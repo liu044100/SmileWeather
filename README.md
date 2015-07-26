@@ -21,7 +21,7 @@ For example, you can search place by using `-(void)getPlacemarksFromString:(NSSt
 
 ![](https://raw.githubusercontent.com/liu044100/SmileWeather/master/SmileWeather-Example/demo_gif/search.png)
 
-You can get the placemark'weather data by using `-(void)getWeatherDataFromPlacemark:(CLPlacemark*)placeMark completion:(SmileWeatherDataDownloadCompletion)completion;`, the completion block return well formed weather data `SmileWeatherData`.
+You can get the placemark's weather data by using `-(void)getWeatherDataFromPlacemark:(CLPlacemark*)placeMark completion:(SmileWeatherDataDownloadCompletion)completion;`, the completion block return well formed weather data `SmileWeatherData`.
 
 ```
 [[SmileWeatherDownLoader sharedDownloader] getWeatherDataFromPlacemark:placemark completion:^(SmileWeatherData *data, NSError *error) {
@@ -51,6 +51,51 @@ iconLabel.text = data.currentData.icon;
 The weather information, timestamp, weekday, timezone, etc, localized all the related information as soon as possible.
 
 ![](https://raw.githubusercontent.com/liu044100/SmileWeather/master/SmileWeather-Example/demo_gif/localization.png)
+
+#Theoretical Introduction
+
+The main class is the `SmileWeatherDownLoader`. It handle downloading weather data from the [Wunderground](http://www.wunderground.com) server. It has three main method:
+
+```
+/*!Get weather data from CLPlacemark.*/
+-(void)getWeatherDataFromPlacemark:(CLPlacemark*)placeMark completion:(SmileWeatherDataDownloadCompletion)completion;
+
+/*!Get weather data from CLLocation.*/
+-(void)getWeatherDataFromLocation:(CLLocation*)location completion:(SmileWeatherDataDownloadCompletion)completion;
+
+/*!Get array of CLPlacemark from the input string.*/
+-(void)getPlacemarksFromString:(NSString*)string completion:(SmileWeatherPlacemarksCompletion)completion;
+```
+
+In the `SmileWeatherDataDownloadCompletion` block, `SmileWeatherData` is returned, it contains the current weather data, 4 days forecast data, 24 hourly forecast data, etc. 
+
+```
+[[SmileWeatherDownLoader sharedDownloader] getWeatherDataFromPlacemark:placemark completion:^(SmileWeatherData *data, NSError *error) {
+        if (!error) {
+            NSLog(@"Current Temperature, Celsius : %@, Fahrenheit: %@", data.currentData.currentTempStri_Celsius, data.currentData.currentTempStri_Fahrenheit);
+        }
+    }];
+```
+
+#How to use it for your project?
+
+**Step 1.** SmileWeather is available through use [CocoaPods](http://cocoapods.org). To install
+it, simply add the following line to your Podfile:
+
+```
+pod 'SmileWeather'
+
+```
+Or you can drag the `SmileWeather` fold to your project.
+
+**Step 2.** Sign up [Wunderground](http://www.wunderground.com/weather/api) to get the api key.
+**Step 3.** Follow as the below image, add the api key and [climacons font](http://adamwhitcroft.com/climacons/) to your project's `Info.plist`. 
+
+![](https://raw.githubusercontent.com/liu044100/SmileWeather/master/SmileWeather-Example/demo_gif/step1.png)
+
+**Step 4.** Import `SmileWeatherDownLoader.h` to your class header file, and use it.
+
+
 
 # Contributions
 
