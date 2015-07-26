@@ -33,16 +33,20 @@ typedef NS_ENUM(int, SmileWeatherAPI) {
 -(void)getWeatherRawDataFromURL:(NSURL*)url completion:(SmileWeatherRawDataCompletion)completion;
 
 //weather data
+/*!Get weather data from CLPlacemark.*/
 -(void)getWeatherDataFromPlacemark:(CLPlacemark*)placeMark completion:(SmileWeatherDataDownloadCompletion)completion;
 
+/*!Get weather data from CLLocation.*/
 -(void)getWeatherDataFromLocation:(CLLocation*)location completion:(SmileWeatherDataDownloadCompletion)completion;
 
 //Placemark Lists
+/*!Get array of CLPlacemark from the input string.*/
 -(void)getPlacemarksFromString:(NSString*)string completion:(SmileWeatherPlacemarksCompletion)completion;
 
 -(void)getPlacemarksForSearchDisplayFromString:(NSString*)string completion:(SmileWeatherPlacemarksCompletion)completion;
 
 //demo vc
+/*!Create a demo view for show the ability of the SmileWeather.*/
 +(SmileWeatherDemoVC*)DemoVCToView:(UIView*)parentView;
 
 //Utility

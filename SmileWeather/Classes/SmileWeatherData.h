@@ -17,8 +17,11 @@
 
 @interface SmileWeatherData : NSObject
 
+/*!The weather data for current weather data.*/
 @property (nonatomic, readonly) SmileWeatherCurrentData *currentData;
+/*!The array of weather data for four days forecast.*/
 @property (nonatomic, readonly) NSArray *forecastDatas;
+/*!The array of weather data for hourly forecast.*/
 @property (nonatomic, readonly) NSArray *hourlyDatas;
 @property (nonatomic, readonly) CLPlacemark *placeMark;
 @property (nonatomic, readonly) NSDate *timeStamp;
