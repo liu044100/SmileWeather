@@ -1,15 +1,15 @@
 Pod::Spec.new do |s|
   s.name         = "SmileWeather"
   s.version      = "0.0.1"
-  s.summary      = "A Library for weather conveniently"
+  s.summary      = "A library for Search & Parse the weather data from Wunderground conveniently."
   s.description  = <<-DESC
-                   1. Handle all complicated things about weather.
-                   2. Get elegant animation automatically and adaptive UI.
-                   3. Support iOS7 and later.
+                   1. Handle all complicated things about Search & Parse the weather data.
+                   2. Need not any weather icon, SmileWeather handle it for you.
+                   3. Fully localized the related information for almost all the countries in the world.
                    DESC
 
   s.homepage     = "https://github.com/liu044100/SmileWeather"
-  s.screenshots  = "https://raw.githubusercontent.com/liu044100/SmileTouchID/master/Example/demo_gif/demo1.gif", "https://raw.githubusercontent.com/liu044100/SmileTouchID/master/Example/demo_gif/demo2.gif"
+  s.screenshots  = "https://raw.githubusercontent.com/liu044100/SmileWeather/master/SmileWeather-Example/demo_gif/pro_big.png"
   s.license      = "MIT"
 
   s.author             = { 'Rain' => 'liu044100@gmail.com' }
