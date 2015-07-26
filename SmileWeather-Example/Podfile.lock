@@ -2,16 +2,7 @@ PODS:
   - SmileWeather (0.0.1)
 
 DEPENDENCIES:
-  - SmileWeather (from `https://github.com/liu044100/SmileWeather.git`)
-
-EXTERNAL SOURCES:
-  SmileWeather:
-    :git: https://github.com/liu044100/SmileWeather.git
-
-CHECKOUT OPTIONS:
-  SmileWeather:
-    :commit: cfa6520a7225fad9986140f123b60e0ce59d39de
-    :git: https://github.com/liu044100/SmileWeather.git
+  - SmileWeather
 
 SPEC CHECKSUMS:
   SmileWeather: b368bf3fdaf9560ca3dc7634225474172739a2e1

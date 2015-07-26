@@ -4,7 +4,9 @@ target 'Smile Weather' do
 
 #pod 'SmileWeather', :path => "../"
 
-pod 'SmileWeather', :git => "https://github.com/liu044100/SmileWeather.git"
+#pod 'SmileWeather', :git => "https://github.com/liu044100/SmileWeather.git"
+
+pod 'SmileWeather'
 
 end
 
