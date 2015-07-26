@@ -5,7 +5,7 @@
 [![License](https://img.shields.io/cocoapods/l/SmileWeather.svg?style=flat)](http://cocoadocs.org/docsets/SmileWeather)
 [![Platform](https://img.shields.io/cocoapods/p/SmileWeather.svg?style=flat)](http://cocoadocs.org/docsets/SmileWeather)
 
-A library for Search & Parse the weather data from Wunderground conveniently.
+A library for Search & Parse the weather data from [Wunderground](http://www.wunderground.com) conveniently.
 
 ![](https://raw.githubusercontent.com/liu044100/SmileWeather/master/SmileWeather-Example/demo_gif/pro_big.png)
 
@@ -17,7 +17,7 @@ A library for Search & Parse the weather data from Wunderground conveniently.
 For example, you can search place by using `-(void)getPlacemarksFromString:(NSString*)string completion:(SmileWeatherPlacemarksCompletion)completion`, the completion block return array of the `CLPlacemark`.
 
 ```
-[[SmileWeatherDownLoader sharedDownloader] getPlacemarksForSearchDisplayFromString:@"cupertino" completion:^(NSArray *placeMarks, NSError *error) {
+[[SmileWeatherDownLoader sharedDownloader] getPlacemarksFromString:@"cupertino" completion:^(NSArray *placeMarks, NSError *error) {
         if (!error) {
             //search results: array of placemark in here
         }
@@ -53,7 +53,7 @@ iconLabel.text = data.currentData.icon;
 
 ##### 3. Fully localized the related information for almost all the countries in the world.
 
-The weather information, timestamp, weekday, timezone, etc, localized all the related information as soon as possible.
+The weather information, timestamp, weekday, timezone, etc, localized all the related information as much as possible.
 
 ![](https://raw.githubusercontent.com/liu044100/SmileWeather/master/SmileWeather-Example/demo_gif/localization.png)
 
