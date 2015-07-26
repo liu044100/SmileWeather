@@ -9,11 +9,11 @@ A library for Search & Parse the weather data from Wunderground conveniently.
 
 ##### 1. Handle all complicated things about Search & Parse the weather data.
 
-For example, you can get weather data by using `-(void)getWeatherDataFromLocation:(CLLocation*)location completion:(SmileWeatherDataDownloadCompletion)completion`, the completion block return well formed weather data.
+For example, you can get weather data by using `-(void)getWeatherDataFromLocation:(CLLocation*)location completion:(SmileWeatherDataDownloadCompletion)completion`, the completion block return well formed weather data `SmileWeatherData`.
 
 ```
-    CLLocation *location = [[CLLocation alloc] initWithLatitude:37.322998 longitude:-122.032182];
-    [[SmileWeatherDownLoader sharedDownloader] getWeatherDataFromLocation:location completion:^(SmileWeatherData *data, NSError *error) {
+CLLocation *location = [[CLLocation alloc] initWithLatitude:37.322998 longitude:-122.032182];
+[[SmileWeatherDownLoader sharedDownloader] getWeatherDataFromLocation:location completion:^(SmileWeatherData *data, NSError *error) {
         if (!error) {
             //Well formed weather data in here.
         }
@@ -35,7 +35,9 @@ You can search place by using `-(void)getPlacemarksFromString:(NSString*)string 
 
 ##### 2. Need not any weather icon, SmileWeather handle it for you. 
 
-Because by using [climacons font](http://adamwhitcroft.com/climacons/), SmileWeather return the corresponding character that is used for weather icon.
+By using [climacons font](http://adamwhitcroft.com/climacons/), SmileWeather return the corresponding character that is used for weather icon.
+
+![](https://raw.githubusercontent.com/liu044100/SmileWeather/master/SmileWeather-Example/demo_gif/climacons.png)
 
 ##### 3. Fully localized the related information for almost all the countries in the world.
 
