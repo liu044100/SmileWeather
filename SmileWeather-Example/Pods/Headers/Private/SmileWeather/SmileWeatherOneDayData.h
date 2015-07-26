@@ -1,0 +1,1 @@
+../../../SmileWeather/SmileWeather/Classes/SmileWeatherOneDayData.h
