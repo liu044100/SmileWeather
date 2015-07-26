@@ -2,9 +2,9 @@ platform :ios, '7.0'
 
 target 'Smile Weather' do
 
-pod 'SmileWeather', :path => "../"
+#pod 'SmileWeather', :path => "../"
 
-#pod 'SmileWeather'
+pod 'SmileWeather', path => "https://github.com/liu044100/SmileWeather.git"
 
 end
 

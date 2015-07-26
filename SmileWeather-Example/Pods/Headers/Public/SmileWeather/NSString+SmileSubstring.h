@@ -1,1 +1,0 @@
-../../../../../SmileWeather/Classes/NSString+SmileSubstring.h

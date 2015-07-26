@@ -1,1 +1,0 @@
-../../../../../SmileWeather/Classes/SmileWeatherCurrentData.h
