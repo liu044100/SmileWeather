@@ -89,6 +89,7 @@ pod 'SmileWeather'
 Or you can drag the `SmileWeather` fold to your project.
 
 **Step 2.** Sign up [Wunderground](http://www.wunderground.com/weather/api) to get the api key.
+
 **Step 3.** Follow as the below image, add the api key and [climacons font](http://adamwhitcroft.com/climacons/) to your project's `Info.plist`. 
 
 ![](https://raw.githubusercontent.com/liu044100/SmileWeather/master/SmileWeather-Example/demo_gif/step1.png)
