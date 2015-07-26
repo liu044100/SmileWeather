@@ -1,0 +1,30 @@
+{
+  "name": "SmileWeather",
+  "version": "0.0.1",
+  "summary": "A Library for weather conveniently",
+  "description": "                   1. Handle all complicated things about weather.\n                   2. Get elegant animation automatically and adaptive UI.\n                   3. Support iOS7 and later.\n",
+  "homepage": "https://github.com/liu044100/SmileWeather",
+  "screenshots": [
+    "https://raw.githubusercontent.com/liu044100/SmileTouchID/master/Example/demo_gif/demo1.gif",
+    "https://raw.githubusercontent.com/liu044100/SmileTouchID/master/Example/demo_gif/demo2.gif"
+  ],
+  "license": "MIT",
+  "authors": {
+    "Rain": "liu044100@gmail.com"
+  },
+  "social_media_url": "https://dribbble.com/yuchenliu",
+  "platforms": {
+    "ios": "7.0"
+  },
+  "requires_arc": true,
+  "source": {
+    "git": "https://github.com/liu044100/SmileWeather.git",
+    "tag": "0.0.1"
+  },
+  "source_files": "SmileWeather/Classes/*",
+  "resources": [
+    "SmileWeather/Assets/*"
+  ],
+  "public_header_files": "SmileWeather/Classes/*.h",
+  "frameworks": "UIKit"
+}

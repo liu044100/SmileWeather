@@ -1,0 +1,14 @@
+platform :ios, '7.0'
+
+target 'SmileWeather-Example' do
+
+pod 'SmileWeather', :path => "../"
+
+#pod 'SmileWeather'
+
+end
+
+target 'SmileWeather-ExampleTests' do
+
+end
+

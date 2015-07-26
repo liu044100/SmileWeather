@@ -1,0 +1,14 @@
+PODS:
+  - SmileWeather (0.0.1)
+
+DEPENDENCIES:
+  - SmileWeather (from `../`)
+
+EXTERNAL SOURCES:
+  SmileWeather:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  SmileWeather: 069b770701c24c02337b6008781b917a5297412b
+
+COCOAPODS: 0.37.2

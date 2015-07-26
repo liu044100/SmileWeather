@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="nFS-92-3Y4">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="smileweather_bg" translatesAutoresizingMaskIntoConstraints="NO" id="a2f-7g-Wqu">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cSY-8A-LNS">
+                                <rect key="frame" x="0.0" y="64" width="600" height="234"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="234" id="Njh-G9-Da5"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="cSY-8A-LNS" secondAttribute="trailing" id="SXC-DJ-aQG"/>
+                            <constraint firstItem="cSY-8A-LNS" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="ShJ-UG-2rc"/>
+                            <constraint firstItem="cSY-8A-LNS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="lHL-Z6-vB3"/>
+                            <constraint firstItem="a2f-7g-Wqu" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="nvF-2H-9Ru"/>
+                            <constraint firstItem="a2f-7g-Wqu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="qqS-DV-cvl"/>
+                            <constraint firstAttribute="trailing" secondItem="a2f-7g-Wqu" secondAttribute="trailing" id="sTJ-yn-awR"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="a2f-7g-Wqu" secondAttribute="bottom" id="w1L-xy-rR5"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="xgh-Am-XFj"/>
+                    <connections>
+                        <outlet property="containerView" destination="cSY-8A-LNS" id="Ikl-aE-TD1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1042" y="274"/>
+        </scene>
+        <!--Search TableVC-->
+        <scene sceneID="uXS-Id-e4h">
+            <objects>
+                <tableViewController storyboardIdentifier="SearchTable" id="F9A-C1-A9e" customClass="SearchTableVC" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="64" sectionHeaderHeight="22" sectionFooterHeight="22" id="33G-c3-hrb">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="searchCell" textLabel="v6w-zx-9EG" rowHeight="64" style="IBUITableViewCellStyleDefault" id="Vv8-5a-RyB">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Vv8-5a-RyB" id="wy0-XX-sfa">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="v6w-zx-9EG">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="F9A-C1-A9e" id="H7g-2a-gcE"/>
+                            <outlet property="delegate" destination="F9A-C1-A9e" id="VGR-Aw-MLc"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ygD-RZ-knZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1669" y="274"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="E1M-PW-T2v">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nFS-92-3Y4" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="um2-t1-l3U">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="js3-iJ-KK5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oTX-wF-pO9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="230" y="274"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="smileweather_bg" width="375" height="667"/>
+    </resources>
+</document>

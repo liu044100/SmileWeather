@@ -1,0 +1,1 @@
+../../../../../SmileWeather/Classes/SmileClimacons.h
