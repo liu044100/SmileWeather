@@ -24,12 +24,8 @@
 	<true/>
 	<key>SmileWeather</key>
 	<dict>
-		<key>API_KEY_openweathermap</key>
-		<string>1e1e8d2e25a13316085219d4b020a88d</string>
 		<key>API_KEY_wunderground</key>
 		<string>be5e1a539a971a0b</string>
-		<key>API_NOW</key>
-		<integer>0</integer>
 	</dict>
 	<key>UIAppFonts</key>
 	<array>

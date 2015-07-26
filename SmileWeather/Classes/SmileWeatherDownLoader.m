@@ -33,8 +33,11 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         NSDictionary *smileInfo =  [SmileWeatherDownLoader smileWeatherInfoDic];
-        sharedDownloader = [[SmileWeatherDownLoader alloc]initWithAPIType:(SmileWeatherAPI)[smileInfo[API_NOW] intValue]];
+//        sharedDownloader = [[SmileWeatherDownLoader alloc]initWithAPIType:(SmileWeatherAPI)[smileInfo[API_NOW] intValue]];
 //        NSLog(@"info -> %@", smileInfo);
+        
+        NSString *wunderground_apikey = [smileInfo objectForKey:API_KEY_wunderground];
+        sharedDownloader = [[SmileWeatherDownLoader alloc]initWithWundergroundAPIKey:wunderground_apikey];
     });
     return sharedDownloader;
 }
@@ -50,6 +53,16 @@
         _sharedInstance = [[NSBundle mainBundle] infoDictionary];
     });
     return _sharedInstance;
+}
+
+- (instancetype)initWithWundergroundAPIKey:(NSString*)apikey{
+    if(self = [super init]) {
+        self.weatherAPI = API_wunderground;
+        self.key = apikey;
+        self.geocoder = [[CLGeocoder alloc]init];
+        self.session = [NSURLSession sharedSession];
+    }
+    return self;
 }
 
 - (instancetype)initWithAPIType:(SmileWeatherAPI)type

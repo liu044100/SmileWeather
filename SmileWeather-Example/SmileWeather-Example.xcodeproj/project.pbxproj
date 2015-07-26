@@ -32,7 +32,7 @@
 		24392B7C1B5E3F9000F6B073 /* SearchTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchTableVC.m; sourceTree = "<group>"; };
 		248FCE891B562F3B00442E75 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		248FCE8A1B562F3F00442E75 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
-		24CF08E11B539EBD00B0060C /* SmileWeather-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SmileWeather-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		24CF08E11B539EBD00B0060C /* SmileWeather-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "SmileWeather-Example.app"; path = "Smile Weather.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		24CF08E51B539EBD00B0060C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		24CF08E61B539EBD00B0060C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		24CF08E81B539EBD00B0060C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -451,7 +451,7 @@
 				INFOPLIST_FILE = "SmileWeather-ExampleTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SmileWeather-Example.app/SmileWeather-Example";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Smile Weather.app/Smile Weather";
 			};
 			name = Debug;
 		};
@@ -466,7 +466,7 @@
 				INFOPLIST_FILE = "SmileWeather-ExampleTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SmileWeather-Example.app/SmileWeather-Example";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Smile Weather.app/Smile Weather";
 			};
 			name = Release;
 		};

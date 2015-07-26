@@ -102,7 +102,7 @@
         NSString *dateStri = [NSString stringWithFormat:@"%@/%@/%@ %@:00:00",[timeDic valueForKey:@"year"], [timeDic valueForKey:@"mon_padded"], [timeDic valueForKey:@"mday_padded"], [timeDic valueForKey:@"hour_padded"]];
         
         forecast.date = [hourlyDateFormatter dateFromString:dateStri];
-        NSLog(@"%@==============%@", dateStri, forecast.date);
+//        NSLog(@"%@==============%@", dateStri, forecast.date);
         //condition
         NSString *condition = [hourlyData valueForKey:@"conditions"];
         NSString *icon = [hourlyData valueForKey:@"icon"];
