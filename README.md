@@ -1,5 +1,10 @@
 # SmileWeather
 
+[![GitHub Issues](http://img.shields.io/github/issues/liu044100/SmileWeather.svg?style=flat)](https://github.com/liu044100/SmileWeather/issues)
+[![Version](https://img.shields.io/cocoapods/v/SmileWeather.svg?style=flat)](http://cocoadocs.org/docsets/SmileWeather)
+[![License](https://img.shields.io/cocoapods/l/SmileWeather.svg?style=flat)](http://cocoadocs.org/docsets/SmileWeather)
+[![Platform](https://img.shields.io/cocoapods/p/SmileWeather.svg?style=flat)](http://cocoadocs.org/docsets/SmileWeather)
+
 A library for Search & Parse the weather data from Wunderground conveniently.
 
 ![](https://raw.githubusercontent.com/liu044100/SmileWeather/master/SmileWeather-Example/demo_gif/pro_big.png)
@@ -21,7 +26,7 @@ For example, you can search place by using `-(void)getPlacemarksFromString:(NSSt
 
 ![](https://raw.githubusercontent.com/liu044100/SmileWeather/master/SmileWeather-Example/demo_gif/search.png)
 
-You can get the placemark's weather data by using `-(void)getWeatherDataFromPlacemark:(CLPlacemark*)placeMark completion:(SmileWeatherDataDownloadCompletion)completion;`, the completion block return well formed weather data `SmileWeatherData`.
+You can get the placemark's weather data by using `-(void)getWeatherDataFromPlacemark:(CLPlacemark*)placeMark completion:(SmileWeatherDataDownloadCompletion)completion;`, the completion block return well formed weather data [SmileWeatherData](http://cocoadocs.org/docsets/SmileWeather/0.0.1/Classes/SmileWeatherData.html).
 
 ```
 [[SmileWeatherDownLoader sharedDownloader] getWeatherDataFromPlacemark:placemark completion:^(SmileWeatherData *data, NSError *error) {
@@ -34,7 +39,7 @@ You can get the placemark's weather data by using `-(void)getWeatherDataFromPlac
 
 ##### 2. Need not any weather icon, SmileWeather handle it for you. 
 
-By using [climacons font](http://adamwhitcroft.com/climacons/), the `SmileWeatherData` contains the corresponding character that is used for weather icon.
+By using [climacons font](http://adamwhitcroft.com/climacons/), the [SmileWeatherData](http://cocoadocs.org/docsets/SmileWeather/0.0.1/Classes/SmileWeatherData.html) contains the corresponding character that is used for weather icon.
 
 ```
 SmileWeatherData *data = ...;
@@ -54,7 +59,7 @@ The weather information, timestamp, weekday, timezone, etc, localized all the re
 
 #Theoretical Introduction
 
-The main class is the `SmileWeatherDownLoader`. It handle downloading weather data from the [Wunderground](http://www.wunderground.com) server. It has three main method:
+The main class is the [SmileWeatherDownLoader](http://cocoadocs.org/docsets/SmileWeather/0.0.1/Classes/SmileWeatherDownLoader.html). It handle downloading weather data from the [Wunderground](http://www.wunderground.com) server. It has three main method:
 
 ```
 /*!Get weather data from CLPlacemark.*/
@@ -67,7 +72,7 @@ The main class is the `SmileWeatherDownLoader`. It handle downloading weather da
 -(void)getPlacemarksFromString:(NSString*)string completion:(SmileWeatherPlacemarksCompletion)completion;
 ```
 
-In the `SmileWeatherDataDownloadCompletion` block, `SmileWeatherData` is returned, it contains the current weather data, 4 days forecast data, 24 hourly forecast data, etc. 
+In the `SmileWeatherDataDownloadCompletion` block, [SmileWeatherData](http://cocoadocs.org/docsets/SmileWeather/0.0.1/Classes/SmileWeatherData.html) is returned, it contains the current weather data, 4 days forecast data, 24 hourly forecast data, etc. 
 
 ```
 [[SmileWeatherDownLoader sharedDownloader] getWeatherDataFromPlacemark:placemark completion:^(SmileWeatherData *data, NSError *error) {
@@ -94,7 +99,7 @@ Or you can drag the `SmileWeather` fold to your project.
 
 ![](https://raw.githubusercontent.com/liu044100/SmileWeather/master/SmileWeather-Example/demo_gif/step1.png)
 
-**Step 4.** Import `SmileWeatherDownLoader.h` to your class header file, and use it.
+**Step 4.** The last step is that import `SmileWeatherDownLoader.h` to your project, and use it :)
 
 
 
