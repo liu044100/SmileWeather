@@ -9,7 +9,7 @@ A library for Search & Parse the weather data from Wunderground conveniently.
 
 ##### 1. Handle all complicated things about Search & Parse the weather data.
 
-For example, you can get weather data by using `-(void)getWeatherDataFromLocation:(CLLocation*)location completion:(SmileWeatherDataDownloadCompletion)completion`, in completion block get well formed weather data.
+For example, you can get weather data by using `-(void)getWeatherDataFromLocation:(CLLocation*)location completion:(SmileWeatherDataDownloadCompletion)completion`, the completion block return well formed weather data.
 
 ```
     CLLocation *location = [[CLLocation alloc] initWithLatitude:37.322998 longitude:-122.032182];
@@ -20,7 +20,7 @@ For example, you can get weather data by using `-(void)getWeatherDataFromLocatio
     }];
 ```
 
-You can search place by `-(void)getPlacemarksFromString:(NSString*)string completion:(SmileWeatherPlacemarksCompletion)completion`, it return array of the `CLPlacemark`.
+You can search place by using `-(void)getPlacemarksFromString:(NSString*)string completion:(SmileWeatherPlacemarksCompletion)completion`, the completion block return array of the `CLPlacemark`.
 
 ```
 [[SmileWeatherDownLoader sharedDownloader] getPlacemarksForSearchDisplayFromString:@"cupertino" completion:^(NSArray *placeMarks, NSError *error) {
