@@ -34,13 +34,21 @@ You can get the placemark'weather data by using `-(void)getWeatherDataFromPlacem
 
 ##### 2. Need not any weather icon, SmileWeather handle it for you. 
 
-By using [climacons font](http://adamwhitcroft.com/climacons/), SmileWeather return the corresponding character that is used for weather icon.
+By using [climacons font](http://adamwhitcroft.com/climacons/), the `SmileWeatherData` contains the corresponding character that is used for weather icon.
+
+```
+SmileWeatherData *data = ...;
+UILabel *iconLabel = ...;
+
+//current weather condition
+iconLabel.text = data.currentData.icon;
+```
 
 ![](https://raw.githubusercontent.com/liu044100/SmileWeather/master/SmileWeather-Example/demo_gif/climacons.png)
 
 ##### 3. Fully localized the related information for almost all the countries in the world.
 
-The Weather information, timestamp, weekday, timezone, etc, localized all the related information as soon as possible.
+The weather information, timestamp, weekday, timezone, etc, localized all the related information as soon as possible.
 
 ![](https://raw.githubusercontent.com/liu044100/SmileWeather/master/SmileWeather-Example/demo_gif/localization.png)
 
