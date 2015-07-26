@@ -22,6 +22,6 @@ Pod::Spec.new do |s|
   s.source_files  = 'SmileWeather/Classes/*'
   s.resource = ['SmileWeather/Assets/*']
   s.public_header_files = 'SmileWeather/Classes/*.h'
-  s.frameworks = 'UIKit'
+  s.frameworks = 'UIKit', 'CoreLocation'
 
 end

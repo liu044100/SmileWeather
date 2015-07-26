@@ -20,9 +20,26 @@ For example, you can get weather data by using `-(void)getWeatherDataFromLocatio
     }];
 ```
 
-##### 2. Need not any weather icon. Using climatically pictographs [climacons font](http://adamwhitcroft.com/climacons/), return the corresponding character that is used for weather icon.
+You can search place by `-(void)getPlacemarksFromString:(NSString*)string completion:(SmileWeatherPlacemarksCompletion)completion`, it return array of the `CLPlacemark`.
 
-##### 3. Fully localized all the things (weather information, timestamp, weekday, timezone, etc) for almost all the countries in the world.
+```
+[[SmileWeatherDownLoader sharedDownloader] getPlacemarksForSearchDisplayFromString:@"cupertino" completion:^(NSArray *placeMarks, NSError *error) {
+        if (!error) {
+            //search results: array of placemark in here
+        }
+    }];
+```
+
+![](https://raw.githubusercontent.com/liu044100/SmileWeather/master/SmileWeather-Example/demo_gif/search.png)
+
+
+##### 2. Need not any weather icon, SmileWeather handle it for you. 
+
+Because by using [climacons font](http://adamwhitcroft.com/climacons/), SmileWeather return the corresponding character that is used for weather icon.
+
+##### 3. Fully localized the related information for almost all the countries in the world.
+
+The Weather information, timestamp, weekday, timezone, etc, localized all the related information as soon as possible.
 
 ![](https://raw.githubusercontent.com/liu044100/SmileWeather/master/SmileWeather-Example/demo_gif/localization.png)
 
