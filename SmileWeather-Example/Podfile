@@ -1,6 +1,6 @@
 platform :ios, '7.0'
 
-target 'SmileWeather-Example' do
+target 'Smile Weather' do
 
 pod 'SmileWeather', :path => "../"
 
