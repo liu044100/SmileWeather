@@ -21,11 +21,10 @@ You can search place by using `-(void)getPlacemarksFromString:(NSString*)string 
 
 ![](https://raw.githubusercontent.com/liu044100/SmileWeather/master/SmileWeather-Example/demo_gif/search.png)
 
-For example, you can get weather data by using `-(void)getWeatherDataFromLocation:(CLLocation*)location completion:(SmileWeatherDataDownloadCompletion)completion`, the completion block return well formed weather data `SmileWeatherData`.
+For example, you can get weather data by using `-(void)getWeatherDataFromPlacemark:(CLPlacemark*)placeMark completion:(SmileWeatherDataDownloadCompletion)completion;`, the completion block return well formed weather data `SmileWeatherData`.
 
 ```
-CLLocation *location = [[CLLocation alloc] initWithLatitude:37.322998 longitude:-122.032182];
-[[SmileWeatherDownLoader sharedDownloader] getWeatherDataFromLocation:location completion:^(SmileWeatherData *data, NSError *error) {
+[[SmileWeatherDownLoader sharedDownloader] getWeatherDataFromPlacemark:placemark completion:^(SmileWeatherData *data, NSError *error) {
         if (!error) {
             //Well formed weather data in here.
         }
