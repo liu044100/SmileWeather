@@ -2,7 +2,11 @@ PODS:
   - SmileWeather (0.0.1)
 
 DEPENDENCIES:
-  - SmileWeather
+  - SmileWeather (from `../`)
+
+EXTERNAL SOURCES:
+  SmileWeather:
+    :path: ../
 
 SPEC CHECKSUMS:
   SmileWeather: b368bf3fdaf9560ca3dc7634225474172739a2e1

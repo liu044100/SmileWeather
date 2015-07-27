@@ -153,13 +153,18 @@ static NSString * const reuseIdentifier_property = @"propertyCell";
             [self.collectionView reloadData];
             [self.collectionView_hourly reloadData];
             [self.collectionView_property reloadData];
-            [self.collectionView_hourly scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:0] atScrollPosition:UICollectionViewScrollPositionRight animated:NO];
+            if (self.data.hourlyDatas.count > 0) {
+                 [self.collectionView_hourly scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:0] atScrollPosition:UICollectionViewScrollPositionRight animated:NO];
+            }
             [self updateUI];
         });
     }
 }
 
 -(void)updateUI{
+    if (!self.data.currentData) {
+        return;
+    }
     self.currentTempLabel.text = self.data.currentData.currentTempStri_Celsius;
     self.localityLabel.text = self.data.placeName;
     
