@@ -7,293 +7,310 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		30D323D5D282700F1ED4A0C4 /* SmileWeatherHourlyData.h in Headers */ = {isa = PBXBuildFile; fileRef = 723468F031FDCE6043BEBA86 /* SmileWeatherHourlyData.h */; };
-		3BFA6CCAF1303CFACF6E30F9 /* SmileLineLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 356864B47BFA5052AE27CBEF /* SmileLineLayout.h */; };
-		44100BDF1867D9185B2A3CE2 /* SmileWeatherData.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FCA2D40328A0EE1D0A81ECC /* SmileWeatherData.m */; };
-		445582C46DE88C686243C18E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 295CB77609BE2139B09804B0 /* CoreLocation.framework */; };
-		580A1787F0E077126C1F038D /* SmileWeatherDemoVC.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A732E4D906501C0F31F61AD /* SmileWeatherDemoVC.h */; };
-		599E354D728205527C375748 /* SmileWeatherDownLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = D285557D81C4CA3A8DB879FF /* SmileWeatherDownLoader.h */; };
-		5EB70F798C4DCF4E5B4BDA38 /* SmileWeatherCurrentData.m in Sources */ = {isa = PBXBuildFile; fileRef = BE6D124D893E15F98B519F5D /* SmileWeatherCurrentData.m */; };
-		62CE9A0165CB8502E95FE57B /* SmileWeatherDemoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 44515E6C90DED65AACE812C0 /* SmileWeatherDemoVC.m */; };
-		6E28EBAAF4C84511D85D05E2 /* Pods-Smile Weather-SmileWeather-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AA54AF89635E36F34712D99A /* Pods-Smile Weather-SmileWeather-dummy.m */; };
-		7607B8045D6B35A90A8FC1EF /* SmileClimacons.h in Headers */ = {isa = PBXBuildFile; fileRef = 958B2D1505882ED256F1C7DA /* SmileClimacons.h */; };
-		7643D4F4E18EE6D1F245504F /* NSString+SmileSubstring.m in Sources */ = {isa = PBXBuildFile; fileRef = DFCA618D18FF9C09D0B02871 /* NSString+SmileSubstring.m */; };
-		77A8BCB7DB5066042BA6380E /* Pods-Smile Weather-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A65202BFB7661754F5B7292F /* Pods-Smile Weather-dummy.m */; };
-		797EC676075554838E9AB820 /* SmileWeatherOneDayData.m in Sources */ = {isa = PBXBuildFile; fileRef = C18BB736DD2615E8DB14EDFD /* SmileWeatherOneDayData.m */; };
-		873ACA6AE3FCDAFC70D1817A /* SmileWeatherForecastDayData.h in Headers */ = {isa = PBXBuildFile; fileRef = 04F5B20DC5BD38529CA8438A /* SmileWeatherForecastDayData.h */; };
-		8A132F194C85C5FB17E18652 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72D7EB9A0141647EC5AC024E /* Foundation.framework */; };
-		95AB33F372FF1B3B2E27DE4B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C53628A8AD49B8461424F77 /* UIKit.framework */; };
-		A6F5715E490DFB9001B1BEAA /* SmilePaddingLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = A59FF282CCA6391BFAEF6060 /* SmilePaddingLabel.m */; };
-		B8D465812DD8D68959C40389 /* SmilePaddingLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = 5C48A150242FD4E89D034333 /* SmilePaddingLabel.h */; };
-		BA167630078ED9D9551D2413 /* SmileWeatherHourlyData.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CCEDC8456345D3AC4DB0B49 /* SmileWeatherHourlyData.m */; };
-		C00A3D6ACD98C6D6E26E9129 /* SmileWeatherCurrentData.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E3D7CE25B91D5897932DC21 /* SmileWeatherCurrentData.h */; };
-		CA75D02F255D796B5974FF2F /* SmileLineLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D8F3A8CA4D8C07299467AFD /* SmileLineLayout.m */; };
-		D00D113B9E09F9E31203E0EE /* SmileWeatherData.h in Headers */ = {isa = PBXBuildFile; fileRef = F1984AC4B24F3B05FB1E0ED7 /* SmileWeatherData.h */; };
-		D21568BB43C2930DE9B51BCE /* NSString+SmileSubstring.h in Headers */ = {isa = PBXBuildFile; fileRef = 6E23CBB9F085ABA8417308E1 /* NSString+SmileSubstring.h */; };
-		D34DF9D2E7A8554BF92ACE1D /* SmileWeatherForecastDayData.m in Sources */ = {isa = PBXBuildFile; fileRef = AF8C308347698C8AEA952B95 /* SmileWeatherForecastDayData.m */; };
-		D4CE71AB5C74A98660F522C2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72D7EB9A0141647EC5AC024E /* Foundation.framework */; };
-		E95F72BDC0D92B3153BF6808 /* SmileWeatherOneDayData.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D63BDEE3CF126DA82CA6EAB /* SmileWeatherOneDayData.h */; };
-		EB24847C3DEC2025CDBAC6F0 /* SmileWeatherDownLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = B12EFDEBD64E9FB5E77F39B6 /* SmileWeatherDownLoader.m */; };
+		0152D4B50785524E6299415E /* SmileWeatherDownLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = 37B22B6503DFD072305768C5 /* SmileWeatherDownLoader.h */; };
+		0E6911A9781187908383019E /* SmileWeatherCurrentData.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D7694A38B193F74E58FCAE /* SmileWeatherCurrentData.m */; };
+		12F77106E0A357234720B82F /* SmileWeatherData.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CA7FBF74EE2D77758CF6E80 /* SmileWeatherData.m */; };
+		168C87ADEB208CA0D376A304 /* NSString+SmileSubstring.m in Sources */ = {isa = PBXBuildFile; fileRef = 66CCFB2FEC3C218FCD22A5EA /* NSString+SmileSubstring.m */; };
+		1F216ECB9996764C42DD78E3 /* NSString+SmileSubstring.h in Headers */ = {isa = PBXBuildFile; fileRef = 734C1D0F6A49A132A012CD0D /* NSString+SmileSubstring.h */; };
+		2944573A76FFA15008B600BC /* SmileWeatherOneDayData.h in Headers */ = {isa = PBXBuildFile; fileRef = ED2A18F0A3F5DF75B425275B /* SmileWeatherOneDayData.h */; };
+		3432BD7418997F68E0E4DBA4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25E21F58D03D37A0DFA9D995 /* Foundation.framework */; };
+		3A7857C545922CF579C8FC63 /* SmileWeatherDemoVC.h in Headers */ = {isa = PBXBuildFile; fileRef = 8913352C56A1A5D0266EA887 /* SmileWeatherDemoVC.h */; };
+		6268963B696918534A2F1D2F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBB2C3C6E1CF5DFDB2617031 /* UIKit.framework */; };
+		63EB3AB75C0FA7E0E503B0B7 /* SmileClimacons.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DF3D4DE85A77C8B5EAB1D89 /* SmileClimacons.h */; };
+		7A8905C6559CC3717970F1E9 /* SmileWeatherDemoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FD048101034A46A35D3E66 /* SmileWeatherDemoVC.m */; };
+		7DD23D8485DC88C5FB3E6FAF /* SmileWeatherDownLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 643F5FC93109BCE14E7E493D /* SmileWeatherDownLoader.m */; };
+		7F68795A165682A0C3A342EC /* SmileWeatherForecastDayData.h in Headers */ = {isa = PBXBuildFile; fileRef = 1432C7E04BF7DC7E02DAFE96 /* SmileWeatherForecastDayData.h */; };
+		816D6DF8CC35D55927D635A5 /* SmilePaddingLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = A5D7EF9B28894E6A7C37A1D8 /* SmilePaddingLabel.h */; };
+		8C2D31865AA20C37D5729221 /* SmileWeatherData.h in Headers */ = {isa = PBXBuildFile; fileRef = E0D37555B7496CB83682D46C /* SmileWeatherData.h */; };
+		A7A32EA4B02106DD52C35143 /* SmileWeatherCurrentData.h in Headers */ = {isa = PBXBuildFile; fileRef = DD19EC4A8C25E577957560C7 /* SmileWeatherCurrentData.h */; };
+		AACEC9C8906E288C5FE96EAE /* SmileWeatherHourlyData.h in Headers */ = {isa = PBXBuildFile; fileRef = 2AFF0B0ABE4273FF0B11C180 /* SmileWeatherHourlyData.h */; };
+		AD0B68DB9D226D631F278E36 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25E21F58D03D37A0DFA9D995 /* Foundation.framework */; };
+		B28288920821C7863C4B6AA7 /* Pods-Smile Weather-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C68E7734EB503B74A5906278 /* Pods-Smile Weather-dummy.m */; };
+		BAC7D0F8F9C93E4E7C7AD372 /* SmileWeatherOneDayData.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD6F74AB4DEF486D5D0CF1C /* SmileWeatherOneDayData.m */; };
+		C233BF7E19B033D2645B4AE3 /* SmileLineLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 6477CFD33C310074D5A2A8A6 /* SmileLineLayout.h */; };
+		C998CE99180C8018A4684BFC /* Pods-Smile Weather-SmileWeather-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A15A7B43421AFA2D285F117E /* Pods-Smile Weather-SmileWeather-dummy.m */; };
+		CF60EF029CF4D8A9F8BC5520 /* SmileWeatherForecastDayData.m in Sources */ = {isa = PBXBuildFile; fileRef = D9F99CEA65C12784A47F0D6D /* SmileWeatherForecastDayData.m */; };
+		D54D32DEF62FA030F59B8A3F /* SmileWeatherHourlyData.m in Sources */ = {isa = PBXBuildFile; fileRef = 47A85F7851289FAA42C69E0F /* SmileWeatherHourlyData.m */; };
+		DEB27E905B18277AD8060770 /* SmileLineLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = DC83AF3F87F079D3B0AFB7C6 /* SmileLineLayout.m */; };
+		E5F2CCC6582AA39655AE271C /* SmilePaddingLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = A935A3F4D43355A4E06E0CC7 /* SmilePaddingLabel.m */; };
+		EEF6AD8631C7B6F5729117DF /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 531C67343C578D65E3311819 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		7A25CE073A8DF1FAB953123F /* PBXContainerItemProxy */ = {
+		DC6E47A8EDDAD15B4FF9213D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = E3425B69FF08BAACF736F5FC /* Project object */;
+			containerPortal = 5910AB8CB0691F0991871480 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 661109ABD0EAFE50F7A57786;
+			remoteGlobalIDString = 6FFFED4A7AD70036765EB37C;
 			remoteInfo = "Pods-Smile Weather-SmileWeather";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0157C48DAEAC0A4B2273235F /* smile_wunder_logo@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "smile_wunder_logo@2x.png"; path = "SmileWeather/Assets/smile_wunder_logo@2x.png"; sourceTree = "<group>"; };
-		04F5B20DC5BD38529CA8438A /* SmileWeatherForecastDayData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SmileWeatherForecastDayData.h; path = SmileWeather/Classes/SmileWeatherForecastDayData.h; sourceTree = "<group>"; };
-		06AE6C87CDA50664368B3245 /* smile_sunset@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "smile_sunset@2x.png"; path = "SmileWeather/Assets/smile_sunset@2x.png"; sourceTree = "<group>"; };
-		1D63BDEE3CF126DA82CA6EAB /* SmileWeatherOneDayData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SmileWeatherOneDayData.h; path = SmileWeather/Classes/SmileWeatherOneDayData.h; sourceTree = "<group>"; };
-		24E5217D5F5A806FDCF13F41 /* Pods-Smile Weather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Smile Weather.debug.xcconfig"; sourceTree = "<group>"; };
-		295CB77609BE2139B09804B0 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/CoreLocation.framework; sourceTree = DEVELOPER_DIR; };
-		2D3503F034763A4291767F3F /* libPods-Smile Weather.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Smile Weather.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2D995E82881F9C6D771CAE1B /* smile_wind@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "smile_wind@3x.png"; path = "SmileWeather/Assets/smile_wind@3x.png"; sourceTree = "<group>"; };
-		33B2E278DB683EE461AB57C6 /* Pods-Smile Weather-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Smile Weather-acknowledgements.markdown"; sourceTree = "<group>"; };
-		356864B47BFA5052AE27CBEF /* SmileLineLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SmileLineLayout.h; path = SmileWeather/Classes/SmileLineLayout.h; sourceTree = "<group>"; };
-		35F635364E39405951DA5872 /* Pods-Smile Weather-SmileWeather.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Smile Weather-SmileWeather.xcconfig"; sourceTree = "<group>"; };
-		38B864753DAF8D51468FFFA9 /* Pods-Smile Weather-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Smile Weather-environment.h"; sourceTree = "<group>"; };
-		3CC26F11DAD55E6707C0D07D /* smile_sunrise@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "smile_sunrise@2x.png"; path = "SmileWeather/Assets/smile_sunrise@2x.png"; sourceTree = "<group>"; };
-		3D8F3A8CA4D8C07299467AFD /* SmileLineLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SmileLineLayout.m; path = SmileWeather/Classes/SmileLineLayout.m; sourceTree = "<group>"; };
-		4000DF76C3CC70869A5985F1 /* Pods-Smile Weather-SmileWeather-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Smile Weather-SmileWeather-prefix.pch"; sourceTree = "<group>"; };
-		44515E6C90DED65AACE812C0 /* SmileWeatherDemoVC.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SmileWeatherDemoVC.m; path = SmileWeather/Classes/SmileWeatherDemoVC.m; sourceTree = "<group>"; };
-		4E4707C495782BCFABA85148 /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		54CEAA94A5DD9A194DBC2EB2 /* libPods-Smile Weather-SmileWeather.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Smile Weather-SmileWeather.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		5C48A150242FD4E89D034333 /* SmilePaddingLabel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SmilePaddingLabel.h; path = SmileWeather/Classes/SmilePaddingLabel.h; sourceTree = "<group>"; };
-		5CCEDC8456345D3AC4DB0B49 /* SmileWeatherHourlyData.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SmileWeatherHourlyData.m; path = SmileWeather/Classes/SmileWeatherHourlyData.m; sourceTree = "<group>"; };
-		5DFA822AF13A7A5A139BB777 /* smile_sunrise@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "smile_sunrise@3x.png"; path = "SmileWeather/Assets/smile_sunrise@3x.png"; sourceTree = "<group>"; };
-		66EA4452E17F164372ED4D58 /* Pods-Smile Weather-SmileWeather-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Smile Weather-SmileWeather-Private.xcconfig"; sourceTree = "<group>"; };
-		6BB36ECE507F6ED498FFCFDE /* smile_pressure@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "smile_pressure@3x.png"; path = "SmileWeather/Assets/smile_pressure@3x.png"; sourceTree = "<group>"; };
-		6E23CBB9F085ABA8417308E1 /* NSString+SmileSubstring.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+SmileSubstring.h"; path = "SmileWeather/Classes/NSString+SmileSubstring.h"; sourceTree = "<group>"; };
-		723468F031FDCE6043BEBA86 /* SmileWeatherHourlyData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SmileWeatherHourlyData.h; path = SmileWeather/Classes/SmileWeatherHourlyData.h; sourceTree = "<group>"; };
-		72D7EB9A0141647EC5AC024E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		73C0DCF97A6FE995BAA68944 /* Pods-Smile Weather-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Smile Weather-acknowledgements.plist"; sourceTree = "<group>"; };
-		75B609BC36C8ACB1E5F955A2 /* Climacons.ttf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = Climacons.ttf; path = SmileWeather/Assets/Climacons.ttf; sourceTree = "<group>"; };
-		7C53628A8AD49B8461424F77 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		7E3D7CE25B91D5897932DC21 /* SmileWeatherCurrentData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SmileWeatherCurrentData.h; path = SmileWeather/Classes/SmileWeatherCurrentData.h; sourceTree = "<group>"; };
-		8658D8C6FA69DBA51B5A1691 /* Pods-Smile Weather-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Smile Weather-resources.sh"; sourceTree = "<group>"; };
-		8A732E4D906501C0F31F61AD /* SmileWeatherDemoVC.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SmileWeatherDemoVC.h; path = SmileWeather/Classes/SmileWeatherDemoVC.h; sourceTree = "<group>"; };
-		8AE17B05E50C81B70FF173AE /* SmileWeatherDemoView.storyboard */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.storyboard; name = SmileWeatherDemoView.storyboard; path = SmileWeather/Assets/SmileWeatherDemoView.storyboard; sourceTree = "<group>"; };
-		958B2D1505882ED256F1C7DA /* SmileClimacons.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SmileClimacons.h; path = SmileWeather/Classes/SmileClimacons.h; sourceTree = "<group>"; };
-		95ED09E431D647719C0AA194 /* smile_sunglass@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "smile_sunglass@3x.png"; path = "SmileWeather/Assets/smile_sunglass@3x.png"; sourceTree = "<group>"; };
-		9F0A27CC80D3CF477477E501 /* Pods-Smile Weather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Smile Weather.release.xcconfig"; sourceTree = "<group>"; };
-		9FCA2D40328A0EE1D0A81ECC /* SmileWeatherData.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SmileWeatherData.m; path = SmileWeather/Classes/SmileWeatherData.m; sourceTree = "<group>"; };
-		A1EEE4397050516FA265EFC6 /* smile_sunglass@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "smile_sunglass@2x.png"; path = "SmileWeather/Assets/smile_sunglass@2x.png"; sourceTree = "<group>"; };
-		A59FF282CCA6391BFAEF6060 /* SmilePaddingLabel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SmilePaddingLabel.m; path = SmileWeather/Classes/SmilePaddingLabel.m; sourceTree = "<group>"; };
-		A65202BFB7661754F5B7292F /* Pods-Smile Weather-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Smile Weather-dummy.m"; sourceTree = "<group>"; };
-		AA54AF89635E36F34712D99A /* Pods-Smile Weather-SmileWeather-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Smile Weather-SmileWeather-dummy.m"; sourceTree = "<group>"; };
-		AF8C308347698C8AEA952B95 /* SmileWeatherForecastDayData.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SmileWeatherForecastDayData.m; path = SmileWeather/Classes/SmileWeatherForecastDayData.m; sourceTree = "<group>"; };
-		B12EFDEBD64E9FB5E77F39B6 /* SmileWeatherDownLoader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SmileWeatherDownLoader.m; path = SmileWeather/Classes/SmileWeatherDownLoader.m; sourceTree = "<group>"; };
-		BBC3BED897751AF63FE0E0A9 /* smile_umbrella@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "smile_umbrella@3x.png"; path = "SmileWeather/Assets/smile_umbrella@3x.png"; sourceTree = "<group>"; };
-		BE6D124D893E15F98B519F5D /* SmileWeatherCurrentData.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SmileWeatherCurrentData.m; path = SmileWeather/Classes/SmileWeatherCurrentData.m; sourceTree = "<group>"; };
-		C18BB736DD2615E8DB14EDFD /* SmileWeatherOneDayData.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SmileWeatherOneDayData.m; path = SmileWeather/Classes/SmileWeatherOneDayData.m; sourceTree = "<group>"; };
-		C5D54DAEDA2542C5E3EC339B /* smile_wunder_logo@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "smile_wunder_logo@3x.png"; path = "SmileWeather/Assets/smile_wunder_logo@3x.png"; sourceTree = "<group>"; };
-		CD056DDBB4E0E6A5AE2AD853 /* smile_pressure@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "smile_pressure@2x.png"; path = "SmileWeather/Assets/smile_pressure@2x.png"; sourceTree = "<group>"; };
-		D285557D81C4CA3A8DB879FF /* SmileWeatherDownLoader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SmileWeatherDownLoader.h; path = SmileWeather/Classes/SmileWeatherDownLoader.h; sourceTree = "<group>"; };
-		DFCA618D18FF9C09D0B02871 /* NSString+SmileSubstring.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSString+SmileSubstring.m"; path = "SmileWeather/Classes/NSString+SmileSubstring.m"; sourceTree = "<group>"; };
-		E6566555E76ADCAB9E00DBCB /* smile_umbrella@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "smile_umbrella@2x.png"; path = "SmileWeather/Assets/smile_umbrella@2x.png"; sourceTree = "<group>"; };
-		E8CC7042D17A97FCFCBEA8FD /* smile_sunset@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "smile_sunset@3x.png"; path = "SmileWeather/Assets/smile_sunset@3x.png"; sourceTree = "<group>"; };
-		F0C9D37A36FB74323AEBC3E7 /* smile_drop@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "smile_drop@3x.png"; path = "SmileWeather/Assets/smile_drop@3x.png"; sourceTree = "<group>"; };
-		F1984AC4B24F3B05FB1E0ED7 /* SmileWeatherData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SmileWeatherData.h; path = SmileWeather/Classes/SmileWeatherData.h; sourceTree = "<group>"; };
-		FF521F009ED89B6C8C17D1F6 /* smile_wind@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "smile_wind@2x.png"; path = "SmileWeather/Assets/smile_wind@2x.png"; sourceTree = "<group>"; };
-		FF6188C85D7814BC29A0786F /* smile_drop@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "smile_drop@2x.png"; path = "SmileWeather/Assets/smile_drop@2x.png"; sourceTree = "<group>"; };
+		006D62EE807C0E09DEBF84FB /* smile_wunder_logo@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "smile_wunder_logo@3x.png"; path = "SmileWeather/Assets/smile_wunder_logo@3x.png"; sourceTree = "<group>"; };
+		00FD048101034A46A35D3E66 /* SmileWeatherDemoVC.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SmileWeatherDemoVC.m; path = SmileWeather/Classes/SmileWeatherDemoVC.m; sourceTree = "<group>"; };
+		07002ABD421963D05F44CC19 /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		0DF3D4DE85A77C8B5EAB1D89 /* SmileClimacons.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SmileClimacons.h; path = SmileWeather/Classes/SmileClimacons.h; sourceTree = "<group>"; };
+		1033FED03C7CC3FBE4814A89 /* smile_sunglass@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "smile_sunglass@2x.png"; path = "SmileWeather/Assets/smile_sunglass@2x.png"; sourceTree = "<group>"; };
+		11B4B5C96DC261377780CBD9 /* Climacons.ttf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = Climacons.ttf; path = SmileWeather/Assets/Climacons.ttf; sourceTree = "<group>"; };
+		1432C7E04BF7DC7E02DAFE96 /* SmileWeatherForecastDayData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SmileWeatherForecastDayData.h; path = SmileWeather/Classes/SmileWeatherForecastDayData.h; sourceTree = "<group>"; };
+		154BF5C9456AA649118EA170 /* smile_sunrise@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "smile_sunrise@2x.png"; path = "SmileWeather/Assets/smile_sunrise@2x.png"; sourceTree = "<group>"; };
+		25E21F58D03D37A0DFA9D995 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		2AD19F5EC99F732AC1768294 /* libPods-Smile Weather.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Smile Weather.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2AFF0B0ABE4273FF0B11C180 /* SmileWeatherHourlyData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SmileWeatherHourlyData.h; path = SmileWeather/Classes/SmileWeatherHourlyData.h; sourceTree = "<group>"; };
+		2F5CCA573091A80E775EBCA8 /* libPods-Smile Weather-SmileWeather.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Smile Weather-SmileWeather.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		31FD776A00A7D46467B26FA8 /* smile_sunset@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "smile_sunset@3x.png"; path = "SmileWeather/Assets/smile_sunset@3x.png"; sourceTree = "<group>"; };
+		340A83BE2FC5F4957C9DA5D5 /* smile_umbrella@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "smile_umbrella@2x.png"; path = "SmileWeather/Assets/smile_umbrella@2x.png"; sourceTree = "<group>"; };
+		37B22B6503DFD072305768C5 /* SmileWeatherDownLoader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SmileWeatherDownLoader.h; path = SmileWeather/Classes/SmileWeatherDownLoader.h; sourceTree = "<group>"; };
+		3A938EF275C0E34CD69C9C7F /* smile_pressure@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "smile_pressure@3x.png"; path = "SmileWeather/Assets/smile_pressure@3x.png"; sourceTree = "<group>"; };
+		3CA7FBF74EE2D77758CF6E80 /* SmileWeatherData.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SmileWeatherData.m; path = SmileWeather/Classes/SmileWeatherData.m; sourceTree = "<group>"; };
+		42D864BA88A5F919997A8679 /* Pods-Smile Weather-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Smile Weather-acknowledgements.plist"; sourceTree = "<group>"; };
+		47A85F7851289FAA42C69E0F /* SmileWeatherHourlyData.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SmileWeatherHourlyData.m; path = SmileWeather/Classes/SmileWeatherHourlyData.m; sourceTree = "<group>"; };
+		531C67343C578D65E3311819 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/CoreLocation.framework; sourceTree = DEVELOPER_DIR; };
+		5FC26B78DB1AB827A11A2F34 /* SmileWeatherDemoView.storyboard */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.storyboard; name = SmileWeatherDemoView.storyboard; path = SmileWeather/Assets/SmileWeatherDemoView.storyboard; sourceTree = "<group>"; };
+		643F5FC93109BCE14E7E493D /* SmileWeatherDownLoader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SmileWeatherDownLoader.m; path = SmileWeather/Classes/SmileWeatherDownLoader.m; sourceTree = "<group>"; };
+		6477CFD33C310074D5A2A8A6 /* SmileLineLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SmileLineLayout.h; path = SmileWeather/Classes/SmileLineLayout.h; sourceTree = "<group>"; };
+		66CCFB2FEC3C218FCD22A5EA /* NSString+SmileSubstring.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSString+SmileSubstring.m"; path = "SmileWeather/Classes/NSString+SmileSubstring.m"; sourceTree = "<group>"; };
+		671EE7414C6348AC5A6EB2BE /* smile_sunrise@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "smile_sunrise@3x.png"; path = "SmileWeather/Assets/smile_sunrise@3x.png"; sourceTree = "<group>"; };
+		6FE40798D112D67D738DAA3F /* smile_sunglass@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "smile_sunglass@3x.png"; path = "SmileWeather/Assets/smile_sunglass@3x.png"; sourceTree = "<group>"; };
+		734C1D0F6A49A132A012CD0D /* NSString+SmileSubstring.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+SmileSubstring.h"; path = "SmileWeather/Classes/NSString+SmileSubstring.h"; sourceTree = "<group>"; };
+		786A64985068E5C308D817F4 /* Pods-Smile Weather-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Smile Weather-resources.sh"; sourceTree = "<group>"; };
+		88FC5C6CE5809B96F8A59905 /* Pods-Smile Weather-SmileWeather-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Smile Weather-SmileWeather-prefix.pch"; sourceTree = "<group>"; };
+		8913352C56A1A5D0266EA887 /* SmileWeatherDemoVC.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SmileWeatherDemoVC.h; path = SmileWeather/Classes/SmileWeatherDemoVC.h; sourceTree = "<group>"; };
+		9F1B103F6EB92B2EC155ADAD /* Pods-Smile Weather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Smile Weather.debug.xcconfig"; sourceTree = "<group>"; };
+		A15A7B43421AFA2D285F117E /* Pods-Smile Weather-SmileWeather-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Smile Weather-SmileWeather-dummy.m"; sourceTree = "<group>"; };
+		A1991FD045D673D7E95DC7B9 /* smile_drop@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "smile_drop@3x.png"; path = "SmileWeather/Assets/smile_drop@3x.png"; sourceTree = "<group>"; };
+		A5D7EF9B28894E6A7C37A1D8 /* SmilePaddingLabel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SmilePaddingLabel.h; path = SmileWeather/Classes/SmilePaddingLabel.h; sourceTree = "<group>"; };
+		A935A3F4D43355A4E06E0CC7 /* SmilePaddingLabel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SmilePaddingLabel.m; path = SmileWeather/Classes/SmilePaddingLabel.m; sourceTree = "<group>"; };
+		AB4E2848B4CB2B45DB07988C /* Pods-Smile Weather-SmileWeather.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Smile Weather-SmileWeather.xcconfig"; sourceTree = "<group>"; };
+		AEC8A61AA53D4925430F065C /* Pods-Smile Weather-SmileWeather-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Smile Weather-SmileWeather-Private.xcconfig"; sourceTree = "<group>"; };
+		B3D7694A38B193F74E58FCAE /* SmileWeatherCurrentData.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SmileWeatherCurrentData.m; path = SmileWeather/Classes/SmileWeatherCurrentData.m; sourceTree = "<group>"; };
+		B97B2B329FBDCEDE24A947CA /* Pods-Smile Weather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Smile Weather.release.xcconfig"; sourceTree = "<group>"; };
+		BBB2C3C6E1CF5DFDB2617031 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		C14FD7D7991D48B6A5D47D58 /* smile_pressure@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "smile_pressure@2x.png"; path = "SmileWeather/Assets/smile_pressure@2x.png"; sourceTree = "<group>"; };
+		C68E7734EB503B74A5906278 /* Pods-Smile Weather-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Smile Weather-dummy.m"; sourceTree = "<group>"; };
+		CAD6F74AB4DEF486D5D0CF1C /* SmileWeatherOneDayData.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SmileWeatherOneDayData.m; path = SmileWeather/Classes/SmileWeatherOneDayData.m; sourceTree = "<group>"; };
+		D8D7E9EE9C81561F7D19F2DC /* smile_drop@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "smile_drop@2x.png"; path = "SmileWeather/Assets/smile_drop@2x.png"; sourceTree = "<group>"; };
+		D9F99CEA65C12784A47F0D6D /* SmileWeatherForecastDayData.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SmileWeatherForecastDayData.m; path = SmileWeather/Classes/SmileWeatherForecastDayData.m; sourceTree = "<group>"; };
+		DC83AF3F87F079D3B0AFB7C6 /* SmileLineLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SmileLineLayout.m; path = SmileWeather/Classes/SmileLineLayout.m; sourceTree = "<group>"; };
+		DD19EC4A8C25E577957560C7 /* SmileWeatherCurrentData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SmileWeatherCurrentData.h; path = SmileWeather/Classes/SmileWeatherCurrentData.h; sourceTree = "<group>"; };
+		E0219794D7FBCA3ED23FFB3F /* smile_wind@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "smile_wind@3x.png"; path = "SmileWeather/Assets/smile_wind@3x.png"; sourceTree = "<group>"; };
+		E05417720456C4C0A32F1431 /* Pods-Smile Weather-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Smile Weather-environment.h"; sourceTree = "<group>"; };
+		E0D37555B7496CB83682D46C /* SmileWeatherData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SmileWeatherData.h; path = SmileWeather/Classes/SmileWeatherData.h; sourceTree = "<group>"; };
+		E13A34957FCCA976926F0622 /* smile_sunset@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "smile_sunset@2x.png"; path = "SmileWeather/Assets/smile_sunset@2x.png"; sourceTree = "<group>"; };
+		ED2A18F0A3F5DF75B425275B /* SmileWeatherOneDayData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SmileWeatherOneDayData.h; path = SmileWeather/Classes/SmileWeatherOneDayData.h; sourceTree = "<group>"; };
+		EE324E38B7B7F1DB7C12BDED /* smile_wunder_logo@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "smile_wunder_logo@2x.png"; path = "SmileWeather/Assets/smile_wunder_logo@2x.png"; sourceTree = "<group>"; };
+		FBEF5040819FBF9FDC53BF10 /* Pods-Smile Weather-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Smile Weather-acknowledgements.markdown"; sourceTree = "<group>"; };
+		FD0FFD911008D86BEB1BD43B /* smile_umbrella@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "smile_umbrella@3x.png"; path = "SmileWeather/Assets/smile_umbrella@3x.png"; sourceTree = "<group>"; };
+		FE66D5C9CB3B2E9EA6FAEBFA /* smile_wind@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "smile_wind@2x.png"; path = "SmileWeather/Assets/smile_wind@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		0BE645525C7543186BE8D0BC /* Frameworks */ = {
+		3D16E58B93732A1DD25F0409 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				445582C46DE88C686243C18E /* CoreLocation.framework in Frameworks */,
-				D4CE71AB5C74A98660F522C2 /* Foundation.framework in Frameworks */,
-				95AB33F372FF1B3B2E27DE4B /* UIKit.framework in Frameworks */,
+				EEF6AD8631C7B6F5729117DF /* CoreLocation.framework in Frameworks */,
+				3432BD7418997F68E0E4DBA4 /* Foundation.framework in Frameworks */,
+				6268963B696918534A2F1D2F /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C7D995F3723C5E06A7D83365 /* Frameworks */ = {
+		9F5118B93F695A525BEE8076 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8A132F194C85C5FB17E18652 /* Foundation.framework in Frameworks */,
+				AD0B68DB9D226D631F278E36 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		075FF7BDFE9F8BDC7AA25BD1 /* Products */ = {
+		06CDC49EC216B0A5A8190ECC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2D3503F034763A4291767F3F /* libPods-Smile Weather.a */,
-				54CEAA94A5DD9A194DBC2EB2 /* libPods-Smile Weather-SmileWeather.a */,
+				2AD19F5EC99F732AC1768294 /* libPods-Smile Weather.a */,
+				2F5CCA573091A80E775EBCA8 /* libPods-Smile Weather-SmileWeather.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		323D55C129F01DE00849F385 /* Pods-Smile Weather */ = {
+		1CEE027BFC95B11D5FBB80B7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				33B2E278DB683EE461AB57C6 /* Pods-Smile Weather-acknowledgements.markdown */,
-				73C0DCF97A6FE995BAA68944 /* Pods-Smile Weather-acknowledgements.plist */,
-				A65202BFB7661754F5B7292F /* Pods-Smile Weather-dummy.m */,
-				38B864753DAF8D51468FFFA9 /* Pods-Smile Weather-environment.h */,
-				8658D8C6FA69DBA51B5A1691 /* Pods-Smile Weather-resources.sh */,
-				24E5217D5F5A806FDCF13F41 /* Pods-Smile Weather.debug.xcconfig */,
-				9F0A27CC80D3CF477477E501 /* Pods-Smile Weather.release.xcconfig */,
-			);
-			name = "Pods-Smile Weather";
-			path = "Target Support Files/Pods-Smile Weather";
-			sourceTree = "<group>";
-		};
-		4831EE1A4B11B016B2D34FFC /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				75B609BC36C8ACB1E5F955A2 /* Climacons.ttf */,
-				8AE17B05E50C81B70FF173AE /* SmileWeatherDemoView.storyboard */,
-				FF6188C85D7814BC29A0786F /* smile_drop@2x.png */,
-				F0C9D37A36FB74323AEBC3E7 /* smile_drop@3x.png */,
-				CD056DDBB4E0E6A5AE2AD853 /* smile_pressure@2x.png */,
-				6BB36ECE507F6ED498FFCFDE /* smile_pressure@3x.png */,
-				A1EEE4397050516FA265EFC6 /* smile_sunglass@2x.png */,
-				95ED09E431D647719C0AA194 /* smile_sunglass@3x.png */,
-				3CC26F11DAD55E6707C0D07D /* smile_sunrise@2x.png */,
-				5DFA822AF13A7A5A139BB777 /* smile_sunrise@3x.png */,
-				06AE6C87CDA50664368B3245 /* smile_sunset@2x.png */,
-				E8CC7042D17A97FCFCBEA8FD /* smile_sunset@3x.png */,
-				E6566555E76ADCAB9E00DBCB /* smile_umbrella@2x.png */,
-				BBC3BED897751AF63FE0E0A9 /* smile_umbrella@3x.png */,
-				FF521F009ED89B6C8C17D1F6 /* smile_wind@2x.png */,
-				2D995E82881F9C6D771CAE1B /* smile_wind@3x.png */,
-				0157C48DAEAC0A4B2273235F /* smile_wunder_logo@2x.png */,
-				C5D54DAEDA2542C5E3EC339B /* smile_wunder_logo@3x.png */,
+				11B4B5C96DC261377780CBD9 /* Climacons.ttf */,
+				5FC26B78DB1AB827A11A2F34 /* SmileWeatherDemoView.storyboard */,
+				D8D7E9EE9C81561F7D19F2DC /* smile_drop@2x.png */,
+				A1991FD045D673D7E95DC7B9 /* smile_drop@3x.png */,
+				C14FD7D7991D48B6A5D47D58 /* smile_pressure@2x.png */,
+				3A938EF275C0E34CD69C9C7F /* smile_pressure@3x.png */,
+				1033FED03C7CC3FBE4814A89 /* smile_sunglass@2x.png */,
+				6FE40798D112D67D738DAA3F /* smile_sunglass@3x.png */,
+				154BF5C9456AA649118EA170 /* smile_sunrise@2x.png */,
+				671EE7414C6348AC5A6EB2BE /* smile_sunrise@3x.png */,
+				E13A34957FCCA976926F0622 /* smile_sunset@2x.png */,
+				31FD776A00A7D46467B26FA8 /* smile_sunset@3x.png */,
+				340A83BE2FC5F4957C9DA5D5 /* smile_umbrella@2x.png */,
+				FD0FFD911008D86BEB1BD43B /* smile_umbrella@3x.png */,
+				FE66D5C9CB3B2E9EA6FAEBFA /* smile_wind@2x.png */,
+				E0219794D7FBCA3ED23FFB3F /* smile_wind@3x.png */,
+				EE324E38B7B7F1DB7C12BDED /* smile_wunder_logo@2x.png */,
+				006D62EE807C0E09DEBF84FB /* smile_wunder_logo@3x.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
 		};
-		8F3580D61BBA8092A58FBA68 /* Targets Support Files */ = {
+		226E8B1757A683CDC49C761F = {
 			isa = PBXGroup;
 			children = (
-				323D55C129F01DE00849F385 /* Pods-Smile Weather */,
+				07002ABD421963D05F44CC19 /* Podfile */,
+				DD9ECD3DD6E9A4FE205CD045 /* Frameworks */,
+				FE475EB5B3FA32A6E313E7F5 /* Pods */,
+				06CDC49EC216B0A5A8190ECC /* Products */,
+				4A934F218E758A562C51A0D0 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		4A934F218E758A562C51A0D0 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				EBC3252FDB5A80BC13F8DB17 /* Pods-Smile Weather */,
 			);
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		942492CB1D84E6522120155D = {
+		B1418907F71575867E13D780 /* SmileWeather */ = {
 			isa = PBXGroup;
 			children = (
-				4E4707C495782BCFABA85148 /* Podfile */,
-				AD219E82AE9D8D81BC75F2B2 /* Frameworks */,
-				AF5D4DCF669138A19D18EABA /* Pods */,
-				075FF7BDFE9F8BDC7AA25BD1 /* Products */,
-				8F3580D61BBA8092A58FBA68 /* Targets Support Files */,
+				734C1D0F6A49A132A012CD0D /* NSString+SmileSubstring.h */,
+				66CCFB2FEC3C218FCD22A5EA /* NSString+SmileSubstring.m */,
+				0DF3D4DE85A77C8B5EAB1D89 /* SmileClimacons.h */,
+				6477CFD33C310074D5A2A8A6 /* SmileLineLayout.h */,
+				DC83AF3F87F079D3B0AFB7C6 /* SmileLineLayout.m */,
+				A5D7EF9B28894E6A7C37A1D8 /* SmilePaddingLabel.h */,
+				A935A3F4D43355A4E06E0CC7 /* SmilePaddingLabel.m */,
+				DD19EC4A8C25E577957560C7 /* SmileWeatherCurrentData.h */,
+				B3D7694A38B193F74E58FCAE /* SmileWeatherCurrentData.m */,
+				E0D37555B7496CB83682D46C /* SmileWeatherData.h */,
+				3CA7FBF74EE2D77758CF6E80 /* SmileWeatherData.m */,
+				8913352C56A1A5D0266EA887 /* SmileWeatherDemoVC.h */,
+				00FD048101034A46A35D3E66 /* SmileWeatherDemoVC.m */,
+				37B22B6503DFD072305768C5 /* SmileWeatherDownLoader.h */,
+				643F5FC93109BCE14E7E493D /* SmileWeatherDownLoader.m */,
+				1432C7E04BF7DC7E02DAFE96 /* SmileWeatherForecastDayData.h */,
+				D9F99CEA65C12784A47F0D6D /* SmileWeatherForecastDayData.m */,
+				2AFF0B0ABE4273FF0B11C180 /* SmileWeatherHourlyData.h */,
+				47A85F7851289FAA42C69E0F /* SmileWeatherHourlyData.m */,
+				ED2A18F0A3F5DF75B425275B /* SmileWeatherOneDayData.h */,
+				CAD6F74AB4DEF486D5D0CF1C /* SmileWeatherOneDayData.m */,
+				1CEE027BFC95B11D5FBB80B7 /* Resources */,
+				BD3C6D0586C2D13CAB643DEA /* Support Files */,
 			);
+			path = SmileWeather;
 			sourceTree = "<group>";
 		};
-		ACF8F13E932D2807368231A0 /* iOS */ = {
+		BD3C6D0586C2D13CAB643DEA /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				295CB77609BE2139B09804B0 /* CoreLocation.framework */,
-				72D7EB9A0141647EC5AC024E /* Foundation.framework */,
-				7C53628A8AD49B8461424F77 /* UIKit.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		AD219E82AE9D8D81BC75F2B2 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				ACF8F13E932D2807368231A0 /* iOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		AF5D4DCF669138A19D18EABA /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				F855ADA30482D39E0E0567E2 /* SmileWeather */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		BE09F00AD62D93D0435BDA7D /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				35F635364E39405951DA5872 /* Pods-Smile Weather-SmileWeather.xcconfig */,
-				66EA4452E17F164372ED4D58 /* Pods-Smile Weather-SmileWeather-Private.xcconfig */,
-				AA54AF89635E36F34712D99A /* Pods-Smile Weather-SmileWeather-dummy.m */,
-				4000DF76C3CC70869A5985F1 /* Pods-Smile Weather-SmileWeather-prefix.pch */,
+				AB4E2848B4CB2B45DB07988C /* Pods-Smile Weather-SmileWeather.xcconfig */,
+				AEC8A61AA53D4925430F065C /* Pods-Smile Weather-SmileWeather-Private.xcconfig */,
+				A15A7B43421AFA2D285F117E /* Pods-Smile Weather-SmileWeather-dummy.m */,
+				88FC5C6CE5809B96F8A59905 /* Pods-Smile Weather-SmileWeather-prefix.pch */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/Pods-Smile Weather-SmileWeather";
 			sourceTree = "<group>";
 		};
-		F855ADA30482D39E0E0567E2 /* SmileWeather */ = {
+		DD9ECD3DD6E9A4FE205CD045 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6E23CBB9F085ABA8417308E1 /* NSString+SmileSubstring.h */,
-				DFCA618D18FF9C09D0B02871 /* NSString+SmileSubstring.m */,
-				958B2D1505882ED256F1C7DA /* SmileClimacons.h */,
-				356864B47BFA5052AE27CBEF /* SmileLineLayout.h */,
-				3D8F3A8CA4D8C07299467AFD /* SmileLineLayout.m */,
-				5C48A150242FD4E89D034333 /* SmilePaddingLabel.h */,
-				A59FF282CCA6391BFAEF6060 /* SmilePaddingLabel.m */,
-				7E3D7CE25B91D5897932DC21 /* SmileWeatherCurrentData.h */,
-				BE6D124D893E15F98B519F5D /* SmileWeatherCurrentData.m */,
-				F1984AC4B24F3B05FB1E0ED7 /* SmileWeatherData.h */,
-				9FCA2D40328A0EE1D0A81ECC /* SmileWeatherData.m */,
-				8A732E4D906501C0F31F61AD /* SmileWeatherDemoVC.h */,
-				44515E6C90DED65AACE812C0 /* SmileWeatherDemoVC.m */,
-				D285557D81C4CA3A8DB879FF /* SmileWeatherDownLoader.h */,
-				B12EFDEBD64E9FB5E77F39B6 /* SmileWeatherDownLoader.m */,
-				04F5B20DC5BD38529CA8438A /* SmileWeatherForecastDayData.h */,
-				AF8C308347698C8AEA952B95 /* SmileWeatherForecastDayData.m */,
-				723468F031FDCE6043BEBA86 /* SmileWeatherHourlyData.h */,
-				5CCEDC8456345D3AC4DB0B49 /* SmileWeatherHourlyData.m */,
-				1D63BDEE3CF126DA82CA6EAB /* SmileWeatherOneDayData.h */,
-				C18BB736DD2615E8DB14EDFD /* SmileWeatherOneDayData.m */,
-				4831EE1A4B11B016B2D34FFC /* Resources */,
-				BE09F00AD62D93D0435BDA7D /* Support Files */,
+				E71C9324FF02E68124C41906 /* iOS */,
 			);
-			path = SmileWeather;
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E71C9324FF02E68124C41906 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				531C67343C578D65E3311819 /* CoreLocation.framework */,
+				25E21F58D03D37A0DFA9D995 /* Foundation.framework */,
+				BBB2C3C6E1CF5DFDB2617031 /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		EBC3252FDB5A80BC13F8DB17 /* Pods-Smile Weather */ = {
+			isa = PBXGroup;
+			children = (
+				FBEF5040819FBF9FDC53BF10 /* Pods-Smile Weather-acknowledgements.markdown */,
+				42D864BA88A5F919997A8679 /* Pods-Smile Weather-acknowledgements.plist */,
+				C68E7734EB503B74A5906278 /* Pods-Smile Weather-dummy.m */,
+				E05417720456C4C0A32F1431 /* Pods-Smile Weather-environment.h */,
+				786A64985068E5C308D817F4 /* Pods-Smile Weather-resources.sh */,
+				9F1B103F6EB92B2EC155ADAD /* Pods-Smile Weather.debug.xcconfig */,
+				B97B2B329FBDCEDE24A947CA /* Pods-Smile Weather.release.xcconfig */,
+			);
+			name = "Pods-Smile Weather";
+			path = "Target Support Files/Pods-Smile Weather";
+			sourceTree = "<group>";
+		};
+		FE475EB5B3FA32A6E313E7F5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B1418907F71575867E13D780 /* SmileWeather */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		44CA421515AF3525FC1674E3 /* Headers */ = {
+		82E53BF6B2DEBE7C85010434 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D21568BB43C2930DE9B51BCE /* NSString+SmileSubstring.h in Headers */,
-				7607B8045D6B35A90A8FC1EF /* SmileClimacons.h in Headers */,
-				3BFA6CCAF1303CFACF6E30F9 /* SmileLineLayout.h in Headers */,
-				B8D465812DD8D68959C40389 /* SmilePaddingLabel.h in Headers */,
-				C00A3D6ACD98C6D6E26E9129 /* SmileWeatherCurrentData.h in Headers */,
-				D00D113B9E09F9E31203E0EE /* SmileWeatherData.h in Headers */,
-				580A1787F0E077126C1F038D /* SmileWeatherDemoVC.h in Headers */,
-				599E354D728205527C375748 /* SmileWeatherDownLoader.h in Headers */,
-				873ACA6AE3FCDAFC70D1817A /* SmileWeatherForecastDayData.h in Headers */,
-				30D323D5D282700F1ED4A0C4 /* SmileWeatherHourlyData.h in Headers */,
-				E95F72BDC0D92B3153BF6808 /* SmileWeatherOneDayData.h in Headers */,
+				1F216ECB9996764C42DD78E3 /* NSString+SmileSubstring.h in Headers */,
+				63EB3AB75C0FA7E0E503B0B7 /* SmileClimacons.h in Headers */,
+				C233BF7E19B033D2645B4AE3 /* SmileLineLayout.h in Headers */,
+				816D6DF8CC35D55927D635A5 /* SmilePaddingLabel.h in Headers */,
+				A7A32EA4B02106DD52C35143 /* SmileWeatherCurrentData.h in Headers */,
+				8C2D31865AA20C37D5729221 /* SmileWeatherData.h in Headers */,
+				3A7857C545922CF579C8FC63 /* SmileWeatherDemoVC.h in Headers */,
+				0152D4B50785524E6299415E /* SmileWeatherDownLoader.h in Headers */,
+				7F68795A165682A0C3A342EC /* SmileWeatherForecastDayData.h in Headers */,
+				AACEC9C8906E288C5FE96EAE /* SmileWeatherHourlyData.h in Headers */,
+				2944573A76FFA15008B600BC /* SmileWeatherOneDayData.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		661109ABD0EAFE50F7A57786 /* Pods-Smile Weather-SmileWeather */ = {
+		5658E6012D7A99143FAC3C1D /* Pods-Smile Weather */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DD0816F8E6A5FBFEDAA1744D /* Build configuration list for PBXNativeTarget "Pods-Smile Weather-SmileWeather" */;
+			buildConfigurationList = 13CEAA85925B3B2B2DBF2D1E /* Build configuration list for PBXNativeTarget "Pods-Smile Weather" */;
 			buildPhases = (
-				9D8E4AB773C152BA2B0D9723 /* Sources */,
-				0BE645525C7543186BE8D0BC /* Frameworks */,
-				44CA421515AF3525FC1674E3 /* Headers */,
+				C01783B7BEAB12F6C3005A1A /* Sources */,
+				9F5118B93F695A525BEE8076 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				15B58691A6D0E03EC737F6AF /* PBXTargetDependency */,
+			);
+			name = "Pods-Smile Weather";
+			productName = "Pods-Smile Weather";
+			productReference = 2AD19F5EC99F732AC1768294 /* libPods-Smile Weather.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		6FFFED4A7AD70036765EB37C /* Pods-Smile Weather-SmileWeather */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 62C6A369E948AB789176460C /* Build configuration list for PBXNativeTarget "Pods-Smile Weather-SmileWeather" */;
+			buildPhases = (
+				2A5E7C1429FDAA931917D66F /* Sources */,
+				3D16E58B93732A1DD25F0409 /* Frameworks */,
+				82E53BF6B2DEBE7C85010434 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -301,108 +318,91 @@
 			);
 			name = "Pods-Smile Weather-SmileWeather";
 			productName = "Pods-Smile Weather-SmileWeather";
-			productReference = 54CEAA94A5DD9A194DBC2EB2 /* libPods-Smile Weather-SmileWeather.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		838E693648E9310C9BD3F92F /* Pods-Smile Weather */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 49F626A45DF6FF5784095AB1 /* Build configuration list for PBXNativeTarget "Pods-Smile Weather" */;
-			buildPhases = (
-				B2A9CDB06A06AA73A2CFB726 /* Sources */,
-				C7D995F3723C5E06A7D83365 /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				D16053A533BF883A7A576CA6 /* PBXTargetDependency */,
-			);
-			name = "Pods-Smile Weather";
-			productName = "Pods-Smile Weather";
-			productReference = 2D3503F034763A4291767F3F /* libPods-Smile Weather.a */;
+			productReference = 2F5CCA573091A80E775EBCA8 /* libPods-Smile Weather-SmileWeather.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		E3425B69FF08BAACF736F5FC /* Project object */ = {
+		5910AB8CB0691F0991871480 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0640;
 			};
-			buildConfigurationList = FEB7BB8B258C92F434967E0E /* Build configuration list for PBXProject "Pods" */;
+			buildConfigurationList = 908E10B78F8F0ABE351EE9A5 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 942492CB1D84E6522120155D;
-			productRefGroup = 075FF7BDFE9F8BDC7AA25BD1 /* Products */;
+			mainGroup = 226E8B1757A683CDC49C761F;
+			productRefGroup = 06CDC49EC216B0A5A8190ECC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				838E693648E9310C9BD3F92F /* Pods-Smile Weather */,
-				661109ABD0EAFE50F7A57786 /* Pods-Smile Weather-SmileWeather */,
+				5658E6012D7A99143FAC3C1D /* Pods-Smile Weather */,
+				6FFFED4A7AD70036765EB37C /* Pods-Smile Weather-SmileWeather */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		9D8E4AB773C152BA2B0D9723 /* Sources */ = {
+		2A5E7C1429FDAA931917D66F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7643D4F4E18EE6D1F245504F /* NSString+SmileSubstring.m in Sources */,
-				6E28EBAAF4C84511D85D05E2 /* Pods-Smile Weather-SmileWeather-dummy.m in Sources */,
-				CA75D02F255D796B5974FF2F /* SmileLineLayout.m in Sources */,
-				A6F5715E490DFB9001B1BEAA /* SmilePaddingLabel.m in Sources */,
-				5EB70F798C4DCF4E5B4BDA38 /* SmileWeatherCurrentData.m in Sources */,
-				44100BDF1867D9185B2A3CE2 /* SmileWeatherData.m in Sources */,
-				62CE9A0165CB8502E95FE57B /* SmileWeatherDemoVC.m in Sources */,
-				EB24847C3DEC2025CDBAC6F0 /* SmileWeatherDownLoader.m in Sources */,
-				D34DF9D2E7A8554BF92ACE1D /* SmileWeatherForecastDayData.m in Sources */,
-				BA167630078ED9D9551D2413 /* SmileWeatherHourlyData.m in Sources */,
-				797EC676075554838E9AB820 /* SmileWeatherOneDayData.m in Sources */,
+				168C87ADEB208CA0D376A304 /* NSString+SmileSubstring.m in Sources */,
+				C998CE99180C8018A4684BFC /* Pods-Smile Weather-SmileWeather-dummy.m in Sources */,
+				DEB27E905B18277AD8060770 /* SmileLineLayout.m in Sources */,
+				E5F2CCC6582AA39655AE271C /* SmilePaddingLabel.m in Sources */,
+				0E6911A9781187908383019E /* SmileWeatherCurrentData.m in Sources */,
+				12F77106E0A357234720B82F /* SmileWeatherData.m in Sources */,
+				7A8905C6559CC3717970F1E9 /* SmileWeatherDemoVC.m in Sources */,
+				7DD23D8485DC88C5FB3E6FAF /* SmileWeatherDownLoader.m in Sources */,
+				CF60EF029CF4D8A9F8BC5520 /* SmileWeatherForecastDayData.m in Sources */,
+				D54D32DEF62FA030F59B8A3F /* SmileWeatherHourlyData.m in Sources */,
+				BAC7D0F8F9C93E4E7C7AD372 /* SmileWeatherOneDayData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B2A9CDB06A06AA73A2CFB726 /* Sources */ = {
+		C01783B7BEAB12F6C3005A1A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				77A8BCB7DB5066042BA6380E /* Pods-Smile Weather-dummy.m in Sources */,
+				B28288920821C7863C4B6AA7 /* Pods-Smile Weather-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		D16053A533BF883A7A576CA6 /* PBXTargetDependency */ = {
+		15B58691A6D0E03EC737F6AF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-Smile Weather-SmileWeather";
-			target = 661109ABD0EAFE50F7A57786 /* Pods-Smile Weather-SmileWeather */;
-			targetProxy = 7A25CE073A8DF1FAB953123F /* PBXContainerItemProxy */;
+			target = 6FFFED4A7AD70036765EB37C /* Pods-Smile Weather-SmileWeather */;
+			targetProxy = DC6E47A8EDDAD15B4FF9213D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		090B2D4927C2F03714381458 /* Release */ = {
+		4982D443FC4E8E0FF746AD0F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 66EA4452E17F164372ED4D58 /* Pods-Smile Weather-SmileWeather-Private.xcconfig */;
+			baseConfigurationReference = 9F1B103F6EB92B2EC155ADAD /* Pods-Smile Weather.debug.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-Smile Weather-SmileWeather/Pods-Smile Weather-SmileWeather-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 			};
-			name = Release;
+			name = Debug;
 		};
-		309B4327973275E127837EB2 /* Release */ = {
+		6470F80540A4B3C8484C39B0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -436,9 +436,9 @@
 			};
 			name = Release;
 		};
-		A3758A480C2EC4F9AFE5D1FD /* Release */ = {
+		78CFF728C47F50EE3F367F82 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9F0A27CC80D3CF477477E501 /* Pods-Smile Weather.release.xcconfig */;
+			baseConfigurationReference = B97B2B329FBDCEDE24A947CA /* Pods-Smile Weather.release.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -452,23 +452,7 @@
 			};
 			name = Release;
 		};
-		CDFB0BAD07B522B79650E356 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 66EA4452E17F164372ED4D58 /* Pods-Smile Weather-SmileWeather-Private.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-Smile Weather-SmileWeather/Pods-Smile Weather-SmileWeather-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		D011FA45D9B62AB9E8EA771D /* Debug */ = {
+		A94910A91BF1DE3E0563AA41 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -507,53 +491,69 @@
 			};
 			name = Debug;
 		};
-		E86D1044A91E9E25D83BDE55 /* Debug */ = {
+		E4A88C01C191C4990BD9B4C9 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 24E5217D5F5A806FDCF13F41 /* Pods-Smile Weather.debug.xcconfig */;
+			baseConfigurationReference = AEC8A61AA53D4925430F065C /* Pods-Smile Weather-SmileWeather-Private.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-Smile Weather-SmileWeather/Pods-Smile Weather-SmileWeather-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
 		};
+		E91E8102C70F2CD7FCDDE153 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AEC8A61AA53D4925430F065C /* Pods-Smile Weather-SmileWeather-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-Smile Weather-SmileWeather/Pods-Smile Weather-SmileWeather-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		49F626A45DF6FF5784095AB1 /* Build configuration list for PBXNativeTarget "Pods-Smile Weather" */ = {
+		13CEAA85925B3B2B2DBF2D1E /* Build configuration list for PBXNativeTarget "Pods-Smile Weather" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E86D1044A91E9E25D83BDE55 /* Debug */,
-				A3758A480C2EC4F9AFE5D1FD /* Release */,
+				4982D443FC4E8E0FF746AD0F /* Debug */,
+				78CFF728C47F50EE3F367F82 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DD0816F8E6A5FBFEDAA1744D /* Build configuration list for PBXNativeTarget "Pods-Smile Weather-SmileWeather" */ = {
+		62C6A369E948AB789176460C /* Build configuration list for PBXNativeTarget "Pods-Smile Weather-SmileWeather" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				CDFB0BAD07B522B79650E356 /* Debug */,
-				090B2D4927C2F03714381458 /* Release */,
+				E4A88C01C191C4990BD9B4C9 /* Debug */,
+				E91E8102C70F2CD7FCDDE153 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FEB7BB8B258C92F434967E0E /* Build configuration list for PBXProject "Pods" */ = {
+		908E10B78F8F0ABE351EE9A5 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D011FA45D9B62AB9E8EA771D /* Debug */,
-				309B4327973275E127837EB2 /* Release */,
+				A94910A91BF1DE3E0563AA41 /* Debug */,
+				6470F80540A4B3C8484C39B0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = E3425B69FF08BAACF736F5FC /* Project object */;
+	rootObject = 5910AB8CB0691F0991871480 /* Project object */;
 }
