@@ -18,7 +18,13 @@
 }
 
 -(NSString *)precipitation{
-    return [NSString stringWithFormat:@"%@%%", _precipitationRaw];
+    NSString *result;
+    if (_precipitationRaw) {
+        result = [NSString stringWithFormat:@"%@%%", _precipitationRaw];
+    } else {
+        result = [NSString stringWithFormat:@"--%%"];
+    }
+    return result;
 }
 
 @end

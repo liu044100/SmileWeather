@@ -20,6 +20,7 @@
 @property (nonatomic, readwrite) NSDate *timeStamp;
 @property (nonatomic, readwrite) NSTimeZone *timeZone;
 @property (nonatomic, readwrite) NSString *placeName;
+@property (nonatomic, readwrite) SmileWeatherAPI weatherAPI;
 @end
 
 @implementation SmileWeatherData
@@ -46,9 +47,18 @@
         self.placeName = [SmileWeatherDownLoader placeNameForDisplay:self.placeMark];
 
         self.timeStamp = [NSDate date];
+        self.weatherAPI = [SmileWeatherDownLoader sharedDownloader].weatherAPI;
         [self configureFromJSON:jsonData];
     }
     return self;
+}
+
+-(void)configureFromJSON:(NSDictionary*)jsonData{
+    if (self.weatherAPI == API_wunderground) {
+        [self configureJSON_wunderground:jsonData];
+    } else if (self.weatherAPI == API_openweathermap){
+        [self configureJSON_openweathermap:jsonData];
+    }
 }
 
 -(NSArray*)createOneDayDatasForForecast:(NSArray*)forecastDatas{
@@ -63,7 +73,7 @@
         forecast.dayOfWeek = [weekdayFormatter stringFromDate:[self.timeStamp dateByAddingTimeInterval:60 * 60 * 24 * idx]];
         
         //condition
-        NSString *condition = [forecastday valueForKey:@"conditions"];
+        NSString *condition = [self createConditionStringFromObject:[forecastday valueForKey:@"conditions"]];
         NSString *icon = [forecastday valueForKey:@"icon"];
         
         forecast.condition = condition;
@@ -77,7 +87,7 @@
         forecast.precipitationRaw = [forecastday valueForKey:@"pop"];
         
         //avehumidity
-        forecast.humidity = [NSString stringWithFormat:@"%@%%", [forecastday valueForKey:@"avehumidity"]];
+        forecast.humidity = [self createHumidityStringFromObject:[forecastday valueForKey:@"avehumidity"]];;
         
         //wind speed
         forecast.windSpeed = [self createWindSpeedStringFromObject:[[forecastday valueForKey:@"avewind"] valueForKey:@"kph"]];
@@ -158,7 +168,7 @@
     
 
     //condition
-    NSString *currentCondition = [currentObservation valueForKey:@"weather"];
+    NSString *currentCondition = [self createConditionStringFromObject: [currentObservation valueForKey:@"weather"]];
     NSString *currentIcon = [currentObservation valueForKey:@"icon"];
     
     self.currentData.condition = currentCondition;
@@ -174,17 +184,18 @@
     self.currentData.precipitationRaw = [forecastday0 valueForKey:@"pop"];
     
     //avehumidity
-    self.currentData.humidity = [NSString stringWithFormat:@"%@", [currentObservation valueForKey:@"relative_humidity"]];
-    
+    self.currentData.humidity = [self createHumidityStringFromObject:[currentObservation valueForKey:@"relative_humidity"]];
     
     //wind speed
     self.currentData.windSpeed = [self createWindSpeedStringFromObject:[currentObservation valueForKey:@"wind_kph"]];
     self.currentData.windDirection = [currentObservation valueForKey:@"wind_dir"];
     
     //today only property
-    self.currentData.pressure = [self createPressureStringFromObject:[currentObservation valueForKey:@"pressure_mb"]];
     self.currentData.pressureTrend = [currentObservation valueForKey:@"pressure_trend"];
-    self.currentData.UV = [currentObservation valueForKey:@"UV"];
+    
+    self.currentData.UV = [self createUVStringFromObject:[currentObservation valueForKey:@"UV"]];
+    
+    self.currentData.pressure = [self createPressureStringFromObject:[currentObservation valueForKey:@"pressure_mb"]];
     self.currentData.sunRise = [self createSunStringFromObject:[[jsonData valueForKey:@"moon_phase"]  valueForKey:@"sunrise"]];
     self.currentData.sunSet = [self createSunStringFromObject:[[jsonData valueForKey:@"moon_phase"]  valueForKey:@"sunset"]];
     
@@ -196,27 +207,89 @@
 }
 
 -(void)configureJSON_openweathermap:(NSDictionary*)jsonData{
-    //weather one day data
-//    self.todayData = [[SmileWeatherOneDayData alloc] init];
-//    SmileWeatherOneDayData *forecast1 = [[SmileWeatherOneDayData alloc] init];
-//    SmileWeatherOneDayData *forecast2 = [[SmileWeatherOneDayData alloc] init];
-//    SmileWeatherOneDayData *forecast3 = [[SmileWeatherOneDayData alloc] init];
-//    SmileWeatherOneDayData *forecast4 = [[SmileWeatherOneDayData alloc] init];
-//    SmileWeatherOneDayData *forecast5 = [[SmileWeatherOneDayData alloc] init];
-//    
-//    NSArray *currentObservation = [jsonData objectForKey:@"weather"];
-//    
-//    self.todayData.condition = [[currentObservation lastObject] valueForKey:@"description"];
-;
+    
+    //current weather data
+    self.currentData = [[SmileWeatherCurrentData alloc] init];
+    NSDictionary *todayDataDic = [jsonData objectForKey:@"main"];
+    NSDictionary *windDic = [jsonData objectForKey:@"wind"];
+    
+    
+    NSDateFormatter *weekdayFormatter = [self weekdayDateFormatter];
+    
+    //today weekday
+    self.currentData.dayOfWeek = [weekdayFormatter stringFromDate:self.timeStamp];
+    
+    //condition
+    NSArray *currentObservation = [jsonData objectForKey:@"weather"];
+    NSDictionary *currentDic = [currentObservation lastObject];
+    
+    self.currentData.condition = [self createConditionStringFromObject:[currentDic valueForKey:@"description"]];
+    
+    //icon
+    self.currentData.icon = [self iconForCondition:[currentDic valueForKey:@"main"]];
+    
+    //temperature
+    //today temperature
+    self.currentData.currentTemperature = [self createTemperatureFromObject:[todayDataDic valueForKey:@"temp"]];
+    
+    
+    //avehumidity
+    self.currentData.humidity = [self createHumidityStringFromObject:[todayDataDic valueForKey:@"humidity"]];
+    
+    //wind speed
+    self.currentData.windSpeed = [self createWindSpeedStringFromObject:[windDic valueForKey:@"speed"]];
+    
+    //today only property
+    self.currentData.pressure = [self createPressureStringFromObject:[todayDataDic valueForKey:@"pressure"]];;
+    
+    NSDictionary *sysDic = [jsonData objectForKey:@"sys"];
+    self.currentData.sunRise = [self createSunStringFromObject_openweathermap:[sysDic valueForKey:@"sunrise"]];
+    self.currentData.sunSet = [self createSunStringFromObject_openweathermap:[sysDic valueForKey:@"sunset"]];
+    self.currentData.UV = [self createUVStringFromObject:nil];
 }
 
--(void)configureFromJSON:(NSDictionary*)jsonData{
-    if ([SmileWeatherDownLoader sharedDownloader].weatherAPI == API_wunderground) {
-        [self configureJSON_wunderground:jsonData];
-    } else if ([SmileWeatherDownLoader sharedDownloader].weatherAPI == API_openweathermap){
-        [self configureJSON_openweathermap:jsonData];
+#pragma mark - convertor for openweathermap
+
+-(NSString*)createSunStringFromObject_openweathermap:(id)object{
+    NSString *result;
+    
+    if ([object isKindOfClass:[NSNumber class]]) {
+        NSNumber *value = (NSNumber*)object;
+        NSDate *sunDate = [SmileWeatherData sunSecToDate:value];
+        NSDateFormatter *ampmDateFormatter = [self ampmDateFormatter];
+        result = [NSString stringWithFormat:@"%@", [ampmDateFormatter stringFromDate:sunDate]];
+    } else {
+        result = @"--:--";
     }
+    
+    return result;
 }
+
+
+-(SmileTemperature)createTemperatureFromObject:(id)object{
+    SmileTemperature result;
+    if ([object isKindOfClass:[NSNumber class]]) {
+        NSNumber *tempNum = (NSNumber*)object;
+        result = SmileTemperatureMake([SmileWeatherData tempToFahrenheit:tempNum], [SmileWeatherData tempToCelcius:tempNum], YES);
+    }
+    return result;
+}
+
++ (NSDate *) sunSecToDate:(NSNumber *) num {
+    return [NSDate dateWithTimeIntervalSince1970:num.intValue];
+}
+
++ (CGFloat) tempToCelcius:(NSNumber *) tempKelvin
+{
+    return (tempKelvin.floatValue - 273.15);
+}
+
++ (CGFloat) tempToFahrenheit:(NSNumber *) tempKelvin
+{
+    return ((tempKelvin.floatValue * 9/5) - 459.67);
+}
+
+#pragma mark - convertor for wunderground
 
 -(NSString*)createSunStringFromObject:(NSDictionary*)object{
     NSString *result;
@@ -239,17 +312,91 @@
     return result;
 }
 
+-(NSString*)createConditionStringFromObject:(id)object {
+    NSString *result;
+    if ([object isKindOfClass:[NSString class]]) {
+        NSString *value = (NSString*)object;
+        if (value.length > 0) {
+            result = [NSString stringWithFormat:@"%@", value];
+        } else {
+            result = @"--";
+        }
+    } else {
+        result = @"--";
+    }
+    
+    return result;
+}
+
+-(NSString*)createHumidityStringFromObject:(id)object {
+    
+    NSString *result;
+    
+    if (self.weatherAPI == API_wunderground) {
+        if ([object isKindOfClass:[NSString class]]) {
+            NSString *value = (NSString*)object;
+            if (value.length > 0) {
+                result = [NSString stringWithFormat:@"%@", value];
+                
+                if ([result isEqualToString:@"%"]) {
+                    result = @"--%";
+                }
+                
+            } else {
+                result = @"--%";
+            }
+        } else {
+            result = @"--%";
+        }
+    } else if (self.weatherAPI == API_openweathermap){
+        if ([object isKindOfClass:[NSNumber class]]) {
+            NSNumber *value = (NSNumber*)object;
+            if (value) {
+                result = [NSString stringWithFormat:@"%0.f%%", value.floatValue];
+            } else {
+                result = @"--%";
+            }
+        } else {
+            result = @"--%";
+        }
+    }
+    
+    
+    return result;
+}
+
+-(NSString*)createUVStringFromObject:(id)object {
+    NSString *result;
+    
+    if ([object isKindOfClass:[NSString class]]) {
+        NSString *value = (NSString*)object;
+        if (value.length > 0) {
+            result = [NSString stringWithFormat:@"%@", value];
+        } else {
+            result = @"--";
+        }
+    } else {
+        result = @"--";
+    }
+    
+    return result;
+}
+
 -(NSString*)createPressureStringFromObject:(id)object {
     NSString *result;
     
     if ([object isKindOfClass:[NSString class]]) {
         NSString *value = (NSString*)object;
         if (value.length > 0) {
-            result = [NSString stringWithFormat:@"%@ hPa", object];
+            result = [NSString stringWithFormat:@"%@ hPa", value];
         } else {
             result = @"-- hPa";
         }
-    } else {
+    } else if ([object isKindOfClass:[NSNumber class]]){
+        NSNumber *value = (NSNumber*)object;
+        result = [NSString stringWithFormat:@"%.0f hPa", value.floatValue];
+    }
+    else {
         result = @"-- hPa";
     }
     
@@ -259,11 +406,21 @@
 -(NSString*)createWindSpeedStringFromObject:(id)object {
     NSString *result;
     
-    if ([object isKindOfClass:[NSNumber class]] || [object isKindOfClass:[NSString class]]) {
-        CGFloat value = [object floatValue]* 1000 / (60 * 60);
-        result = [NSString stringWithFormat:@"%.0f M/S", value];
-    } else {
-        result = @"-- M/S";
+    if (self.weatherAPI == API_wunderground) {
+        if ([object isKindOfClass:[NSNumber class]]) {
+            NSNumber *value = (NSNumber*)object;
+            result = [NSString stringWithFormat:@"%.0f M/S", value.floatValue];
+        } else {
+            result = @"-- M/S";
+        }
+    
+    } else if (self.weatherAPI == API_openweathermap){
+        if ([object isKindOfClass:[NSNumber class]] || [object isKindOfClass:[NSString class]]) {
+            CGFloat value = [object floatValue]* 1000 / (60 * 60);
+            result = [NSString stringWithFormat:@"%.0f M/S", value];
+        } else {
+            result = @"-- M/S";
+        }
     }
     
     return result;
@@ -293,6 +450,8 @@
     return result;
 }
 
+#pragma mark - common tools
+
 - (NSString *)iconForCondition:(NSString *)condition
 {
 //    NSLog(@"^^^^^^^^^^^^^^^^^^^^^^raw: %@", condition);
@@ -315,7 +474,8 @@
         iconName = [NSString stringWithFormat:@"%c", ClimaconDownpour];
     }
     
-    else if([lowercaseCondition contains:@"fog"] || [lowercaseCondition contains:@"hazy"]){
+    else if([lowercaseCondition contains:@"fog"] || [lowercaseCondition contains:@"hazy"] ||
+            [lowercaseCondition contains:@"haze"]){
         iconName = [NSString stringWithFormat:@"%c", ClimaconHaze];
     }
     

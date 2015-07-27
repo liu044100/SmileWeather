@@ -27,9 +27,9 @@
 		<key>API_KEY_wunderground</key>
 		<string>be5e1a539a971a0b</string>
 		<key>API_KEY_openweathermap</key>
-		<string>1e1e8d2e25a13316085219d4b020a88d</string>
+		<string>1111111111</string>
 		<key>API_NOW</key>
-		<string>1</string>
+		<integer>1</integer>
 	</dict>
 	<key>UIAppFonts</key>
 	<array>
