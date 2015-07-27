@@ -126,6 +126,8 @@ static NSString * const reuseIdentifier_property = @"propertyCell";
     
     UICollectionViewFlowLayout*hourlyLayout = (UICollectionViewFlowLayout*)self.collectionView_hourly.collectionViewLayout;
     hourlyLayout.sectionInset = UIEdgeInsetsMake(0, left, 0, 0);
+
+    NSLog(@"--------%@", NSStringFromCGSize(self.collectionView.contentSize));
 }
 
 - (void)didReceiveMemoryWarning {
@@ -153,7 +155,7 @@ static NSString * const reuseIdentifier_property = @"propertyCell";
             [self.collectionView reloadData];
             [self.collectionView_hourly reloadData];
             [self.collectionView_property reloadData];
-            if (self.data.hourlyDatas.count > 0) {
+            if (self.data.hourlyData.count > 0) {
                  [self.collectionView_hourly scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:0] atScrollPosition:UICollectionViewScrollPositionRight animated:NO];
             }
             [self updateUI];
@@ -205,12 +207,12 @@ static NSString * const reuseIdentifier_property = @"propertyCell";
     NSInteger number = 0;
 
     if (collectionView == self.collectionView) {
-        if (self.data.forecastDatas.count > 0) {
-            number = self.data.forecastDatas.count;
+        if (self.data.forecastData.count > 0) {
+            number = self.data.forecastData.count;
         }
     } else if (collectionView == self.collectionView_hourly){
-        if (self.data.hourlyDatas.count > 0) {
-            number = self.data.hourlyDatas.count;
+        if (self.data.hourlyData.count > 0) {
+            number = self.data.hourlyData.count;
         }
     } else if (collectionView == self.collectionView_property){
         if (_propertyArray.count > 0) {
@@ -250,7 +252,7 @@ static NSString * const reuseIdentifier_property = @"propertyCell";
         highTempLabel.text = @"--";
         lowTempLabel.text = @"--";
     } else {
-        SmileWeatherForecastDayData *forecastDayData = self.data.forecastDatas[indexPath.row];
+        SmileWeatherForecastDayData *forecastDayData = self.data.forecastData[indexPath.row];
         weekLabel.text = forecastDayData.dayOfWeek;
         weatherLabel.text = forecastDayData.icon;
         
@@ -285,15 +287,21 @@ static NSString * const reuseIdentifier_property = @"propertyCell";
         weatherLabel.text = @"";
         tempLabel.text = @"--";
     } else {
-        SmileWeatherHourlyData *hourlyData = self.data.hourlyDatas[indexPath.row];
+        SmileWeatherHourlyData *hourlyData = self.data.hourlyData[indexPath.row];
         timeLabel.text = hourlyData.localizedTime;
         weatherLabel.text = hourlyData.icon;
         tempLabel.text = hourlyData.currentTempStri_Celsius;
         
         if (hourlyData.precipitationRaw.length > 0) {
-            NSInteger pop = hourlyData.precipitationRaw.integerValue;
-            if (pop > 24) {
-                popLabel.text = hourlyData.precipitation;
+            if ([hourlyData.precipitationRaw containsString:@"mm"]) {
+                if (![hourlyData.precipitationRaw isEqualToString:@"0 mm"]) {
+                    popLabel.text = hourlyData.precipitation;
+                }
+            } else {
+                NSInteger pop = hourlyData.precipitationRaw.integerValue;
+                if (pop > 24) {
+                    popLabel.text = hourlyData.precipitation;
+                }
             }
         }
     }

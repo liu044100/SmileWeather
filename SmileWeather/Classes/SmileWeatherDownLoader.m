@@ -178,7 +178,7 @@
             
             if (!allError) {
                 weatherData = [[SmileWeatherData alloc] initWithJSON:allDataDic inPlacemark:placeMark];
-                NSLog(@"openweathermap -> raw data -> %@", allDataDic);
+//                NSLog(@"openweathermap -> raw data -> %@", allDataDic);
             }
             
             SmileWeather_DispatchMainThread(^(){

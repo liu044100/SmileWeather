@@ -20,7 +20,11 @@
 -(NSString *)precipitation{
     NSString *result;
     if (_precipitationRaw) {
-        result = [NSString stringWithFormat:@"%@%%", _precipitationRaw];
+        if ([_precipitationRaw containsString:@"mm"]) {
+            result = [NSString stringWithFormat:@"%@", _precipitationRaw];
+        } else {
+            result = [NSString stringWithFormat:@"%@%%", _precipitationRaw];
+        }
     } else {
         result = [NSString stringWithFormat:@"--%%"];
     }
