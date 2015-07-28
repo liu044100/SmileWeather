@@ -87,7 +87,7 @@ In the `SmileWeatherDataDownloadCompletion` block, [SmileWeatherData](http://coc
 **Step 1.** SmileWeather is available through use [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
-```
+```Ruby
 pod 'SmileWeather'
 
 ```
