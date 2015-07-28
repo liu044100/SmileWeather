@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *currentTempLabel;
 @property (weak, nonatomic) IBOutlet UILabel *localityLabel;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *leftViewLeadingConstraint;
+@property (unsafe_unretained, nonatomic) IBOutlet UIView *contentView;
 
 
 @property (weak, nonatomic) IBOutlet UILabel *conditionsLabel;
@@ -56,7 +57,8 @@ static NSString * const reuseIdentifier_property = @"propertyCell";
 -(void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.75];
+    self.contentView.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.7];
+    
     SmileLineLayout *lineLayout = [[SmileLineLayout alloc] init];
     self.collectionView.collectionViewLayout = lineLayout;
     
@@ -64,7 +66,7 @@ static NSString * const reuseIdentifier_property = @"propertyCell";
     [self addHairLine];
     
     //add shadow
-    [self addShadow];
+    [self addShadowToView:self.contentView];
     
     self.activityView.backgroundColor = [UIColor redColor];
     self.activityView.layer.cornerRadius = CGRectGetMidX(self.activityView.bounds);
@@ -78,17 +80,17 @@ static NSString * const reuseIdentifier_property = @"propertyCell";
     }
 }
 
--(void)addShadow{
+-(void)addShadowToView:(UIView*)view{
     //add shadow
-    self.view.layer.masksToBounds = NO;
+    view.layer.masksToBounds = NO;
     // 影のかかる方向を指定する
-    self.view.layer.shadowOffset = CGSizeMake(0.0f, 3.0f);
+    view.layer.shadowOffset = CGSizeMake(0.0f, 3.0f);
     // 影の透明度
-    self.view.layer.shadowOpacity = 0.1f;
+    view.layer.shadowOpacity = 0.1f;
     // 影の色
-    self.view.layer.shadowColor = [UIColor blackColor].CGColor;
+    view.layer.shadowColor = [UIColor blackColor].CGColor;
     // ぼかしの量
-    self.view.layer.shadowRadius = 3.0f;
+    view.layer.shadowRadius = 3.0f;
 }
 
 -(void)addHairLine{
@@ -144,9 +146,9 @@ static NSString * const reuseIdentifier_property = @"propertyCell";
     CGFloat left = [(SmileLineLayout*)self.collectionView.collectionViewLayout sectionInset].left;
     self.leftViewLeadingConstraint.constant = left;
     [self.view layoutIfNeeded];
-    
-    UICollectionViewFlowLayout*hourlyLayout = (UICollectionViewFlowLayout*)self.collectionView_hourly.collectionViewLayout;
-    hourlyLayout.sectionInset = UIEdgeInsetsMake(0, left, 0, 0);
+
+//    UICollectionViewFlowLayout*hourlyLayout = (UICollectionViewFlowLayout*)self.collectionView_hourly.collectionViewLayout;
+//    hourlyLayout.sectionInset = UIEdgeInsetsMake(0, left, 0, 0);
 }
 
 - (void)didReceiveMemoryWarning {
