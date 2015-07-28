@@ -147,8 +147,6 @@ static NSString * const reuseIdentifier_property = @"propertyCell";
     
     UICollectionViewFlowLayout*hourlyLayout = (UICollectionViewFlowLayout*)self.collectionView_hourly.collectionViewLayout;
     hourlyLayout.sectionInset = UIEdgeInsetsMake(0, left, 0, 0);
-
-    NSLog(@"--------%@", NSStringFromCGSize(self.collectionView.contentSize));
 }
 
 - (void)didReceiveMemoryWarning {

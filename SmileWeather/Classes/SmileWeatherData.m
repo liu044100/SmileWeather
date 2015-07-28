@@ -103,6 +103,11 @@
     
     NSDateFormatter *hourlyDateFormatter = [self hourlyDateFormatter];
     [hourlyData enumerateObjectsUsingBlock:^(NSDictionary *hourlyData, NSUInteger idx, BOOL *stop) {
+        
+        if (idx > 23) {
+            *stop = YES;
+        }
+        
         SmileWeatherHourlyData *forecast = [[SmileWeatherHourlyData alloc] init];
         
         //time
