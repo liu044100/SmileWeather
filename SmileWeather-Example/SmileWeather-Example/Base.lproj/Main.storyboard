@@ -20,10 +20,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cSY-8A-LNS">
-                                <rect key="frame" x="0.0" y="64" width="600" height="234"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="425"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="234" id="Njh-G9-Da5"/>
+                                    <constraint firstAttribute="height" constant="425" id="Njh-G9-Da5"/>
                                 </constraints>
                             </view>
                         </subviews>

@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="1Nd-84-t6y">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
@@ -45,7 +46,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6:00 PM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XXS-dv-hHp">
-                                                    <rect key="frame" x="3" y="8" width="62" height="15"/>
+                                                    <rect key="frame" x="3" y="8" width="62" height="14.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -55,13 +56,13 @@
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="200" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="24O-qA-VRs">
-                                                    <rect key="frame" x="19" y="31" width="31" height="36"/>
+                                                    <rect key="frame" x="19" y="31" width="31" height="35.5"/>
                                                     <fontDescription key="fontDescription" name="Climacons-Font" family="Climacons-Font" pointSize="35"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="300" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lca-pI-q48">
-                                                    <rect key="frame" x="8" y="75" width="52" height="15"/>
+                                                    <rect key="frame" x="8" y="75" width="52" height="14.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -126,16 +127,16 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mon" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fTP-pV-pzv" customClass="SmilePaddingLabel">
-                                                    <rect key="frame" x="18" y="5" width="35" height="21"/>
+                                                    <rect key="frame" x="18" y="5" width="34.5" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.98039215690000003" green="0.0" blue="0.041125419230000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DON-l9-pAO" userLabel="weather view">
-                                                    <rect key="frame" x="0.0" y="26" width="70" height="80"/>
+                                                    <rect key="frame" x="0.0" y="25" width="70" height="80.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" tag="200" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L1P-K7-MW3">
-                                                            <rect key="frame" x="5" y="6" width="60" height="69"/>
+                                                            <rect key="frame" x="5" y="6" width="59.5" height="68.5"/>
                                                             <fontDescription key="fontDescription" name="Climacons-Font" family="Climacons-Font" pointSize="68"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -214,19 +215,19 @@
                                 <rect key="frame" x="0.0" y="0.0" width="132" height="134"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="hDY-gX-jEa">
-                                        <rect key="frame" x="8" y="8" width="124" height="20"/>
+                                        <rect key="frame" x="8" y="8" width="124" height="19.5"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PUG-fG-MUW">
-                                        <rect key="frame" x="8" y="24" width="124" height="86"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="--" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PUG-fG-MUW">
+                                        <rect key="frame" x="8" y="23" width="124" height="86"/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="72"/>
                                         <color key="textColor" red="0.98039215690000003" green="0.0" blue="0.041125419230000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="UzP-gN-Inm">
-                                        <rect key="frame" x="8" y="104" width="124" height="20"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="--" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="UzP-gN-Inm">
+                                        <rect key="frame" x="8" y="103" width="124" height="19.5"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -274,7 +275,7 @@
                                                     <rect key="frame" x="0.0" y="7" width="19" height="12"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="200" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="EXf-WT-ObF">
-                                                    <rect key="frame" x="30" y="6" width="70" height="15"/>
+                                                    <rect key="frame" x="30" y="6" width="70" height="14.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -305,8 +306,35 @@
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="tSn-TQ-bcs">
                                 <rect key="frame" x="282" y="169" width="37" height="37"/>
                             </activityIndicatorView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="smile_wunder_logo" translatesAutoresizingMaskIntoConstraints="NO" id="4Vs-iD-URG">
-                                <rect key="frame" x="244" y="387" width="113" height="24"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="smile_wunder_logo" translatesAutoresizingMaskIntoConstraints="NO" id="4Vs-iD-URG">
+                                <rect key="frame" x="479" y="391" width="113" height="24"/>
+                            </imageView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="w48-lN-KA7">
+                                <rect key="frame" x="8" y="389" width="110" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="110" id="gVV-tZ-6RY"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="℃"/>
+                                    <segment title="℉"/>
+                                </segments>
+                                <color key="tintColor" red="0.98039215690000003" green="0.0" blue="0.041125419230000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="convertTempUnit:" destination="1Nd-84-t6y" eventType="valueChanged" id="nCC-qn-7TR"/>
+                                </connections>
+                            </segmentedControl>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="smile_openweather_logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="3iZ-Zw-xuo">
+                                <rect key="frame" x="560" y="385.5" width="35" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="35" id="AvA-zv-FZo"/>
+                                    <constraint firstAttribute="width" secondItem="3iZ-Zw-xuo" secondAttribute="height" multiplier="1:1" id="Vfe-rc-LxB"/>
+                                    <constraint firstAttribute="height" constant="40" id="iNh-Pq-adB"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="iNh-Pq-adB"/>
+                                    </mask>
+                                </variation>
                             </imageView>
                         </subviews>
                         <constraints>
@@ -314,26 +342,30 @@
                             <constraint firstAttribute="trailing" secondItem="E1W-CZ-vkJ" secondAttribute="trailing" id="1Lf-N7-chW"/>
                             <constraint firstItem="7jl-NZ-MDR" firstAttribute="top" secondItem="cv9-53-wj5" secondAttribute="bottom" id="3ib-ws-VOc"/>
                             <constraint firstItem="fDH-5L-mUj" firstAttribute="leading" secondItem="cv9-53-wj5" secondAttribute="trailing" constant="3" id="49j-8r-2r6"/>
+                            <constraint firstAttribute="trailing" secondItem="4Vs-iD-URG" secondAttribute="trailing" constant="8" id="6HS-Rl-End"/>
                             <constraint firstItem="cv9-53-wj5" firstAttribute="top" secondItem="v4p-ao-okm" secondAttribute="topMargin" id="74m-Pl-Z1D"/>
                             <constraint firstItem="E1W-CZ-vkJ" firstAttribute="top" secondItem="fDH-5L-mUj" secondAttribute="bottom" constant="10" id="8yu-2K-UMA"/>
+                            <constraint firstItem="w48-lN-KA7" firstAttribute="leading" secondItem="v4p-ao-okm" secondAttribute="leading" constant="8" id="9mB-Sf-nSf"/>
                             <constraint firstItem="E1W-CZ-vkJ" firstAttribute="top" secondItem="cv9-53-wj5" secondAttribute="bottom" id="At3-iE-WO0"/>
                             <constraint firstItem="cv9-53-wj5" firstAttribute="top" secondItem="GPf-3v-yZG" secondAttribute="bottom" id="B4M-gm-ZqS"/>
                             <constraint firstAttribute="bottom" secondItem="7jl-NZ-MDR" secondAttribute="bottom" id="CVS-Lc-4Va"/>
-                            <constraint firstItem="mlG-5u-liQ" firstAttribute="top" secondItem="4Vs-iD-URG" secondAttribute="bottom" constant="14" id="Hqa-gc-X7F"/>
+                            <constraint firstItem="w48-lN-KA7" firstAttribute="centerY" secondItem="3iZ-Zw-xuo" secondAttribute="centerY" id="CVp-vK-UYe"/>
                             <constraint firstItem="E1W-CZ-vkJ" firstAttribute="leading" secondItem="v4p-ao-okm" secondAttribute="leading" id="JWJ-ih-syz"/>
-                            <constraint firstAttribute="centerX" secondItem="4Vs-iD-URG" secondAttribute="centerX" id="Ssu-LM-rRe"/>
                             <constraint firstAttribute="trailing" secondItem="fDH-5L-mUj" secondAttribute="trailing" id="TCC-pK-JCK"/>
                             <constraint firstItem="cv9-53-wj5" firstAttribute="top" secondItem="v4p-ao-okm" secondAttribute="top" constant="20" id="Van-qo-d5V"/>
                             <constraint firstItem="7jl-NZ-MDR" firstAttribute="leading" secondItem="v4p-ao-okm" secondAttribute="leading" id="ZgO-Sm-QsR"/>
                             <constraint firstItem="tSn-TQ-bcs" firstAttribute="centerY" secondItem="E1W-CZ-vkJ" secondAttribute="centerY" id="aU0-rJ-S3c"/>
+                            <constraint firstItem="mlG-5u-liQ" firstAttribute="top" secondItem="w48-lN-KA7" secondAttribute="bottom" constant="8" id="bhw-4U-pjx"/>
                             <constraint firstItem="7jl-NZ-MDR" firstAttribute="top" secondItem="E1W-CZ-vkJ" secondAttribute="bottom" id="eaD-kH-h90"/>
                             <constraint firstItem="fDH-5L-mUj" firstAttribute="top" secondItem="v4p-ao-okm" secondAttribute="top" constant="10" id="fF9-zZ-zs3"/>
                             <constraint firstAttribute="trailing" secondItem="4Vs-iD-URG" secondAttribute="trailing" constant="8" id="j9R-6e-RqY"/>
+                            <constraint firstItem="w48-lN-KA7" firstAttribute="centerY" secondItem="4Vs-iD-URG" secondAttribute="centerY" id="kVc-VK-VWM"/>
                             <constraint firstItem="cv9-53-wj5" firstAttribute="top" secondItem="v4p-ao-okm" secondAttribute="top" id="la4-Qe-sCJ"/>
                             <constraint firstItem="mlG-5u-liQ" firstAttribute="top" secondItem="7jl-NZ-MDR" secondAttribute="bottom" id="n86-6F-V62"/>
                             <constraint firstItem="cv9-53-wj5" firstAttribute="top" secondItem="v4p-ao-okm" secondAttribute="top" constant="20" id="tUX-Jc-EMl"/>
                             <constraint firstAttribute="trailing" secondItem="7jl-NZ-MDR" secondAttribute="trailing" id="v8I-nH-LBZ"/>
                             <constraint firstItem="cv9-53-wj5" firstAttribute="leading" secondItem="v4p-ao-okm" secondAttribute="leading" id="wyM-y7-IQl"/>
+                            <constraint firstAttribute="trailing" secondItem="3iZ-Zw-xuo" secondAttribute="trailing" constant="5" id="y0C-8C-WgY"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -359,6 +391,8 @@
                         <outlet property="currentTempLabel" destination="PUG-fG-MUW" id="tXH-Rz-nCB"/>
                         <outlet property="leftViewLeadingConstraint" destination="wyM-y7-IQl" id="paT-4d-10a"/>
                         <outlet property="localityLabel" destination="hDY-gX-jEa" id="G4K-H8-SXv"/>
+                        <outlet property="logo_openweather" destination="3iZ-Zw-xuo" id="lJT-nG-qUB"/>
+                        <outlet property="logo_wunderground" destination="4Vs-iD-URG" id="AnK-bs-BuK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vfs-Ed-zfh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -367,6 +401,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="smile_openweather_logo.png" width="40" height="40"/>
         <image name="smile_wind" width="19" height="12"/>
         <image name="smile_wunder_logo" width="113" height="24"/>
     </resources>

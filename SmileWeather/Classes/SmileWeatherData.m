@@ -364,17 +364,17 @@
 -(NSString*)createSunStringFromObject_openweathermap:(id)object{
     NSString *result;
     
-    //if iOS9, uncomment it
-//    if ([object isKindOfClass:[NSNumber class]]) {
-//        NSNumber *value = (NSNumber*)object;
-//        NSDate *sunDate = [SmileWeatherData sunSecToDate:value];
-//        NSDateFormatter *ampmDateFormatter = [self ampmDateFormatter];
-//        result = [NSString stringWithFormat:@"%@", [ampmDateFormatter stringFromDate:sunDate]];
-//    } else {
-//        result = @"--:--";
-//    }
+    //if iOS9, it will get right result
+    if ([object isKindOfClass:[NSNumber class]]) {
+        NSNumber *value = (NSNumber*)object;
+        NSDate *sunDate = [SmileWeatherData sunSecToDate:value];
+        NSDateFormatter *ampmDateFormatter = [self twentyFourHoursDateFormatter];
+        result = [NSString stringWithFormat:@"%@", [ampmDateFormatter stringFromDate:sunDate]];
+    } else {
+        result = @"--:--";
+    }
     
-    result = @"--:--";
+//    result = @"--:--";
     
     return result;
 }
@@ -670,6 +670,17 @@
     static NSCalendar *_sharedInstance;
     dispatch_once(&onceToken, ^{
         _sharedInstance = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    });
+    return _sharedInstance;
+}
+
+-(NSDateFormatter*)twentyFourHoursDateFormatter{
+    static dispatch_once_t onceToken;
+    static NSDateFormatter *_sharedInstance;
+    dispatch_once(&onceToken, ^{
+        _sharedInstance = [[NSDateFormatter alloc] init];
+        [_sharedInstance setTimeStyle:NSDateFormatterShortStyle];
+        _sharedInstance.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_GB"];
     });
     return _sharedInstance;
 }
