@@ -13,5 +13,4 @@
 
 @property (nonatomic, strong) SmileWeatherData *data;
 @property (nonatomic) BOOL loading;
-
 @end

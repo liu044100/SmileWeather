@@ -8,6 +8,7 @@
 
 #import "SmileWeatherDemoVC.h"
 #import "SmileLineLayout.h"
+#import "SmileWeatherDownLoader.h"
 
 @interface SmileWeatherDemoVC () <UICollectionViewDataSource, UICollectionViewDelegate>
 
@@ -22,6 +23,10 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *conditionsLabel;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityView;
+
+@property (nonatomic) BOOL isFahrenheit;
+@property (unsafe_unretained, nonatomic) IBOutlet UIImageView *logo_openweather;
+@property (unsafe_unretained, nonatomic) IBOutlet UIImageView *logo_wunderground;
 
 @end
 
@@ -40,6 +45,14 @@ static NSString * const reuseIdentifier = @"forecastCell";
 static NSString * const reuseIdentifier_hourly = @"hourlyCell";
 static NSString * const reuseIdentifier_property = @"propertyCell";
 
+- (IBAction)convertTempUnit:(UISegmentedControl*)sender {
+    if (sender.selectedSegmentIndex == 0) {
+        self.isFahrenheit = NO;
+    } else {
+        self.isFahrenheit = YES;
+    }
+}
+
 -(void)viewDidLoad {
     [super viewDidLoad];
     
@@ -55,6 +68,14 @@ static NSString * const reuseIdentifier_property = @"propertyCell";
     
     self.activityView.backgroundColor = [UIColor redColor];
     self.activityView.layer.cornerRadius = CGRectGetMidX(self.activityView.bounds);
+    
+    if ([SmileWeatherDownLoader sharedDownloader].weatherAPI == API_wunderground) {
+        self.logo_openweather.hidden = YES;
+        self.logo_wunderground.hidden = NO;
+    } else if ([SmileWeatherDownLoader sharedDownloader].weatherAPI == API_openweathermap){
+        self.logo_openweather.hidden = NO;
+        self.logo_wunderground.hidden = YES;
+    }
 }
 
 -(void)addShadow{
@@ -126,6 +147,8 @@ static NSString * const reuseIdentifier_property = @"propertyCell";
     
     UICollectionViewFlowLayout*hourlyLayout = (UICollectionViewFlowLayout*)self.collectionView_hourly.collectionViewLayout;
     hourlyLayout.sectionInset = UIEdgeInsetsMake(0, left, 0, 0);
+
+    NSLog(@"--------%@", NSStringFromCGSize(self.collectionView.contentSize));
 }
 
 - (void)didReceiveMemoryWarning {
@@ -146,6 +169,18 @@ static NSString * const reuseIdentifier_property = @"propertyCell";
     });
 }
 
+-(void)setIsFahrenheit:(BOOL)isFahrenheit{
+    if (_isFahrenheit != isFahrenheit) {
+        _isFahrenheit = isFahrenheit;
+        SmileWeather_DispatchMainThread(^(){
+            [self.collectionView reloadData];
+            [self.collectionView_hourly reloadData];
+            [self.collectionView_property reloadData];
+            [self updateUI];
+        });
+    }
+}
+
 -(void)setData:(SmileWeatherData *)data{
     if (_data != data) {
         _data = data;
@@ -153,14 +188,27 @@ static NSString * const reuseIdentifier_property = @"propertyCell";
             [self.collectionView reloadData];
             [self.collectionView_hourly reloadData];
             [self.collectionView_property reloadData];
-            [self.collectionView_hourly scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:0] atScrollPosition:UICollectionViewScrollPositionRight animated:NO];
+            if (self.data.hourlyData.count > 0) {
+                 [self.collectionView_hourly scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:0] atScrollPosition:UICollectionViewScrollPositionRight animated:NO];
+            }
             [self updateUI];
         });
     }
 }
 
 -(void)updateUI{
-    self.currentTempLabel.text = self.data.currentData.currentTempStri_Celsius;
+    if (!self.data.currentData) {
+        return;
+    }
+    
+    NSString *temp;
+    if (self.isFahrenheit) {
+        temp = self.data.currentData.currentTempStri_Fahrenheit;
+    } else {
+        temp = self.data.currentData.currentTempStri_Celsius;
+    }
+    
+    self.currentTempLabel.text = temp;
     self.localityLabel.text = self.data.placeName;
     
     NSString *pressureStri = self.data.currentData.pressure;
@@ -200,12 +248,12 @@ static NSString * const reuseIdentifier_property = @"propertyCell";
     NSInteger number = 0;
 
     if (collectionView == self.collectionView) {
-        if (self.data.forecastDatas.count > 0) {
-            number = self.data.forecastDatas.count;
+        if (self.data.forecastData.count > 0) {
+            number = self.data.forecastData.count;
         }
     } else if (collectionView == self.collectionView_hourly){
-        if (self.data.hourlyDatas.count > 0) {
-            number = self.data.hourlyDatas.count;
+        if (self.data.hourlyData.count > 0) {
+            number = self.data.hourlyData.count;
         }
     } else if (collectionView == self.collectionView_property){
         if (_propertyArray.count > 0) {
@@ -245,7 +293,7 @@ static NSString * const reuseIdentifier_property = @"propertyCell";
         highTempLabel.text = @"--";
         lowTempLabel.text = @"--";
     } else {
-        SmileWeatherForecastDayData *forecastDayData = self.data.forecastDatas[indexPath.row];
+        SmileWeatherForecastDayData *forecastDayData = self.data.forecastData[indexPath.row];
         weekLabel.text = forecastDayData.dayOfWeek;
         weatherLabel.text = forecastDayData.icon;
         
@@ -261,8 +309,20 @@ static NSString * const reuseIdentifier_property = @"propertyCell";
             weekLabel.layer.masksToBounds = NO;
         }
         
-        highTempLabel.text = forecastDayData.highTempStri_Celsius;
-        lowTempLabel.text = forecastDayData.lowTempStri_Celsius;
+        
+        NSString *tempHigh;
+        NSString *tempLow;
+        if (self.isFahrenheit) {
+            tempHigh = forecastDayData.highTempStri_Fahrenheit;
+            tempLow = forecastDayData.lowTempStri_Fahrenheit;
+        } else {
+            tempHigh = forecastDayData.highTempStri_Celsius;
+            tempLow = forecastDayData.lowTempStri_Celsius;
+        }
+
+        
+        highTempLabel.text = tempHigh;
+        lowTempLabel.text = tempLow;
     }
 }
 
@@ -280,15 +340,29 @@ static NSString * const reuseIdentifier_property = @"propertyCell";
         weatherLabel.text = @"";
         tempLabel.text = @"--";
     } else {
-        SmileWeatherHourlyData *hourlyData = self.data.hourlyDatas[indexPath.row];
+        SmileWeatherHourlyData *hourlyData = self.data.hourlyData[indexPath.row];
         timeLabel.text = hourlyData.localizedTime;
         weatherLabel.text = hourlyData.icon;
-        tempLabel.text = hourlyData.currentTempStri_Celsius;
+        
+        NSString *temp;
+        if (self.isFahrenheit) {
+            temp = hourlyData.currentTempStri_Fahrenheit;
+        } else {
+            temp = hourlyData.currentTempStri_Celsius;
+        }
+        
+        tempLabel.text = temp;
         
         if (hourlyData.precipitationRaw.length > 0) {
-            NSInteger pop = hourlyData.precipitationRaw.integerValue;
-            if (pop > 24) {
-                popLabel.text = hourlyData.precipitation;
+            if ([hourlyData.precipitationRaw containsString:@"mm"]) {
+                if (![hourlyData.precipitationRaw isEqualToString:@"0 mm"]) {
+                    popLabel.text = hourlyData.precipitation;
+                }
+            } else {
+                NSInteger pop = hourlyData.precipitationRaw.integerValue;
+                if (pop > 24) {
+                    popLabel.text = hourlyData.precipitation;
+                }
             }
         }
     }

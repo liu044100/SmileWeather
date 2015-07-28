@@ -33,11 +33,11 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         NSDictionary *smileInfo =  [SmileWeatherDownLoader smileWeatherInfoDic];
-//        sharedDownloader = [[SmileWeatherDownLoader alloc]initWithAPIType:(SmileWeatherAPI)[smileInfo[API_NOW] intValue]];
-//        NSLog(@"info -> %@", smileInfo);
+        sharedDownloader = [[SmileWeatherDownLoader alloc]initWithAPIType:(SmileWeatherAPI)[smileInfo[API_NOW] intValue]];
+        NSLog(@"info plist -> %@", smileInfo);
         
-        NSString *wunderground_apikey = [smileInfo objectForKey:API_KEY_wunderground];
-        sharedDownloader = [[SmileWeatherDownLoader alloc]initWithWundergroundAPIKey:wunderground_apikey];
+//        NSString *wunderground_apikey = [smileInfo objectForKey:API_KEY_wunderground];
+//        sharedDownloader = [[SmileWeatherDownLoader alloc]initWithWundergroundAPIKey:wunderground_apikey];
     });
     return sharedDownloader;
 }
@@ -178,7 +178,7 @@
             
             if (!allError) {
                 weatherData = [[SmileWeatherData alloc] initWithJSON:allDataDic inPlacemark:placeMark];
-//                NSLog(@"all raw data -> %@", allDataDic);
+//                NSLog(@"openweathermap -> raw data -> %@", allDataDic);
             }
             
             SmileWeather_DispatchMainThread(^(){
@@ -403,7 +403,7 @@
     CLLocationCoordinate2D coordinates = location.coordinate;
     requestURL = [NSString stringWithFormat:@"%@%@lat=%f&lon=%f&APPID=%@&lang=%@", baseURL_openweathermap, parameters_openweathermap, coordinates.latitude, coordinates.longitude, self.key, [self preferedLanguage]];
     
-    NSLog(@"openweathermap url %@-> %@", type, requestURL);
+    NSLog(@"openweathermap -> url type -> %@ -> %@", type, requestURL);
     
     NSURL *url = [NSURL URLWithString:requestURL];
     

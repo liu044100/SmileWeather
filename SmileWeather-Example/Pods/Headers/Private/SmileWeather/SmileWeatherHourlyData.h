@@ -1,1 +1,1 @@
-../../../SmileWeather/SmileWeather/Classes/SmileWeatherHourlyData.h
+../../../../../SmileWeather/Classes/SmileWeatherHourlyData.h
