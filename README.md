@@ -5,7 +5,7 @@
 [![License](https://img.shields.io/cocoapods/l/SmileWeather.svg?style=flat)](http://cocoadocs.org/docsets/SmileWeather)
 [![Platform](https://img.shields.io/cocoapods/p/SmileWeather.svg?style=flat)](http://cocoadocs.org/docsets/SmileWeather)
 
-A library for Search & Parse the weather data from [Wunderground](http://www.wunderground.com) conveniently.
+A library for Search & Parse the weather data from [Wunderground](http://www.wunderground.com) & [Openweathermap](http://openweathermap.org) conveniently.
 
 ![](https://raw.githubusercontent.com/liu044100/SmileWeather/master/SmileWeather-Example/demo_gif/pro_big.png)
 
