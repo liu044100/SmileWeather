@@ -93,11 +93,18 @@ pod 'SmileWeather'
 ```
 Or you can drag the `SmileWeather` fold to your project.
 
-**Step 2.** Sign up [Wunderground](http://www.wunderground.com/weather/api) to get the api key.
+**Step 2.** Sign up [Wunderground](http://www.wunderground.com/weather/api) or [Openweathermap](http://openweathermap.org/api) to get the api key.
 
 **Step 3.** Follow as the below image, add the api key and [climacons font](http://adamwhitcroft.com/climacons/) to your project's `Info.plist`. 
 
 ![](https://raw.githubusercontent.com/liu044100/SmileWeather/master/SmileWeather-Example/demo_gif/step1.png)
+
+If you use [Wunderground](http://www.wunderground.com/weather/api) api, please add this key: `API_KEY_wunderground` .
+
+If you use [Openweathermap](http://openweathermap.org/api) api, please add this key: `API_KEY_openweathermap`.
+
+If you add both of these in `Info.plist`, please add `API_NOW` to let the `SmileWeather` know which one should be used, `0` is `API_KEY_wunderground`, and `1` is `API_KEY_openweathermap`.
+
 
 **Step 4.** The last step is that import `SmileWeatherDownLoader.h` to your project, and use it :)
 
