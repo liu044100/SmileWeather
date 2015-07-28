@@ -16,7 +16,7 @@ A library for Search & Parse the weather data from [Wunderground](http://www.wun
 
 For example, you can search place by using `-(void)getPlacemarksFromString:(NSString*)string completion:(SmileWeatherPlacemarksCompletion)completion`, the completion block return array of the `CLPlacemark`.
 
-```
+```Objective-c
 [[SmileWeatherDownLoader sharedDownloader] getPlacemarksFromString:@"cupertino" completion:^(NSArray *placeMarks, NSError *error) {
         if (!error) {
             //search results: array of placemark in here
@@ -28,7 +28,7 @@ For example, you can search place by using `-(void)getPlacemarksFromString:(NSSt
 
 You can get the placemark's weather data by using `-(void)getWeatherDataFromPlacemark:(CLPlacemark*)placeMark completion:(SmileWeatherDataDownloadCompletion)completion;`, the completion block return well formed weather data [SmileWeatherData](http://cocoadocs.org/docsets/SmileWeather/0.0.1/Classes/SmileWeatherData.html).
 
-```
+```Objective-c
 [[SmileWeatherDownLoader sharedDownloader] getWeatherDataFromPlacemark:placemark completion:^(SmileWeatherData *data, NSError *error) {
         if (!error) {
             //Well formed weather data in here.
@@ -41,7 +41,7 @@ You can get the placemark's weather data by using `-(void)getWeatherDataFromPlac
 
 By using [climacons font](http://adamwhitcroft.com/climacons/), the [SmileWeatherData](http://cocoadocs.org/docsets/SmileWeather/0.0.1/Classes/SmileWeatherData.html) contains the corresponding character that is used for weather icon.
 
-```
+```Objective-c
 SmileWeatherData *data = ...;
 UILabel *iconLabel = ...;
 
@@ -61,7 +61,7 @@ The weather information, timestamp, weekday, timezone, etc, localized all the re
 
 The main class is the [SmileWeatherDownLoader](http://cocoadocs.org/docsets/SmileWeather/0.0.1/Classes/SmileWeatherDownLoader.html). It handle downloading weather data from the [Wunderground](http://www.wunderground.com) server. It has three main method:
 
-```
+```Objective-c
 /*!Get weather data from CLPlacemark.*/
 -(void)getWeatherDataFromPlacemark:(CLPlacemark*)placeMark completion:(SmileWeatherDataDownloadCompletion)completion;
 
@@ -74,7 +74,7 @@ The main class is the [SmileWeatherDownLoader](http://cocoadocs.org/docsets/Smil
 
 In the `SmileWeatherDataDownloadCompletion` block, [SmileWeatherData](http://cocoadocs.org/docsets/SmileWeather/0.0.1/Classes/SmileWeatherData.html) is returned, it contains the current weather data, 4 days forecast data, 24 hourly forecast data, etc. 
 
-```
+```Objective-c
 [[SmileWeatherDownLoader sharedDownloader] getWeatherDataFromPlacemark:placemark completion:^(SmileWeatherData *data, NSError *error) {
         if (!error) {
             NSLog(@"Current Temperature, Celsius : %@, Fahrenheit: %@", data.currentData.currentTempStri_Celsius, data.currentData.currentTempStri_Fahrenheit);
