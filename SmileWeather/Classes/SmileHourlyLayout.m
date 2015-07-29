@@ -1,15 +1,16 @@
 //
-//  SmileLineLayout.m
-//  SmileWeather-Example
+//  SmileHourlyLayout.m
+//  Pods
 //
-//  Created by ryu-ushin on 7/16/15.
-//  Copyright (c) 2015 rain. All rights reserved.
+//  Created by ryu-ushin on 7/29/15.
+//
 //
 
-#import "SmileLineLayout.h"
+#import "SmileHourlyLayout.h"
 
-@implementation SmileLineLayout
-static CGFloat kToleranceSpacing = 28.0;
+@implementation SmileHourlyLayout
+static CGFloat kToleranceSpacing_min = 10.0;
+static CGFloat kToleranceSpacing_max = 28.0;
 static CGFloat kItemWidth = 70.0;
 static CGFloat kMinMargin = 8.0;
 static NSInteger kItemNum = 4;
@@ -21,7 +22,7 @@ static NSInteger kItemNum = 4;
     
     if (self) {
         self.scrollDirection = UICollectionViewScrollDirectionHorizontal;
-        self.itemSize = CGSizeMake(kItemWidth, 130.0);
+        self.itemSize = CGSizeMake(68, 98);
         self.sectionInset = [self updateSectionInset];
     }
     
@@ -30,13 +31,19 @@ static NSInteger kItemNum = 4;
 
 -(UIEdgeInsets)updateSectionInset {
     CGFloat screenWidth = [UIScreen mainScreen].bounds.size.width;
-    self.minimumLineSpacing = (screenWidth - kItemWidth * kItemNum - 2 * kMinMargin)/(kItemNum - 1);
     
-    if (self.minimumLineSpacing > kToleranceSpacing) {
-        self.minimumLineSpacing = kToleranceSpacing;
+    CGFloat spacing = (screenWidth - kItemWidth * kItemNum - 2 * kMinMargin)/(kItemNum - 1);
+    
+    if (spacing > kToleranceSpacing_max) {
+        spacing = kToleranceSpacing_max;
     }
     
-    CGFloat contentWidth = kItemWidth * kItemNum + (kItemNum - 1) * self.minimumLineSpacing;
+    if (spacing < kToleranceSpacing_min) {
+        spacing = kToleranceSpacing_min;
+    }
+
+    
+    CGFloat contentWidth = kItemWidth * kItemNum + (kItemNum - 1) * spacing;
     
     UIEdgeInsets insets;
     if (screenWidth > contentWidth) {
@@ -55,6 +62,5 @@ static NSInteger kItemNum = 4;
     
     return YES;
 }
-
 
 @end

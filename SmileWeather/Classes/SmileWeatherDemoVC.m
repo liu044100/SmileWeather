@@ -8,6 +8,7 @@
 
 #import "SmileWeatherDemoVC.h"
 #import "SmileLineLayout.h"
+#import "SmileHourlyLayout.h"
 #import "SmileWeatherDownLoader.h"
 
 @interface SmileWeatherDemoVC () <UICollectionViewDataSource, UICollectionViewDelegate>
@@ -61,6 +62,9 @@ static NSString * const reuseIdentifier_property = @"propertyCell";
     
     SmileLineLayout *lineLayout = [[SmileLineLayout alloc] init];
     self.collectionView.collectionViewLayout = lineLayout;
+    
+    SmileHourlyLayout *hourlyLayout = [[SmileHourlyLayout alloc] init];
+    self.collectionView_hourly.collectionViewLayout = hourlyLayout;
     
     //hair line
     [self addHairLine];
@@ -145,10 +149,6 @@ static NSString * const reuseIdentifier_property = @"propertyCell";
     
     CGFloat left = [(SmileLineLayout*)self.collectionView.collectionViewLayout sectionInset].left;
     self.leftViewLeadingConstraint.constant = left;
-    [self.view layoutIfNeeded];
-
-//    UICollectionViewFlowLayout*hourlyLayout = (UICollectionViewFlowLayout*)self.collectionView_hourly.collectionViewLayout;
-//    hourlyLayout.sectionInset = UIEdgeInsetsMake(0, left, 0, 0);
 }
 
 - (void)didReceiveMemoryWarning {
