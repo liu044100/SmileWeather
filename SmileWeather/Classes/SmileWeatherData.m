@@ -8,7 +8,6 @@
 
 #import "SmileWeatherData.h"
 #import "SmileClimacons.h"
-#import "NSString+SmileSubstring.h"
 #import "SmileWeatherDownLoader.h"
 
 @interface SmileWeatherData()

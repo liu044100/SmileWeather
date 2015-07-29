@@ -354,7 +354,7 @@ static NSString * const reuseIdentifier_property = @"propertyCell";
         tempLabel.text = temp;
         
         if (hourlyData.precipitationRaw.length > 0) {
-            if ([hourlyData.precipitationRaw containsString:@"mm"]) {
+            if ([hourlyData.precipitationRaw contains:@"mm"]) {
                 if (![hourlyData.precipitationRaw isEqualToString:@"0 mm"]) {
                     popLabel.text = hourlyData.precipitation;
                 }
