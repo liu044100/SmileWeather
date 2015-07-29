@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
                    DESC
 
   s.homepage     = "https://github.com/liu044100/SmileWeather"
-  s.screenshots  = "https://raw.githubusercontent.com/liu044100/SmileWeather/master/SmileWeather-Example/demo_gif/pro_big.png"
+  s.screenshots  = "https://raw.githubusercontent.com/liu044100/SmileWeather/master/SmileWeather-Example/demo_gif/pro_big1.png"
   s.license      = "MIT"
 
   s.author             = { 'Rain' => 'liu044100@gmail.com' }
