@@ -57,6 +57,16 @@ The weather information, timestamp, weekday, timezone, etc, localized all the re
 
 ![](https://raw.githubusercontent.com/liu044100/SmileWeather/master/SmileWeather-Example/demo_gif/localization.png)
 
+##### 4. Add the Weather Widget Style UI to your project simply, by using `SmileWeatherDemoVC`.
+
+Please check the example project for more detail. 
+
+```Objective-c
+SmileWeatherDemoVC *demoVC = [SmileWeatherDemoVC DemoVCToView:self.containerView];
+```
+
+![](https://raw.githubusercontent.com/liu044100/SmileWeather/master/SmileWeather-Example/demo_gif/demoview.png)
+
 #Theoretical Introduction
 
 The main class is the [SmileWeatherDownLoader](http://cocoadocs.org/docsets/SmileWeather/0.0.1/Classes/SmileWeatherDownLoader.html). It handle downloading weather data from the [Wunderground](http://www.wunderground.com) server. It has three main method:
