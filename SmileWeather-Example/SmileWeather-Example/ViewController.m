@@ -42,13 +42,9 @@ static NSString * const demoLocation_key = @"demoLocation";
     if (!_userDefaults) {
         _userDefaults = [NSUserDefaults standardUserDefaults];
     }
-    
     NSNumber *lat = [_userDefaults objectForKey:@"lat"];
     NSNumber *lon = [_userDefaults objectForKey:@"long"];
-    NSLog(@"%@, %@", lat, lon);
-
     CLLocation *location = [[CLLocation alloc] initWithLatitude:[lat doubleValue] longitude:[lon doubleValue]];
-    NSLog(@"-%@", location);
     return location;
 }
 
