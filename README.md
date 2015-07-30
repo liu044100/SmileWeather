@@ -59,7 +59,7 @@ The weather information, timestamp, weekday, timezone, etc, localized all the re
 
 ##### 4. Add the Weather Widget Style UI to your project simply, by using `SmileWeatherDemoVC`.
 
-Please check the example project for more detail. 
+Please check the [example project](https://github.com/liu044100/SmileWeather/tree/master/SmileWeather-Example) for more detail. 
 
 ```Objective-c
 SmileWeatherDemoVC *demoVC = [SmileWeatherDemoVC DemoVCToView:self.containerView];
