@@ -1,14 +1,14 @@
 PODS:
-  - SmileWeather (0.0.1)
+  - SmileWeather (0.0.2)
 
 DEPENDENCIES:
-  - SmileWeather (from `../`)
+  - SmileWeather (from `~/Documents/my_practice/cocoapods_final/SmileWeather`)
 
 EXTERNAL SOURCES:
   SmileWeather:
-    :path: ../
+    :path: ~/Documents/my_practice/cocoapods_final/SmileWeather
 
 SPEC CHECKSUMS:
-  SmileWeather: b368bf3fdaf9560ca3dc7634225474172739a2e1
+  SmileWeather: 87df02966288b71da8074b761a2dae54c62d0fd3
 
 COCOAPODS: 0.37.2

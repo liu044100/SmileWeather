@@ -13,9 +13,6 @@
 #define API_KEY_wunderground @"API_KEY_wunderground"
 #define API_KEY_openweathermap @"API_KEY_openweathermap"
 
-#define kStoryBoardName @"SmileWeatherDemoView"
-#define kDemoVCID     @"smileDemo"
-
 @interface SmileWeatherDownLoader()
 @property (nonatomic, strong) CLGeocoder *geocoder;
 @property (nonatomic, copy) NSString *key;
@@ -459,36 +456,6 @@
     NSURL *url = [NSURL URLWithString:requestURL];
     
     return url;
-}
-
-#pragma mark - DemoVC
-
-+(SmileWeatherDemoVC*)createDemoVC {
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:kStoryBoardName bundle: nil];
-    
-    SmileWeatherDemoVC *demoVC = (SmileWeatherDemoVC*)[storyboard instantiateViewControllerWithIdentifier:kDemoVCID];
-    
-
-    return demoVC;
-}
-
-+(SmileWeatherDemoVC *)DemoVCToView:(UIView *)parentView {
-    SmileWeatherDemoVC *demoVC = [SmileWeatherDownLoader createDemoVC];
-    
-    demoVC.view.translatesAutoresizingMaskIntoConstraints = NO;
-    
-    [parentView addSubview:demoVC.view];
-    
-    NSLayoutConstraint *left = [NSLayoutConstraint constraintWithItem:parentView attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:demoVC.view attribute:NSLayoutAttributeLeading multiplier:1.0 constant:0];
-    NSLayoutConstraint *right = [NSLayoutConstraint constraintWithItem:parentView attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:demoVC.view attribute:NSLayoutAttributeTrailing multiplier:1.0 constant:0];
-    NSLayoutConstraint *top = [NSLayoutConstraint constraintWithItem:parentView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:demoVC.view attribute:NSLayoutAttributeTop multiplier:1.0 constant:0];
-    NSLayoutConstraint *bottom = [NSLayoutConstraint constraintWithItem:parentView attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:demoVC.view attribute:NSLayoutAttributeBottom multiplier:1.0 constant:0];
-
-    NSArray *constraints = @[left, right, top, bottom];
-    
-    [parentView addConstraints: constraints];
-    
-    return demoVC;
 }
 
 #pragma mark - Debug Utility

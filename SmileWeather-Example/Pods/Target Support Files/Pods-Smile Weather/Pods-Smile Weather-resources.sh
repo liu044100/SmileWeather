@@ -58,7 +58,6 @@ install_resource()
   esac
 }
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_resource "../../SmileWeather/Assets/Climacons.ttf"
   install_resource "../../SmileWeather/Assets/smile_drop@2x.png"
   install_resource "../../SmileWeather/Assets/smile_drop@3x.png"
   install_resource "../../SmileWeather/Assets/smile_openweather_logo@2x.png"
@@ -77,10 +76,13 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_resource "../../SmileWeather/Assets/smile_wind@3x.png"
   install_resource "../../SmileWeather/Assets/smile_wunder_logo@2x.png"
   install_resource "../../SmileWeather/Assets/smile_wunder_logo@3x.png"
-  install_resource "../../SmileWeather/Assets/SmileWeatherDemoView.storyboard"
+  install_resource "../../SmileWeather/Assets/Climacons.ttf"
+  install_resource "../../SmileWeather/Assets/SmileWeatherDemoView.xib"
+  install_resource "../../SmileWeather/Assets/SmileWeatherForecastCell.xib"
+  install_resource "../../SmileWeather/Assets/SmileWeatherHourlyCell.xib"
+  install_resource "../../SmileWeather/Assets/SmileWeatherPropertyCell.xib"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_resource "../../SmileWeather/Assets/Climacons.ttf"
   install_resource "../../SmileWeather/Assets/smile_drop@2x.png"
   install_resource "../../SmileWeather/Assets/smile_drop@3x.png"
   install_resource "../../SmileWeather/Assets/smile_openweather_logo@2x.png"
@@ -99,7 +101,11 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_resource "../../SmileWeather/Assets/smile_wind@3x.png"
   install_resource "../../SmileWeather/Assets/smile_wunder_logo@2x.png"
   install_resource "../../SmileWeather/Assets/smile_wunder_logo@3x.png"
-  install_resource "../../SmileWeather/Assets/SmileWeatherDemoView.storyboard"
+  install_resource "../../SmileWeather/Assets/Climacons.ttf"
+  install_resource "../../SmileWeather/Assets/SmileWeatherDemoView.xib"
+  install_resource "../../SmileWeather/Assets/SmileWeatherForecastCell.xib"
+  install_resource "../../SmileWeather/Assets/SmileWeatherHourlyCell.xib"
+  install_resource "../../SmileWeather/Assets/SmileWeatherPropertyCell.xib"
 fi
 
 rsync -avr --copy-links --no-relative --exclude '*/.svn/*' --files-from="$RESOURCES_TO_COPY" / "${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"

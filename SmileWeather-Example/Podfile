@@ -2,7 +2,9 @@ platform :ios, '7.0'
 
 target 'Smile Weather' do
 
-pod 'SmileWeather', :path => "../"
+#pod 'SmileWeather', :path => "../"
+
+pod 'SmileWeather', :path => '~/Documents/my_practice/cocoapods_final/SmileWeather'
 
 #pod 'SmileWeather', :git => "https://github.com/liu044100/SmileWeather.git"
 

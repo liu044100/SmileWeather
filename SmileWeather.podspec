@@ -20,7 +20,7 @@ Pod::Spec.new do |s|
   s.requires_arc = true
   s.source       = { :git => "https://github.com/liu044100/SmileWeather.git", :tag => s.version.to_s}
   s.source_files  = 'SmileWeather/Classes/*'
-  s.resource = ['SmileWeather/Assets/*']
+  s.resources = ['SmileWeather/Assets/*.png', 'SmileWeather/Assets/*.ttf', 'SmileWeather/Assets/*.xib']
   s.public_header_files = 'SmileWeather/Classes/*.h'
   s.frameworks = 'UIKit', 'CoreLocation'
 

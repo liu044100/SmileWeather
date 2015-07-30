@@ -19,26 +19,67 @@
 
 @implementation ViewController {
     SmileWeatherDemoVC *_demoVC;
+    NSUserDefaults *_userDefaults;
 }
 
+#define IS_OS_7    ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0 && [[[UIDevice currentDevice] systemVersion] floatValue] < 8.0)
 static NSString * const reuseIdentifier = @"searchCell";
 static NSString * const searchTableIdentifier = @"SearchTable";
+static NSString * const demoLocation_key = @"demoLocation";
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-    
-    //UISearchController
-    [self configureSearchControllerAndSearchResultsController];
-    
-    //create demo VC
-    _demoVC = [SmileWeatherDownLoader DemoVCToView:self.containerView];
+-(void)firstLaunchRegister{
+    _userDefaults = [NSUserDefaults standardUserDefaults];
     
     //create demo location
     CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(37.322998,-122.032182);
-    CLLocation *location = [[CLLocation alloc] initWithLatitude:coordinate.latitude longitude:coordinate.longitude];
+    NSNumber *lat = [NSNumber numberWithDouble:coordinate.latitude];
+    NSNumber *lon = [NSNumber numberWithDouble:coordinate.longitude];
+    NSDictionary *userLocation=@{@"lat":lat,@"long":lon};
+    [_userDefaults registerDefaults:userLocation];
+}
+
+-(CLLocation*)locationInUserDefaults{
+    if (!_userDefaults) {
+        _userDefaults = [NSUserDefaults standardUserDefaults];
+    }
+    
+    NSNumber *lat = [_userDefaults objectForKey:@"lat"];
+    NSNumber *lon = [_userDefaults objectForKey:@"long"];
+    NSLog(@"%@, %@", lat, lon);
+
+    CLLocation *location = [[CLLocation alloc] initWithLatitude:[lat doubleValue] longitude:[lon doubleValue]];
+    NSLog(@"-%@", location);
+    return location;
+}
+
+-(void)saveLocationInUserDefaults:(CLLocation*)location{
+    if (!_userDefaults) {
+        _userDefaults = [NSUserDefaults standardUserDefaults];
+    }
+    CLLocationCoordinate2D coordinate = location.coordinate;
+    NSNumber *lat = [NSNumber numberWithDouble:coordinate.latitude];
+    NSNumber *lon = [NSNumber numberWithDouble:coordinate.longitude];
+    [_userDefaults setObject:lat forKey:@"lat"];
+    [_userDefaults setObject:lon forKey:@"long"];
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    //register data for first launch
+    [self firstLaunchRegister];
+    
+    //create searchbar if in iOS => iOS8
+    if (!IS_OS_7) {
+        //UISearchController
+        [self configureSearchControllerAndSearchResultsController];
+    }
+    
+    //create demo VC
+    _demoVC = [SmileWeatherDemoVC DemoVCToView:self.containerView];
     
     //get weather data from CLLocation
+    CLLocation *location = [self locationInUserDefaults];
     [[SmileWeatherDownLoader sharedDownloader] getWeatherDataFromLocation:location completion:^(SmileWeatherData *data, NSError *error) {
         if (error) {
             NSLog(@"error -> %@", error.localizedDescription);
@@ -106,6 +147,9 @@ static NSString * const searchTableIdentifier = @"SearchTable";
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
     
     CLPlacemark *placemark = self.searchResults[indexPath.row];
+    
+    //save location
+    [self saveLocationInUserDefaults:placemark.location];
     
     self.searchController.active = NO;
     _demoVC.loading = YES;
