@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "NSString+SmileSubstring.h"
 
 typedef struct {
     CGFloat fahrenheit;

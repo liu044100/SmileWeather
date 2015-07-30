@@ -1,1 +1,1 @@
-../../../../../SmileWeather/Classes/SmileWeatherCurrentData.h
+../../../SmileWeather/SmileWeather/Classes/SmileWeatherCurrentData.h

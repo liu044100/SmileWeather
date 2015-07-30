@@ -1,1 +1,1 @@
-../../../../../SmileWeather/Classes/NSString+SmileSubstring.h
+../../../SmileWeather/SmileWeather/Classes/NSString+SmileSubstring.h

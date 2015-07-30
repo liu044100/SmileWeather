@@ -4,11 +4,7 @@ target 'Smile Weather' do
 
 #pod 'SmileWeather', :path => "../"
 
-pod 'SmileWeather', :path => '~/Documents/my_practice/cocoapods_final/SmileWeather'
-
-#pod 'SmileWeather', :git => "https://github.com/liu044100/SmileWeather.git"
-
-#pod 'SmileWeather'
+pod 'SmileWeather'
 
 end
 

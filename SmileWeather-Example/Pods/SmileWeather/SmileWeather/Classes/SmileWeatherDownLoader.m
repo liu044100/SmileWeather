@@ -13,9 +13,6 @@
 #define API_KEY_wunderground @"API_KEY_wunderground"
 #define API_KEY_openweathermap @"API_KEY_openweathermap"
 
-#define kStoryBoardName @"SmileWeatherDemoView"
-#define kDemoVCID     @"smileDemo"
-
 @interface SmileWeatherDownLoader()
 @property (nonatomic, strong) CLGeocoder *geocoder;
 @property (nonatomic, copy) NSString *key;
@@ -28,22 +25,10 @@
 
 @implementation SmileWeatherDownLoader
 
-+(SmileWeatherDownLoader*)sharedDownloader {
-    static SmileWeatherDownLoader *sharedDownloader = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        NSDictionary *smileInfo =  [SmileWeatherDownLoader smileWeatherInfoDic];
-//        sharedDownloader = [[SmileWeatherDownLoader alloc]initWithAPIType:(SmileWeatherAPI)[smileInfo[API_NOW] intValue]];
-//        NSLog(@"info -> %@", smileInfo);
-        
-        NSString *wunderground_apikey = [smileInfo objectForKey:API_KEY_wunderground];
-        sharedDownloader = [[SmileWeatherDownLoader alloc]initWithWundergroundAPIKey:wunderground_apikey];
-    });
-    return sharedDownloader;
-}
-
 +(NSDictionary*)smileWeatherInfoDic{
-    return [[SmileWeatherDownLoader appInfoPlist]  objectForKey:INFO_DIC];
+    NSDictionary *dic = [[SmileWeatherDownLoader appInfoPlist]  objectForKey:INFO_DIC];
+    NSAssert(dic != nil, @"Please add SmileWeather key to your Info.plist");
+    return dic;
 }
 
 +(NSDictionary*)appInfoPlist{
@@ -53,6 +38,38 @@
         _sharedInstance = [[NSBundle mainBundle] infoDictionary];
     });
     return _sharedInstance;
+}
+
+-(instancetype)initFromInfoKey:(NSDictionary*)smileInfo{
+    SmileWeatherDownLoader *sharedDownloader;
+    if ([smileInfo[API_NOW] isKindOfClass:[NSNumber class]]) {
+        NSNumber *api_now = smileInfo[API_NOW];
+        sharedDownloader = [[SmileWeatherDownLoader alloc]initWithAPIType:(SmileWeatherAPI)[api_now intValue]];
+    } else {
+        NSString *apikey_wunderground = smileInfo[API_KEY_wunderground];
+        NSString *apikey_openweathermap = smileInfo[API_KEY_openweathermap];
+        if (apikey_wunderground && !apikey_openweathermap) {
+            sharedDownloader = [[SmileWeatherDownLoader alloc] initWithWundergroundAPIKey:apikey_wunderground];
+        } else if (!apikey_wunderground && apikey_openweathermap){
+            sharedDownloader = [[SmileWeatherDownLoader alloc] initWithOpenweathermapAPIKey:apikey_openweathermap];
+        } else {
+            NSAssert( apikey_wunderground != nil && apikey_openweathermap !=nil, @"No Wunderground or Openweathermap key to your Info.plist");
+            
+            NSAssert( apikey_wunderground == nil && apikey_openweathermap ==nil, @"Both of Wunderground and Openweathermap key in your Info.plist, please add API_NOW key to select which one is used.");
+        }
+    }
+    
+    return sharedDownloader;
+}
+
++(SmileWeatherDownLoader*)sharedDownloader {
+    static SmileWeatherDownLoader *sharedDownloader = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        NSDictionary *smileInfo =  [SmileWeatherDownLoader smileWeatherInfoDic];
+        sharedDownloader = [[SmileWeatherDownLoader alloc] initFromInfoKey:smileInfo];
+    });
+    return sharedDownloader;
 }
 
 - (instancetype)initWithWundergroundAPIKey:(NSString*)apikey{
@@ -65,6 +82,17 @@
     return self;
 }
 
+- (instancetype)initWithOpenweathermapAPIKey:(NSString*)apikey{
+    if(self = [super init]) {
+        self.weatherAPI = API_openweathermap;
+        self.key = apikey;
+        self.geocoder = [[CLGeocoder alloc]init];
+        self.session = [NSURLSession sharedSession];
+    }
+    return self;
+}
+
+
 - (instancetype)initWithAPIType:(SmileWeatherAPI)type
 {
     if(self = [super init]) {
@@ -74,13 +102,14 @@
         NSString *apikey;
         if (self.weatherAPI == API_wunderground) {
             apikey = smileInfo[API_KEY_wunderground];
+            NSAssert(apikey != nil, @"Please add Wunderground key to your Info.plist");
+            self = [[SmileWeatherDownLoader alloc] initWithWundergroundAPIKey:apikey];
         } else if (self.weatherAPI == API_openweathermap){
             apikey = smileInfo[API_KEY_openweathermap];
+            NSAssert(apikey != nil, @"Please add openweathermap key to your Info.plist");
+            self = [[SmileWeatherDownLoader alloc] initWithOpenweathermapAPIKey:apikey];
         }
         
-        self.key = apikey;
-        self.geocoder = [[CLGeocoder alloc]init];
-        self.session = [NSURLSession sharedSession];
     }
     return self;
 }
@@ -178,7 +207,7 @@
             
             if (!allError) {
                 weatherData = [[SmileWeatherData alloc] initWithJSON:allDataDic inPlacemark:placeMark];
-//                NSLog(@"all raw data -> %@", allDataDic);
+//                NSLog(@"openweathermap -> raw data -> %@", allDataDic);
             }
             
             SmileWeather_DispatchMainThread(^(){
@@ -403,7 +432,7 @@
     CLLocationCoordinate2D coordinates = location.coordinate;
     requestURL = [NSString stringWithFormat:@"%@%@lat=%f&lon=%f&APPID=%@&lang=%@", baseURL_openweathermap, parameters_openweathermap, coordinates.latitude, coordinates.longitude, self.key, [self preferedLanguage]];
     
-    NSLog(@"openweathermap url %@-> %@", type, requestURL);
+//    NSLog(@"openweathermap -> url type -> %@ -> %@", type, requestURL);
     
     NSURL *url = [NSURL URLWithString:requestURL];
     
@@ -427,42 +456,6 @@
     NSURL *url = [NSURL URLWithString:requestURL];
     
     return url;
-}
-
-#pragma mark - DemoVC
-
-+(SmileWeatherDemoVC*)createDemoVC {
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:kStoryBoardName bundle: nil];
-    
-    SmileWeatherDemoVC *demoVC = (SmileWeatherDemoVC*)[storyboard instantiateViewControllerWithIdentifier:kDemoVCID];
-    
-
-    return demoVC;
-}
-
-+(SmileWeatherDemoVC *)DemoVCToView:(UIView *)parentView {
-    SmileWeatherDemoVC *demoVC = [SmileWeatherDownLoader createDemoVC];
-    
-    demoVC.view.translatesAutoresizingMaskIntoConstraints = NO;
-    
-    [parentView addSubview:demoVC.view];
-    
-    NSLayoutConstraint *left = [NSLayoutConstraint constraintWithItem:parentView attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:demoVC.view attribute:NSLayoutAttributeLeading multiplier:1.0 constant:0];
-    NSLayoutConstraint *right = [NSLayoutConstraint constraintWithItem:parentView attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:demoVC.view attribute:NSLayoutAttributeTrailing multiplier:1.0 constant:0];
-    NSLayoutConstraint *top = [NSLayoutConstraint constraintWithItem:parentView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:demoVC.view attribute:NSLayoutAttributeTop multiplier:1.0 constant:0];
-    
-    NSArray *constraints = @[left, right, top];
-    
-    [parentView addConstraints: constraints];
-    
-    NSDictionary *viewsDictionary = @{@"View":demoVC.view};
-    NSArray *constraint_H = [NSLayoutConstraint constraintsWithVisualFormat:@"V:[View(425)]"
-                                                                    options:0
-                                                                    metrics:nil
-                                                                      views:viewsDictionary];
-    [demoVC.view addConstraints:constraint_H];
-    
-    return demoVC;
 }
 
 #pragma mark - Debug Utility
