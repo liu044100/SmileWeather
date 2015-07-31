@@ -1,13 +1,14 @@
+////
+////  SmileWeatherDemoVC.m
+////  SmileWeather-Example
+////
+////  Created by ryu-ushin on 7/15/15.
+////  Copyright (c) 2015 rain. All rights reserved.
+////
 //
-//  SmileWeatherDemoVC.m
-//  SmileWeather-Example
-//
-//  Created by ryu-ushin on 7/15/15.
-//  Copyright (c) 2015 rain. All rights reserved.
-//
-
 #import "SmileWeatherDemoVC.h"
 #import "SmileLineLayout.h"
+#import "SmileWeatherDownLoader.h"
 
 @interface SmileWeatherDemoVC () <UICollectionViewDataSource, UICollectionViewDelegate>
 
@@ -20,14 +21,22 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *leftViewLeadingConstraint;
 
 
+
 @property (weak, nonatomic) IBOutlet UILabel *conditionsLabel;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityView;
 
+@property (nonatomic) BOOL isFahrenheit;
+@property (weak, nonatomic) IBOutlet UIImageView *logo_openweather;
+@property (weak, nonatomic) IBOutlet UIImageView *logo_wunderground;
+
 @end
+
+#define kStoryBoardName @"SmileWeatherDemoView"
 
 @implementation SmileWeatherDemoVC{
     NSArray *_propertyArray;
 }
+
 
 typedef NS_ENUM(int, SmileHairLinePosition) {
     top,
@@ -36,38 +45,63 @@ typedef NS_ENUM(int, SmileHairLinePosition) {
     right
 };
 
+static NSString * const NIB_name_forecast = @"SmileWeatherForecastCell";
+static NSString * const NIB_name_forecast_hourly = @"SmileWeatherHourlyCell";
+static NSString * const NIB_name_forecast_property = @"SmileWeatherPropertyCell";
+
 static NSString * const reuseIdentifier = @"forecastCell";
 static NSString * const reuseIdentifier_hourly = @"hourlyCell";
 static NSString * const reuseIdentifier_property = @"propertyCell";
 
+- (IBAction)convertTempUnit:(UISegmentedControl*)sender {
+    if (sender.selectedSegmentIndex == 0) {
+        self.isFahrenheit = NO;
+    } else {
+        self.isFahrenheit = YES;
+    }
+}
+
 -(void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.75];
+    self.view.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.7];
+    
+    [self.collectionView registerNib:[UINib nibWithNibName:NIB_name_forecast bundle:nil] forCellWithReuseIdentifier:reuseIdentifier];
+    [self.collectionView_hourly registerNib:[UINib nibWithNibName:NIB_name_forecast_hourly bundle:nil] forCellWithReuseIdentifier:reuseIdentifier_hourly];
+    [self.collectionView_property registerNib:[UINib nibWithNibName:NIB_name_forecast_property bundle:nil] forCellWithReuseIdentifier:reuseIdentifier_property];
+    
     SmileLineLayout *lineLayout = [[SmileLineLayout alloc] init];
     self.collectionView.collectionViewLayout = lineLayout;
-    
+
     //hair line
     [self addHairLine];
     
     //add shadow
-    [self addShadow];
+    [self addShadowToView:self.view];
     
     self.activityView.backgroundColor = [UIColor redColor];
     self.activityView.layer.cornerRadius = CGRectGetMidX(self.activityView.bounds);
+    
+    if ([SmileWeatherDownLoader sharedDownloader].weatherAPI == API_wunderground) {
+        self.logo_openweather.hidden = YES;
+        self.logo_wunderground.hidden = NO;
+    } else if ([SmileWeatherDownLoader sharedDownloader].weatherAPI == API_openweathermap){
+        self.logo_openweather.hidden = NO;
+        self.logo_wunderground.hidden = YES;
+    }
 }
 
--(void)addShadow{
+-(void)addShadowToView:(UIView*)view{
     //add shadow
-    self.view.layer.masksToBounds = NO;
+    view.layer.masksToBounds = NO;
     // 影のかかる方向を指定する
-    self.view.layer.shadowOffset = CGSizeMake(0.0f, 3.0f);
+    view.layer.shadowOffset = CGSizeMake(0.0f, 3.0f);
     // 影の透明度
-    self.view.layer.shadowOpacity = 0.1f;
+    view.layer.shadowOpacity = 0.1f;
     // 影の色
-    self.view.layer.shadowColor = [UIColor blackColor].CGColor;
+    view.layer.shadowColor = [UIColor blackColor].CGColor;
     // ぼかしの量
-    self.view.layer.shadowRadius = 3.0f;
+    view.layer.shadowRadius = 3.0f;
 }
 
 -(void)addHairLine{
@@ -118,12 +152,9 @@ static NSString * const reuseIdentifier_property = @"propertyCell";
 }
 
 -(void)viewDidLayoutSubviews {
-    [super viewDidLayoutSubviews];
-    
+    [super viewDidLayoutSubviews];   
     CGFloat left = [(SmileLineLayout*)self.collectionView.collectionViewLayout sectionInset].left;
     self.leftViewLeadingConstraint.constant = left;
-    [self.view layoutIfNeeded];
-    
     UICollectionViewFlowLayout*hourlyLayout = (UICollectionViewFlowLayout*)self.collectionView_hourly.collectionViewLayout;
     hourlyLayout.sectionInset = UIEdgeInsetsMake(0, left, 0, 0);
 }
@@ -146,6 +177,18 @@ static NSString * const reuseIdentifier_property = @"propertyCell";
     });
 }
 
+-(void)setIsFahrenheit:(BOOL)isFahrenheit{
+    if (_isFahrenheit != isFahrenheit) {
+        _isFahrenheit = isFahrenheit;
+        SmileWeather_DispatchMainThread(^(){
+            [self.collectionView reloadData];
+            [self.collectionView_hourly reloadData];
+            [self.collectionView_property reloadData];
+            [self updateUI];
+        });
+    }
+}
+
 -(void)setData:(SmileWeatherData *)data{
     if (_data != data) {
         _data = data;
@@ -153,14 +196,27 @@ static NSString * const reuseIdentifier_property = @"propertyCell";
             [self.collectionView reloadData];
             [self.collectionView_hourly reloadData];
             [self.collectionView_property reloadData];
-            [self.collectionView_hourly scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:0] atScrollPosition:UICollectionViewScrollPositionRight animated:NO];
+            if (self.data.hourlyData.count > 0) {
+                 [self.collectionView_hourly scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:0] atScrollPosition:UICollectionViewScrollPositionRight animated:NO];
+            }
             [self updateUI];
         });
     }
 }
 
 -(void)updateUI{
-    self.currentTempLabel.text = self.data.currentData.currentTempStri_Celsius;
+    if (!self.data.currentData) {
+        return;
+    }
+    
+    NSString *temp;
+    if (self.isFahrenheit) {
+        temp = self.data.currentData.currentTempStri_Fahrenheit;
+    } else {
+        temp = self.data.currentData.currentTempStri_Celsius;
+    }
+    
+    self.currentTempLabel.text = temp;
     self.localityLabel.text = self.data.placeName;
     
     NSString *pressureStri = self.data.currentData.pressure;
@@ -200,12 +256,12 @@ static NSString * const reuseIdentifier_property = @"propertyCell";
     NSInteger number = 0;
 
     if (collectionView == self.collectionView) {
-        if (self.data.forecastDatas.count > 0) {
-            number = self.data.forecastDatas.count;
+        if (self.data.forecastData.count > 0) {
+            number = self.data.forecastData.count;
         }
     } else if (collectionView == self.collectionView_hourly){
-        if (self.data.hourlyDatas.count > 0) {
-            number = self.data.hourlyDatas.count;
+        if (self.data.hourlyData.count > 0) {
+            number = self.data.hourlyData.count;
         }
     } else if (collectionView == self.collectionView_property){
         if (_propertyArray.count > 0) {
@@ -245,7 +301,7 @@ static NSString * const reuseIdentifier_property = @"propertyCell";
         highTempLabel.text = @"--";
         lowTempLabel.text = @"--";
     } else {
-        SmileWeatherForecastDayData *forecastDayData = self.data.forecastDatas[indexPath.row];
+        SmileWeatherForecastDayData *forecastDayData = self.data.forecastData[indexPath.row];
         weekLabel.text = forecastDayData.dayOfWeek;
         weatherLabel.text = forecastDayData.icon;
         
@@ -261,8 +317,20 @@ static NSString * const reuseIdentifier_property = @"propertyCell";
             weekLabel.layer.masksToBounds = NO;
         }
         
-        highTempLabel.text = forecastDayData.highTempStri_Celsius;
-        lowTempLabel.text = forecastDayData.lowTempStri_Celsius;
+        
+        NSString *tempHigh;
+        NSString *tempLow;
+        if (self.isFahrenheit) {
+            tempHigh = forecastDayData.highTempStri_Fahrenheit;
+            tempLow = forecastDayData.lowTempStri_Fahrenheit;
+        } else {
+            tempHigh = forecastDayData.highTempStri_Celsius;
+            tempLow = forecastDayData.lowTempStri_Celsius;
+        }
+
+        
+        highTempLabel.text = tempHigh;
+        lowTempLabel.text = tempLow;
     }
 }
 
@@ -280,15 +348,29 @@ static NSString * const reuseIdentifier_property = @"propertyCell";
         weatherLabel.text = @"";
         tempLabel.text = @"--";
     } else {
-        SmileWeatherHourlyData *hourlyData = self.data.hourlyDatas[indexPath.row];
+        SmileWeatherHourlyData *hourlyData = self.data.hourlyData[indexPath.row];
         timeLabel.text = hourlyData.localizedTime;
         weatherLabel.text = hourlyData.icon;
-        tempLabel.text = hourlyData.currentTempStri_Celsius;
+        
+        NSString *temp;
+        if (self.isFahrenheit) {
+            temp = hourlyData.currentTempStri_Fahrenheit;
+        } else {
+            temp = hourlyData.currentTempStri_Celsius;
+        }
+        
+        tempLabel.text = temp;
         
         if (hourlyData.precipitationRaw.length > 0) {
-            NSInteger pop = hourlyData.precipitationRaw.integerValue;
-            if (pop > 24) {
-                popLabel.text = hourlyData.precipitation;
+            if ([hourlyData.precipitationRaw contains:@"mm"]) {
+                if (![hourlyData.precipitationRaw isEqualToString:@"0 mm"]) {
+                    popLabel.text = hourlyData.precipitation;
+                }
+            } else {
+                NSInteger pop = hourlyData.precipitationRaw.integerValue;
+                if (pop > 24) {
+                    popLabel.text = hourlyData.precipitation;
+                }
             }
         }
     }
@@ -314,4 +396,34 @@ static NSString * const reuseIdentifier_property = @"propertyCell";
 #pragma mark <UICollectionViewDelegate>
 
 
+#pragma mark - DemoVC
+
++(SmileWeatherDemoVC*)createDemoVC {
+    SmileWeatherDemoVC *demoVC = [[SmileWeatherDemoVC alloc] initWithNibName:kStoryBoardName bundle:nil];
+    return demoVC;
+}
+
++(SmileWeatherDemoVC *)DemoVCToView:(UIView *)parentView {
+    SmileWeatherDemoVC *demoVC = [SmileWeatherDemoVC createDemoVC];
+    
+    demoVC.view.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    [parentView addSubview:demoVC.view];
+    
+    NSLayoutConstraint *left = [NSLayoutConstraint constraintWithItem:parentView attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:demoVC.view attribute:NSLayoutAttributeLeading multiplier:1.0 constant:0];
+    NSLayoutConstraint *right = [NSLayoutConstraint constraintWithItem:parentView attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:demoVC.view attribute:NSLayoutAttributeTrailing multiplier:1.0 constant:0];
+    NSLayoutConstraint *top = [NSLayoutConstraint constraintWithItem:parentView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:demoVC.view attribute:NSLayoutAttributeTop multiplier:1.0 constant:0];
+    NSArray *constraints = @[left, right, top];
+    
+    [parentView addConstraints: constraints];
+    
+    NSDictionary *viewsDictionary = @{@"View":demoVC.view};
+    NSArray *constraint_H = [NSLayoutConstraint constraintsWithVisualFormat:@"V:[View(425)]"
+                                                                    options:0
+                                                                    metrics:nil
+                                                                      views:viewsDictionary];
+    [demoVC.view addConstraints:constraint_H];
+    
+    return demoVC;
+}
 @end

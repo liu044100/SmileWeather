@@ -1,1 +1,1 @@
-../../../../../SmileWeather/Classes/SmilePaddingLabel.h
+../../../SmileWeather/SmileWeather/Classes/SmilePaddingLabel.h

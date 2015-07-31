@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Climacons.ttf">
+            <string>Climacons-Font</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="forecastCell" id="apR-N7-wz2">
+            <rect key="frame" x="0.0" y="0.0" width="70" height="130"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="70" height="130"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" tag="200" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mzd-ni-6E4" userLabel="weatherIcon">
+                        <rect key="frame" x="5" y="30" width="59.5" height="68.5"/>
+                        <fontDescription key="fontDescription" name="Climacons-Font" family="Climacons-Font" pointSize="68"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iSa-aG-FKC">
+                        <rect key="frame" x="5" y="5" width="59.5" height="25.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.98039215690000003" green="0.0" blue="0.041125419230000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" tag="300" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oRM-rF-ktp">
+                        <rect key="frame" x="14" y="104" width="15" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" tag="400" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uqq-4V-wj2">
+                        <rect key="frame" x="41" y="104.5" width="15" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <constraints>
+                <constraint firstItem="iSa-aG-FKC" firstAttribute="top" secondItem="apR-N7-wz2" secondAttribute="top" constant="5" id="2VL-Yw-mxS"/>
+                <constraint firstAttribute="centerX" secondItem="oRM-rF-ktp" secondAttribute="trailing" constant="6" id="7h8-vN-egg"/>
+                <constraint firstItem="mzd-ni-6E4" firstAttribute="top" secondItem="iSa-aG-FKC" secondAttribute="bottom" id="EN8-Ge-qu5"/>
+                <constraint firstAttribute="centerX" secondItem="mzd-ni-6E4" secondAttribute="centerX" id="Qr5-BR-9HW"/>
+                <constraint firstAttribute="trailing" secondItem="iSa-aG-FKC" secondAttribute="trailing" constant="5" id="WKf-VW-4LP"/>
+                <constraint firstItem="oRM-rF-ktp" firstAttribute="top" secondItem="mzd-ni-6E4" secondAttribute="bottom" constant="6" id="Y2d-vl-eQN"/>
+                <constraint firstItem="Uqq-4V-wj2" firstAttribute="centerY" secondItem="oRM-rF-ktp" secondAttribute="centerY" id="aeu-bl-Zlo"/>
+                <constraint firstAttribute="centerX" secondItem="Uqq-4V-wj2" secondAttribute="leading" constant="-6" id="blq-Eo-aOU"/>
+                <constraint firstItem="iSa-aG-FKC" firstAttribute="leading" secondItem="apR-N7-wz2" secondAttribute="leading" constant="5" id="qH4-F2-hY9"/>
+                <constraint firstAttribute="centerY" secondItem="mzd-ni-6E4" secondAttribute="centerY" id="yGv-Hy-7G5"/>
+            </constraints>
+            <size key="customSize" width="123" height="201"/>
+            <point key="canvasLocation" x="124" y="79"/>
+        </collectionViewCell>
+    </objects>
+</document>

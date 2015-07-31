@@ -43,7 +43,7 @@ static NSInteger kItemNum = 4;
         CGFloat buffer = (screenWidth - contentWidth)/2.0;
         insets = UIEdgeInsetsMake(0, buffer, 0, 0);
     } else {
-        insets = UIEdgeInsetsMake(0, 0, 0, 0);
+        insets = UIEdgeInsetsMake(0, kMinMargin, 0, 0);
     }
     return insets;
 }

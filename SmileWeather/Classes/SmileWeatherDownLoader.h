@@ -45,10 +45,6 @@ typedef NS_ENUM(int, SmileWeatherAPI) {
 
 -(void)getPlacemarksForSearchDisplayFromString:(NSString*)string completion:(SmileWeatherPlacemarksCompletion)completion;
 
-//demo vc
-/*!Create a demo view for show the ability of the SmileWeather.*/
-+(SmileWeatherDemoVC*)DemoVCToView:(UIView*)parentView;
-
 //Utility
 +(NSString*)placeNameForSearchDisplay:(CLPlacemark*)placemark;
 +(NSString*)placeNameForDisplay:(CLPlacemark*)placemark;

@@ -13,4 +13,9 @@
 
 @property (nonatomic, strong) SmileWeatherData *data;
 @property (nonatomic) BOOL loading;
+
+//demo vc
+/*!Create a demo view for show the ability of the SmileWeather.*/
++(SmileWeatherDemoVC*)DemoVCToView:(UIView*)parentView;
+
 @end

@@ -1,11 +1,11 @@
+////
+////  SmileWeatherDemoVC.m
+////  SmileWeather-Example
+////
+////  Created by ryu-ushin on 7/15/15.
+////  Copyright (c) 2015 rain. All rights reserved.
+////
 //
-//  SmileWeatherDemoVC.m
-//  SmileWeather-Example
-//
-//  Created by ryu-ushin on 7/15/15.
-//  Copyright (c) 2015 rain. All rights reserved.
-//
-
 #import "SmileWeatherDemoVC.h"
 #import "SmileLineLayout.h"
 #import "SmileWeatherDownLoader.h"
@@ -21,18 +21,22 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *leftViewLeadingConstraint;
 
 
+
 @property (weak, nonatomic) IBOutlet UILabel *conditionsLabel;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityView;
 
 @property (nonatomic) BOOL isFahrenheit;
-@property (unsafe_unretained, nonatomic) IBOutlet UIImageView *logo_openweather;
-@property (unsafe_unretained, nonatomic) IBOutlet UIImageView *logo_wunderground;
+@property (weak, nonatomic) IBOutlet UIImageView *logo_openweather;
+@property (weak, nonatomic) IBOutlet UIImageView *logo_wunderground;
 
 @end
+
+#define kStoryBoardName @"SmileWeatherDemoView"
 
 @implementation SmileWeatherDemoVC{
     NSArray *_propertyArray;
 }
+
 
 typedef NS_ENUM(int, SmileHairLinePosition) {
     top,
@@ -40,6 +44,10 @@ typedef NS_ENUM(int, SmileHairLinePosition) {
     bottom,
     right
 };
+
+static NSString * const NIB_name_forecast = @"SmileWeatherForecastCell";
+static NSString * const NIB_name_forecast_hourly = @"SmileWeatherHourlyCell";
+static NSString * const NIB_name_forecast_property = @"SmileWeatherPropertyCell";
 
 static NSString * const reuseIdentifier = @"forecastCell";
 static NSString * const reuseIdentifier_hourly = @"hourlyCell";
@@ -56,15 +64,20 @@ static NSString * const reuseIdentifier_property = @"propertyCell";
 -(void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.75];
+    self.view.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.7];
+    
+    [self.collectionView registerNib:[UINib nibWithNibName:NIB_name_forecast bundle:nil] forCellWithReuseIdentifier:reuseIdentifier];
+    [self.collectionView_hourly registerNib:[UINib nibWithNibName:NIB_name_forecast_hourly bundle:nil] forCellWithReuseIdentifier:reuseIdentifier_hourly];
+    [self.collectionView_property registerNib:[UINib nibWithNibName:NIB_name_forecast_property bundle:nil] forCellWithReuseIdentifier:reuseIdentifier_property];
+    
     SmileLineLayout *lineLayout = [[SmileLineLayout alloc] init];
     self.collectionView.collectionViewLayout = lineLayout;
-    
+
     //hair line
     [self addHairLine];
     
     //add shadow
-    [self addShadow];
+    [self addShadowToView:self.view];
     
     self.activityView.backgroundColor = [UIColor redColor];
     self.activityView.layer.cornerRadius = CGRectGetMidX(self.activityView.bounds);
@@ -78,17 +91,17 @@ static NSString * const reuseIdentifier_property = @"propertyCell";
     }
 }
 
--(void)addShadow{
+-(void)addShadowToView:(UIView*)view{
     //add shadow
-    self.view.layer.masksToBounds = NO;
+    view.layer.masksToBounds = NO;
     // 影のかかる方向を指定する
-    self.view.layer.shadowOffset = CGSizeMake(0.0f, 3.0f);
+    view.layer.shadowOffset = CGSizeMake(0.0f, 3.0f);
     // 影の透明度
-    self.view.layer.shadowOpacity = 0.1f;
+    view.layer.shadowOpacity = 0.1f;
     // 影の色
-    self.view.layer.shadowColor = [UIColor blackColor].CGColor;
+    view.layer.shadowColor = [UIColor blackColor].CGColor;
     // ぼかしの量
-    self.view.layer.shadowRadius = 3.0f;
+    view.layer.shadowRadius = 3.0f;
 }
 
 -(void)addHairLine{
@@ -139,16 +152,11 @@ static NSString * const reuseIdentifier_property = @"propertyCell";
 }
 
 -(void)viewDidLayoutSubviews {
-    [super viewDidLayoutSubviews];
-    
+    [super viewDidLayoutSubviews];   
     CGFloat left = [(SmileLineLayout*)self.collectionView.collectionViewLayout sectionInset].left;
     self.leftViewLeadingConstraint.constant = left;
-    [self.view layoutIfNeeded];
-    
     UICollectionViewFlowLayout*hourlyLayout = (UICollectionViewFlowLayout*)self.collectionView_hourly.collectionViewLayout;
     hourlyLayout.sectionInset = UIEdgeInsetsMake(0, left, 0, 0);
-
-    NSLog(@"--------%@", NSStringFromCGSize(self.collectionView.contentSize));
 }
 
 - (void)didReceiveMemoryWarning {
@@ -354,7 +362,7 @@ static NSString * const reuseIdentifier_property = @"propertyCell";
         tempLabel.text = temp;
         
         if (hourlyData.precipitationRaw.length > 0) {
-            if ([hourlyData.precipitationRaw containsString:@"mm"]) {
+            if ([hourlyData.precipitationRaw contains:@"mm"]) {
                 if (![hourlyData.precipitationRaw isEqualToString:@"0 mm"]) {
                     popLabel.text = hourlyData.precipitation;
                 }
@@ -388,4 +396,34 @@ static NSString * const reuseIdentifier_property = @"propertyCell";
 #pragma mark <UICollectionViewDelegate>
 
 
+#pragma mark - DemoVC
+
++(SmileWeatherDemoVC*)createDemoVC {
+    SmileWeatherDemoVC *demoVC = [[SmileWeatherDemoVC alloc] initWithNibName:kStoryBoardName bundle:nil];
+    return demoVC;
+}
+
++(SmileWeatherDemoVC *)DemoVCToView:(UIView *)parentView {
+    SmileWeatherDemoVC *demoVC = [SmileWeatherDemoVC createDemoVC];
+    
+    demoVC.view.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    [parentView addSubview:demoVC.view];
+    
+    NSLayoutConstraint *left = [NSLayoutConstraint constraintWithItem:parentView attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:demoVC.view attribute:NSLayoutAttributeLeading multiplier:1.0 constant:0];
+    NSLayoutConstraint *right = [NSLayoutConstraint constraintWithItem:parentView attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:demoVC.view attribute:NSLayoutAttributeTrailing multiplier:1.0 constant:0];
+    NSLayoutConstraint *top = [NSLayoutConstraint constraintWithItem:parentView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:demoVC.view attribute:NSLayoutAttributeTop multiplier:1.0 constant:0];
+    NSArray *constraints = @[left, right, top];
+    
+    [parentView addConstraints: constraints];
+    
+    NSDictionary *viewsDictionary = @{@"View":demoVC.view};
+    NSArray *constraint_H = [NSLayoutConstraint constraintsWithVisualFormat:@"V:[View(425)]"
+                                                                    options:0
+                                                                    metrics:nil
+                                                                      views:viewsDictionary];
+    [demoVC.view addConstraints:constraint_H];
+    
+    return demoVC;
+}
 @end
