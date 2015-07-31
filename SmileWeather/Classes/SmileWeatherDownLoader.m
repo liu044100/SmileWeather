@@ -13,11 +13,18 @@
 #define API_KEY_wunderground @"API_KEY_wunderground"
 #define API_KEY_openweathermap @"API_KEY_openweathermap"
 
-@interface SmileWeatherDownLoader()
+@interface SmileWeatherDownLoader()<NSXMLParserDelegate>
 @property (nonatomic, strong) CLGeocoder *geocoder;
 @property (nonatomic, copy) NSString *key;
-@property (nonatomic, strong) NSURLSession *session;
 @property (nonatomic, readwrite) SmileWeatherAPI weatherAPI;
+
+//download
+@property (nonatomic, strong) NSURLSession *session;
+@property (nonatomic, strong) NSXMLParser *xmlParser;
+@property (nonatomic, strong) NSMutableString *foundValue_xml;
+@property (nonatomic, strong) NSMutableDictionary *weatherRawData_xml;
+@property (nonatomic, strong) NSMutableDictionary *dictTempDataStorage_xml;
+
 //for search display
 @property (nonatomic, strong) NSMutableArray *searchResults;
 @property (nonatomic, copy) NSString *lastSearchString;
@@ -97,7 +104,6 @@
 {
     if(self = [super init]) {
         self.weatherAPI = type;
-        
         NSDictionary *smileInfo =  [SmileWeatherDownLoader smileWeatherInfoDic];
         NSString *apikey;
         if (self.weatherAPI == API_wunderground) {
@@ -109,12 +115,66 @@
             NSAssert(apikey != nil, @"Please add openweathermap key to your Info.plist");
             self = [[SmileWeatherDownLoader alloc] initWithOpenweathermapAPIKey:apikey];
         }
-        
     }
     return self;
 }
 
+#pragma mark - NSXMLParserDelegate
+
+-(void)parserDidStartDocument:(NSXMLParser *)parser{
+    
+}
+
+-(void)parserDidEndDocument:(NSXMLParser *)parser{
+    SmileWeather_DispatchMainThread(^(){
+        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+    });
+}
+
+-(void)parser:(NSXMLParser *)parser parseErrorOccurred:(NSError *)parseError{
+    NSLog(@"%@", [parseError localizedDescription]);
+}
+
+-(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict{
+    NSLog(@"start -- %@, %@, %@, %@, %@", parser, elementName, namespaceURI, qName, attributeDict);
+}
+
+-(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName{
+    NSLog(@"end -- %@, %@, %@, %@", parser, elementName, namespaceURI, qName);
+}
+
+-(void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string{
+    NSLog(@"found -- %@", string);
+}
+
 #pragma mark - download weather data
+-(void)getWeatherRawDataFromXMLURL:(NSURL *)url completion:(SmileWeatherRawDataCompletion)completion{
+    if (!url | !completion) {
+        NSLog(@"invalid url or completion");
+        return;
+    }
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+    NSURLSessionDataTask *dataTask = [self.session dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        if (!error) {
+            self.xmlParser = [[NSXMLParser alloc] initWithData:data];
+            self.xmlParser.delegate = self;
+            // Initialize the mutable string that we'll use during parsing.
+            self.foundValue_xml = [[NSMutableString alloc] init];
+            [self.xmlParser parse];
+        } else {
+            if (self.weatherRawData_xml) {
+                [self.weatherRawData_xml removeAllObjects];
+            }
+        }
+        SmileWeather_DispatchMainThread(^(){
+            [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+            completion(self.weatherRawData_xml, error);
+        });
+    }];
+    
+    [dataTask resume];
+
+}
 
 -(void)getWeatherRawDataFromURL:(NSURL *)url completion:(SmileWeatherRawDataCompletion)completion{
     if (!url | !completion) {
@@ -151,29 +211,23 @@
     
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
     
+    //FOR wunderground
     if (self.weatherAPI == API_wunderground) {
-        NSURLSessionDataTask *dataTask = [self.session dataTaskWithURL:[self urlForLocation:placeMark.location] completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-            
+        [self getWeatherRawDataFromURL:[self urlForLocation:placeMark.location] completion:^(NSDictionary *rawData, NSError *error) {
             SmileWeatherData *weatherData;
-            
             if (!error) {
-                NSDictionary *dataDic = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-                weatherData = [[SmileWeatherData alloc] initWithJSON:dataDic inPlacemark:placeMark];
-//                NSLog(@"raw data -> %@", dataDic);
+                weatherData = [[SmileWeatherData alloc] initWithJSON:rawData inPlacemark:placeMark];
             }
             SmileWeather_DispatchMainThread(^(){
                 [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
                 completion(weatherData, error);
             });
-            
         }];
-        
-        [dataTask resume];
     }
     
+    //FOR openweathermap
     else if (self.weatherAPI == API_openweathermap){
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
-        
             __block NSMutableDictionary *allDataDic = [NSMutableDictionary new];
             __block SmileWeatherData *weatherData;
             __block NSError *allError;
@@ -183,39 +237,25 @@
             NSArray *urlArrays = @[[self urlForCurrentDataInLocation:placeMark.location], [self urlForForecastDataInLocation:placeMark.location]];
             
             for (NSURL *url in urlArrays) {
-                
                 dispatch_group_enter(downloadGroup);
-                
-                NSURLSessionDataTask *dataTask = [self.session dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-                    
+                [self getWeatherRawDataFromURL:url completion:^(NSDictionary *rawData, NSError *error) {
                     if (!error) {
-                        NSDictionary *dataDic = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-                        [allDataDic addEntriesFromDictionary:dataDic];
+                        [allDataDic addEntriesFromDictionary:rawData];
                     }else{
-                        error = error;
+                        allError = error;
                     }
-                    
                     dispatch_group_leave(downloadGroup);
-                    
                 }];
-                
-                [dataTask resume];
-                
             }
-            
             dispatch_group_wait(downloadGroup, DISPATCH_TIME_FOREVER);
-            
             if (!allError) {
                 weatherData = [[SmileWeatherData alloc] initWithJSON:allDataDic inPlacemark:placeMark];
-//                NSLog(@"openweathermap -> raw data -> %@", allDataDic);
             }
             
             SmileWeather_DispatchMainThread(^(){
                 [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
                 completion(weatherData, allError);
             });
-
-            
         });
     }
 }

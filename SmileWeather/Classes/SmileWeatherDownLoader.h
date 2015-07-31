@@ -31,23 +31,52 @@ typedef NS_ENUM(int, SmileWeatherAPI) {
 
 //raw data
 -(void)getWeatherRawDataFromURL:(NSURL*)url completion:(SmileWeatherRawDataCompletion)completion;
+-(void)getWeatherRawDataFromXMLURL:(NSURL *)url completion:(SmileWeatherRawDataCompletion)completion;
 
 //weather data
-/*!Get weather data from CLPlacemark.*/
+/*!
+ @brief Get weather data from CLPlacemark.
+ @discussion This method submits the specified CLPlacemark data to the weather server asynchronously and returns well formed data 'SmileWeatherData' for using easily. Your completion handler block will be executed on the main thread.
+ @param placeMark The CLPlacemark is submited for weather data.
+ @param completion A block object containing the code to execute at the end of the request. This code is called whether the request is successful or unsuccessful.
+ @see -getWeatherDataFromLocation:completion:
+ */
 -(void)getWeatherDataFromPlacemark:(CLPlacemark*)placeMark completion:(SmileWeatherDataDownloadCompletion)completion;
 
-/*!Get weather data from CLLocation.*/
+/*!
+ @brief Get weather data from CLLocation.
+ @discussion This method submits the specified CLLocation data to the weather server asynchronously and returns well formed data 'SmileWeatherData' for using easily. Your completion handler block will be executed on the main thread.
+ @param location The CLPlacemark is submited for weather data.
+ @param completion A block object containing the code to execute at the end of the request. This code is called whether the request is successful or unsuccessful.
+ @see -getWeatherDataFromPlacemark:completion:
+ */
 -(void)getWeatherDataFromLocation:(CLLocation*)location completion:(SmileWeatherDataDownloadCompletion)completion;
 
 //Placemark Lists
-/*!Get array of CLPlacemark from the input string.*/
+/*!
+ @brief Get array of CLPlacemark from the input string in the normal scene.
+ @discussion This method submits the specified String to the weather server asynchronously and returns array of CLPlacemark. Your completion handler block will be executed on the main thread.
+ @param string The string is submited for search.
+ @param completion A block object containing the code to execute at the end of the request. This code is called whether the request is successful or unsuccessful.
+ @see -getPlacemarksForSearchDisplayFromString:completion:
+ */
 -(void)getPlacemarksFromString:(NSString*)string completion:(SmileWeatherPlacemarksCompletion)completion;
 
+/*!
+ @brief Get array of CLPlacemark from the input string for display in the scene where the results is displayed in the search bar. By use this method, the returned array will contains the corresponding results as much as possible.
+ @discussion This method submits the specified string to the weather server asynchronously and returns array of CLPlacemark. Your completion handler block will be executed on the main thread.
+ @param string The string is submited for search.
+ @param completion A block object containing the code to execute at the end of the request. This code is called whether the request is successful or unsuccessful.
+ @see -getPlacemarksFromString:completion:
+ */
 -(void)getPlacemarksForSearchDisplayFromString:(NSString*)string completion:(SmileWeatherPlacemarksCompletion)completion;
 
 //Utility
+/*!Optimized placename for display in the search bar scene.*/
 +(NSString*)placeNameForSearchDisplay:(CLPlacemark*)placemark;
+/*!Optimized placename for display in the normal scene.*/
 +(NSString*)placeNameForDisplay:(CLPlacemark*)placemark;
+/*!Current prefered language for device.*/
 -(NSString*)preferedLanguage;
 
 @end
