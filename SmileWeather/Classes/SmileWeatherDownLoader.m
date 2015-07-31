@@ -20,10 +20,6 @@
 
 //download
 @property (nonatomic, strong) NSURLSession *session;
-@property (nonatomic, strong) NSXMLParser *xmlParser;
-@property (nonatomic, strong) NSMutableString *foundValue_xml;
-@property (nonatomic, strong) NSMutableDictionary *weatherRawData_xml;
-@property (nonatomic, strong) NSMutableDictionary *dictTempDataStorage_xml;
 
 //for search display
 @property (nonatomic, strong) NSMutableArray *searchResults;
@@ -119,62 +115,7 @@
     return self;
 }
 
-#pragma mark - NSXMLParserDelegate
-
--(void)parserDidStartDocument:(NSXMLParser *)parser{
-    
-}
-
--(void)parserDidEndDocument:(NSXMLParser *)parser{
-    SmileWeather_DispatchMainThread(^(){
-        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
-    });
-}
-
--(void)parser:(NSXMLParser *)parser parseErrorOccurred:(NSError *)parseError{
-    NSLog(@"%@", [parseError localizedDescription]);
-}
-
--(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict{
-    NSLog(@"start -- %@, %@, %@, %@, %@", parser, elementName, namespaceURI, qName, attributeDict);
-}
-
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName{
-    NSLog(@"end -- %@, %@, %@, %@", parser, elementName, namespaceURI, qName);
-}
-
--(void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string{
-    NSLog(@"found -- %@", string);
-}
-
 #pragma mark - download weather data
--(void)getWeatherRawDataFromXMLURL:(NSURL *)url completion:(SmileWeatherRawDataCompletion)completion{
-    if (!url | !completion) {
-        NSLog(@"invalid url or completion");
-        return;
-    }
-    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
-    NSURLSessionDataTask *dataTask = [self.session dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-        if (!error) {
-            self.xmlParser = [[NSXMLParser alloc] initWithData:data];
-            self.xmlParser.delegate = self;
-            // Initialize the mutable string that we'll use during parsing.
-            self.foundValue_xml = [[NSMutableString alloc] init];
-            [self.xmlParser parse];
-        } else {
-            if (self.weatherRawData_xml) {
-                [self.weatherRawData_xml removeAllObjects];
-            }
-        }
-        SmileWeather_DispatchMainThread(^(){
-            [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
-            completion(self.weatherRawData_xml, error);
-        });
-    }];
-    
-    [dataTask resume];
-
-}
 
 -(void)getWeatherRawDataFromURL:(NSURL *)url completion:(SmileWeatherRawDataCompletion)completion{
     if (!url | !completion) {

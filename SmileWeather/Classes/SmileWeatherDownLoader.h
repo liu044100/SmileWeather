@@ -25,13 +25,13 @@ typedef NS_ENUM(int, SmileWeatherAPI) {
 
 @interface SmileWeatherDownLoader : NSObject
 
+/*!The weather api used for your project, please set it in your info.plist in advance.*/
 @property (nonatomic, readonly) SmileWeatherAPI weatherAPI;
 
 +(SmileWeatherDownLoader*)sharedDownloader;
 
 //raw data
 -(void)getWeatherRawDataFromURL:(NSURL*)url completion:(SmileWeatherRawDataCompletion)completion;
--(void)getWeatherRawDataFromXMLURL:(NSURL *)url completion:(SmileWeatherRawDataCompletion)completion;
 
 //weather data
 /*!

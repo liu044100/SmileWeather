@@ -79,12 +79,6 @@ static NSString * const demoLocation_key = @"demoLocation";
     
 }
 
--(void)testXML{
-    [[SmileWeatherDownLoader sharedDownloader] getWeatherRawDataFromXMLURL:[NSURL URLWithString:@"http://api.openweathermap.org/data/2.5/weather?q=Tokyo&mode=xml"] completion:^(NSDictionary *rawData, NSError *error) {
-        
-    }];
-}
-
 -(void)getWeatherData{
     //get weather data from CLLocation
     CLLocation *location = [self locationInUserDefaults];
