@@ -35,8 +35,9 @@
 
 @implementation SmileWeatherDemoVC{
     NSArray *_propertyArray;
+    UIView *_hairLine_top;
+    UIView *_hairLine_bottom;
 }
-
 
 typedef NS_ENUM(int, SmileHairLinePosition) {
     top,
@@ -64,15 +65,19 @@ static NSString * const reuseIdentifier_property = @"propertyCell";
 -(void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.7];
+    if (self.nightMode) {
+        self.view.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.7];
+    } else {
+        self.view.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.7];
+    }
+    
+    SmileLineLayout *lineLayout = [[SmileLineLayout alloc] init];
+    self.collectionView.collectionViewLayout = lineLayout;
     
     [self.collectionView registerNib:[UINib nibWithNibName:NIB_name_forecast bundle:nil] forCellWithReuseIdentifier:reuseIdentifier];
     [self.collectionView_hourly registerNib:[UINib nibWithNibName:NIB_name_forecast_hourly bundle:nil] forCellWithReuseIdentifier:reuseIdentifier_hourly];
     [self.collectionView_property registerNib:[UINib nibWithNibName:NIB_name_forecast_property bundle:nil] forCellWithReuseIdentifier:reuseIdentifier_property];
     
-    SmileLineLayout *lineLayout = [[SmileLineLayout alloc] init];
-    self.collectionView.collectionViewLayout = lineLayout;
-
     //hair line
     [self addHairLine];
     
@@ -107,21 +112,21 @@ static NSString * const reuseIdentifier_property = @"propertyCell";
 -(void)addHairLine{
     UIColor *hairLineColor = [UIColor blackColor];
     CGFloat hairline_Height = 0.5;
-    UIView *hairLine_top = [[UIView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), hairline_Height)];
-    hairLine_top.backgroundColor = hairLineColor;
-    hairLine_top.translatesAutoresizingMaskIntoConstraints = NO;
-    [self.view addSubview:hairLine_top];
+    _hairLine_top = [[UIView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), hairline_Height)];
+    _hairLine_top.backgroundColor = hairLineColor;
+    _hairLine_top.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.view addSubview:_hairLine_top];
     
-    UIView *hairLine_bottom = [[UIView alloc] initWithFrame:CGRectMake(0, CGRectGetHeight(self.view.bounds)-hairline_Height, CGRectGetWidth(self.view.bounds), hairline_Height)];
-    hairLine_bottom.backgroundColor = hairLineColor;
-    hairLine_bottom.translatesAutoresizingMaskIntoConstraints = NO;
-    [self.view addSubview:hairLine_bottom];
+    _hairLine_bottom = [[UIView alloc] initWithFrame:CGRectMake(0, CGRectGetHeight(self.view.bounds)-hairline_Height, CGRectGetWidth(self.view.bounds), hairline_Height)];
+    _hairLine_bottom.backgroundColor = hairLineColor;
+    _hairLine_bottom.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.view addSubview:_hairLine_bottom];
     
-    [self addHeightConstraintToView:hairLine_top];
-    [self addHeightConstraintToView:hairLine_bottom];
+    [self addHeightConstraintToView:_hairLine_top];
+    [self addHeightConstraintToView:_hairLine_bottom];
     
-    [self addConstraintsToPosition:top forView:hairLine_top];
-    [self addConstraintsToPosition:bottom forView:hairLine_bottom];
+    [self addConstraintsToPosition:top forView:_hairLine_top];
+    [self addConstraintsToPosition:bottom forView:_hairLine_bottom];
 }
 
 -(void)addConstraintsToPosition:(SmileHairLinePosition)position forView:(UIView*)view{
@@ -165,6 +170,19 @@ static NSString * const reuseIdentifier_property = @"propertyCell";
 }
 
 #pragma mark - Setter
+-(void)setNightMode:(BOOL)nightMode{
+    if (_nightMode != nightMode) {
+        _nightMode = nightMode;
+        SmileWeather_DispatchMainThread(^(){
+            [self.collectionView reloadData];
+            [self.collectionView_hourly reloadData];
+            [self.collectionView_property reloadData];
+            [self updateUI];
+        });
+    }
+
+}
+
 -(void)setLoading:(BOOL)loading {
     _loading = loading;
     
@@ -207,6 +225,16 @@ static NSString * const reuseIdentifier_property = @"propertyCell";
 -(void)updateUI{
     if (!self.data.currentData) {
         return;
+    }
+    
+    if (self.nightMode) {
+        self.view.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.7];
+        self.localityLabel.textColor = [UIColor whiteColor];
+        self.conditionsLabel.textColor = [UIColor whiteColor];
+    } else {
+        self.view.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.7];
+        self.localityLabel.textColor = [UIColor blackColor];
+        self.conditionsLabel.textColor = [UIColor blackColor];
     }
     
     NSString *temp;
@@ -294,6 +322,16 @@ static NSString * const reuseIdentifier_property = @"propertyCell";
     UILabel *highTempLabel = (UILabel*)[cell viewWithTag:300];
     UILabel *lowTempLabel = (UILabel*)[cell viewWithTag:400];
     
+    if (self.nightMode) {
+        weekLabel.textColor = [UIColor whiteColor];
+        weatherLabel.textColor = [UIColor whiteColor];
+        highTempLabel.textColor = [UIColor whiteColor];
+    } else {
+        weekLabel.textColor = [UIColor blackColor];
+        weatherLabel.textColor = [UIColor blackColor];
+        highTempLabel.textColor = [UIColor blackColor];
+    }
+    
     // Configure the cell
     if (!self.data) {
         weekLabel.text = @"--";
@@ -339,6 +377,17 @@ static NSString * const reuseIdentifier_property = @"propertyCell";
     UILabel *weatherLabel = (UILabel*)[cell viewWithTag:200];
     UILabel *tempLabel = (UILabel*)[cell viewWithTag:300];
     UILabel *popLabel = (UILabel*)[cell viewWithTag:400];
+    
+    if (self.nightMode) {
+        timeLabel.textColor = [UIColor whiteColor];
+        weatherLabel.textColor = [UIColor whiteColor];
+        tempLabel.textColor = [UIColor whiteColor];
+    } else {
+        timeLabel.textColor = [UIColor blackColor];
+        weatherLabel.textColor = [UIColor blackColor];
+        tempLabel.textColor = [UIColor blackColor];
+    }
+
 
     popLabel.text = @"";
     
@@ -390,7 +439,15 @@ static NSString * const reuseIdentifier_property = @"propertyCell";
         iconImageView.image = [UIImage imageNamed: iconName];
         valueLabel.text = propertyDic[iconName];
     }
-
+    
+    iconImageView.image = [iconImageView.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    if (self.nightMode) {
+        valueLabel.textColor = [UIColor whiteColor];
+        [iconImageView setTintColor:[UIColor whiteColor]];
+    } else {
+        valueLabel.textColor = [UIColor blackColor];
+        [iconImageView setTintColor:[UIColor blackColor]];
+    }
 }
 
 #pragma mark <UICollectionViewDelegate>

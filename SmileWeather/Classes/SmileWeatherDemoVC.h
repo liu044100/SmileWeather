@@ -13,6 +13,8 @@
 
 @property (nonatomic, strong) SmileWeatherData *data;
 @property (nonatomic) BOOL loading;
+/*!Night mode will change background color to black color.*/
+@property (nonatomic) BOOL nightMode;
 
 //demo vc
 /*!Create a demo view for show the ability of the SmileWeather.*/

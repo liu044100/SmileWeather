@@ -13,7 +13,7 @@
 #define API_KEY_wunderground @"API_KEY_wunderground"
 #define API_KEY_openweathermap @"API_KEY_openweathermap"
 
-@interface SmileWeatherDownLoader()<NSXMLParserDelegate>
+@interface SmileWeatherDownLoader()
 @property (nonatomic, strong) CLGeocoder *geocoder;
 @property (nonatomic, copy) NSString *key;
 @property (nonatomic, readwrite) SmileWeatherAPI weatherAPI;
@@ -202,7 +202,7 @@
                         NSDictionary *dataDic = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
                         [allDataDic addEntriesFromDictionary:dataDic];
                     }else{
-                        error = error;
+                        allError = error;
                     }
                     
                     dispatch_group_leave(downloadGroup);
