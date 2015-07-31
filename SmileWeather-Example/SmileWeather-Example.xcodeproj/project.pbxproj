@@ -50,6 +50,7 @@
 		24DB06851B60E2F600341EFA /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Main.strings; sourceTree = "<group>"; };
 		24DB06861B60E55400341EFA /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
 		72E8400C0684461AF5DB54CB /* libPods-SmileWeather-Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SmileWeather-Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B71DFF501B6B914A00D3501C /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/Main.strings; sourceTree = "<group>"; };
 		C90E90C44B0D4C5F806EB839 /* Pods-Smile Weather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smile Weather.release.xcconfig"; path = "Pods/Target Support Files/Pods-Smile Weather/Pods-Smile Weather.release.xcconfig"; sourceTree = "<group>"; };
 		E3C8A2925353A23A506A3912 /* Pods-Smile Weather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smile Weather.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Smile Weather/Pods-Smile Weather.debug.xcconfig"; sourceTree = "<group>"; };
 		E4C0EAFE9E6F91A130CBCCC3 /* libPods-Smile Weather.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Smile Weather.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -325,6 +326,7 @@
 				24DB06841B60E2F100341EFA /* it */,
 				24DB06851B60E2F600341EFA /* ko */,
 				24DB06861B60E55400341EFA /* es */,
+				B71DFF501B6B914A00D3501C /* pt */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

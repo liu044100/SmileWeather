@@ -74,6 +74,12 @@ static NSString * const demoLocation_key = @"demoLocation";
     //create demo VC
     _demoVC = [SmileWeatherDemoVC DemoVCToView:self.containerView];
     
+    //get weather data
+    [self getWeatherData];
+    
+}
+
+-(void)getWeatherData{
     //get weather data from CLLocation
     CLLocation *location = [self locationInUserDefaults];
     [[SmileWeatherDownLoader sharedDownloader] getWeatherDataFromLocation:location completion:^(SmileWeatherData *data, NSError *error) {
@@ -83,7 +89,6 @@ static NSString * const demoLocation_key = @"demoLocation";
             _demoVC.data = data;
         }
     }];
-    
 }
 
 -(void)configureSearchControllerAndSearchResultsController{
