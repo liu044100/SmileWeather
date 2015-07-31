@@ -13,7 +13,9 @@
 
 typedef void(^SmileWeatherDataDownloadCompletion)(SmileWeatherData *data, NSError *error);
 typedef void(^SmileWeatherPlacemarksCompletion)(NSArray *placeMarks, NSError *error);
-typedef void(^SmileWeatherRawDataCompletion)(NSDictionary *rawData, NSError *error);
+typedef void(^SmileWeatherRawDicCompletion)(NSDictionary *rawDic, NSError *error);
+typedef void(^SmileWeatherRawDataCompletion)(NSData *rawData, NSError *error);
+
 
 typedef NS_ENUM(int, SmileWeatherAPI) {
     /*!*/
@@ -32,6 +34,8 @@ typedef NS_ENUM(int, SmileWeatherAPI) {
 
 //raw data
 -(void)getWeatherRawDataFromURL:(NSURL*)url completion:(SmileWeatherRawDataCompletion)completion;
+
+-(void)getWeatherRawDicFromURL:(NSURL*)url completion:(SmileWeatherRawDicCompletion)completion;
 
 //weather data
 /*!
