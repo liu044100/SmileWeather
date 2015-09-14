@@ -10,4 +10,6 @@
 
 @interface SmileLineLayout : UICollectionViewFlowLayout
 
+-(instancetype)initWithItemNum:(NSUInteger)itemNum;
+
 @end

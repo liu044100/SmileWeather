@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0BEEA233DD88644C94A62FEF"
-               BuildableName = "libPods-Smile Weather-SmileWeather.a"
-               BlueprintName = "Pods-Smile Weather-SmileWeather"
+               BlueprintIdentifier = "05C6A88C171C04146B9F7E69"
+               BuildableName = "libPods-SmileWeatherTodayWidget-SmileWeather.a"
+               BlueprintName = "Pods-SmileWeatherTodayWidget-SmileWeather"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

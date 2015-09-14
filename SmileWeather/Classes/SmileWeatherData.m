@@ -55,6 +55,10 @@
     if (self.weatherAPI == API_wunderground) {
         [self configureJSON_wunderground:jsonData];
     } else if (self.weatherAPI == API_openweathermap){
+        //new api in iOS9
+        //        if([[[UIDevice currentDevice] systemVersion] floatValue] >= 9.0){
+        //            self.timeZone = self.placeMark.timeZone;
+        //        }
         [self configureJSON_openweathermap:jsonData];
     }
 }
@@ -216,7 +220,6 @@
     NSDictionary *mainDataDic = [jsonData objectForKey:@"main"];
     NSDictionary *windDic = [jsonData objectForKey:@"wind"];
     
-    
     NSDateFormatter *weekdayFormatter = [self weekdayDateFormatter];
     
     //today weekday
@@ -368,7 +371,7 @@
 -(NSString*)createSunStringFromObject_openweathermap:(id)object{
     NSString *result;
     
-    //if iOS9, it will get right result
+    //if iOS9, it will get right result by using placemark's timezone, prior iOS9 will use current timezone. 
     if ([object isKindOfClass:[NSNumber class]]) {
         NSNumber *value = (NSNumber*)object;
         NSDate *sunDate = [SmileWeatherData sunSecToDate:value];
@@ -377,8 +380,6 @@
     } else {
         result = @"--:--";
     }
-    
-//    result = @"--:--";
     
     return result;
 }

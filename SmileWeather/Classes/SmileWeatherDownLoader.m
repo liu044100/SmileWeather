@@ -122,14 +122,18 @@
         NSLog(@"invalid url or completion");
         return;
     }
+#if !defined(SmileWeather_APP_EXTENSIONS)
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+#endif
     NSURLSessionDataTask *dataTask = [self.session dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         NSDictionary *dataDic;
         if (!error) {
             dataDic = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
         }
         SmileWeather_DispatchMainThread(^(){
+            #if !defined(SmileWeather_APP_EXTENSIONS)
             [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+            #endif
             completion(dataDic, error);
         });
     }];
@@ -141,11 +145,15 @@
         NSLog(@"invalid url or completion");
         return;
     }
+#if !defined(SmileWeather_APP_EXTENSIONS)
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+#endif
     
     NSURLSessionDataTask *dataTask = [self.session dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         SmileWeather_DispatchMainThread(^(){
+#if !defined(SmileWeather_APP_EXTENSIONS)
             [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+#endif
             completion(data, error);
         });
     }];
@@ -159,7 +167,9 @@
         return;
     }
     
+#if !defined(SmileWeather_APP_EXTENSIONS)
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+#endif
     
     if (self.weatherAPI == API_wunderground) {
         NSURLSessionDataTask *dataTask = [self.session dataTaskWithURL:[self urlForLocation:placeMark.location] completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
@@ -172,7 +182,9 @@
                 //                NSLog(@"raw data -> %@", dataDic);
             }
             SmileWeather_DispatchMainThread(^(){
+#if !defined(SmileWeather_APP_EXTENSIONS)
                 [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+#endif
                 completion(weatherData, error);
             });
             
@@ -221,7 +233,9 @@
             }
             
             SmileWeather_DispatchMainThread(^(){
+#if !defined(SmileWeather_APP_EXTENSIONS)
                 [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+#endif
                 completion(weatherData, allError);
             });
             
@@ -235,14 +249,18 @@
         return;
     }
     
+#if !defined(SmileWeather_APP_EXTENSIONS)
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+#endif
     
     [self.geocoder reverseGeocodeLocation:location completionHandler: ^(NSArray *placemarks, NSError *error) {
         if(placemarks.count > 0) {
             CLPlacemark *placeMark = [placemarks lastObject];
             [self getWeatherDataFromPlacemark:placeMark completion:completion];
         } else if(error) {
+#if !defined(SmileWeather_APP_EXTENSIONS)
             [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+#endif
             completion(nil, error);
         }
     }];

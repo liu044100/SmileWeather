@@ -8,35 +8,41 @@
 
 #import "SmileLineLayout.h"
 
+@interface SmileLineLayout()
+@property(nonatomic, assign) NSUInteger itemNum;
+@end
+
 @implementation SmileLineLayout
 static CGFloat kToleranceSpacing = 28.0;
 static CGFloat kItemWidth = 70.0;
 static CGFloat kMinMargin = 8.0;
 static NSInteger kItemNum = 4;
 
-
--(instancetype)init{
-    
+-(instancetype)initWithItemNum:(NSUInteger)itemNum{
     self = [super init];
-    
     if (self) {
         self.scrollDirection = UICollectionViewScrollDirectionHorizontal;
         self.itemSize = CGSizeMake(kItemWidth, 130.0);
+        if (itemNum != 0) {
+            self.itemNum = itemNum;
+        } else {
+            self.itemNum = kItemNum;
+        }
         self.sectionInset = [self updateSectionInset];
+
     }
-    
     return self;
 }
 
 -(UIEdgeInsets)updateSectionInset {
     CGFloat screenWidth = [UIScreen mainScreen].bounds.size.width;
-    self.minimumLineSpacing = (screenWidth - kItemWidth * kItemNum - 2 * kMinMargin)/(kItemNum - 1);
+    self.minimumInteritemSpacing = (screenWidth - kItemWidth * _itemNum - 2 * kMinMargin)/(_itemNum - 1);
     
-    if (self.minimumLineSpacing > kToleranceSpacing) {
-        self.minimumLineSpacing = kToleranceSpacing;
+    if (self.minimumInteritemSpacing < kToleranceSpacing) {
+        self.minimumInteritemSpacing = kToleranceSpacing;
     }
-    
-    CGFloat contentWidth = kItemWidth * kItemNum + (kItemNum - 1) * self.minimumLineSpacing;
+
+    CGFloat contentWidth = kItemWidth * _itemNum + (_itemNum - 1) * self.minimumLineSpacing;
     
     UIEdgeInsets insets;
     if (screenWidth > contentWidth) {

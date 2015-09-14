@@ -71,7 +71,12 @@ static NSString * const reuseIdentifier_property = @"propertyCell";
         self.view.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.7];
     }
     
-    SmileLineLayout *lineLayout = [[SmileLineLayout alloc] init];
+    SmileLineLayout *lineLayout;
+    if ([SmileWeatherDownLoader sharedDownloader].weatherAPI == API_openweathermap) {
+     lineLayout = [[SmileLineLayout alloc] initWithItemNum:5];
+    } else {
+     lineLayout = [[SmileLineLayout alloc] initWithItemNum:4];
+    }
     self.collectionView.collectionViewLayout = lineLayout;
     
     [self.collectionView registerNib:[UINib nibWithNibName:NIB_name_forecast bundle:nil] forCellWithReuseIdentifier:reuseIdentifier];
