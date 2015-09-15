@@ -605,7 +605,7 @@
     }
     
     else if([lowercaseCondition contains:@"fog"] || [lowercaseCondition contains:@"hazy"] ||
-            [lowercaseCondition contains:@"haze"]){
+            [lowercaseCondition contains:@"haze"]||[lowercaseCondition contains:@"mist"]){
         iconName = [NSString stringWithFormat:@"%c", ClimaconHaze];
     }
     
@@ -621,9 +621,6 @@
         iconName = [NSString stringWithFormat:@"%c", ClimaconSnow];
     }
     
-    else {
-        iconName = @"";
-    }
     return iconName;
 }
 

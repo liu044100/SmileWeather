@@ -32,7 +32,7 @@
         } else {
             self.placeLabel.text = data.placeName;
             self.tempLabel.text = data.currentData.currentTempStri_Celsius;
-            self.weatherLabel.text = data.currentData.icon;;
+            self.weatherLabel.text = data.currentData.icon;
         }
     }];
 }
