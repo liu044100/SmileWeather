@@ -118,6 +118,27 @@ If you add both of these in `Info.plist`, please add `API_NOW` to let the `Smile
 
 **Step 4.** The last step is that import `SmileWeatherDownLoader.h` to your project, and use it :)
 
+# Support Today Extension
+
+For use `SmileWeather` in Today Extension, add below line to your `Podfile`.
+
+```Ruby
+post_install do |installer|
+    # NOTE: If you are using a CocoaPods version prior to 0.38, replace `pods_project` with `project` on the below line
+    installer.project.targets.each do |target|
+        if target.name.end_with? "SmileWeather"
+            target.build_configurations.each do |build_configuration|
+                if build_configuration.build_settings['APPLICATION_EXTENSION_API_ONLY'] == 'YES'
+                    build_configuration.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] = ['$(inherited)', 'SmileWeather_APP_EXTENSIONS=1']
+                end
+            end
+        end
+    end
+end
+
+```
+
+![](https://raw.githubusercontent.com/liu044100/SmileWeather/master/SmileWeather-Example/demo_gif/demo_extension.png)
 
 
 # Contributions
