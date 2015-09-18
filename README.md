@@ -23,8 +23,7 @@ For example, you can search place by using `-(void)getPlacemarksFromString:(NSSt
         }
     }];
 ```
-
-![](https://raw.githubusercontent.com/liu044100/SmileWeather/master/SmileWeather-Example/demo_gif/search.png)
+<img src="SmileWeather-Example/demo_gif/search.png" width="400">
 
 You can get the placemark's weather data by using `-(void)getWeatherDataFromPlacemark:(CLPlacemark*)placeMark completion:(SmileWeatherDataDownloadCompletion)completion;`, the completion block return well formed weather data [SmileWeatherData](http://cocoadocs.org/docsets/SmileWeather/0.0.4/Classes/SmileWeatherData.html).
 
@@ -137,9 +136,7 @@ post_install do |installer|
 end
 
 ```
-
-![](https://raw.githubusercontent.com/liu044100/SmileWeather/master/SmileWeather-Example/demo_gif/demo_extension.png)
-
+<img src="SmileWeather-Example/demo_gif/demo_extension.png" width="400">
 
 # Contributions
 
