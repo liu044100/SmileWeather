@@ -13,7 +13,6 @@
 @end
 
 @implementation SmileLineLayout
-static CGFloat kToleranceSpacing = 28.0;
 static CGFloat kItemWidth = 70.0;
 static CGFloat kMinMargin = 8.0;
 static NSInteger kItemNum = 4;
