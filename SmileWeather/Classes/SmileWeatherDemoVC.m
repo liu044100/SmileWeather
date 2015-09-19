@@ -73,7 +73,7 @@ static NSString * const reuseIdentifier_property = @"propertyCell";
     
     SmileLineLayout *lineLayout;
     if ([SmileWeatherDownLoader sharedDownloader].weatherAPI == API_openweathermap) {
-     lineLayout = [[SmileLineLayout alloc] initWithItemNum:5];
+     lineLayout = [[SmileLineLayout alloc] initWithItemNum:6];
     } else {
      lineLayout = [[SmileLineLayout alloc] initWithItemNum:4];
     }

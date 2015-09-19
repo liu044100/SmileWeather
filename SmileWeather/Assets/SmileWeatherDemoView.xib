@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="15A282b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SmileWeatherDemoVC">
@@ -29,18 +29,21 @@
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="hyT-gy-KjF">
                             <rect key="frame" x="8" y="8" width="114" height="20"/>
+                            <animations/>
                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="f8N-Ux-7Wa">
                             <rect key="frame" x="8" y="104" width="114" height="20"/>
+                            <animations/>
                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="HZd-nV-HHD">
                             <rect key="frame" x="8" y="31" width="118" height="76"/>
+                            <animations/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="76" id="NER-pm-Itj"/>
                             </constraints>
@@ -49,6 +52,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
+                    <animations/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="hyT-gy-KjF" secondAttribute="trailing" constant="12" id="B4R-Tb-Qzc"/>
@@ -72,6 +76,7 @@
                 </view>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Oe4-tu-A06" userLabel="hourly">
                     <rect key="frame" x="0.0" y="132" width="600" height="106"/>
+                    <animations/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="106" id="fta-CU-wAU"/>
@@ -90,6 +95,7 @@
                 </collectionView>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="8aX-cH-2JD" userLabel="forecasts">
                     <rect key="frame" x="0.0" y="238" width="600" height="140"/>
+                    <animations/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="140" id="4PX-Dg-QFH"/>
@@ -107,6 +113,7 @@
                 </collectionView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="smile_openweather_logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="Hx8-TY-HUG">
                     <rect key="frame" x="555" y="380" width="40" height="40"/>
+                    <animations/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="25v-Kl-8nU"/>
                         <constraint firstAttribute="width" constant="40" id="XtQ-Pk-FED"/>
@@ -114,6 +121,7 @@
                 </imageView>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="wSh-LL-NKQ" userLabel="property">
                     <rect key="frame" x="134" y="0.0" width="466" height="132"/>
+                    <animations/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="1" id="3Ql-yA-fpV">
                         <size key="itemSize" width="100" height="26"/>
@@ -128,9 +136,11 @@
                 </collectionView>
                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="5NC-d5-Toh">
                     <rect key="frame" x="281" y="166" width="37" height="37"/>
+                    <animations/>
                 </activityIndicatorView>
                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="jHZ-VQ-IgV">
                     <rect key="frame" x="8" y="389" width="120" height="29"/>
+                    <animations/>
                     <constraints>
                         <constraint firstAttribute="width" constant="120" id="dZg-pG-8eL"/>
                     </constraints>
@@ -145,12 +155,14 @@
                 </segmentedControl>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="smile_wunder_logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="JTz-Os-oby">
                     <rect key="frame" x="479" y="386" width="113" height="24"/>
+                    <animations/>
                     <constraints>
                         <constraint firstAttribute="width" constant="113" id="Di4-0U-1tu"/>
                         <constraint firstAttribute="height" constant="24" id="Gqt-ag-5Yt"/>
                     </constraints>
                 </imageView>
             </subviews>
+            <animations/>
             <color key="backgroundColor" red="1" green="0.70008807719999999" blue="0.59647979169999998" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="Oe4-tu-A06" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="01Y-oh-Gc7"/>

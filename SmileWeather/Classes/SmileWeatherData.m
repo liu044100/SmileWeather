@@ -56,11 +56,11 @@
         [self configureJSON_wunderground:jsonData];
     } else if (self.weatherAPI == API_openweathermap){
         //new api in iOS9
-//        if([[[UIDevice currentDevice] systemVersion] floatValue] >= 9.0){
-//            self.timeZone = self.placeMark.timeZone;
-//            NSDateFormatter *ampmDateFormatter = [self twentyFourHoursDateFormatter];
-//            ampmDateFormatter.timeZone = self.timeZone;
-//        }
+        if([[[UIDevice currentDevice] systemVersion] floatValue] >= 9.0){
+            self.timeZone = self.placeMark.timeZone;
+            NSDateFormatter *ampmDateFormatter = [self twentyFourHoursDateFormatter];
+            ampmDateFormatter.timeZone = self.timeZone;
+        }
         [self configureJSON_openweathermap:jsonData];
     }
 }

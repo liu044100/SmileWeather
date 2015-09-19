@@ -7,7 +7,7 @@
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
-	<string>edu.self.$(PRODUCT_NAME:rfc1034identifier)</string>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -26,7 +26,7 @@
 	<dict>
 		<key>NSExceptionDomains</key>
 		<dict>
-			<key>wunderground.com</key>
+			<key>openweathermap.org</key>
 			<dict>
 				<key>NSIncludesSubdomains</key>
 				<true/>
@@ -35,7 +35,7 @@
 				<key>NSTemporaryExceptionMinimumTLSVersion</key>
 				<string>TLSv1.1</string>
 			</dict>
-			<key>openweathermap.org</key>
+			<key>wunderground.com</key>
 			<dict>
 				<key>NSIncludesSubdomains</key>
 				<true/>
@@ -48,10 +48,10 @@
 	</dict>
 	<key>SmileWeather</key>
 	<dict>
-		<key>API_KEY_wunderground</key>
-		<string>Enter your key in here</string>
 		<key>API_KEY_openweathermap</key>
 		<string>1111111111</string>
+		<key>API_KEY_wunderground</key>
+		<string>Enter your key in here</string>
 		<key>API_NOW</key>
 		<integer>1</integer>
 	</dict>
