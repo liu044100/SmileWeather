@@ -23,7 +23,7 @@ static inline SmileTemperature SmileTemperatureMake(CGFloat fahrenheit, CGFloat 
 }
 
 
-@interface SmileWeatherOneDayData : NSObject
+@interface SmileWeatherOneDayData : NSObject <NSCoding>
 
 //use NSTimeZone calculate
 @property (copy, nonatomic) NSString *dayOfWeek;

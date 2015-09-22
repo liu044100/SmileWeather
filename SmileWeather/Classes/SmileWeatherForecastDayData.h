@@ -8,15 +8,15 @@
 
 #import "SmileWeatherOneDayData.h"
 
-@interface SmileWeatherForecastDayData : SmileWeatherOneDayData
+@interface SmileWeatherForecastDayData : SmileWeatherOneDayData <NSCoding>
 
 @property (nonatomic) SmileTemperature highTemperature;
 @property (nonatomic) SmileTemperature lowTemperature;
 
-@property (copy, nonatomic) NSString *highTempStri_Celsius;
-@property (copy, nonatomic) NSString *highTempStri_Fahrenheit;
+@property (readonly, nonatomic) NSString *highTempStri_Celsius;
+@property (readonly, nonatomic) NSString *highTempStri_Fahrenheit;
 
-@property (copy, nonatomic) NSString *lowTempStri_Celsius;
-@property (copy, nonatomic) NSString *lowTempStri_Fahrenheit;
+@property (readonly, nonatomic) NSString *lowTempStri_Celsius;
+@property (readonly, nonatomic) NSString *lowTempStri_Fahrenheit;
 
 @end

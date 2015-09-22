@@ -8,7 +8,7 @@
 
 #import "SmileWeatherOneDayData.h"
 
-@interface SmileWeatherCurrentData : SmileWeatherOneDayData
+@interface SmileWeatherCurrentData : SmileWeatherOneDayData <NSCoding>
 
 //today weather only
 //"UV": "5",
@@ -20,8 +20,8 @@
 // "temp_f": 66.3, "temp_c": 19.1
 @property (nonatomic) SmileTemperature currentTemperature;
 
-@property (copy, nonatomic) NSString *currentTempStri_Celsius;
-@property (copy, nonatomic) NSString *currentTempStri_Fahrenheit;
+@property (readonly, nonatomic) NSString *currentTempStri_Celsius;
+@property (readonly, nonatomic) NSString *currentTempStri_Fahrenheit;
 /*
  "sunrise": {
  "hour": "7",

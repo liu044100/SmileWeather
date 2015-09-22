@@ -10,6 +10,35 @@
 
 @implementation SmileWeatherForecastDayData
 
+static NSString * const SmileCoder_forecastHighTemp = @"forecastHighTemp";
+static NSString * const SmileCoder_forecastLowTemp = @"forecastLowTemp";
+
+- (void)encodeWithCoder:(NSCoder *)encoder
+{
+    [super encodeWithCoder:encoder];
+
+    NSData *temData_high = [NSData dataWithBytes:&_highTemperature length:sizeof(SmileTemperature)];
+    [encoder encodeObject:temData_high forKey:SmileCoder_forecastHighTemp];
+
+    
+    NSData *temData_low = [NSData dataWithBytes:&_lowTemperature length:sizeof(SmileTemperature)];
+    [encoder encodeObject:temData_low forKey:SmileCoder_forecastLowTemp];
+}
+
+- (instancetype)initWithCoder:(NSCoder *)decoder
+{
+    self = [super initWithCoder:decoder];
+    if (self) {
+        NSData *temData_high = [decoder decodeObjectForKey:SmileCoder_forecastHighTemp];
+        [temData_high getBytes:&_highTemperature];
+        
+        NSData *temData_low = [decoder decodeObjectForKey:SmileCoder_forecastLowTemp];
+        [temData_low getBytes:&_lowTemperature];
+    }
+    return self;
+}
+
+
 -(NSString *)highTempStri_Celsius {
     if (self.highTemperature.initialized) {
         return [NSString stringWithFormat:@"%.0fº", self.highTemperature.celsius];
