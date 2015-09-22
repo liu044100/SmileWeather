@@ -81,7 +81,7 @@ The main class is the [SmileWeatherDownLoader](http://cocoadocs.org/docsets/Smil
 -(void)getPlacemarksFromString:(NSString*)string completion:(SmileWeatherPlacemarksCompletion)completion;
 ```
 
-In the `SmileWeatherDataDownloadCompletion` block, [SmileWeatherData](http://cocoadocs.org/docsets/SmileWeather/0.0.4/Classes/SmileWeatherData.html) is returned, it contains the current weather data, 4 days forecast data, 24 hourly forecast data, etc. 
+In the `SmileWeatherDataDownloadCompletion` block, [SmileWeatherData](http://cocoadocs.org/docsets/SmileWeather/0.0.9/Classes/SmileWeatherData.html) is returned, it contains the current weather data, 4 days forecast data, 24 hourly forecast data, etc. 
 
 ```Objective-c
 [[SmileWeatherDownLoader sharedDownloader] getWeatherDataFromPlacemark:placemark completion:^(SmileWeatherData *data, NSError *error) {
@@ -89,6 +89,13 @@ In the `SmileWeatherDataDownloadCompletion` block, [SmileWeatherData](http://coc
             NSLog(@"Current Temperature, Celsius : %@, Fahrenheit: %@", data.currentData.currentTempStri_Celsius, data.currentData.currentTempStri_Fahrenheit);
         }
     }];
+```
+
+[SmileWeatherData](http://cocoadocs.org/docsets/SmileWeather/0.0.4/Classes/SmileWeatherData.html) also conform to `NSCoding`, you can archive it as `NSData`.
+
+```Objective-c
+SmileWeatherData *data = ...
+NSData* encodedData = [NSKeyedArchiver archivedDataWithRootObject: data];
 ```
 
 #How to use it for your project?
