@@ -238,10 +238,14 @@ static NSString * const reuseIdentifier_property = @"propertyCell";
         self.view.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.7];
         self.localityLabel.textColor = [UIColor whiteColor];
         self.conditionsLabel.textColor = [UIColor whiteColor];
+        _hairLine_bottom.backgroundColor = [UIColor whiteColor];
+        _hairLine_top.backgroundColor = [UIColor whiteColor];
     } else {
         self.view.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.7];
         self.localityLabel.textColor = [UIColor blackColor];
         self.conditionsLabel.textColor = [UIColor blackColor];
+        _hairLine_bottom.backgroundColor = [UIColor blackColor];
+        _hairLine_top.backgroundColor = [UIColor blackColor];
     }
     
     NSString *temp;
