@@ -162,8 +162,10 @@ static NSString * const reuseIdentifier_property = @"propertyCell";
 }
 
 -(void)viewDidLayoutSubviews {
-    [super viewDidLayoutSubviews];   
-    CGFloat left = [(SmileLineLayout*)self.collectionView.collectionViewLayout sectionInset].left;
+    [super viewDidLayoutSubviews];
+    SmileLineLayout *lineLayout =  (SmileLineLayout*)self.collectionView.collectionViewLayout;
+    [lineLayout shouldInvalidateLayoutForBoundsChange:self.view.bounds];
+    CGFloat left = lineLayout.sectionInset.left;
     self.leftViewLeadingConstraint.constant = left;
     UICollectionViewFlowLayout*hourlyLayout = (UICollectionViewFlowLayout*)self.collectionView_hourly.collectionViewLayout;
     hourlyLayout.sectionInset = UIEdgeInsetsMake(0, left, 0, 0);

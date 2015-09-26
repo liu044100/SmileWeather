@@ -33,16 +33,13 @@ static NSInteger kItemNum = 4;
 }
 
 -(UIEdgeInsets)updateSectionInset {
-    CGFloat screenWidth = [UIScreen mainScreen].bounds.size.width;
+    CGFloat screenWidth = self.collectionView.bounds.size.width;
     self.minimumLineSpacing = (screenWidth - kItemWidth * kItemNum - 2 * kMinMargin)/(kItemNum - 1);
     CGFloat toleranceSpacing = screenWidth/12.0;
     if (self.minimumLineSpacing > toleranceSpacing) {
         self.minimumLineSpacing = toleranceSpacing;
     }
-    
-    CGFloat contentWidth = kItemWidth * _itemNum + (_itemNum
-                                                    - 1) * self.minimumLineSpacing;
-    
+    CGFloat contentWidth = kItemWidth * _itemNum + (_itemNum - 1) * self.minimumLineSpacing;
     UIEdgeInsets insets;
     if (screenWidth > contentWidth) {
         CGFloat buffer = (screenWidth - contentWidth)/2.0;
@@ -56,7 +53,6 @@ static NSInteger kItemNum = 4;
 - (BOOL)shouldInvalidateLayoutForBoundsChange:(CGRect)oldBounds
 {
     self.sectionInset = [self updateSectionInset];
-    
     return YES;
 }
 

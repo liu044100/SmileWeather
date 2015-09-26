@@ -11,5 +11,5 @@
 @interface SmileLineLayout : UICollectionViewFlowLayout
 
 -(instancetype)initWithItemNum:(NSUInteger)itemNum;
-
+-(UIEdgeInsets)updateSectionInset;
 @end
