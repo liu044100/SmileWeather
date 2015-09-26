@@ -314,7 +314,6 @@ static NSString * const SmileCoder_timeZone = @"timeZone";
         NSDateComponents *components = [[self openweathermapCalendar] components:NSCalendarUnitDay fromDate: date];
         
         if (dayFlag == 0 || dayFlag != components.day) {
-//            NSLog(@"=======%@", date);
             //this is a day
             SmileWeatherForecastDayData *forecast = [[SmileWeatherForecastDayData alloc] init];
             NSDateFormatter *weekdayFormatter = [self weekdayDateFormatter];
@@ -388,6 +387,11 @@ static NSString * const SmileCoder_timeZone = @"timeZone";
     }
     
     self.hourlyData = [hourlyData mutableCopy];
+    
+    //get just 5 days forecast
+    if (forecastData.count > 5) {
+        [forecastData removeLastObject];
+    }
     self.forecastData = [forecastData mutableCopy];
 }
 
