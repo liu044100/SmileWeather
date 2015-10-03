@@ -60,6 +60,9 @@ static NSString * const reuseIdentifier_property = @"propertyCell";
     } else {
         self.isFahrenheit = YES;
     }
+    if ([self.delegate respondsToSelector:@selector(changeTempUnitsToFahrenheit:)]) {
+        [self.delegate changeTempUnitsToFahrenheit:self.isFahrenheit];
+    }
 }
 
 -(void)viewDidLoad {

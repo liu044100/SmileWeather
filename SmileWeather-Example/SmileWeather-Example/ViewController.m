@@ -10,7 +10,7 @@
 #import "SmileWeatherDownLoader.h"
 #import "SearchTableVC.h"
 
-@interface ViewController () <UISearchResultsUpdating, UITableViewDataSource, UITableViewDelegate>
+@interface ViewController () <UISearchResultsUpdating, UITableViewDataSource, UITableViewDelegate, SmileDemoChangeTempUnitsDelegate>
 @property (weak, nonatomic) IBOutlet UIView *containerView;
 @property (nonatomic, strong) UISearchController *searchController;
 @property (nonatomic, strong) SearchTableVC *searchTableVC;
@@ -73,6 +73,7 @@ static NSString * const demoLocation_key = @"demoLocation";
     
     //create demo VC
     _demoVC = [SmileWeatherDemoVC DemoVCToView:self.containerView];
+    _demoVC.delegate = self;
     
     //get weather data
     [self getWeatherData];
@@ -164,6 +165,12 @@ static NSString * const demoLocation_key = @"demoLocation";
             self.searchResults = [NSArray new];
         }
     }];
+}
+
+#pragma mark - SmileDemoChangeTempUnitsDelegate
+
+-(void)changeTempUnitsToFahrenheit:(BOOL)isFahrenheit{
+    NSLog(@"is now change to Fahrenheit -> %d", isFahrenheit);
 }
 
 
