@@ -20,12 +20,12 @@
 @property (weak, nonatomic) IBOutlet UILabel *localityLabel;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *leftViewLeadingConstraint;
 
+@property (weak, nonatomic) IBOutlet UISegmentedControl *tempUnitsSegmentControl;
 
 
 @property (weak, nonatomic) IBOutlet UILabel *conditionsLabel;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityView;
 
-@property (nonatomic) BOOL isFahrenheit;
 @property (weak, nonatomic) IBOutlet UIImageView *logo_openweather;
 @property (weak, nonatomic) IBOutlet UIImageView *logo_wunderground;
 
@@ -56,9 +56,9 @@ static NSString * const reuseIdentifier_property = @"propertyCell";
 
 - (IBAction)convertTempUnit:(UISegmentedControl*)sender {
     if (sender.selectedSegmentIndex == 0) {
-        self.isFahrenheit = NO;
+        self.fahrenheit = NO;
     } else {
-        self.isFahrenheit = YES;
+        self.fahrenheit = YES;
     }
     if ([self.delegate respondsToSelector:@selector(changeTempUnitsToFahrenheit:)]) {
         [self.delegate changeTempUnitsToFahrenheit:self.isFahrenheit];
@@ -195,7 +195,6 @@ static NSString * const reuseIdentifier_property = @"propertyCell";
 
 -(void)setLoading:(BOOL)loading {
     _loading = loading;
-    
     SmileWeather_DispatchMainThread(^(){
         if (_loading) {
             [self.activityView startAnimating];
@@ -205,10 +204,11 @@ static NSString * const reuseIdentifier_property = @"propertyCell";
     });
 }
 
--(void)setIsFahrenheit:(BOOL)isFahrenheit{
-    if (_isFahrenheit != isFahrenheit) {
-        _isFahrenheit = isFahrenheit;
+-(void)setFahrenheit:(BOOL)isFahrenheit{
+    if (_fahrenheit != isFahrenheit) {
+        _fahrenheit = isFahrenheit;
         SmileWeather_DispatchMainThread(^(){
+            self.tempUnitsSegmentControl.selectedSegmentIndex = isFahrenheit;
             [self.collectionView reloadData];
             [self.collectionView_hourly reloadData];
             [self.collectionView_property reloadData];

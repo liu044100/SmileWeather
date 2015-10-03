@@ -18,6 +18,7 @@
 
 @property (nonatomic, strong) SmileWeatherData *data;
 @property (nonatomic) BOOL loading;
+@property (nonatomic, getter= isFahrenheit) BOOL fahrenheit;
 /*!Night mode will change background color to black color.*/
 @property (nonatomic) BOOL nightMode;
 @property (weak, nonatomic) id<SmileDemoChangeTempUnitsDelegate>delegate;

@@ -74,6 +74,7 @@ static NSString * const demoLocation_key = @"demoLocation";
     //create demo VC
     _demoVC = [SmileWeatherDemoVC DemoVCToView:self.containerView];
     _demoVC.delegate = self;
+    _demoVC.fahrenheit = YES;
     
     //get weather data
     [self getWeatherData];
