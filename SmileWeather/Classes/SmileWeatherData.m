@@ -76,6 +76,8 @@ static NSString * const SmileCoder_timeZone = @"timeZone";
     [self hourlyDateFormatter].timeZone = timeZone;
     [self weekdayDateFormatter].timeZone = timeZone;
     [self ampmDateFormatter].timeZone = timeZone;
+    [self twentyFourHoursDateFormatter].timeZone = timeZone;
+    [self openweathermapCalendar].timeZone = self.timeZone;
 }
 
 -(instancetype)initWithJSON:(NSDictionary*)jsonData inPlacemark:(CLPlacemark *)placeMark {
@@ -95,8 +97,6 @@ static NSString * const SmileCoder_timeZone = @"timeZone";
         //new api in iOS9
         if([[[UIDevice currentDevice] systemVersion] floatValue] >= 9.0){
             self.timeZone = self.placeMark.timeZone;
-            NSDateFormatter *ampmDateFormatter = [self twentyFourHoursDateFormatter];
-            ampmDateFormatter.timeZone = self.timeZone;
         }
         [self configureJSON_openweathermap:jsonData];
     }
