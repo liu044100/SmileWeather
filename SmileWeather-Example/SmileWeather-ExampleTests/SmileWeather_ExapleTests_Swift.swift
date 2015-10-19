@@ -1,0 +1,50 @@
+//
+//  SmileWeather_ExapleTests_Swift.swift
+//  SmileWeather-Example
+//
+//  Created by yuchen liu on 10/19/15.
+//  Copyright © 2015 rain. All rights reserved.
+//
+
+import XCTest
+
+class SmileWeather_ExapleTests_Swift: XCTestCase {
+    
+    let sharedDownloader = SmileWeatherDownLoader.sharedDownloader()
+    
+    override func setUp() {
+        super.setUp()
+        // Put setup code here. This method is called before the invocation of each test method in the class.
+    }
+    
+    override func tearDown() {
+        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        super.tearDown()
+    }
+
+    func locationForTest() -> CLLocation {
+        let coordinate = CLLocationCoordinate2D(latitude: 37.322998, longitude: -122.032182)
+        return CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
+    }
+    
+    func test_Downloader_init() {
+        let sharedInstance = SmileWeatherDownLoader.sharedDownloader()
+        XCTAssertNotNil(sharedInstance, "SmileWeatherDownLoader failed to instance");
+    }
+    
+    func test_Asyn_download() {
+        let completionExpectation = self.expectationWithDescription("Asyn Download")
+        sharedDownloader.getWeatherDataFromLocation(self.locationForTest()) { (data: SmileWeatherData?, error: NSError?) -> Void in
+            XCTAssertNil(error, "SmileWeatherDownLoader failed download weather info")
+            guard let theData = data else {
+                print("SmileWeatherDownLoader failed download weather data")
+                return
+            }
+            XCTAssertTrue(theData.forecastData.count > 0, "SmileWeatherDownLoader failed download forecastData")
+            XCTAssertTrue(theData.hourlyData.count > 0, "SmileWeatherDownLoader failed download hourlyData")
+            completionExpectation.fulfill()
+        }
+        self.waitForExpectationsWithTimeout(5.0, handler: nil)
+    }
+    
+}
