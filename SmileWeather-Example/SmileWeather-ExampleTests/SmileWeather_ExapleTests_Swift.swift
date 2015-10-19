@@ -36,12 +36,8 @@ class SmileWeather_ExapleTests_Swift: XCTestCase {
         let completionExpectation = self.expectationWithDescription("Asyn Download")
         sharedDownloader.getWeatherDataFromLocation(self.locationForTest()) { (data: SmileWeatherData?, error: NSError?) -> Void in
             XCTAssertNil(error, "SmileWeatherDownLoader failed download weather info")
-            guard let theData = data else {
-                print("SmileWeatherDownLoader failed download weather data")
-                return
-            }
-            XCTAssertTrue(theData.forecastData.count > 0, "SmileWeatherDownLoader failed download forecastData")
-            XCTAssertTrue(theData.hourlyData.count > 0, "SmileWeatherDownLoader failed download hourlyData")
+            XCTAssertTrue(data?.forecastData.count > 0, "SmileWeatherDownLoader failed download forecastData")
+            XCTAssertTrue(data?.hourlyData.count > 0, "SmileWeatherDownLoader failed download hourlyData")
             completionExpectation.fulfill()
         }
         self.waitForExpectationsWithTimeout(5.0, handler: nil)
