@@ -9,7 +9,21 @@
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
 
+#import "NSBundle+SmileTestAdditions.h"
+#import <SmileWeatherDownLoader.h>
+
+@interface SmileWeatherDownLoader (SmileTestExtension)
+-(NSURL*)urlForLocation:(CLLocation *)location;
+@end
+
+@interface SmileWeatherData (SmileTestExtension)
+@property (nonatomic, readwrite) SmileWeatherAPI weatherAPI;
+-(void)configureForecastDaysAndHourly_openweathermap:(NSArray*)object;
+@end
+
 @interface SmileWeather_ExampleTests : XCTestCase
+
+@property(nonatomic, strong) SmileWeatherDownLoader *sharedDownloader;
 
 @end
 
@@ -25,15 +39,57 @@
     [super tearDown];
 }
 
-- (void)testExample {
-    // This is an example of a functional test case.
-    XCTAssert(YES, @"Pass");
+-(SmileWeatherDownLoader *)sharedDownloader{
+    if (!_sharedDownloader) {
+        _sharedDownloader = [SmileWeatherDownLoader sharedDownloader];
+    }
+    return _sharedDownloader;
 }
 
-- (void)testPerformanceExample {
-    // This is an example of a performance test case.
+-(CLLocation*)locationForTest{
+    static CLLocation *location;
+    if (!location) {
+        CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(37.322998,-122.032182);
+        location = [[CLLocation alloc] initWithLatitude:coordinate.latitude longitude:coordinate.longitude];
+    }
+    return location;
+}
+
+-(void)test_Downloader_init{
+    SmileWeatherDownLoader *sharedInstance = [SmileWeatherDownLoader sharedDownloader];
+    XCTAssertNotNil(sharedInstance, @"SmileWeatherDownLoader failed to instance");
+}
+
+-(void)test_URL_getter{
+    CLLocation *location = [self locationForTest];
+    NSURL *url = [self.sharedDownloader urlForLocation:location];
+    XCTAssertNotNil(url, @"SmileWeatherDownLoader failed to get url");
+}
+
+-(void)test_Asyn_download{
+    XCTestExpectation *completionExpectation = [self expectationWithDescription:@"Asyn Download"];
+    CLLocation *location = [self locationForTest];
+    [self.sharedDownloader getWeatherDataFromLocation:location completion:^(SmileWeatherData *data, NSError *error) {
+        XCTAssertNil(error, @"SmileWeatherDownLoader failed download weather info");
+        XCTAssertTrue(data.forecastData.count > 0, @"SmileWeatherDownLoader failed download forecastData");
+        XCTAssertTrue(data.hourlyData.count > 0, @"SmileWeatherDownLoader failed download hourlyData");
+        [completionExpectation fulfill];
+    }];
+    [self waitForExpectationsWithTimeout:5.0 handler:nil];
+}
+
+-(void)test_Performance_createWeatherDataFromDictionary{
+    NSURL *sampleURL = [[NSBundle testBundle] URLForResource:@"SampleResponse" withExtension:@"json"];
+    NSDictionary *jsonDic = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfURL:sampleURL] options:0 error:nil];
+    XCTAssert(jsonDic, @"cannot serialize json data");
+    
+    SmileWeatherData *weatherData = [[SmileWeatherData alloc] init];
+    weatherData.weatherAPI = self.sharedDownloader.weatherAPI;
+    
     [self measureBlock:^{
-        // Put the code you want to measure the time of here.
+        [weatherData configureForecastDaysAndHourly_openweathermap:(NSArray*)[jsonDic objectForKey:@"list"]];
+        XCTAssertTrue(weatherData.forecastData.count > 0, @"SmileWeatherDownLoader failed download forecastData");
+        XCTAssertTrue(weatherData.hourlyData.count > 0, @"SmileWeatherDownLoader failed download hourlyData");
     }];
 }
 

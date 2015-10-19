@@ -15,6 +15,10 @@
 		24CF08F21B539EBD00B0060C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24CF08F11B539EBD00B0060C /* Images.xcassets */; };
 		24CF09011B539EBE00B0060C /* SmileWeather_ExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 24CF09001B539EBE00B0060C /* SmileWeather_ExampleTests.m */; };
 		4CFD2E9653425AC8FBEC9607 /* libPods-SmileWeatherTodayWidget.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 56F066AFA862AEAB884E3C46 /* libPods-SmileWeatherTodayWidget.a */; };
+		B188EDBC8B3474727E73157E /* libPods-SmileWeather-ExampleTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CBC0237328BF8D252DE5E026 /* libPods-SmileWeather-ExampleTests.a */; };
+		B7A7ACD21BD51488007D33D0 /* NSBundle+SmileTestAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A7ACD01BD51488007D33D0 /* NSBundle+SmileTestAdditions.m */; settings = {ASSET_TAGS = (); }; };
+		B7A7ACD31BD51488007D33D0 /* SampleResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = B7A7ACD11BD51488007D33D0 /* SampleResponse.json */; settings = {ASSET_TAGS = (); }; };
+		B7A7ACD61BD52174007D33D0 /* SmileWeather_ExapleTests_Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A7ACD51BD52174007D33D0 /* SmileWeather_ExapleTests_Swift.swift */; settings = {ASSET_TAGS = (); }; };
 		B7D5AE991BA7040B0043188E /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7D5AE981BA7040B0043188E /* NotificationCenter.framework */; };
 		B7D5AE9F1BA7040B0043188E /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7D5AE9E1BA7040B0043188E /* TodayViewController.m */; };
 		B7D5AEA11BA7040B0043188E /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7D5AEA01BA7040B0043188E /* MainInterface.storyboard */; };
@@ -80,6 +84,11 @@
 		56F066AFA862AEAB884E3C46 /* libPods-SmileWeatherTodayWidget.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SmileWeatherTodayWidget.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		72E8400C0684461AF5DB54CB /* libPods-SmileWeather-Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SmileWeather-Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B71DFF501B6B914A00D3501C /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/Main.strings; sourceTree = "<group>"; };
+		B7A7ACCF1BD51488007D33D0 /* NSBundle+SmileTestAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+SmileTestAdditions.h"; sourceTree = "<group>"; };
+		B7A7ACD01BD51488007D33D0 /* NSBundle+SmileTestAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+SmileTestAdditions.m"; sourceTree = "<group>"; };
+		B7A7ACD11BD51488007D33D0 /* SampleResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SampleResponse.json; sourceTree = "<group>"; };
+		B7A7ACD41BD52174007D33D0 /* SmileWeather-ExampleTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SmileWeather-ExampleTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		B7A7ACD51BD52174007D33D0 /* SmileWeather_ExapleTests_Swift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmileWeather_ExapleTests_Swift.swift; sourceTree = "<group>"; };
 		B7D5AE971BA7040B0043188E /* SmileWeatherTodayWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SmileWeatherTodayWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7D5AE981BA7040B0043188E /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		B7D5AE9C1BA7040B0043188E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -87,6 +96,9 @@
 		B7D5AE9E1BA7040B0043188E /* TodayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TodayViewController.m; sourceTree = "<group>"; };
 		B7D5AEA01BA7040B0043188E /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
 		C90E90C44B0D4C5F806EB839 /* Pods-Smile Weather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smile Weather.release.xcconfig"; path = "Pods/Target Support Files/Pods-Smile Weather/Pods-Smile Weather.release.xcconfig"; sourceTree = "<group>"; };
+		CBC0237328BF8D252DE5E026 /* libPods-SmileWeather-ExampleTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SmileWeather-ExampleTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7CD560CB6FB372BC66643B9 /* Pods-SmileWeather-ExampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmileWeather-ExampleTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SmileWeather-ExampleTests/Pods-SmileWeather-ExampleTests.release.xcconfig"; sourceTree = "<group>"; };
+		DBA95DB4B3DBF0EA7E6AF746 /* Pods-SmileWeather-ExampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmileWeather-ExampleTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SmileWeather-ExampleTests/Pods-SmileWeather-ExampleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E3C8A2925353A23A506A3912 /* Pods-Smile Weather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smile Weather.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Smile Weather/Pods-Smile Weather.debug.xcconfig"; sourceTree = "<group>"; };
 		E4C0EAFE9E6F91A130CBCCC3 /* libPods-Smile Weather.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Smile Weather.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -104,6 +116,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B188EDBC8B3474727E73157E /* libPods-SmileWeather-ExampleTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -170,7 +183,12 @@
 			isa = PBXGroup;
 			children = (
 				24CF09001B539EBE00B0060C /* SmileWeather_ExampleTests.m */,
+				B7A7ACD51BD52174007D33D0 /* SmileWeather_ExapleTests_Swift.swift */,
+				B7A7ACCF1BD51488007D33D0 /* NSBundle+SmileTestAdditions.h */,
+				B7A7ACD01BD51488007D33D0 /* NSBundle+SmileTestAdditions.m */,
+				B7A7ACD11BD51488007D33D0 /* SampleResponse.json */,
 				24CF08FE1B539EBE00B0060C /* Supporting Files */,
+				B7A7ACD41BD52174007D33D0 /* SmileWeather-ExampleTests-Bridging-Header.h */,
 			);
 			path = "SmileWeather-ExampleTests";
 			sourceTree = "<group>";
@@ -190,6 +208,8 @@
 				C90E90C44B0D4C5F806EB839 /* Pods-Smile Weather.release.xcconfig */,
 				1CEE07DCCF44177384AA69F6 /* Pods-SmileWeatherTodayWidget.debug.xcconfig */,
 				0027E1BAC487B19811B1F298 /* Pods-SmileWeatherTodayWidget.release.xcconfig */,
+				DBA95DB4B3DBF0EA7E6AF746 /* Pods-SmileWeather-ExampleTests.debug.xcconfig */,
+				D7CD560CB6FB372BC66643B9 /* Pods-SmileWeather-ExampleTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -201,6 +221,7 @@
 				E4C0EAFE9E6F91A130CBCCC3 /* libPods-Smile Weather.a */,
 				B7D5AE981BA7040B0043188E /* NotificationCenter.framework */,
 				56F066AFA862AEAB884E3C46 /* libPods-SmileWeatherTodayWidget.a */,
+				CBC0237328BF8D252DE5E026 /* libPods-SmileWeather-ExampleTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -252,9 +273,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 24CF09071B539EBE00B0060C /* Build configuration list for PBXNativeTarget "SmileWeather-ExampleTests" */;
 			buildPhases = (
+				87674A18AD11E422182ECBAD /* Check Pods Manifest.lock */,
 				24CF08F61B539EBE00B0060C /* Sources */,
 				24CF08F71B539EBE00B0060C /* Frameworks */,
 				24CF08F81B539EBE00B0060C /* Resources */,
+				E8EB86D60B7F8A86C838D1C0 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -291,6 +314,7 @@
 		24CF08D91B539EBD00B0060C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = rain;
 				TargetAttributes = {
@@ -340,6 +364,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7A7ACD31BD51488007D33D0 /* SampleResponse.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,6 +439,36 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SmileWeatherTodayWidget/Pods-SmileWeatherTodayWidget-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		87674A18AD11E422182ECBAD /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E8EB86D60B7F8A86C838D1C0 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SmileWeather-ExampleTests/Pods-SmileWeather-ExampleTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -432,7 +487,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7A7ACD61BD52174007D33D0 /* SmileWeather_ExapleTests_Swift.swift in Sources */,
 				24CF09011B539EBE00B0060C /* SmileWeather_ExampleTests.m in Sources */,
+				B7A7ACD21BD51488007D33D0 /* NSBundle+SmileTestAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -600,8 +657,10 @@
 		};
 		24CF09081B539EBE00B0060C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DBA95DB4B3DBF0EA7E6AF746 /* Pods-SmileWeather-ExampleTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -611,19 +670,24 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "edu.self.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SmileWeather-ExampleTests/SmileWeather-ExampleTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Smile Weather.app/Smile Weather";
 			};
 			name = Debug;
 		};
 		24CF09091B539EBE00B0060C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D7CD560CB6FB372BC66643B9 /* Pods-SmileWeather-ExampleTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "SmileWeather-ExampleTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "edu.self.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SmileWeather-ExampleTests/SmileWeather-ExampleTests-Bridging-Header.h";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Smile Weather.app/Smile Weather";
 			};
 			name = Release;

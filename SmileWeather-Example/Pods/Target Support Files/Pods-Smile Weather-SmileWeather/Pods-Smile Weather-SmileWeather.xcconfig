@@ -1,1 +1,0 @@
-PODS_SMILE_WEATHER_SMILEWEATHER_OTHER_LDFLAGS = -framework "CoreLocation" -framework "UIKit"

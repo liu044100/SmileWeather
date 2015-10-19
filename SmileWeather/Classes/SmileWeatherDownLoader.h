@@ -11,10 +11,10 @@
 #import "SmileWeatherData.h"
 #import "SmileWeatherDemoVC.h"
 
-typedef void(^SmileWeatherDataDownloadCompletion)(SmileWeatherData *data, NSError *error);
-typedef void(^SmileWeatherPlacemarksCompletion)(NSArray *placeMarks, NSError *error);
-typedef void(^SmileWeatherRawDicCompletion)(NSDictionary *rawDic, NSError *error);
-typedef void(^SmileWeatherRawDataCompletion)(NSData *rawData, NSError *error);
+typedef void(^SmileWeatherDataDownloadCompletion)(SmileWeatherData * _Nullable data,  NSError *_Nullable error);
+typedef void(^SmileWeatherPlacemarksCompletion)(NSArray<CLPlacemark*> *_Nullable placeMarks, NSError *_Nullable error);
+typedef void(^SmileWeatherRawDicCompletion)(NSDictionary *_Nullable rawDic, NSError *_Nullable error);
+typedef void(^SmileWeatherRawDataCompletion)(NSData *_Nullable rawData, NSError *_Nullable error);
 
 
 typedef NS_ENUM(int, SmileWeatherAPI) {
@@ -30,12 +30,12 @@ typedef NS_ENUM(int, SmileWeatherAPI) {
 /*!The weather api used for your project, please set it in your info.plist in advance.*/
 @property (nonatomic, readonly) SmileWeatherAPI weatherAPI;
 
-+(SmileWeatherDownLoader*)sharedDownloader;
++(nonnull SmileWeatherDownLoader*)sharedDownloader;
 
 //raw data
--(void)getWeatherRawDataFromURL:(NSURL*)url completion:(SmileWeatherRawDataCompletion)completion;
+-(void)getWeatherRawDataFromURL:(nonnull NSURL*)url completion:(nonnull SmileWeatherRawDataCompletion)completion;
 
--(void)getWeatherRawDicFromURL:(NSURL*)url completion:(SmileWeatherRawDicCompletion)completion;
+-(void)getWeatherRawDicFromURL:(nonnull NSURL*)url completion:(nonnull SmileWeatherRawDicCompletion)completion;
 
 //weather data
 /*!
@@ -45,7 +45,7 @@ typedef NS_ENUM(int, SmileWeatherAPI) {
  @param completion A block object containing the code to execute at the end of the request. This code is called whether the request is successful or unsuccessful.
  @see -getWeatherDataFromLocation:completion:
  */
--(void)getWeatherDataFromPlacemark:(CLPlacemark*)placeMark completion:(SmileWeatherDataDownloadCompletion)completion;
+-(void)getWeatherDataFromPlacemark:(nonnull CLPlacemark*)placeMark completion:(nonnull SmileWeatherDataDownloadCompletion)completion;
 
 /*!
  @brief Get weather data from CLLocation.
@@ -54,7 +54,7 @@ typedef NS_ENUM(int, SmileWeatherAPI) {
  @param completion A block object containing the code to execute at the end of the request. This code is called whether the request is successful or unsuccessful.
  @see -getWeatherDataFromPlacemark:completion:
  */
--(void)getWeatherDataFromLocation:(CLLocation*)location completion:(SmileWeatherDataDownloadCompletion)completion;
+-(void)getWeatherDataFromLocation:(nonnull CLLocation*)location completion:(nonnull SmileWeatherDataDownloadCompletion)completion;
 
 //Placemark Lists
 /*!
@@ -64,7 +64,7 @@ typedef NS_ENUM(int, SmileWeatherAPI) {
  @param completion A block object containing the code to execute at the end of the request. This code is called whether the request is successful or unsuccessful.
  @see -getPlacemarksForSearchDisplayFromString:completion:
  */
--(void)getPlacemarksFromString:(NSString*)string completion:(SmileWeatherPlacemarksCompletion)completion;
+-(void)getPlacemarksFromString:(nonnull NSString*)string completion:(nonnull SmileWeatherPlacemarksCompletion)completion;
 
 /*!
  @brief Get array of CLPlacemark from the input string for display in the scene where the results is displayed in the search bar. By use this method, the returned array will contains the corresponding results as much as possible.
@@ -73,14 +73,14 @@ typedef NS_ENUM(int, SmileWeatherAPI) {
  @param completion A block object containing the code to execute at the end of the request. This code is called whether the request is successful or unsuccessful.
  @see -getPlacemarksFromString:completion:
  */
--(void)getPlacemarksForSearchDisplayFromString:(NSString*)string completion:(SmileWeatherPlacemarksCompletion)completion;
+-(void)getPlacemarksForSearchDisplayFromString:(nonnull NSString*)string completion:(nonnull SmileWeatherPlacemarksCompletion)completion;
 
 //Utility
 /*!Optimized placename for display in the search bar scene.*/
-+(NSString*)placeNameForSearchDisplay:(CLPlacemark*)placemark;
++(nonnull NSString*)placeNameForSearchDisplay:(nonnull CLPlacemark*)placemark;
 /*!Optimized placename for display in the normal scene.*/
-+(NSString*)placeNameForDisplay:(CLPlacemark*)placemark;
++(nonnull NSString*)placeNameForDisplay:(nonnull CLPlacemark*)placemark;
 /*!Current prefered language for device.*/
--(NSString*)preferedLanguage;
+-(nonnull NSString*)preferedLanguage;
 
 @end
