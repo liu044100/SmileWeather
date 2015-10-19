@@ -43,4 +43,14 @@ class SmileWeather_ExapleTests_Swift: XCTestCase {
         self.waitForExpectationsWithTimeout(5.0, handler: nil)
     }
     
+    func test_Asyn_search() {
+        let completionExpectation = self.expectationWithDescription("Asyn Search")
+        sharedDownloader.getPlacemarksFromString("Tokyo") { (places: [CLPlacemark]?, error: NSError?) -> Void in
+            XCTAssertNil(error, "SmileWeatherDownLoader failed search places info")
+            XCTAssertTrue(places?.count > 0, "SmileWeatherDownLoader failed placeMark array")
+            completionExpectation.fulfill()
+        }
+        self.waitForExpectationsWithTimeout(5.0, handler: nil)
+    }
+    
 }
