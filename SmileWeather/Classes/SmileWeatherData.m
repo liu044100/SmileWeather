@@ -24,11 +24,49 @@
 
 @implementation SmileWeatherData
 
+static NSString * const SmileCoder_currentData = @"currentData";
+static NSString * const SmileCoder_forecastData = @"forecastData";
+static NSString * const SmileCoder_hourlyData = @"hourlyData";
+static NSString * const SmileCoder_placemark = @"placemark";
+static NSString * const SmileCoder_timeStamp = @"timeStamp";
+static NSString * const SmileCoder_timeZone = @"timeZone";
+
+- (void)encodeWithCoder:(NSCoder *)encoder
+{
+    [encoder encodeObject:self.currentData forKey:SmileCoder_currentData];
+    [encoder encodeObject:self.forecastData forKey:SmileCoder_forecastData];
+    [encoder encodeObject:self.hourlyData forKey:SmileCoder_hourlyData];
+    [encoder encodeObject:self.placeMark forKey:SmileCoder_placemark];
+    [encoder encodeObject:self.timeStamp forKey:SmileCoder_timeStamp];
+    [encoder encodeObject:self.timeZone forKey:SmileCoder_timeZone];
+}
+
+- (instancetype)initWithCoder:(NSCoder *)decoder
+{
+    self = [self init];
+    if (self) {
+        _currentData = [decoder decodeObjectForKey:SmileCoder_currentData];
+        _forecastData = [decoder decodeObjectForKey:SmileCoder_forecastData];
+        _hourlyData = [decoder decodeObjectForKey:SmileCoder_hourlyData];
+        _placeMark = [decoder decodeObjectForKey:SmileCoder_placemark];
+        _timeStamp = [decoder decodeObjectForKey:SmileCoder_timeStamp];
+        _timeZone = [decoder decodeObjectForKey:SmileCoder_timeZone];
+    }
+
+    return self;
+}
+
 #pragma mark - Description
 
 -(NSString *)description{
     NSString *all = [NSString stringWithFormat:@"%@\r\r%@\r\r%@\r%@\r", self.placeName, self.currentData, self.forecastData, self.hourlyData];
     return all;
+}
+
+#pragma mark - getter 
+
+-(NSString *)placeName{
+    return [SmileWeatherDownLoader placeNameForDisplay:self.placeMark];
 }
 
 #pragma mark - Setter
@@ -38,13 +76,14 @@
     [self hourlyDateFormatter].timeZone = timeZone;
     [self weekdayDateFormatter].timeZone = timeZone;
     [self ampmDateFormatter].timeZone = timeZone;
+    [self twentyFourHoursDateFormatter].timeZone = timeZone;
+    [self openweathermapCalendar].timeZone = self.timeZone;
 }
 
 -(instancetype)initWithJSON:(NSDictionary*)jsonData inPlacemark:(CLPlacemark *)placeMark {
     if(self = [super init]) {
         self.weatherAPI = [SmileWeatherDownLoader sharedDownloader].weatherAPI;
         self.placeMark = placeMark;
-        self.placeName = [SmileWeatherDownLoader placeNameForDisplay:self.placeMark];
         self.timeStamp = [NSDate date];
         [self configureFromJSON:jsonData];
     }
@@ -55,6 +94,10 @@
     if (self.weatherAPI == API_wunderground) {
         [self configureJSON_wunderground:jsonData];
     } else if (self.weatherAPI == API_openweathermap){
+        //new api in iOS9
+        if([[[UIDevice currentDevice] systemVersion] floatValue] >= 9.0){
+            self.timeZone = self.placeMark.timeZone;
+        }
         [self configureJSON_openweathermap:jsonData];
     }
 }
@@ -216,7 +259,6 @@
     NSDictionary *mainDataDic = [jsonData objectForKey:@"main"];
     NSDictionary *windDic = [jsonData objectForKey:@"wind"];
     
-    
     NSDateFormatter *weekdayFormatter = [self weekdayDateFormatter];
     
     //today weekday
@@ -272,7 +314,6 @@
         NSDateComponents *components = [[self openweathermapCalendar] components:NSCalendarUnitDay fromDate: date];
         
         if (dayFlag == 0 || dayFlag != components.day) {
-//            NSLog(@"=======%@", date);
             //this is a day
             SmileWeatherForecastDayData *forecast = [[SmileWeatherForecastDayData alloc] init];
             NSDateFormatter *weekdayFormatter = [self weekdayDateFormatter];
@@ -346,6 +387,11 @@
     }
     
     self.hourlyData = [hourlyData mutableCopy];
+    
+    //get just 5 days forecast
+    if (forecastData.count > 5) {
+        [forecastData removeLastObject];
+    }
     self.forecastData = [forecastData mutableCopy];
 }
 
@@ -368,7 +414,7 @@
 -(NSString*)createSunStringFromObject_openweathermap:(id)object{
     NSString *result;
     
-    //if iOS9, it will get right result
+    //if iOS9, it will get right result by using placemark's timezone, prior iOS9 will use current timezone. 
     if ([object isKindOfClass:[NSNumber class]]) {
         NSNumber *value = (NSNumber*)object;
         NSDate *sunDate = [SmileWeatherData sunSecToDate:value];
@@ -377,8 +423,6 @@
     } else {
         result = @"--:--";
     }
-    
-//    result = @"--:--";
     
     return result;
 }
@@ -604,7 +648,7 @@
     }
     
     else if([lowercaseCondition contains:@"fog"] || [lowercaseCondition contains:@"hazy"] ||
-            [lowercaseCondition contains:@"haze"]){
+            [lowercaseCondition contains:@"haze"]||[lowercaseCondition contains:@"mist"]){
         iconName = [NSString stringWithFormat:@"%c", ClimaconHaze];
     }
     
@@ -620,9 +664,6 @@
         iconName = [NSString stringWithFormat:@"%c", ClimaconSnow];
     }
     
-    else {
-        iconName = @"";
-    }
     return iconName;
 }
 

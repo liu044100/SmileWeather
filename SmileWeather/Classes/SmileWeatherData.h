@@ -15,7 +15,7 @@
 
 #define SmileWeather_DispatchMainThread(block, ...) if(block) dispatch_async(dispatch_get_main_queue(), ^{ block(__VA_ARGS__); })
 
-@interface SmileWeatherData : NSObject
+@interface SmileWeatherData : NSObject <NSCoding>
 
 /*!The weather data for current weather data.*/
 @property (nonatomic, readonly) SmileWeatherCurrentData *currentData;

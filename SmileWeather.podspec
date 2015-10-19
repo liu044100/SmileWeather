@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "SmileWeather"
-  s.version      = "0.0.4"
+  s.version      = "0.1.2"
   s.summary      = "A library for Search & Parse the weather data from Wunderground conveniently."
   s.description  = <<-DESC
                    1. Handle all complicated things about Search & Parse the weather data.
@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
                    DESC
 
   s.homepage     = "https://github.com/liu044100/SmileWeather"
-  s.screenshots  = "https://raw.githubusercontent.com/liu044100/SmileWeather/master/SmileWeather-Example/demo_gif/pro_big1.png"
+  s.screenshots  = "https://raw.githubusercontent.com/liu044100/SmileWeather/master/SmileWeather-Example/demo_gif/new_pro.jpg"
   s.license      = "MIT"
 
   s.author             = { 'Rain' => 'liu044100@gmail.com' }

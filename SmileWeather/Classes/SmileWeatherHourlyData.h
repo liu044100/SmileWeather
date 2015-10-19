@@ -8,7 +8,7 @@
 
 #import "SmileWeatherOneDayData.h"
 
-@interface SmileWeatherHourlyData : SmileWeatherOneDayData
+@interface SmileWeatherHourlyData : SmileWeatherOneDayData <NSCoding>
 
 //hourly data only
 /*
@@ -19,7 +19,7 @@
 @property (copy, nonatomic) NSString *localizedTime;
 @property (nonatomic) NSDate *date;
 @property (nonatomic) SmileTemperature currentTemperature;
-@property (copy, nonatomic) NSString *currentTempStri_Celsius;
-@property (copy, nonatomic) NSString *currentTempStri_Fahrenheit;
+@property (readonly, nonatomic) NSString *currentTempStri_Celsius;
+@property (readonly, nonatomic) NSString *currentTempStri_Fahrenheit;
 
 @end

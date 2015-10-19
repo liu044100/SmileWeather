@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="M4Y-Lb-cyx">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Climacons.ttf">
+            <string>Climacons-Font</string>
+        </mutableArray>
+    </customFonts>
+    <scenes>
+        <!--Today View Controller-->
+        <scene sceneID="cwh-vc-ff4">
+            <objects>
+                <viewController id="M4Y-Lb-cyx" customClass="TodayViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ft6-oW-KC0"/>
+                        <viewControllerLayoutGuide type="bottom" id="FKl-LY-JtV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" simulatedAppContext="notificationCenter" id="S3S-Oj-5AN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mtr-fc-x6D">
+                                <rect key="frame" x="0.0" y="8" width="320" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="QmH-ah-E6Y"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vuq-ic-ktv">
+                                <rect key="frame" x="0.0" y="34" width="34" height="54"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="KmD-ze-HCF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fwa-V3-H5M">
+                                <rect key="frame" x="50" y="28" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="UGe-4j-C8q"/>
+                                    <constraint firstAttribute="height" constant="60" id="h2i-WQ-QOr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Climacons-Font" family="Climacons-Font" pointSize="58"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="vuq-ic-ktv" firstAttribute="top" secondItem="Mtr-fc-x6D" secondAttribute="bottom" constant="5" id="2IX-E4-JbT"/>
+                            <constraint firstItem="vuq-ic-ktv" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" id="C7O-uT-HgN"/>
+                            <constraint firstItem="Fwa-V3-H5M" firstAttribute="bottom" secondItem="vuq-ic-ktv" secondAttribute="bottom" id="D5R-lv-ItV"/>
+                            <constraint firstItem="Mtr-fc-x6D" firstAttribute="top" secondItem="Ft6-oW-KC0" secondAttribute="bottom" constant="8" id="DCy-hv-Yhu"/>
+                            <constraint firstAttribute="trailing" secondItem="Mtr-fc-x6D" secondAttribute="trailing" id="GJL-sN-lMS"/>
+                            <constraint firstItem="Fwa-V3-H5M" firstAttribute="leading" secondItem="vuq-ic-ktv" secondAttribute="trailing" constant="16" id="Jmi-QP-A6I"/>
+                            <constraint firstItem="Mtr-fc-x6D" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" id="wke-ay-FEc"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="100"/>
+                    <connections>
+                        <outlet property="placeLabel" destination="Mtr-fc-x6D" id="In8-ZY-kSz"/>
+                        <outlet property="tempLabel" destination="vuq-ic-ktv" id="i2w-dH-tmN"/>
+                        <outlet property="weatherLabel" destination="Fwa-V3-H5M" id="zoP-gV-yOH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="516" y="285"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

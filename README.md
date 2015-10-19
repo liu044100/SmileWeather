@@ -7,7 +7,7 @@
 
 A library for Search & Parse the weather data from [Wunderground](http://www.wunderground.com) & [Openweathermap](http://openweathermap.org) conveniently.
 
-![](https://raw.githubusercontent.com/liu044100/SmileWeather/master/SmileWeather-Example/demo_gif/pro_big1.png)
+<img src="SmileWeather-Example/demo_gif/new_pro.jpg" width="900">
 
 #What can it do for you?
 
@@ -23,10 +23,9 @@ For example, you can search place by using `-(void)getPlacemarksFromString:(NSSt
         }
     }];
 ```
+<img src="SmileWeather-Example/demo_gif/search.png" width="400">
 
-![](https://raw.githubusercontent.com/liu044100/SmileWeather/master/SmileWeather-Example/demo_gif/search.png)
-
-You can get the placemark's weather data by using `-(void)getWeatherDataFromPlacemark:(CLPlacemark*)placeMark completion:(SmileWeatherDataDownloadCompletion)completion;`, the completion block return well formed weather data [SmileWeatherData](http://cocoadocs.org/docsets/SmileWeather/0.0.1/Classes/SmileWeatherData.html).
+You can get the placemark's weather data by using `-(void)getWeatherDataFromPlacemark:(CLPlacemark*)placeMark completion:(SmileWeatherDataDownloadCompletion)completion;`, the completion block return well formed weather data [SmileWeatherData](http://cocoadocs.org/docsets/SmileWeather/0.0.4/Classes/SmileWeatherData.html).
 
 ```Objective-c
 [[SmileWeatherDownLoader sharedDownloader] getWeatherDataFromPlacemark:placemark completion:^(SmileWeatherData *data, NSError *error) {
@@ -39,7 +38,7 @@ You can get the placemark's weather data by using `-(void)getWeatherDataFromPlac
 
 ##### 2. Need not any weather icon, SmileWeather handle it for you. 
 
-By using [climacons font](http://adamwhitcroft.com/climacons/), the [SmileWeatherData](http://cocoadocs.org/docsets/SmileWeather/0.0.1/Classes/SmileWeatherData.html) contains the corresponding character that is used for weather icon.
+By using [climacons font](http://adamwhitcroft.com/climacons/), the [SmileWeatherData](http://cocoadocs.org/docsets/SmileWeather/0.0.4/Classes/SmileWeatherData.html) contains the corresponding character that is used for weather icon.
 
 ```Objective-c
 SmileWeatherData *data = ...;
@@ -69,7 +68,7 @@ SmileWeatherDemoVC *demoVC = [SmileWeatherDemoVC DemoVCToView:self.containerView
 
 #Theoretical Introduction
 
-The main class is the [SmileWeatherDownLoader](http://cocoadocs.org/docsets/SmileWeather/0.0.1/Classes/SmileWeatherDownLoader.html). It handle downloading weather data from the [Wunderground](http://www.wunderground.com) server. It has three main method:
+The main class is the [SmileWeatherDownLoader](http://cocoadocs.org/docsets/SmileWeather/0.0.4/Classes/SmileWeatherDownLoader.html). It handle downloading weather data from the [Wunderground](http://www.wunderground.com) server. It has three main method:
 
 ```Objective-c
 /*!Get weather data from CLPlacemark.*/
@@ -82,7 +81,7 @@ The main class is the [SmileWeatherDownLoader](http://cocoadocs.org/docsets/Smil
 -(void)getPlacemarksFromString:(NSString*)string completion:(SmileWeatherPlacemarksCompletion)completion;
 ```
 
-In the `SmileWeatherDataDownloadCompletion` block, [SmileWeatherData](http://cocoadocs.org/docsets/SmileWeather/0.0.1/Classes/SmileWeatherData.html) is returned, it contains the current weather data, 4 days forecast data, 24 hourly forecast data, etc. 
+In the `SmileWeatherDataDownloadCompletion` block, [SmileWeatherData](http://cocoadocs.org/docsets/SmileWeather/0.0.9/Classes/SmileWeatherData.html) is returned, it contains the current weather data, 4 days forecast data, 24 hourly forecast data, etc. 
 
 ```Objective-c
 [[SmileWeatherDownLoader sharedDownloader] getWeatherDataFromPlacemark:placemark completion:^(SmileWeatherData *data, NSError *error) {
@@ -90,6 +89,13 @@ In the `SmileWeatherDataDownloadCompletion` block, [SmileWeatherData](http://coc
             NSLog(@"Current Temperature, Celsius : %@, Fahrenheit: %@", data.currentData.currentTempStri_Celsius, data.currentData.currentTempStri_Fahrenheit);
         }
     }];
+```
+
+[SmileWeatherData](http://cocoadocs.org/docsets/SmileWeather/0.0.4/Classes/SmileWeatherData.html) also conform to `NSCoding`, you can archive it as `NSData`.
+
+```Objective-c
+SmileWeatherData *data = ...
+NSData* encodedData = [NSKeyedArchiver archivedDataWithRootObject: data];
 ```
 
 #How to use it for your project?
@@ -118,7 +124,26 @@ If you add both of these in `Info.plist`, please add `API_NOW` to let the `Smile
 
 **Step 4.** The last step is that import `SmileWeatherDownLoader.h` to your project, and use it :)
 
+# Support Today Extension
 
+For use `SmileWeather` in Today Extension, add below line to your `Podfile`.
+
+```Ruby
+post_install do |installer|
+    # NOTE: If you are using a CocoaPods version prior to 0.38, replace `pods_project` with `project` on the below line
+    installer.project.targets.each do |target|
+        if target.name.end_with? "SmileWeather"
+            target.build_configurations.each do |build_configuration|
+                if build_configuration.build_settings['APPLICATION_EXTENSION_API_ONLY'] == 'YES'
+                    build_configuration.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] = ['$(inherited)', 'SmileWeather_APP_EXTENSIONS=1']
+                end
+            end
+        end
+    end
+end
+
+```
+<img src="SmileWeather-Example/demo_gif/demo_extension.png" width="400">
 
 # Contributions
 

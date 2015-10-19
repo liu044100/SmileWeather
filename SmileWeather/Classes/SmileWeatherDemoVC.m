@@ -20,12 +20,12 @@
 @property (weak, nonatomic) IBOutlet UILabel *localityLabel;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *leftViewLeadingConstraint;
 
+@property (weak, nonatomic) IBOutlet UISegmentedControl *tempUnitsSegmentControl;
 
 
 @property (weak, nonatomic) IBOutlet UILabel *conditionsLabel;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityView;
 
-@property (nonatomic) BOOL isFahrenheit;
 @property (weak, nonatomic) IBOutlet UIImageView *logo_openweather;
 @property (weak, nonatomic) IBOutlet UIImageView *logo_wunderground;
 
@@ -56,9 +56,12 @@ static NSString * const reuseIdentifier_property = @"propertyCell";
 
 - (IBAction)convertTempUnit:(UISegmentedControl*)sender {
     if (sender.selectedSegmentIndex == 0) {
-        self.isFahrenheit = NO;
+        self.fahrenheit = NO;
     } else {
-        self.isFahrenheit = YES;
+        self.fahrenheit = YES;
+    }
+    if ([self.delegate respondsToSelector:@selector(changeTempUnitsToFahrenheit:)]) {
+        [self.delegate changeTempUnitsToFahrenheit:self.isFahrenheit];
     }
 }
 
@@ -71,7 +74,12 @@ static NSString * const reuseIdentifier_property = @"propertyCell";
         self.view.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.7];
     }
     
-    SmileLineLayout *lineLayout = [[SmileLineLayout alloc] init];
+    SmileLineLayout *lineLayout;
+    if ([SmileWeatherDownLoader sharedDownloader].weatherAPI == API_openweathermap) {
+     lineLayout = [[SmileLineLayout alloc] initWithItemNum:5];
+    } else {
+     lineLayout = [[SmileLineLayout alloc] initWithItemNum:4];
+    }
     self.collectionView.collectionViewLayout = lineLayout;
     
     [self.collectionView registerNib:[UINib nibWithNibName:NIB_name_forecast bundle:nil] forCellWithReuseIdentifier:reuseIdentifier];
@@ -157,8 +165,10 @@ static NSString * const reuseIdentifier_property = @"propertyCell";
 }
 
 -(void)viewDidLayoutSubviews {
-    [super viewDidLayoutSubviews];   
-    CGFloat left = [(SmileLineLayout*)self.collectionView.collectionViewLayout sectionInset].left;
+    [super viewDidLayoutSubviews];
+    SmileLineLayout *lineLayout =  (SmileLineLayout*)self.collectionView.collectionViewLayout;
+    [lineLayout shouldInvalidateLayoutForBoundsChange:self.view.bounds];
+    CGFloat left = lineLayout.sectionInset.left;
     self.leftViewLeadingConstraint.constant = left;
     UICollectionViewFlowLayout*hourlyLayout = (UICollectionViewFlowLayout*)self.collectionView_hourly.collectionViewLayout;
     hourlyLayout.sectionInset = UIEdgeInsetsMake(0, left, 0, 0);
@@ -185,7 +195,6 @@ static NSString * const reuseIdentifier_property = @"propertyCell";
 
 -(void)setLoading:(BOOL)loading {
     _loading = loading;
-    
     SmileWeather_DispatchMainThread(^(){
         if (_loading) {
             [self.activityView startAnimating];
@@ -195,10 +204,11 @@ static NSString * const reuseIdentifier_property = @"propertyCell";
     });
 }
 
--(void)setIsFahrenheit:(BOOL)isFahrenheit{
-    if (_isFahrenheit != isFahrenheit) {
-        _isFahrenheit = isFahrenheit;
+-(void)setFahrenheit:(BOOL)isFahrenheit{
+    if (_fahrenheit != isFahrenheit) {
+        _fahrenheit = isFahrenheit;
         SmileWeather_DispatchMainThread(^(){
+            self.tempUnitsSegmentControl.selectedSegmentIndex = isFahrenheit;
             [self.collectionView reloadData];
             [self.collectionView_hourly reloadData];
             [self.collectionView_property reloadData];
@@ -231,10 +241,14 @@ static NSString * const reuseIdentifier_property = @"propertyCell";
         self.view.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.7];
         self.localityLabel.textColor = [UIColor whiteColor];
         self.conditionsLabel.textColor = [UIColor whiteColor];
+        _hairLine_bottom.backgroundColor = [UIColor whiteColor];
+        _hairLine_top.backgroundColor = [UIColor whiteColor];
     } else {
         self.view.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.7];
         self.localityLabel.textColor = [UIColor blackColor];
         self.conditionsLabel.textColor = [UIColor blackColor];
+        _hairLine_bottom.backgroundColor = [UIColor blackColor];
+        _hairLine_top.backgroundColor = [UIColor blackColor];
     }
     
     NSString *temp;

@@ -9,13 +9,19 @@
 #import <UIKit/UIKit.h>
 #import "SmileWeatherData.h"
 
+@protocol SmileDemoChangeTempUnitsDelegate <NSObject>
+@optional
+-(void)changeTempUnitsToFahrenheit:(BOOL)isFahrenheit;
+@end
+
 @interface SmileWeatherDemoVC : UIViewController
 
 @property (nonatomic, strong) SmileWeatherData *data;
 @property (nonatomic) BOOL loading;
+@property (nonatomic, getter= isFahrenheit) BOOL fahrenheit;
 /*!Night mode will change background color to black color.*/
 @property (nonatomic) BOOL nightMode;
-
+@property (weak, nonatomic) id<SmileDemoChangeTempUnitsDelegate>delegate;
 //demo vc
 /*!Create a demo view for show the ability of the SmileWeather.*/
 +(SmileWeatherDemoVC*)DemoVCToView:(UIView*)parentView;
