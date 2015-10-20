@@ -56,7 +56,7 @@
 	<key>SmileWeather</key>
 	<dict>
 		<key>API_KEY_openweathermap</key>
-		<string>1111111111</string>
+		<string>4f6d982f5f483c9bdf2ef9cc0b7b40cf</string>
 		<key>API_KEY_wunderground</key>
 		<string>Enter your key in here</string>
 		<key>API_NOW</key>
