@@ -69,10 +69,20 @@
 -(void)test_Asyn_download{
     XCTestExpectation *completionExpectation = [self expectationWithDescription:@"Asyn Download"];
     CLLocation *location = [self locationForTest];
-    [self.sharedDownloader getWeatherDataFromLocation:location completion:^(SmileWeatherData *data, NSError *error) {
+    [self.sharedDownloader getWeatherDataFromLocation:location completion:^(SmileWeatherData * _Nullable data, NSError * _Nullable error) {
         XCTAssertNil(error, @"SmileWeatherDownLoader failed download weather info");
         XCTAssertTrue(data.forecastData.count > 0, @"SmileWeatherDownLoader failed download forecastData");
         XCTAssertTrue(data.hourlyData.count > 0, @"SmileWeatherDownLoader failed download hourlyData");
+        [completionExpectation fulfill];
+    }];
+    [self waitForExpectationsWithTimeout:5.0 handler:nil];
+}
+
+-(void)test_Asyn_search{
+    XCTestExpectation *completionExpectation = [self expectationWithDescription:@"Asyn Search"];
+    [self.sharedDownloader getPlacemarksFromString:@"Tokyo" completion:^(NSArray<CLPlacemark *> * _Nullable placeMarks, NSError * _Nullable error) {
+        XCTAssertNil(error, @"SmileWeatherDownLoader failed search places info");
+        XCTAssertTrue(placeMarks.count > 0, @"SmileWeatherDownLoader failed placeMark array");
         [completionExpectation fulfill];
     }];
     [self waitForExpectationsWithTimeout:5.0 handler:nil];
@@ -91,6 +101,12 @@
         XCTAssertTrue(weatherData.forecastData.count > 0, @"SmileWeatherDownLoader failed download forecastData");
         XCTAssertTrue(weatherData.hourlyData.count > 0, @"SmileWeatherDownLoader failed download hourlyData");
     }];
+}
+
+-(void)test_DemoView{
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
+    SmileWeatherDemoVC *demoVC = [SmileWeatherDemoVC DemoVCToView:view];
+    XCTAssertNotNil(demoVC, @"Cannot create SmileWeatherDemoVC");
 }
 
 @end

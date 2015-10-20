@@ -16,7 +16,7 @@
 
 @interface SmileWeatherDemoVC : UIViewController
 
-@property (nonatomic, strong) SmileWeatherData *data;
+@property (nonatomic, strong, nullable) SmileWeatherData *data;
 @property (nonatomic) BOOL loading;
 @property (nonatomic, getter= isFahrenheit) BOOL fahrenheit;
 /*!Night mode will change background color to black color.*/
@@ -24,6 +24,6 @@
 @property (weak, nonatomic) id<SmileDemoChangeTempUnitsDelegate>delegate;
 //demo vc
 /*!Create a demo view for show the ability of the SmileWeather.*/
-+(SmileWeatherDemoVC*)DemoVCToView:(UIView*)parentView;
++(nonnull SmileWeatherDemoVC*)DemoVCToView:(nonnull UIView*)parentView;
 
 @end
