@@ -47,8 +47,7 @@ UILabel *iconLabel = ...;
 //current weather condition
 iconLabel.text = data.currentData.icon;
 ```
-
-![](https://raw.githubusercontent.com/liu044100/SmileWeather/master/SmileWeather-Example/demo_gif/climacons.png)
+<img src="SmileWeather-Example/demo_gif/climacons.png" width="500">
 
 ##### 3. Fully localized the related information for almost all the countries in the world.
 
@@ -63,8 +62,7 @@ Please check the [example project](https://github.com/liu044100/SmileWeather/tre
 ```Objective-c
 SmileWeatherDemoVC *demoVC = [SmileWeatherDemoVC DemoVCToView:self.containerView];
 ```
-
-![](https://raw.githubusercontent.com/liu044100/SmileWeather/master/SmileWeather-Example/demo_gif/demoview.png)
+<img src="SmileWeather-Example/demo_gif/demoview.png" width="500">
 
 #Theoretical Introduction
 
@@ -113,7 +111,7 @@ Or you can drag the `SmileWeather` fold to your project.
 
 **Step 3.** Follow as the below image, add the api key and [climacons font](http://adamwhitcroft.com/climacons/) to your project's `Info.plist`. 
 
-![](https://raw.githubusercontent.com/liu044100/SmileWeather/master/SmileWeather-Example/demo_gif/step1.png)
+<img src="SmileWeather-Example/demo_gif/step1.png" width="600">
 
 If you use [Wunderground](http://www.wunderground.com/weather/api) api, please add this key: `API_KEY_wunderground` .
 
