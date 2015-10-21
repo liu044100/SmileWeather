@@ -7,7 +7,7 @@
 
 A library for Search & Parse the weather data from [Wunderground](http://www.wunderground.com) & [Openweathermap](http://openweathermap.org) conveniently.
 
-<img src="SmileWeather-Example/demo_gif/new_pro.jpg" width="900">
+<img src="SmileWeather-Example/demo_gif/new_pro.jpg" width="700">
 
 #What can it do for you?
 
