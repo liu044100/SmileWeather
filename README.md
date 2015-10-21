@@ -25,7 +25,7 @@ For example, you can search place by using `-(void)getPlacemarksFromString:(NSSt
 ```
 <img src="SmileWeather-Example/demo_gif/search.png" width="400">
 
-You can get the placemark's weather data by using `-(void)getWeatherDataFromPlacemark:(CLPlacemark*)placeMark completion:(SmileWeatherDataDownloadCompletion)completion;`, the completion block return well formed weather data [SmileWeatherData](http://cocoadocs.org/docsets/SmileWeather/0.0.4/Classes/SmileWeatherData.html).
+You can get the placemark's weather data by using `-(void)getWeatherDataFromPlacemark:(CLPlacemark*)placeMark completion:(SmileWeatherDataDownloadCompletion)completion;`, the completion block return well formed weather data [SmileWeatherData](http://cocoadocs.org/docsets/SmileWeather/0.1.4/Classes/SmileWeatherData.html).
 
 ```Objective-c
 [[SmileWeatherDownLoader sharedDownloader] getWeatherDataFromPlacemark:placemark completion:^(SmileWeatherData *data, NSError *error) {
@@ -38,7 +38,7 @@ You can get the placemark's weather data by using `-(void)getWeatherDataFromPlac
 
 ##### 2. Need not any weather icon, SmileWeather handle it for you. 
 
-By using [climacons font](http://adamwhitcroft.com/climacons/), the [SmileWeatherData](http://cocoadocs.org/docsets/SmileWeather/0.0.4/Classes/SmileWeatherData.html) contains the corresponding character that is used for weather icon.
+By using [climacons font](http://adamwhitcroft.com/climacons/), the [SmileWeatherData](http://cocoadocs.org/docsets/SmileWeather/0.1.4/Classes/SmileWeatherData.html) contains the corresponding character that is used for weather icon.
 
 ```Objective-c
 SmileWeatherData *data = ...;
@@ -68,7 +68,7 @@ SmileWeatherDemoVC *demoVC = [SmileWeatherDemoVC DemoVCToView:self.containerView
 
 #Theoretical Introduction
 
-The main class is the [SmileWeatherDownLoader](http://cocoadocs.org/docsets/SmileWeather/0.0.4/Classes/SmileWeatherDownLoader.html). It handle downloading weather data from the [Wunderground](http://www.wunderground.com) server. It has three main method:
+The main class is the [SmileWeatherDownLoader](http://cocoadocs.org/docsets/SmileWeather/0.1.4/Classes/SmileWeatherDownLoader.html). It handle downloading weather data from the [Wunderground](http://www.wunderground.com) server. It has three main method:
 
 ```Objective-c
 /*!Get weather data from CLPlacemark.*/
@@ -81,7 +81,7 @@ The main class is the [SmileWeatherDownLoader](http://cocoadocs.org/docsets/Smil
 -(void)getPlacemarksFromString:(NSString*)string completion:(SmileWeatherPlacemarksCompletion)completion;
 ```
 
-In the `SmileWeatherDataDownloadCompletion` block, [SmileWeatherData](http://cocoadocs.org/docsets/SmileWeather/0.0.9/Classes/SmileWeatherData.html) is returned, it contains the current weather data, 4 days forecast data, 24 hourly forecast data, etc. 
+In the `SmileWeatherDataDownloadCompletion` block, [SmileWeatherData](http://cocoadocs.org/docsets/SmileWeather/0.1.4/Classes/SmileWeatherData.html) is returned, it contains the current weather data, 4 days forecast data, 24 hourly forecast data, etc. 
 
 ```Objective-c
 [[SmileWeatherDownLoader sharedDownloader] getWeatherDataFromPlacemark:placemark completion:^(SmileWeatherData *data, NSError *error) {
@@ -91,7 +91,7 @@ In the `SmileWeatherDataDownloadCompletion` block, [SmileWeatherData](http://coc
     }];
 ```
 
-[SmileWeatherData](http://cocoadocs.org/docsets/SmileWeather/0.0.4/Classes/SmileWeatherData.html) also conform to `NSCoding`, you can archive it as `NSData`.
+[SmileWeatherData](http://cocoadocs.org/docsets/SmileWeather/0.1.4/Classes/SmileWeatherData.html) also conform to `NSCoding`, you can archive it as `NSData`.
 
 ```Objective-c
 SmileWeatherData *data = ...
