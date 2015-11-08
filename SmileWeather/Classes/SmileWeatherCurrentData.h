@@ -14,7 +14,11 @@
 //"UV": "5",
 @property (copy, nonatomic) NSString *UV;
 //"pressure_mb": "1013",
-@property (copy, nonatomic) NSString *pressure;
+@property (copy, nonatomic) NSString *pressureRaw;
+/*!pressure unit: hPa*/
+@property (readonly, nonatomic) NSString *pressure;
+/*!pressure unit: inch of mercury*/
+@property (readonly, nonatomic) NSString *pressure_mercuryInch;
 //"pressure_trend": "+",
 @property (copy, nonatomic) NSString *pressureTrend;
 // "temp_f": 66.3, "temp_c": 19.1

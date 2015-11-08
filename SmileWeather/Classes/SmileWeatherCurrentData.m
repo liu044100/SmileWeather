@@ -63,6 +63,21 @@ static NSString * const SmileCoder_sunset = @"sunset";
     }
 }
 
+#define kIncheOfMercury_To_hPa_Ratio 0.0295
+#define kUnit_hPa @"hPa"
+#define kUnit_Hg  @"Hg"
+
+-(void)setPressureRaw:(NSString *)pressureRaw{
+    _pressureRaw = pressureRaw;
+    if (pressureRaw.length > 0) {
+        _pressure = [NSString stringWithFormat:@"%.0f %@", pressureRaw.floatValue, kUnit_hPa];
+        _pressure_mercuryInch = [NSString stringWithFormat:@"%.0f %@", pressureRaw.floatValue * kIncheOfMercury_To_hPa_Ratio, kUnit_Hg];;
+    } else {
+        _pressure = [NSString stringWithFormat:@"-- %@", kUnit_hPa];
+        _pressure_mercuryInch = [NSString stringWithFormat:@"-- %@", kUnit_Hg];
+    }
+}
+
 -(NSString *)description{
     
     NSString *all = [NSString stringWithFormat:@"~CurrentData~\rWeekday: %@,\rCondition: %@,\rHumidity: %@,\rPrecip: %@,\rWind: %@,\rWind Dir: %@,\rCurrent Temperature: %@\rPressure: %@,\rPressure Trend: %@\rUV: %@\rSunrise: %@\rSunset:%@\r", self.dayOfWeek, self.condition, self.humidity, self.precipitation, self.windSpeed, self.windDirection, self.currentTempStri_Celsius, self.pressure, self.pressureTrend, self.UV, self.sunRise, self.sunSet];

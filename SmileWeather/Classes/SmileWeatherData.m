@@ -241,7 +241,7 @@ static NSString * const SmileCoder_timeZone = @"timeZone";
     
     self.currentData.UV = [self createUVStringFromObject:[currentObservation valueForKey:@"UV"]];
     
-    self.currentData.pressure = [self createPressureStringFromObject:[currentObservation valueForKey:@"pressure_mb"]];
+    self.currentData.pressureRaw = [self createPressureStringFromObject:[currentObservation valueForKey:@"pressure_mb"]];
     self.currentData.sunRise = [self createSunStringFromObject:[[jsonData valueForKey:@"moon_phase"]  valueForKey:@"sunrise"]];
     self.currentData.sunSet = [self createSunStringFromObject:[[jsonData valueForKey:@"moon_phase"]  valueForKey:@"sunset"]];
     
@@ -285,7 +285,7 @@ static NSString * const SmileCoder_timeZone = @"timeZone";
     self.currentData.windSpeed = [self createWindSpeedStringFromObject:[windDic valueForKey:@"speed"]];
     
     //today only property
-    self.currentData.pressure = [self createPressureStringFromObject:[mainDataDic valueForKey:@"pressure"]];
+    self.currentData.pressureRaw = [self createPressureStringFromObject:[mainDataDic valueForKey:@"pressure"]];
     
     //precipitation
     self.currentData.precipitationRaw = [self createAmountOfRainFromObject_openweathermap:[jsonData objectForKey:@"rain"]];
@@ -557,22 +557,20 @@ static NSString * const SmileCoder_timeZone = @"timeZone";
 
 -(NSString*)createPressureStringFromObject:(id)object {
     NSString *result;
-    
     if ([object isKindOfClass:[NSString class]]) {
         NSString *value = (NSString*)object;
         if (value.length > 0) {
-            result = [NSString stringWithFormat:@"%@ hPa", value];
+            result = [NSString stringWithFormat:@"%@", value];
         } else {
-            result = @"-- hPa";
+            result = @"";
         }
     } else if ([object isKindOfClass:[NSNumber class]]){
         NSNumber *value = (NSNumber*)object;
-        result = [NSString stringWithFormat:@"%.0f hPa", value.floatValue];
+        result = [NSString stringWithFormat:@"%.0f", value.floatValue];
     }
     else {
-        result = @"-- hPa";
+        result = @"";
     }
-    
     return result;
 }
 
