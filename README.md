@@ -105,7 +105,7 @@ it, simply add the following line to your Podfile:
 pod 'SmileWeather'
 
 ```
-Or you can drag the `SmileWeather` fold to your project.
+Or you can drag the `SmileWeather` folder to your project.
 
 **Step 2.** Sign up [Wunderground](http://www.wunderground.com/weather/api) or [Openweathermap](http://openweathermap.org/api) to get the api key.
 
