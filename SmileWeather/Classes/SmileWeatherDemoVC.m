@@ -81,10 +81,10 @@ static NSString * const reuseIdentifier_property = @"propertyCell";
      lineLayout = [[SmileLineLayout alloc] initWithItemNum:4];
     }
     self.collectionView.collectionViewLayout = lineLayout;
-    
-    [self.collectionView registerNib:[UINib nibWithNibName:NIB_name_forecast bundle:nil] forCellWithReuseIdentifier:reuseIdentifier];
-    [self.collectionView_hourly registerNib:[UINib nibWithNibName:NIB_name_forecast_hourly bundle:nil] forCellWithReuseIdentifier:reuseIdentifier_hourly];
-    [self.collectionView_property registerNib:[UINib nibWithNibName:NIB_name_forecast_property bundle:nil] forCellWithReuseIdentifier:reuseIdentifier_property];
+    NSBundle *bundle = [NSBundle bundleForClass: self.class];
+    [self.collectionView registerNib:[UINib nibWithNibName:NIB_name_forecast bundle:bundle] forCellWithReuseIdentifier:reuseIdentifier];
+    [self.collectionView_hourly registerNib:[UINib nibWithNibName:NIB_name_forecast_hourly bundle:bundle] forCellWithReuseIdentifier:reuseIdentifier_hourly];
+    [self.collectionView_property registerNib:[UINib nibWithNibName:NIB_name_forecast_property bundle:bundle] forCellWithReuseIdentifier:reuseIdentifier_property];
     
     //hair line
     [self addHairLine];
@@ -470,7 +470,8 @@ static NSString * const reuseIdentifier_property = @"propertyCell";
 #pragma mark - DemoVC
 
 +(SmileWeatherDemoVC*)createDemoVC {
-    SmileWeatherDemoVC *demoVC = [[SmileWeatherDemoVC alloc] initWithNibName:kStoryBoardName bundle:nil];
+    NSBundle *bundle = [NSBundle bundleForClass: self.class];
+    SmileWeatherDemoVC *demoVC = [[SmileWeatherDemoVC alloc] initWithNibName:kStoryBoardName bundle:bundle];
     return demoVC;
 }
 

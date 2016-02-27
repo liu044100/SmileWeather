@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "SmileWeather"
-  s.version      = "0.1.5"
+  s.version      = "0.1.6"
   s.summary      = "A library for Search & Parse the weather data from Wunderground conveniently."
   s.description  = <<-DESC
                    1. Handle all complicated things about Search & Parse the weather data.
@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
   s.author             = { 'Rain' => 'liu044100@gmail.com' }
   s.social_media_url   = "https://dribbble.com/yuchenliu"
 
-  
+
   s.platform     = :ios, '7.0'
   s.requires_arc = true
   s.source       = { :git => "https://github.com/liu044100/SmileWeather.git", :tag => s.version.to_s}

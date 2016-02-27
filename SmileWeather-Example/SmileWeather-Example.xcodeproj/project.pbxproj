@@ -16,9 +16,9 @@
 		24CF09011B539EBE00B0060C /* SmileWeather_ExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 24CF09001B539EBE00B0060C /* SmileWeather_ExampleTests.m */; };
 		4CFD2E9653425AC8FBEC9607 /* libPods-SmileWeatherTodayWidget.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 56F066AFA862AEAB884E3C46 /* libPods-SmileWeatherTodayWidget.a */; };
 		B188EDBC8B3474727E73157E /* libPods-SmileWeather-ExampleTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CBC0237328BF8D252DE5E026 /* libPods-SmileWeather-ExampleTests.a */; };
-		B7A7ACD21BD51488007D33D0 /* NSBundle+SmileTestAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A7ACD01BD51488007D33D0 /* NSBundle+SmileTestAdditions.m */; settings = {ASSET_TAGS = (); }; };
-		B7A7ACD31BD51488007D33D0 /* SampleResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = B7A7ACD11BD51488007D33D0 /* SampleResponse.json */; settings = {ASSET_TAGS = (); }; };
-		B7A7ACD61BD52174007D33D0 /* SmileWeather_ExapleTests_Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A7ACD51BD52174007D33D0 /* SmileWeather_ExapleTests_Swift.swift */; settings = {ASSET_TAGS = (); }; };
+		B7A7ACD21BD51488007D33D0 /* NSBundle+SmileTestAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A7ACD01BD51488007D33D0 /* NSBundle+SmileTestAdditions.m */; };
+		B7A7ACD31BD51488007D33D0 /* SampleResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = B7A7ACD11BD51488007D33D0 /* SampleResponse.json */; };
+		B7A7ACD61BD52174007D33D0 /* SmileWeather_ExapleTests_Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A7ACD51BD52174007D33D0 /* SmileWeather_ExapleTests_Swift.swift */; };
 		B7D5AE991BA7040B0043188E /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7D5AE981BA7040B0043188E /* NotificationCenter.framework */; };
 		B7D5AE9F1BA7040B0043188E /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7D5AE9E1BA7040B0043188E /* TodayViewController.m */; };
 		B7D5AEA11BA7040B0043188E /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7D5AEA01BA7040B0043188E /* MainInterface.storyboard */; };
@@ -258,6 +258,7 @@
 				24CF08DF1B539EBD00B0060C /* Resources */,
 				42496D108EFFB7B296E38A35 /* Copy Pods Resources */,
 				B7D5AEA81BA7040B0043188E /* Embed App Extensions */,
+				4723F70B3B81B7262DAAB538 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -278,6 +279,7 @@
 				24CF08F71B539EBE00B0060C /* Frameworks */,
 				24CF08F81B539EBE00B0060C /* Resources */,
 				E8EB86D60B7F8A86C838D1C0 /* Copy Pods Resources */,
+				12895D1EB7B8F55A2FCA2B08 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -298,6 +300,7 @@
 				B7D5AE941BA7040B0043188E /* Frameworks */,
 				B7D5AE951BA7040B0043188E /* Resources */,
 				7D1333A6BCA3B80CE3147451 /* Copy Pods Resources */,
+				4EEFF1516AC5E5073CB252F6 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -394,6 +397,21 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		12895D1EB7B8F55A2FCA2B08 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SmileWeather-ExampleTests/Pods-SmileWeather-ExampleTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		42496D108EFFB7B296E38A35 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -407,6 +425,36 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Smile Weather/Pods-Smile Weather-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4723F70B3B81B7262DAAB538 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Smile Weather/Pods-Smile Weather-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4EEFF1516AC5E5073CB252F6 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SmileWeatherTodayWidget/Pods-SmileWeatherTodayWidget-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		7841B4FBFF165F5DAD36D454 /* Check Pods Manifest.lock */ = {
