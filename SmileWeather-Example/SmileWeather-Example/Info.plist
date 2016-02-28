@@ -53,7 +53,7 @@
 		<key>API_KEY_wunderground</key>
 		<string>af2c6c6c4aa3d084</string>
 		<key>API_NOW</key>
-		<integer>0</integer>
+		<integer>1</integer>
 	</dict>
 	<key>UIAppFonts</key>
 	<array>
