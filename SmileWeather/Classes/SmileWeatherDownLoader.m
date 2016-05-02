@@ -396,10 +396,6 @@
 +(NSString *)placeNameForSearchDisplay:(CLPlacemark *)placemark{
     NSMutableString *address = [[NSMutableString alloc] init];
     
-    if (![placemark.name isEqualToString:placemark.locality] && ![placemark.name isEqualToString:placemark.administrativeArea]) {
-        [address appendString:placemark.name];
-    }
-    
     if (placemark.locality) {
         if ([address isEqualToString:@""]||[address isEqual:nil] ) {
             [address appendString:placemark.locality];
@@ -409,22 +405,29 @@
             [address appendString:strtemp];
         }
     }
-    if (placemark.administrativeArea) {
-        if ([address isEqualToString:@""]||[address isEqual:nil] ) {
-            [address appendString:placemark.administrativeArea];
-        }
-        else{
-            NSString *strtemp=[NSString stringWithFormat:@", %@",placemark.administrativeArea];
-            [address appendString:strtemp];
+    
+    //because some rare case the locality equal administrativeArea, repeat name will looks not well
+    if (![placemark.locality isEqualToString:placemark.administrativeArea]) {
+        if (placemark.administrativeArea) {
+            if ([address isEqualToString:@""]||[address isEqual:nil] ) {
+                [address appendString:placemark.administrativeArea];
+            }
+            else{
+                NSString *strtemp=[NSString stringWithFormat:@", %@",placemark.administrativeArea];
+                [address appendString:strtemp];
+            }
         }
     }
-    if (placemark.country) {
-        if ([address isEqualToString:@""]||[address isEqual:nil] ) {
-            [address appendString:placemark.country];
-        }
-        else{
-            NSString *strtemp=[NSString stringWithFormat:@", %@",placemark.country];
-            [address appendString:strtemp];
+
+    if (![placemark.administrativeArea isEqualToString:placemark.country]) {
+        if (placemark.country) {
+            if ([address isEqualToString:@""]||[address isEqual:nil] ) {
+                [address appendString:placemark.country];
+            }
+            else{
+                NSString *strtemp=[NSString stringWithFormat:@", %@",placemark.country];
+                [address appendString:strtemp];
+            }
         }
     }
     

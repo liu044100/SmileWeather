@@ -23,9 +23,11 @@
 }
 
 #define IS_OS_7    ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0 && [[[UIDevice currentDevice] systemVersion] floatValue] < 8.0)
+#define kIsFahrenheit  @"Fahrenheit"
 static NSString * const reuseIdentifier = @"searchCell";
 static NSString * const searchTableIdentifier = @"SearchTable";
 static NSString * const demoLocation_key = @"demoLocation";
+
 
 -(void)firstLaunchRegister{
     _userDefaults = [NSUserDefaults standardUserDefaults];
@@ -34,7 +36,7 @@ static NSString * const demoLocation_key = @"demoLocation";
     CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(37.322998,-122.032182);
     NSNumber *lat = [NSNumber numberWithDouble:coordinate.latitude];
     NSNumber *lon = [NSNumber numberWithDouble:coordinate.longitude];
-    NSDictionary *userLocation=@{@"lat":lat,@"long":lon};
+    NSDictionary *userLocation=@{@"lat":lat,@"long":lon, kIsFahrenheit: @NO};
     [_userDefaults registerDefaults:userLocation];
 }
 
@@ -74,7 +76,7 @@ static NSString * const demoLocation_key = @"demoLocation";
     //create demo VC
     _demoVC = [SmileWeatherDemoVC DemoVCToView:self.containerView];
     _demoVC.delegate = self;
-    _demoVC.fahrenheit = YES;
+    _demoVC.fahrenheit = [_userDefaults boolForKey:kIsFahrenheit];
     
     //get weather data
     [self getWeatherData];
@@ -172,6 +174,11 @@ static NSString * const demoLocation_key = @"demoLocation";
 
 -(void)changeTempUnitsToFahrenheit:(BOOL)isFahrenheit{
     NSLog(@"is now change to Fahrenheit -> %d", isFahrenheit);
+    if (isFahrenheit) {
+        [_userDefaults setBool:YES forKey:kIsFahrenheit];
+    } else {
+        [_userDefaults setBool:NO forKey:kIsFahrenheit];
+    }
 }
 
 
