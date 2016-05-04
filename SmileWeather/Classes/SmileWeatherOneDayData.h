@@ -47,6 +47,7 @@ static inline SmileTemperature SmileTemperatureMake(CGFloat fahrenheit, CGFloat 
  */
 
 //pop = 90;
+///Openweathermap unit: mm, Wunderground unit: %
 @property (copy, nonatomic) NSString *precipitationRaw;
 @property (readonly, nonatomic) NSString *precipitation;
 
@@ -61,7 +62,9 @@ avewind =                     {
     mph = 15;
 };
  */
-@property (copy, nonatomic) NSString *windSpeed;
+///unit is M/S
+@property (copy, nonatomic) NSString *windSpeedRaw;
+@property (readonly, nonatomic) NSString *windSpeed;
 @property (copy, nonatomic) NSString *windDirection;
 
 

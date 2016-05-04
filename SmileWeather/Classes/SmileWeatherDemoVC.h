@@ -21,7 +21,7 @@
 @property (nonatomic, getter= isFahrenheit) BOOL fahrenheit;
 /*!Night mode will change background color to black color.*/
 @property (nonatomic) BOOL nightMode;
-@property (weak, nonatomic) id<SmileDemoChangeTempUnitsDelegate>delegate;
+@property (weak, nonatomic, nullable) id<SmileDemoChangeTempUnitsDelegate>delegate;
 //demo vc
 /*!Create a demo view for show the ability of the SmileWeather.*/
 +(nonnull SmileWeatherDemoVC*)DemoVCToView:(nonnull UIView*)parentView;

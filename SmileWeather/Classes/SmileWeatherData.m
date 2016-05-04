@@ -131,7 +131,7 @@ static NSString * const SmileCoder_timeZone = @"timeZone";
         forecast.humidity = [self createHumidityStringFromObject:[forecastday valueForKey:@"avehumidity"]];;
         
         //wind speed
-        forecast.windSpeed = [self createWindSpeedStringFromObject:[[forecastday valueForKey:@"avewind"] valueForKey:@"kph"]];
+        forecast.windSpeedRaw = [self createWindSpeedRawFromObject:[[forecastday valueForKey:@"avewind"] valueForKey:@"kph"]];
         forecast.windDirection = [[forecastday valueForKey:@"avewind"] valueForKey:@"dir"];
         
         [results addObject:forecast];
@@ -176,7 +176,7 @@ static NSString * const SmileCoder_timeZone = @"timeZone";
         forecast.humidity = [NSString stringWithFormat:@"%@%%", [hourlyData valueForKey:@"humidity"]];
         
         //wind
-        forecast.windSpeed = [self createWindSpeedStringFromObject:[[hourlyData valueForKey:@"wspd"] valueForKey:@"metric"]];
+        forecast.windSpeedRaw = [self createWindSpeedRawFromObject:[[hourlyData valueForKey:@"wspd"] valueForKey:@"metric"]];
         forecast.windDirection = [[hourlyData valueForKey:@"wdir"] valueForKey:@"dir"];
         
         [results addObject:forecast];
@@ -233,7 +233,7 @@ static NSString * const SmileCoder_timeZone = @"timeZone";
     self.currentData.humidity = [self createHumidityStringFromObject:[currentObservation valueForKey:@"relative_humidity"]];
     
     //wind speed
-    self.currentData.windSpeed = [self createWindSpeedStringFromObject:[currentObservation valueForKey:@"wind_kph"]];
+    self.currentData.windSpeedRaw = [self createWindSpeedRawFromObject:[currentObservation valueForKey:@"wind_kph"]];
     self.currentData.windDirection = [currentObservation valueForKey:@"wind_dir"];
     
     //today only property
@@ -282,7 +282,7 @@ static NSString * const SmileCoder_timeZone = @"timeZone";
     self.currentData.humidity = [self createHumidityStringFromObject:[mainDataDic valueForKey:@"humidity"]];
     
     //wind speed
-    self.currentData.windSpeed = [self createWindSpeedStringFromObject:[windDic valueForKey:@"speed"]];
+    self.currentData.windSpeedRaw = [self createWindSpeedRawFromObject:[windDic valueForKey:@"speed"]];
     
     //today only property
     self.currentData.pressureRaw = [self createPressureStringFromObject:[mainDataDic valueForKey:@"pressure"]];
@@ -339,7 +339,7 @@ static NSString * const SmileCoder_timeZone = @"timeZone";
             forecast.humidity = [self createHumidityStringFromObject:[mainDataDic valueForKey:@"humidity"]];
             
             //wind speed
-            forecast.windSpeed = [self createWindSpeedStringFromObject:[windDic valueForKey:@"speed"]];
+            forecast.windSpeedRaw = [self createWindSpeedRawFromObject:[windDic valueForKey:@"speed"]];
             
             //precipitation
             forecast.precipitationRaw = [self createAmountOfRainFromObject_openweathermap:[obj objectForKey:@"rain"]];
@@ -371,7 +371,7 @@ static NSString * const SmileCoder_timeZone = @"timeZone";
             forecast.humidity = [self createHumidityStringFromObject:[mainDataDic valueForKey:@"humidity"]];
             
             //wind speed
-            forecast.windSpeed = [self createWindSpeedStringFromObject:[windDic valueForKey:@"speed"]];
+            forecast.windSpeedRaw = [self createWindSpeedRawFromObject:[windDic valueForKey:@"speed"]];
             
             //precipitation
             forecast.precipitationRaw = [self createAmountOfRainFromObject_openweathermap:[obj objectForKey:@"rain"]];
@@ -429,7 +429,7 @@ static NSString * const SmileCoder_timeZone = @"timeZone";
 
 
 -(SmileTemperature)createTemperatureFromObject_openweathermap:(id)object{
-    SmileTemperature result;
+    SmileTemperature result = SmileTemperatureMake(0, 0, false);
     if ([object isKindOfClass:[NSNumber class]]) {
         NSNumber *tempNum = (NSNumber*)object;
         result = SmileTemperatureMake([SmileWeatherData tempToFahrenheit:tempNum], [SmileWeatherData tempToCelcius:tempNum], YES);
@@ -574,26 +574,19 @@ static NSString * const SmileCoder_timeZone = @"timeZone";
     return result;
 }
 
--(NSString*)createWindSpeedStringFromObject:(id)object {
-    NSString *result;
-    
-    if (self.weatherAPI == API_wunderground) {
-        if ([object isKindOfClass:[NSNumber class]]) {
+-(NSString*)createWindSpeedRawFromObject:(id)object {
+    NSString *result = @"";
+    if (self.weatherAPI == API_openweathermap) {
+        if ([object isKindOfClass:[NSNumber class]] || [object isKindOfClass:[NSString class]]) {
             NSNumber *value = (NSNumber*)object;
-            result = [NSString stringWithFormat:@"%.0f M/S", value.floatValue];
-        } else {
-            result = @"-- M/S";
+            result = [NSString stringWithFormat:@"%.0f", value.floatValue];
         }
-    
-    } else if (self.weatherAPI == API_openweathermap){
+    } else if (self.weatherAPI == API_wunderground){
         if ([object isKindOfClass:[NSNumber class]] || [object isKindOfClass:[NSString class]]) {
             CGFloat value = [object floatValue]* 1000 / (60 * 60);
-            result = [NSString stringWithFormat:@"%.0f M/S", value];
-        } else {
-            result = @"-- M/S";
+            result = [NSString stringWithFormat:@"%.0f", value];
         }
     }
-    
     return result;
 }
 

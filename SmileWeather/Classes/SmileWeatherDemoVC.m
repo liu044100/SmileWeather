@@ -95,6 +95,10 @@ static NSString * const reuseIdentifier_property = @"propertyCell";
     self.activityView.backgroundColor = [UIColor redColor];
     self.activityView.layer.cornerRadius = CGRectGetMidX(self.activityView.bounds);
     
+    [self handleAPILogo];
+}
+
+-(void)handleAPILogo {
     if ([SmileWeatherDownLoader sharedDownloader].weatherAPI == API_wunderground) {
         self.logo_openweather.hidden = YES;
         self.logo_wunderground.hidden = NO;
@@ -228,6 +232,7 @@ static NSString * const reuseIdentifier_property = @"propertyCell";
                  [self.collectionView_hourly scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:0] atScrollPosition:UICollectionViewScrollPositionRight animated:NO];
             }
             [self updateUI];
+            [self handleAPILogo];
         });
     }
 }

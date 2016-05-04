@@ -28,6 +28,8 @@
 
 @implementation SmileWeatherDownLoader
 
+#pragma mark - Info Dic
+
 +(NSDictionary*)smileWeatherInfoDic{
     NSDictionary *dic = [[SmileWeatherDownLoader appInfoPlist]  objectForKey:INFO_DIC];
     NSAssert(dic != nil, @"Please add SmileWeather key to your Info.plist");
@@ -43,6 +45,18 @@
     return _sharedInstance;
 }
 
+#pragma mark - Init
+
++(SmileWeatherDownLoader*)sharedDownloader {
+    static SmileWeatherDownLoader *sharedDownloader = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        NSDictionary *smileInfo =  [SmileWeatherDownLoader smileWeatherInfoDic];
+        sharedDownloader = [[SmileWeatherDownLoader alloc] initFromInfoKey:smileInfo];
+    });
+    return sharedDownloader;
+}
+
 -(instancetype)initFromInfoKey:(NSDictionary*)smileInfo{
     SmileWeatherDownLoader *sharedDownloader;
     if ([smileInfo[API_NOW] isKindOfClass:[NSNumber class]]) {
@@ -56,27 +70,34 @@
         } else if (!apikey_wunderground && apikey_openweathermap){
             sharedDownloader = [[SmileWeatherDownLoader alloc] initWithOpenweathermapAPIKey:apikey_openweathermap];
         } else {
-            NSAssert( apikey_wunderground != nil && apikey_openweathermap !=nil, @"No Wunderground or Openweathermap key to your Info.plist");
-            
-            NSAssert( apikey_wunderground == nil && apikey_openweathermap ==nil, @"Both of Wunderground and Openweathermap key in your Info.plist, please add API_NOW key to select which one is used.");
+            NSAssert( apikey_wunderground != nil && apikey_openweathermap !=nil, @"No Wunderground or Openweathermap key in your Info.plist");
+            NSAssert( apikey_wunderground == nil && apikey_openweathermap ==nil, @"Both of Wunderground and Openweathermap key in your Info.plist, please add API_NOW key that show which api should be used.");
         }
     }
     
     return sharedDownloader;
 }
 
-+(SmileWeatherDownLoader*)sharedDownloader {
-    static SmileWeatherDownLoader *sharedDownloader = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        NSDictionary *smileInfo =  [SmileWeatherDownLoader smileWeatherInfoDic];
-        sharedDownloader = [[SmileWeatherDownLoader alloc] initFromInfoKey:smileInfo];
-    });
-    return sharedDownloader;
+- (instancetype)initWithAPIType:(SmileWeatherAPI)type
+{
+    self.weatherAPI = type;
+    NSDictionary *smileInfo =  [SmileWeatherDownLoader smileWeatherInfoDic];
+    NSString *apikey;
+    if (self.weatherAPI == API_wunderground) {
+        apikey = smileInfo[API_KEY_wunderground];
+        NSAssert(apikey != nil, @"Please add Wunderground key to your Info.plist");
+        self = [[SmileWeatherDownLoader alloc] initWithWundergroundAPIKey:apikey];
+    } else if (self.weatherAPI == API_openweathermap){
+        apikey = smileInfo[API_KEY_openweathermap];
+        NSAssert(apikey != nil, @"Please add openweathermap key to your Info.plist");
+        self = [[SmileWeatherDownLoader alloc] initWithOpenweathermapAPIKey:apikey];
+    }
+    return self;
 }
 
 - (instancetype)initWithWundergroundAPIKey:(NSString*)apikey{
     if(self = [super init]) {
+        NSAssert( apikey != nil && apikey.length > 0, @"No Wunderground key in your Info.plist");
         self.weatherAPI = API_wunderground;
         self.key = apikey;
         self.geocoder = [[CLGeocoder alloc]init];
@@ -87,6 +108,7 @@
 
 - (instancetype)initWithOpenweathermapAPIKey:(NSString*)apikey{
     if(self = [super init]) {
+        NSAssert( apikey != nil && apikey.length > 0, @"No Openweathermap key in your Info.plist");
         self.weatherAPI = API_openweathermap;
         self.key = apikey;
         self.geocoder = [[CLGeocoder alloc]init];
@@ -95,27 +117,24 @@
     return self;
 }
 
+#pragma mark - Dynamically change api
 
-- (instancetype)initWithAPIType:(SmileWeatherAPI)type
-{
-    if(self = [super init]) {
-        self.weatherAPI = type;
+-(void)changeAPI:(SmileWeatherAPI)newAPI {
+    if (self.weatherAPI != newAPI) {
+        self.weatherAPI = newAPI;
         NSDictionary *smileInfo =  [SmileWeatherDownLoader smileWeatherInfoDic];
-        NSString *apikey;
-        if (self.weatherAPI == API_wunderground) {
-            apikey = smileInfo[API_KEY_wunderground];
-            NSAssert(apikey != nil, @"Please add Wunderground key to your Info.plist");
-            self = [[SmileWeatherDownLoader alloc] initWithWundergroundAPIKey:apikey];
-        } else if (self.weatherAPI == API_openweathermap){
-            apikey = smileInfo[API_KEY_openweathermap];
-            NSAssert(apikey != nil, @"Please add openweathermap key to your Info.plist");
-            self = [[SmileWeatherDownLoader alloc] initWithOpenweathermapAPIKey:apikey];
+        switch (newAPI) {
+            case API_openweathermap:
+                self.key = smileInfo[API_KEY_openweathermap];
+            case API_wunderground:
+                self.key = smileInfo[API_KEY_wunderground];
+            default:
+                break;
         }
     }
-    return self;
 }
 
-#pragma mark - download weather data
+#pragma mark - Download weather data
 
 -(void)getWeatherRawDicFromURL:(NSURL *)url completion:(SmileWeatherRawDicCompletion)completion{
     if (!url | !completion) {

@@ -38,7 +38,7 @@ static NSString * const SmileCoder_windDirection = @"windDirection";
         _condition = [decoder decodeObjectForKey: SmileCoder_condition];
         _precipitationRaw = [decoder decodeObjectForKey: SmileCoder_precipitationRaw];
         _humidity = [decoder decodeObjectForKey: SmileCoder_humidity];
-        _windSpeed = [decoder decodeObjectForKey: SmileCoder_windSpeed];
+        _windSpeedRaw = [decoder decodeObjectForKey: SmileCoder_windSpeed];
         _windDirection = [decoder decodeObjectForKey: SmileCoder_windDirection];
     }
     return self;
@@ -61,6 +61,17 @@ static NSString * const SmileCoder_windDirection = @"windDirection";
         }
     } else {
         result = [NSString stringWithFormat:@"--%%"];
+    }
+    return result;
+}
+
+-(NSString *)windSpeed {
+    NSString *unit = @"M/S";
+    NSString *result;
+    if (_windSpeedRaw && _windSpeedRaw.length > 0) {
+        result = [NSString stringWithFormat:@"%@ %@", _windSpeedRaw, unit];
+    } else {
+        result = [NSString stringWithFormat:@"-- %@", unit];
     }
     return result;
 }
