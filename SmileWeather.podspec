@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "SmileWeather"
-  s.version      = "0.1.8"
+  s.version      = "0.1.9"
   s.summary      = "A library for Search & Parse the weather data from Wunderground conveniently."
   s.description  = <<-DESC
                    1. Handle all complicated things about Search & Parse the weather data.
