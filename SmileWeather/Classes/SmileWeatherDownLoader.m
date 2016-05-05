@@ -123,14 +123,16 @@
     if (self.weatherAPI != newAPI) {
         self.weatherAPI = newAPI;
         NSDictionary *smileInfo =  [SmileWeatherDownLoader smileWeatherInfoDic];
+        NSString *key;
         switch (newAPI) {
             case API_openweathermap:
-                self.key = smileInfo[API_KEY_openweathermap];
+                key = smileInfo[API_KEY_openweathermap];
+                break;
             case API_wunderground:
-                self.key = smileInfo[API_KEY_wunderground];
-            default:
+                key = smileInfo[API_KEY_wunderground];
                 break;
         }
+        self.key = key;
     }
 }
 

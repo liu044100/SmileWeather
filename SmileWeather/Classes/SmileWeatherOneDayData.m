@@ -15,7 +15,7 @@ static NSString * const SmileCoder_icon = @"icon";
 static NSString * const SmileCoder_condition = @"condition";
 static NSString * const SmileCoder_precipitationRaw = @"precipitationRaw";
 static NSString * const SmileCoder_humidity = @"humidity";
-static NSString * const SmileCoder_windSpeed = @"windSpeed";
+static NSString * const SmileCoder_windSpeedRaw = @"windSpeedRaw";
 static NSString * const SmileCoder_windDirection = @"windDirection";
 
 - (void)encodeWithCoder:(NSCoder *)encoder
@@ -25,7 +25,7 @@ static NSString * const SmileCoder_windDirection = @"windDirection";
     [encoder encodeObject:self.condition forKey:SmileCoder_condition];
     [encoder encodeObject:self.precipitationRaw forKey:SmileCoder_precipitationRaw];
     [encoder encodeObject:self.humidity forKey:SmileCoder_humidity];
-    [encoder encodeObject:self.windSpeed forKey:SmileCoder_windSpeed];
+    [encoder encodeObject:self.windSpeedRaw forKey:SmileCoder_windSpeedRaw];
     [encoder encodeObject:self.windDirection forKey:SmileCoder_windDirection];
 }
 
@@ -38,7 +38,7 @@ static NSString * const SmileCoder_windDirection = @"windDirection";
         _condition = [decoder decodeObjectForKey: SmileCoder_condition];
         _precipitationRaw = [decoder decodeObjectForKey: SmileCoder_precipitationRaw];
         _humidity = [decoder decodeObjectForKey: SmileCoder_humidity];
-        _windSpeedRaw = [decoder decodeObjectForKey: SmileCoder_windSpeed];
+        _windSpeedRaw = [decoder decodeObjectForKey: SmileCoder_windSpeedRaw];
         _windDirection = [decoder decodeObjectForKey: SmileCoder_windDirection];
     }
     return self;

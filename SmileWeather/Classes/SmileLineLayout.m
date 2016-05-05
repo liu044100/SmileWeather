@@ -8,10 +8,6 @@
 
 #import "SmileLineLayout.h"
 
-@interface SmileLineLayout()
-@property(nonatomic, assign) NSUInteger itemNum;
-@end
-
 @implementation SmileLineLayout
 static CGFloat kItemWidth = 70.0;
 static CGFloat kMinMargin = 8.0;
@@ -30,6 +26,13 @@ static NSInteger kItemNum = 4;
         self.sectionInset = [self updateSectionInset];
     }
     return self;
+}
+
+-(void)setItemNum:(NSUInteger)itemNum {
+    if (_itemNum != itemNum) {
+        _itemNum = itemNum;
+        self.sectionInset = [self updateSectionInset];
+    }
 }
 
 -(UIEdgeInsets)updateSectionInset {

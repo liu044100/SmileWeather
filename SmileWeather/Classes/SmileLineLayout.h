@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface SmileLineLayout : UICollectionViewFlowLayout
-
+@property(nonatomic, assign) NSUInteger itemNum;
 -(instancetype)initWithItemNum:(NSUInteger)itemNum;
 -(UIEdgeInsets)updateSectionInset;
 @end

@@ -37,6 +37,7 @@
     NSArray *_propertyArray;
     UIView *_hairLine_top;
     UIView *_hairLine_bottom;
+    SmileLineLayout *_lineLayout;
 }
 
 typedef NS_ENUM(int, SmileHairLinePosition) {
@@ -74,13 +75,12 @@ static NSString * const reuseIdentifier_property = @"propertyCell";
         self.view.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.7];
     }
     
-    SmileLineLayout *lineLayout;
+    NSUInteger itemNum = 4;
     if ([SmileWeatherDownLoader sharedDownloader].weatherAPI == API_openweathermap) {
-     lineLayout = [[SmileLineLayout alloc] initWithItemNum:5];
-    } else {
-     lineLayout = [[SmileLineLayout alloc] initWithItemNum:4];
+        itemNum = 5;
     }
-    self.collectionView.collectionViewLayout = lineLayout;
+    _lineLayout = [[SmileLineLayout alloc] initWithItemNum:itemNum];
+    self.collectionView.collectionViewLayout = _lineLayout;
     NSBundle *bundle = [NSBundle bundleForClass: self.class];
     [self.collectionView registerNib:[UINib nibWithNibName:NIB_name_forecast bundle:bundle] forCellWithReuseIdentifier:reuseIdentifier];
     [self.collectionView_hourly registerNib:[UINib nibWithNibName:NIB_name_forecast_hourly bundle:bundle] forCellWithReuseIdentifier:reuseIdentifier_hourly];
@@ -95,16 +95,22 @@ static NSString * const reuseIdentifier_property = @"propertyCell";
     self.activityView.backgroundColor = [UIColor redColor];
     self.activityView.layer.cornerRadius = CGRectGetMidX(self.activityView.bounds);
     
-    [self handleAPILogo];
+    [self handleAPILogoAndLayout];
 }
 
--(void)handleAPILogo {
+-(void)handleAPILogoAndLayout {
+    NSUInteger itemNum = 4;
     if ([SmileWeatherDownLoader sharedDownloader].weatherAPI == API_wunderground) {
         self.logo_openweather.hidden = YES;
         self.logo_wunderground.hidden = NO;
     } else if ([SmileWeatherDownLoader sharedDownloader].weatherAPI == API_openweathermap){
         self.logo_openweather.hidden = NO;
         self.logo_wunderground.hidden = YES;
+        itemNum = 5;
+    }
+    if (_lineLayout.itemNum != itemNum) {
+        _lineLayout.itemNum = itemNum;
+        [self viewDidLayoutSubviews];
     }
 }
 
@@ -232,7 +238,7 @@ static NSString * const reuseIdentifier_property = @"propertyCell";
                  [self.collectionView_hourly scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:0] atScrollPosition:UICollectionViewScrollPositionRight animated:NO];
             }
             [self updateUI];
-            [self handleAPILogo];
+            [self handleAPILogoAndLayout];
         });
     }
 }
