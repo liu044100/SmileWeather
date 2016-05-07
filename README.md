@@ -57,7 +57,11 @@ The weather information, timestamp, weekday, timezone, etc, localized all the re
 
 ![](https://raw.githubusercontent.com/liu044100/SmileWeather/master/SmileWeather-Example/demo_gif/localization.png)
 
-##### 4. Add the Weather Widget Style UI to your project simply, by using `SmileWeatherDemoVC`.
+##### 4. Support Today Extension & WatchOS 2.
+
+<img src="SmileWeather-Example/demo_gif/demo_extension.png" width="400">
+
+##### 5. Add the Weather Widget Style UI to your project simply, by using `SmileWeatherDemoVC`.
 
 Please check the [example project](https://github.com/liu044100/SmileWeather/tree/master/SmileWeather-Example) for more detail. 
 
@@ -124,26 +128,6 @@ If you add both of these in `Info.plist`, please add `API_NOW` to let the `Smile
 
 **Step 4.** The last step is that import `SmileWeatherDownLoader.h` to your project, and use it :)
 
-# Support Today Extension
-
-For use `SmileWeather` in Today Extension, add below line to your `Podfile`.
-
-```Ruby
-post_install do |installer|
-    # NOTE: If you are using a CocoaPods version prior to 0.38, replace `pods_project` with `project` on the below line
-    installer.project.targets.each do |target|
-        if target.name.end_with? "SmileWeather"
-            target.build_configurations.each do |build_configuration|
-                if build_configuration.build_settings['APPLICATION_EXTENSION_API_ONLY'] == 'YES'
-                    build_configuration.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] = ['$(inherited)', 'SmileWeather_APP_EXTENSIONS=1']
-                end
-            end
-        end
-    end
-end
-
-```
-<img src="SmileWeather-Example/demo_gif/demo_extension.png" width="400">
 
 # Contributions
 
