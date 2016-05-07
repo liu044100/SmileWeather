@@ -32,7 +32,7 @@ static NSString * const SmileCoder_hourlyTemp = @"hourlyTemp";
         _date = [decoder decodeObjectForKey:SmileCoder_hourlyDate];
         
         NSData *temData = [decoder decodeObjectForKey:SmileCoder_hourlyTemp];
-        [temData getBytes:&_currentTemperature];
+        [temData getBytes:&_currentTemperature length:sizeof(SmileTemperature)];
     }
     return self;
 }

@@ -1,4 +1,4 @@
-platform :ios, '7.0'
+platform :ios, '8.0'
 
 target 'Smile Weather' do
 pod 'SmileWeather', :path => "../"
@@ -15,17 +15,4 @@ end
 
 target 'SmileWeather-ExampleTests' do
 pod 'SmileWeather', :path => "../"
-end
-
-
-post_install do |installer|
-    installer.pods_project.targets.each do |target|
-        if target.name.end_with? "SmileWeather"
-            target.build_configurations.each do |build_configuration|
-                if build_configuration.build_settings['APPLICATION_EXTENSION_API_ONLY'] == 'YES'
-                    build_configuration.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] = ['$(inherited)', 'SmileWeather_APP_EXTENSIONS=1']
-                end
-            end
-        end
-    end
 end

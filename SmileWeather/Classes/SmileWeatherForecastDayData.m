@@ -16,11 +16,8 @@ static NSString * const SmileCoder_forecastLowTemp = @"forecastLowTemp";
 - (void)encodeWithCoder:(NSCoder *)encoder
 {
     [super encodeWithCoder:encoder];
-
     NSData *temData_high = [NSData dataWithBytes:&_highTemperature length:sizeof(SmileTemperature)];
     [encoder encodeObject:temData_high forKey:SmileCoder_forecastHighTemp];
-
-    
     NSData *temData_low = [NSData dataWithBytes:&_lowTemperature length:sizeof(SmileTemperature)];
     [encoder encodeObject:temData_low forKey:SmileCoder_forecastLowTemp];
 }
@@ -30,10 +27,10 @@ static NSString * const SmileCoder_forecastLowTemp = @"forecastLowTemp";
     self = [super initWithCoder:decoder];
     if (self) {
         NSData *temData_high = [decoder decodeObjectForKey:SmileCoder_forecastHighTemp];
-        [temData_high getBytes:&_highTemperature];
+        [temData_high getBytes:&_highTemperature length:sizeof(SmileTemperature)];
         
         NSData *temData_low = [decoder decodeObjectForKey:SmileCoder_forecastLowTemp];
-        [temData_low getBytes:&_lowTemperature];
+        [temData_low getBytes:&_lowTemperature length:sizeof(SmileTemperature)];
     }
     return self;
 }

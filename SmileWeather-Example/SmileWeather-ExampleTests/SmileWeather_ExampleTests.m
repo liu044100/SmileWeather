@@ -11,6 +11,7 @@
 
 #import "NSBundle+SmileTestAdditions.h"
 #import <SmileWeatherDownLoader.h>
+#import <SmileWeatherDemoVC.h>
 
 @interface SmileWeatherDownLoader (SmileTestExtension)
 -(NSURL*)urlForLocation:(CLLocation *)location;
@@ -74,6 +75,7 @@
         XCTAssertTrue(data.forecastData.count > 0, @"SmileWeatherDownLoader failed download forecastData");
         XCTAssertTrue(data.hourlyData.count > 0, @"SmileWeatherDownLoader failed download hourlyData");
         [completionExpectation fulfill];
+        [self test_EncodeDecode: data];
     }];
     [self waitForExpectationsWithTimeout:5.0 handler:nil];
 }
@@ -103,10 +105,12 @@
     }];
 }
 
--(void)test_DemoView{
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
-    SmileWeatherDemoVC *demoVC = [SmileWeatherDemoVC DemoVCToView:view];
-    XCTAssertNotNil(demoVC, @"Cannot create SmileWeatherDemoVC");
+-(void)test_EncodeDecode:(SmileWeatherData*)data {
+    NSData *archivedData = [NSKeyedArchiver archivedDataWithRootObject:data];
+    XCTAssertNotNil(archivedData, @"Fail to encode");
+    SmileWeatherData *unarchivedData = [NSKeyedUnarchiver unarchiveObjectWithData:archivedData];
+    XCTAssertNotNil(unarchivedData, @"Fail to decode");
+    XCTAssertTrue(unarchivedData.currentData.currentTemperature.celsius == data.currentData.currentTemperature.celsius, @"");
 }
 
 @end

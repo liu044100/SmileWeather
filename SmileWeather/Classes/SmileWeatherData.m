@@ -307,7 +307,7 @@ static NSString * const SmileCoder_timeZone = @"timeZone";
     id data = [windDic valueForKey:@"deg"];
     if ([data isKindOfClass:[NSNumber class]]) {
         NSInteger degree = [data integerValue];
-        result = [NSString stringWithFormat:@"%ldº", degree];
+        result = [NSString stringWithFormat:@"%ldº", (long)degree];
     }
     return result;
 }
@@ -423,7 +423,6 @@ static NSString * const SmileCoder_timeZone = @"timeZone";
     if (object){
         NSDictionary *dic = (NSDictionary*)object;
         id value = [dic objectForKey:key];
-//        NSLog(@"the rain -> %@", value);
         if ([value isKindOfClass:[NSNumber class]]) {
             result = [NSString stringWithFormat:@"%.2f mm", [(NSNumber*)value floatValue]];
         }
@@ -477,7 +476,7 @@ static NSString * const SmileCoder_timeZone = @"timeZone";
     NSString *result;
     if (object) {
         NSInteger degree = [object integerValue];
-        result = [NSString stringWithFormat:@"%ld", degree];
+        result = [NSString stringWithFormat:@"%ld", (long)degree];
     }
     return result;
 }
@@ -636,7 +635,6 @@ static NSString * const SmileCoder_timeZone = @"timeZone";
 
 - (NSString *)iconForCondition:(NSString *)condition
 {
-//    NSLog(@"^^^^^^^^^^^^^^^^^^^^^^raw: %@", condition);
     NSString *iconName = [NSString stringWithFormat:@"%c", ClimaconSun];
     NSString *lowercaseCondition = [condition lowercaseString];
     
@@ -723,7 +721,7 @@ static NSString * const SmileCoder_timeZone = @"timeZone";
     static dispatch_once_t onceToken;
     static NSCalendar *_sharedInstance;
     dispatch_once(&onceToken, ^{
-        _sharedInstance = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+        _sharedInstance = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     });
     return _sharedInstance;
 }

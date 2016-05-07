@@ -143,18 +143,12 @@
         NSLog(@"invalid url or completion");
         return;
     }
-#if !defined(SmileWeather_APP_EXTENSIONS)
-    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
-#endif
     NSURLSessionDataTask *dataTask = [self.session dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         NSDictionary *dataDic;
         if (!error) {
             dataDic = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
         }
         SmileWeather_DispatchMainThread(^(){
-            #if !defined(SmileWeather_APP_EXTENSIONS)
-            [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
-            #endif
             completion(dataDic, error);
         });
     }];
@@ -166,15 +160,9 @@
         NSLog(@"invalid url or completion");
         return;
     }
-#if !defined(SmileWeather_APP_EXTENSIONS)
-    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
-#endif
     
     NSURLSessionDataTask *dataTask = [self.session dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         SmileWeather_DispatchMainThread(^(){
-#if !defined(SmileWeather_APP_EXTENSIONS)
-            [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
-#endif
             completion(data, error);
         });
     }];
@@ -243,18 +231,11 @@
         return;
     }
     
-#if !defined(SmileWeather_APP_EXTENSIONS)
-    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
-#endif
-    
     [self.geocoder reverseGeocodeLocation:location completionHandler: ^(NSArray *placemarks, NSError *error) {
         if(placemarks.count > 0) {
             CLPlacemark *placeMark = [placemarks lastObject];
             [self getWeatherDataFromPlacemark:placeMark completion:completion];
         } else if(error) {
-#if !defined(SmileWeather_APP_EXTENSIONS)
-            [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
-#endif
             completion(nil, error);
         }
     }];
@@ -372,10 +353,7 @@
 }
 
 +(NSString *)placeNameForDisplay:(CLPlacemark *)placemark{
-//    NSLog(@"%@",[SmileWeatherDownLoader infoFromPlacemark_DEBUG:placemark]);
-    
     NSMutableString *address = [[NSMutableString alloc] init];
-    
     if (placemark.locality) {
         [address appendString:placemark.locality];
     } else {
@@ -383,7 +361,6 @@
             [address appendString:placemark.name];
         }
     }
-    
     return [NSString stringWithString:address];
 }
 
@@ -456,8 +433,6 @@
     CLLocationCoordinate2D coordinates = location.coordinate;
     requestURL = [NSString stringWithFormat:@"%@%@lat=%f&lon=%f&APPID=%@&lang=%@", baseURL_openweathermap, parameters_openweathermap, coordinates.latitude, coordinates.longitude, self.key, [self preferedLanguage]];
     
-//    NSLog(@"openweathermap -> url type -> %@ -> %@", type, requestURL);
-    
     NSURL *url = [NSURL URLWithString:requestURL];
     
     return url;
@@ -474,8 +449,6 @@
     NSString *parameters_wunderground = [NSString stringWithFormat:@"/forecast/conditions/astronomy/hourly/lang:%@/q/",lang];
     CLLocationCoordinate2D coordinates = location.coordinate;
     requestURL = [NSString stringWithFormat:@"%@%@%@%f,%f.json", baseURL_wunderground, self.key, parameters_wunderground, coordinates.latitude, coordinates.longitude];
-    
-//    NSLog(@"wunderground url -> %@", requestURL);
     
     NSURL *url = [NSURL URLWithString:requestURL];
     

@@ -42,7 +42,7 @@ static NSString * const SmileCoder_sunset = @"sunset";
         _sunSet = [decoder decodeObjectForKey:SmileCoder_sunset];
         
         NSData *temData = [decoder decodeObjectForKey:SmileCoder_currentTemp];
-        [temData getBytes:&_currentTemperature];
+        [temData getBytes:&_currentTemperature length:sizeof(SmileTemperature)];
     }
     return self;
 }

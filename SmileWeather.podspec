@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   s.social_media_url   = "https://dribbble.com/yuchenliu"
 
 
-  s.ios.deployment_target = "7.0"
+  s.ios.deployment_target = "8.0"
   s.watchos.deployment_target = "2.0"
   s.ios.frameworks = 'UIKit', 'CoreLocation'
   s.watchos.frameworks = 'CoreLocation'
