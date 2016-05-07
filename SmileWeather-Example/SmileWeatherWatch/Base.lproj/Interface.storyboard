@@ -10,26 +10,49 @@
         </mutableArray>
     </customFonts>
     <scenes>
-        <!--Interface Controller-->
+        <!--Weather-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController">
+                <controller title="Weather" id="AgC-eL-Hgc" customClass="InterfaceController">
                     <items>
                         <group width="1" height="1" alignment="left" layout="vertical" spacing="0.0" id="By7-8O-CPF">
                             <items>
-                                <label alignment="left" id="57b-4w-VZP">
+                                <label alignment="left" text="0" minimumScaleFactor="0.5" id="57b-4w-VZP">
                                     <fontDescription key="font" name="Climacons-Font" family="Climacons-Font" pointSize="55"/>
                                 </label>
-                                <label alignment="left" text="--" id="PFh-w4-dqj">
-                                    <fontDescription key="font" type="system" pointSize="51"/>
+                                <group width="1" alignment="left" layout="vertical" radius="12" spacing="0.0" id="LS0-f2-Jkx">
+                                    <items>
+                                        <label height="40" alignment="left" text="20" id="PFh-w4-dqj">
+                                            <fontDescription key="font" type="system" pointSize="51"/>
+                                        </label>
+                                        <label alignment="left" text="Yokohama" id="ViN-TI-fCl">
+                                            <color key="textColor" red="0.12549019610000001" green="0.67843137249999996" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                    </items>
+                                </group>
+                                <label alignment="left" text="Label" id="1f1-3y-lav">
+                                    <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
                                 </label>
-                                <label alignment="left" text="--" id="ViN-TI-fCl">
-                                    <color key="textColor" red="0.12549019610000001" green="0.67843137249999996" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
-                                </label>
+                                <group width="1" alignment="left" spacing="7" id="vNC-9s-qQQ">
+                                    <items>
+                                        <label alignment="left" text="Label" id="H1b-9h-uIp">
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <fontDescription key="font" style="UICTFontTextStyleCaption2"/>
+                                        </label>
+                                        <separator alignment="left" id="4VL-lf-K84"/>
+                                        <label alignment="left" text="Label" id="eii-9g-QJu">
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <fontDescription key="font" style="UICTFontTextStyleCaption2"/>
+                                        </label>
+                                    </items>
+                                </group>
                             </items>
                         </group>
                     </items>
                     <connections>
+                        <outlet property="conditionLabel" destination="1f1-3y-lav" id="q5g-0k-W3a"/>
+                        <outlet property="maxTempLabel" destination="H1b-9h-uIp" id="99p-as-RO0"/>
+                        <outlet property="minTempLabel" destination="eii-9g-QJu" id="Iwv-sW-d6E"/>
                         <outlet property="placeLabel" destination="ViN-TI-fCl" id="3j0-qC-iCn"/>
                         <outlet property="tempLabel" destination="PFh-w4-dqj" id="4ZN-9c-WFS"/>
                         <outlet property="weatherLabel" destination="57b-4w-VZP" id="D0u-Zh-tgL"/>
@@ -39,4 +62,5 @@
             <point key="canvasLocation" x="220" y="345"/>
         </scene>
     </scenes>
+    <color key="tintColor" red="0.12549019610000001" green="0.67843137249999996" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
 </document>

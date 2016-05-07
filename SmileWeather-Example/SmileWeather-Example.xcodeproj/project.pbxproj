@@ -22,8 +22,7 @@
 		B763BD351CDDA580003E9D01 /* InterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = B763BD341CDDA580003E9D01 /* InterfaceController.m */; };
 		B763BD3D1CDDA581003E9D01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B763BD3C1CDDA581003E9D01 /* Assets.xcassets */; };
 		B763BD411CDDA581003E9D01 /* SmileWeatherWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = B763BD201CDDA580003E9D01 /* SmileWeatherWatch.app */; };
-		B763BD601CDDD881003E9D01 /* Climacons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B763BD5F1CDDD881003E9D01 /* Climacons.ttf */; };
-		B763BD611CDDD9FC003E9D01 /* Climacons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B763BD5F1CDDD881003E9D01 /* Climacons.ttf */; };
+		B763BD621CDDDE0D003E9D01 /* Climacons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B763BD5F1CDDD881003E9D01 /* Climacons.ttf */; };
 		B7A7ACD21BD51488007D33D0 /* NSBundle+SmileTestAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A7ACD01BD51488007D33D0 /* NSBundle+SmileTestAdditions.m */; };
 		B7A7ACD31BD51488007D33D0 /* SampleResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = B7A7ACD11BD51488007D33D0 /* SampleResponse.json */; };
 		B7A7ACD61BD52174007D33D0 /* SmileWeather_ExapleTests_Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A7ACD51BD52174007D33D0 /* SmileWeather_ExapleTests_Swift.swift */; };
@@ -157,12 +156,9 @@
 		C90E90C44B0D4C5F806EB839 /* Pods-Smile Weather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smile Weather.release.xcconfig"; path = "Pods/Target Support Files/Pods-Smile Weather/Pods-Smile Weather.release.xcconfig"; sourceTree = "<group>"; };
 		CBC0237328BF8D252DE5E026 /* libPods-SmileWeather-ExampleTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SmileWeather-ExampleTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7CD560CB6FB372BC66643B9 /* Pods-SmileWeather-ExampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmileWeather-ExampleTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SmileWeather-ExampleTests/Pods-SmileWeather-ExampleTests.release.xcconfig"; sourceTree = "<group>"; };
-		D8B39AE1C6940987500039AD /* libPods-Watch Extension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Watch Extension.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBA95DB4B3DBF0EA7E6AF746 /* Pods-SmileWeather-ExampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmileWeather-ExampleTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SmileWeather-ExampleTests/Pods-SmileWeather-ExampleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E3C8A2925353A23A506A3912 /* Pods-Smile Weather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smile Weather.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Smile Weather/Pods-Smile Weather.debug.xcconfig"; sourceTree = "<group>"; };
 		E4C0EAFE9E6F91A130CBCCC3 /* libPods-Smile Weather.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Smile Weather.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F10C8D273996F988F0F43D2E /* Pods-Watch Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Watch Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-Watch Extension/Pods-Watch Extension.release.xcconfig"; sourceTree = "<group>"; };
-		FD14FB7E85FE0895E1952755 /* Pods-Watch Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Watch Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Watch Extension/Pods-Watch Extension.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -284,8 +280,6 @@
 				0027E1BAC487B19811B1F298 /* Pods-SmileWeatherTodayWidget.release.xcconfig */,
 				DBA95DB4B3DBF0EA7E6AF746 /* Pods-SmileWeather-ExampleTests.debug.xcconfig */,
 				D7CD560CB6FB372BC66643B9 /* Pods-SmileWeather-ExampleTests.release.xcconfig */,
-				FD14FB7E85FE0895E1952755 /* Pods-Watch Extension.debug.xcconfig */,
-				F10C8D273996F988F0F43D2E /* Pods-Watch Extension.release.xcconfig */,
 				C8BB44B87061A26BB6097599 /* Pods-SmileWeatherWatch Extension.debug.xcconfig */,
 				3962CCC79C5E75F8C70CA7C2 /* Pods-SmileWeatherWatch Extension.release.xcconfig */,
 			);
@@ -300,7 +294,6 @@
 				B7D5AE981BA7040B0043188E /* NotificationCenter.framework */,
 				56F066AFA862AEAB884E3C46 /* libPods-SmileWeatherTodayWidget.a */,
 				CBC0237328BF8D252DE5E026 /* libPods-SmileWeather-ExampleTests.a */,
-				D8B39AE1C6940987500039AD /* libPods-Watch Extension.a */,
 				B70FAAC24E03A9F476156045 /* libPods-SmileWeatherWatch Extension.a */,
 			);
 			name = Frameworks;
@@ -533,7 +526,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B763BD601CDDD881003E9D01 /* Climacons.ttf in Resources */,
+				B763BD621CDDDE0D003E9D01 /* Climacons.ttf in Resources */,
 				B763BD261CDDA580003E9D01 /* Assets.xcassets in Resources */,
 				B763BD241CDDA580003E9D01 /* Interface.storyboard in Resources */,
 			);
@@ -543,7 +536,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B763BD611CDDD9FC003E9D01 /* Climacons.ttf in Resources */,
 				B763BD3D1CDDA581003E9D01 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
