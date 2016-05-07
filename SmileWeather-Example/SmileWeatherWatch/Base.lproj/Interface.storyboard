@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="10032"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Climacons.ttf">
+            <string>Climacons-Font</string>
+        </mutableArray>
+    </customFonts>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController">
+                    <items>
+                        <group width="1" height="1" alignment="left" layout="vertical" spacing="0.0" id="By7-8O-CPF">
+                            <items>
+                                <label alignment="left" id="57b-4w-VZP">
+                                    <fontDescription key="font" name="Climacons-Font" family="Climacons-Font" pointSize="55"/>
+                                </label>
+                                <label alignment="left" text="--" id="PFh-w4-dqj">
+                                    <fontDescription key="font" type="system" pointSize="51"/>
+                                </label>
+                                <label alignment="left" text="--" id="ViN-TI-fCl">
+                                    <color key="textColor" red="0.12549019610000001" green="0.67843137249999996" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
+                                </label>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="placeLabel" destination="ViN-TI-fCl" id="3j0-qC-iCn"/>
+                        <outlet property="tempLabel" destination="PFh-w4-dqj" id="4ZN-9c-WFS"/>
+                        <outlet property="weatherLabel" destination="57b-4w-VZP" id="D0u-Zh-tgL"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="220" y="345"/>
+        </scene>
+    </scenes>
+</document>

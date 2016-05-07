@@ -7,7 +7,8 @@
 //
 
 #import "ViewController.h"
-#import "SmileWeatherDownLoader.h"
+#import <SmileWeatherDownLoader.h>
+#import <SmileWeatherDemoVC.h>
 #import "SearchTableVC.h"
 
 @interface ViewController () <UISearchResultsUpdating, UITableViewDataSource, UITableViewDelegate, SmileDemoChangeTempUnitsDelegate>
@@ -179,12 +180,6 @@ static NSString * const demoLocation_key = @"demoLocation";
     } else {
         [_userDefaults setBool:NO forKey:kIsFahrenheit];
     }
-}
-
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end

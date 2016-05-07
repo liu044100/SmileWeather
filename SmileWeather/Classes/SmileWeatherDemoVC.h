@@ -6,6 +6,8 @@
 //  Copyright (c) 2015 rain. All rights reserved.
 //
 
+#if TARGET_OS_IOS
+
 #import <UIKit/UIKit.h>
 #import "SmileWeatherData.h"
 
@@ -27,3 +29,5 @@
 +(nonnull SmileWeatherDemoVC*)DemoVCToView:(nonnull UIView*)parentView;
 
 @end
+
+#endif

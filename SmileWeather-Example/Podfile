@@ -1,21 +1,24 @@
 platform :ios, '7.0'
 
 target 'Smile Weather' do
-
 pod 'SmileWeather', :path => "../"
-
-#pod 'SmileWeather'
-
 end
 
 target 'SmileWeatherTodayWidget' do
-    
 pod 'SmileWeather', :path => "../"
+end
 
-#pod 'SmileWeather'
+target 'SmileWeatherWatch Extension' do
+platform :watchos, '2.0'
+pod 'SmileWeather', :path => "../"    
+end
+
+target 'SmileWeather-ExampleTests' do
+pod 'SmileWeather', :path => "../"
+end
+
 
 post_install do |installer|
-    # NOTE: If you are using a CocoaPods version prior to 0.38, replace `pods_project` with `project` on the below line
     installer.pods_project.targets.each do |target|
         if target.name.end_with? "SmileWeather"
             target.build_configurations.each do |build_configuration|
@@ -26,11 +29,3 @@ post_install do |installer|
         end
     end
 end
-    
-end
-
-target 'SmileWeather-ExampleTests' do
-pod 'SmileWeather', :path => "../"
-#pod 'SmileWeather'
-end
-

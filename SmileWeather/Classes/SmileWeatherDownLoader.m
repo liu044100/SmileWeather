@@ -188,30 +188,15 @@
         return;
     }
     
-#if !defined(SmileWeather_APP_EXTENSIONS)
-    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
-#endif
-    
     if (self.weatherAPI == API_wunderground) {
-        NSURLSessionDataTask *dataTask = [self.session dataTaskWithURL:[self urlForLocation:placeMark.location] completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-            
+        NSURL *url = [self urlForLocation:placeMark.location];
+        [self getWeatherRawDicFromURL:url completion:^(NSDictionary * _Nullable rawDic, NSError * _Nullable error) {
             SmileWeatherData *weatherData;
-            
             if (!error) {
-                NSDictionary *dataDic = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-                weatherData = [[SmileWeatherData alloc] initWithJSON:dataDic inPlacemark:placeMark];
-                //                NSLog(@"raw data -> %@", dataDic);
+                weatherData = [[SmileWeatherData alloc] initWithJSON:rawDic inPlacemark:placeMark];
             }
-            SmileWeather_DispatchMainThread(^(){
-#if !defined(SmileWeather_APP_EXTENSIONS)
-                [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
-#endif
-                completion(weatherData, error);
-            });
-            
+            completion(weatherData, error);
         }];
-        
-        [dataTask resume];
     }
     
     else if (self.weatherAPI == API_openweathermap){
@@ -229,41 +214,29 @@
                 
                 dispatch_group_enter(downloadGroup);
                 
-                NSURLSessionDataTask *dataTask = [self.session dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-                    
+                [self getWeatherRawDicFromURL:url completion:^(NSDictionary * _Nullable rawDic, NSError * _Nullable error) {
                     if (!error) {
-                        NSDictionary *dataDic = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-                        [allDataDic addEntriesFromDictionary:dataDic];
+                        [allDataDic addEntriesFromDictionary:rawDic];
                     }else{
                         allError = error;
                     }
-                    
                     dispatch_group_leave(downloadGroup);
-                    
                 }];
-                
-                [dataTask resume];
-                
             }
             
             dispatch_group_wait(downloadGroup, DISPATCH_TIME_FOREVER);
             
             if (!allError) {
                 weatherData = [[SmileWeatherData alloc] initWithJSON:allDataDic inPlacemark:placeMark];
-                //                NSLog(@"openweathermap -> raw data -> %@", allDataDic);
             }
             
             SmileWeather_DispatchMainThread(^(){
-#if !defined(SmileWeather_APP_EXTENSIONS)
-                [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
-#endif
                 completion(weatherData, allError);
             });
-            
-            
         });
     }
 }
+
 -(void)getWeatherDataFromLocation:(CLLocation*)location completion:(SmileWeatherDataDownloadCompletion)completion {
     if (!location | !completion) {
         NSLog(@"invalid location or completion");

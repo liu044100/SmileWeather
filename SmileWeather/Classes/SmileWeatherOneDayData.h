@@ -7,16 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
 #import "NSString+SmileSubstring.h"
 
 typedef struct {
-    CGFloat fahrenheit;
-    CGFloat celsius;
+    float fahrenheit;
+    float celsius;
     BOOL initialized;
 } SmileTemperature;
 
-static inline SmileTemperature SmileTemperatureMake(CGFloat fahrenheit, CGFloat celsius, BOOL initialized) {
+static inline SmileTemperature SmileTemperatureMake(float fahrenheit, float celsius, BOOL initialized) {
     return (SmileTemperature){
         fahrenheit, celsius, initialized
     };

@@ -5,6 +5,7 @@
 //  Created by ryu-ushin on 7/16/15.
 //  Copyright (c) 2015 rain. All rights reserved.
 //
+#if TARGET_OS_IOS
 
 #import "SmileLineLayout.h"
 
@@ -61,3 +62,5 @@ static NSInteger kItemNum = 4;
 
 
 @end
+
+#endif

@@ -94,10 +94,12 @@ static NSString * const SmileCoder_timeZone = @"timeZone";
     if (self.weatherAPI == API_wunderground) {
         [self configureJSON_wunderground:jsonData];
     } else if (self.weatherAPI == API_openweathermap){
+#if TARGET_OS_IOS
         //new api in iOS9
         if([[[UIDevice currentDevice] systemVersion] floatValue] >= 9.0){
             self.timeZone = self.placeMark.timeZone;
         }
+#endif
         [self configureJSON_openweathermap:jsonData];
     }
 }
@@ -459,12 +461,12 @@ static NSString * const SmileCoder_timeZone = @"timeZone";
     return [NSDate dateWithTimeIntervalSince1970:num.intValue];
 }
 
-+ (CGFloat) tempToCelcius:(NSNumber *) tempKelvin
++ (float) tempToCelcius:(NSNumber *) tempKelvin
 {
     return (tempKelvin.floatValue - 273.15);
 }
 
-+ (CGFloat) tempToFahrenheit:(NSNumber *) tempKelvin
++ (float) tempToFahrenheit:(NSNumber *) tempKelvin
 {
     return ((tempKelvin.floatValue * 9/5) - 459.67);
 }
@@ -599,7 +601,7 @@ static NSString * const SmileCoder_timeZone = @"timeZone";
         }
     } else if (self.weatherAPI == API_wunderground){
         if ([object isKindOfClass:[NSNumber class]] || [object isKindOfClass:[NSString class]]) {
-            CGFloat value = [object floatValue]* 1000 / (60 * 60);
+            float value = [object floatValue]* 1000 / (60 * 60);
             result = [NSString stringWithFormat:@"%.0f", value];
         }
     }
@@ -614,12 +616,12 @@ static NSString * const SmileCoder_timeZone = @"timeZone";
     id object_c = [object valueForKey:key_c];
     
     if ([object_f isKindOfClass:[NSNumber class]] && [object_c isKindOfClass:[NSNumber class]]) {
-        CGFloat value_f = [object_f doubleValue];
-        CGFloat value_c = [object_c doubleValue];
+        float value_f = [object_f doubleValue];
+        float value_c = [object_c doubleValue];
         result = SmileTemperatureMake(value_f, value_c, YES);
     } else if([object_f isKindOfClass:[NSString class]] && [object_c isKindOfClass:[NSString class]]){
-        CGFloat value_f = [object_f doubleValue];
-        CGFloat value_c = [object_c doubleValue];
+        float value_f = [object_f doubleValue];
+        float value_c = [object_c doubleValue];
         result = SmileTemperatureMake(value_f, value_c, YES);
 
     }

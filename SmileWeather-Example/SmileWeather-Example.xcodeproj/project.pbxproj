@@ -16,6 +16,14 @@
 		24CF09011B539EBE00B0060C /* SmileWeather_ExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 24CF09001B539EBE00B0060C /* SmileWeather_ExampleTests.m */; };
 		4CFD2E9653425AC8FBEC9607 /* libPods-SmileWeatherTodayWidget.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 56F066AFA862AEAB884E3C46 /* libPods-SmileWeatherTodayWidget.a */; };
 		B188EDBC8B3474727E73157E /* libPods-SmileWeather-ExampleTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CBC0237328BF8D252DE5E026 /* libPods-SmileWeather-ExampleTests.a */; };
+		B763BD241CDDA580003E9D01 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B763BD221CDDA580003E9D01 /* Interface.storyboard */; };
+		B763BD261CDDA580003E9D01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B763BD251CDDA580003E9D01 /* Assets.xcassets */; };
+		B763BD2D1CDDA580003E9D01 /* SmileWeatherWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = B763BD2C1CDDA580003E9D01 /* SmileWeatherWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		B763BD351CDDA580003E9D01 /* InterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = B763BD341CDDA580003E9D01 /* InterfaceController.m */; };
+		B763BD3D1CDDA581003E9D01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B763BD3C1CDDA581003E9D01 /* Assets.xcassets */; };
+		B763BD411CDDA581003E9D01 /* SmileWeatherWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = B763BD201CDDA580003E9D01 /* SmileWeatherWatch.app */; };
+		B763BD601CDDD881003E9D01 /* Climacons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B763BD5F1CDDD881003E9D01 /* Climacons.ttf */; };
+		B763BD611CDDD9FC003E9D01 /* Climacons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B763BD5F1CDDD881003E9D01 /* Climacons.ttf */; };
 		B7A7ACD21BD51488007D33D0 /* NSBundle+SmileTestAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A7ACD01BD51488007D33D0 /* NSBundle+SmileTestAdditions.m */; };
 		B7A7ACD31BD51488007D33D0 /* SampleResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = B7A7ACD11BD51488007D33D0 /* SampleResponse.json */; };
 		B7A7ACD61BD52174007D33D0 /* SmileWeather_ExapleTests_Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A7ACD51BD52174007D33D0 /* SmileWeather_ExapleTests_Swift.swift */; };
@@ -24,6 +32,7 @@
 		B7D5AEA11BA7040B0043188E /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7D5AEA01BA7040B0043188E /* MainInterface.storyboard */; };
 		B7D5AEA41BA7040B0043188E /* SmileWeatherTodayWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = B7D5AE971BA7040B0043188E /* SmileWeatherTodayWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C83B887FC002B1A93DDCF303 /* libPods-Smile Weather.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C0EAFE9E6F91A130CBCCC3 /* libPods-Smile Weather.a */; };
+		EC4A47609B3BB071E1B84ACD /* libPods-SmileWeatherWatch Extension.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B70FAAC24E03A9F476156045 /* libPods-SmileWeatherWatch Extension.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +42,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = 24CF08E01B539EBD00B0060C;
 			remoteInfo = "SmileWeather-Example";
+		};
+		B763BD2E1CDDA580003E9D01 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 24CF08D91B539EBD00B0060C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B763BD2B1CDDA580003E9D01;
+			remoteInfo = "SmileWeatherWatch Extension";
+		};
+		B763BD3F1CDDA581003E9D01 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 24CF08D91B539EBD00B0060C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B763BD1F1CDDA580003E9D01;
+			remoteInfo = SmileWeatherWatch;
 		};
 		B7D5AEA21BA7040B0043188E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -44,6 +67,28 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		B763BD1D1CDD9B68003E9D01 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				B763BD411CDDA581003E9D01 /* SmileWeatherWatch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B763BD451CDDA581003E9D01 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				B763BD2D1CDDA580003E9D01 /* SmileWeatherWatch Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B7D5AEA81BA7040B0043188E /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -81,9 +126,22 @@
 		24DB06841B60E2F100341EFA /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Main.strings; sourceTree = "<group>"; };
 		24DB06851B60E2F600341EFA /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Main.strings; sourceTree = "<group>"; };
 		24DB06861B60E55400341EFA /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
+		3962CCC79C5E75F8C70CA7C2 /* Pods-SmileWeatherWatch Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmileWeatherWatch Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-SmileWeatherWatch Extension/Pods-SmileWeatherWatch Extension.release.xcconfig"; sourceTree = "<group>"; };
 		56F066AFA862AEAB884E3C46 /* libPods-SmileWeatherTodayWidget.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SmileWeatherTodayWidget.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		72E8400C0684461AF5DB54CB /* libPods-SmileWeather-Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SmileWeather-Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B70FAAC24E03A9F476156045 /* libPods-SmileWeatherWatch Extension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SmileWeatherWatch Extension.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B71DFF501B6B914A00D3501C /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/Main.strings; sourceTree = "<group>"; };
+		B763BD201CDDA580003E9D01 /* SmileWeatherWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmileWeatherWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B763BD231CDDA580003E9D01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		B763BD251CDDA580003E9D01 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B763BD271CDDA580003E9D01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B763BD2C1CDDA580003E9D01 /* SmileWeatherWatch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "SmileWeatherWatch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B763BD321CDDA580003E9D01 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		B763BD331CDDA580003E9D01 /* InterfaceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterfaceController.h; sourceTree = "<group>"; };
+		B763BD341CDDA580003E9D01 /* InterfaceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterfaceController.m; sourceTree = "<group>"; };
+		B763BD3C1CDDA581003E9D01 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B763BD3E1CDDA581003E9D01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B763BD5F1CDDD881003E9D01 /* Climacons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Climacons.ttf; sourceTree = "<group>"; };
 		B7A7ACCF1BD51488007D33D0 /* NSBundle+SmileTestAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+SmileTestAdditions.h"; sourceTree = "<group>"; };
 		B7A7ACD01BD51488007D33D0 /* NSBundle+SmileTestAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+SmileTestAdditions.m"; sourceTree = "<group>"; };
 		B7A7ACD11BD51488007D33D0 /* SampleResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SampleResponse.json; sourceTree = "<group>"; };
@@ -95,12 +153,16 @@
 		B7D5AE9D1BA7040B0043188E /* TodayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TodayViewController.h; sourceTree = "<group>"; };
 		B7D5AE9E1BA7040B0043188E /* TodayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TodayViewController.m; sourceTree = "<group>"; };
 		B7D5AEA01BA7040B0043188E /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
+		C8BB44B87061A26BB6097599 /* Pods-SmileWeatherWatch Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmileWeatherWatch Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SmileWeatherWatch Extension/Pods-SmileWeatherWatch Extension.debug.xcconfig"; sourceTree = "<group>"; };
 		C90E90C44B0D4C5F806EB839 /* Pods-Smile Weather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smile Weather.release.xcconfig"; path = "Pods/Target Support Files/Pods-Smile Weather/Pods-Smile Weather.release.xcconfig"; sourceTree = "<group>"; };
 		CBC0237328BF8D252DE5E026 /* libPods-SmileWeather-ExampleTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SmileWeather-ExampleTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7CD560CB6FB372BC66643B9 /* Pods-SmileWeather-ExampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmileWeather-ExampleTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SmileWeather-ExampleTests/Pods-SmileWeather-ExampleTests.release.xcconfig"; sourceTree = "<group>"; };
+		D8B39AE1C6940987500039AD /* libPods-Watch Extension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Watch Extension.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBA95DB4B3DBF0EA7E6AF746 /* Pods-SmileWeather-ExampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmileWeather-ExampleTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SmileWeather-ExampleTests/Pods-SmileWeather-ExampleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E3C8A2925353A23A506A3912 /* Pods-Smile Weather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smile Weather.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Smile Weather/Pods-Smile Weather.debug.xcconfig"; sourceTree = "<group>"; };
 		E4C0EAFE9E6F91A130CBCCC3 /* libPods-Smile Weather.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Smile Weather.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F10C8D273996F988F0F43D2E /* Pods-Watch Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Watch Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-Watch Extension/Pods-Watch Extension.release.xcconfig"; sourceTree = "<group>"; };
+		FD14FB7E85FE0895E1952755 /* Pods-Watch Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Watch Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Watch Extension/Pods-Watch Extension.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +179,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				B188EDBC8B3474727E73157E /* libPods-SmileWeather-ExampleTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B763BD291CDDA580003E9D01 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC4A47609B3BB071E1B84ACD /* libPods-SmileWeatherWatch Extension.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,6 +208,8 @@
 				24CF08E31B539EBD00B0060C /* SmileWeather-Example */,
 				24CF08FD1B539EBE00B0060C /* SmileWeather-ExampleTests */,
 				B7D5AE9A1BA7040B0043188E /* SmileWeatherTodayWidget */,
+				B763BD211CDDA580003E9D01 /* SmileWeatherWatch */,
+				B763BD301CDDA580003E9D01 /* SmileWeatherWatch Extension */,
 				24CF08E21B539EBD00B0060C /* Products */,
 				73A15B1A981A07236052F0C2 /* Pods */,
 				A3D1AABAEF04DB2ADE010D78 /* Frameworks */,
@@ -150,6 +222,8 @@
 				24CF08E11B539EBD00B0060C /* Smile Weather.app */,
 				24CF08FA1B539EBE00B0060C /* SmileWeather-ExampleTests.xctest */,
 				B7D5AE971BA7040B0043188E /* SmileWeatherTodayWidget.appex */,
+				B763BD201CDDA580003E9D01 /* SmileWeatherWatch.app */,
+				B763BD2C1CDDA580003E9D01 /* SmileWeatherWatch Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -210,6 +284,10 @@
 				0027E1BAC487B19811B1F298 /* Pods-SmileWeatherTodayWidget.release.xcconfig */,
 				DBA95DB4B3DBF0EA7E6AF746 /* Pods-SmileWeather-ExampleTests.debug.xcconfig */,
 				D7CD560CB6FB372BC66643B9 /* Pods-SmileWeather-ExampleTests.release.xcconfig */,
+				FD14FB7E85FE0895E1952755 /* Pods-Watch Extension.debug.xcconfig */,
+				F10C8D273996F988F0F43D2E /* Pods-Watch Extension.release.xcconfig */,
+				C8BB44B87061A26BB6097599 /* Pods-SmileWeatherWatch Extension.debug.xcconfig */,
+				3962CCC79C5E75F8C70CA7C2 /* Pods-SmileWeatherWatch Extension.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -222,8 +300,41 @@
 				B7D5AE981BA7040B0043188E /* NotificationCenter.framework */,
 				56F066AFA862AEAB884E3C46 /* libPods-SmileWeatherTodayWidget.a */,
 				CBC0237328BF8D252DE5E026 /* libPods-SmileWeather-ExampleTests.a */,
+				D8B39AE1C6940987500039AD /* libPods-Watch Extension.a */,
+				B70FAAC24E03A9F476156045 /* libPods-SmileWeatherWatch Extension.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B763BD211CDDA580003E9D01 /* SmileWeatherWatch */ = {
+			isa = PBXGroup;
+			children = (
+				B763BD221CDDA580003E9D01 /* Interface.storyboard */,
+				B763BD251CDDA580003E9D01 /* Assets.xcassets */,
+				B763BD5F1CDDD881003E9D01 /* Climacons.ttf */,
+				B763BD271CDDA580003E9D01 /* Info.plist */,
+			);
+			path = SmileWeatherWatch;
+			sourceTree = "<group>";
+		};
+		B763BD301CDDA580003E9D01 /* SmileWeatherWatch Extension */ = {
+			isa = PBXGroup;
+			children = (
+				B763BD331CDDA580003E9D01 /* InterfaceController.h */,
+				B763BD341CDDA580003E9D01 /* InterfaceController.m */,
+				B763BD3C1CDDA581003E9D01 /* Assets.xcassets */,
+				B763BD3E1CDDA581003E9D01 /* Info.plist */,
+				B763BD311CDDA580003E9D01 /* Supporting Files */,
+			);
+			path = "SmileWeatherWatch Extension";
+			sourceTree = "<group>";
+		};
+		B763BD311CDDA580003E9D01 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B763BD321CDDA580003E9D01 /* PushNotificationPayload.apns */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		B7D5AE9A1BA7040B0043188E /* SmileWeatherTodayWidget */ = {
@@ -259,11 +370,13 @@
 				42496D108EFFB7B296E38A35 /* Copy Pods Resources */,
 				B7D5AEA81BA7040B0043188E /* Embed App Extensions */,
 				4723F70B3B81B7262DAAB538 /* Embed Pods Frameworks */,
+				B763BD1D1CDD9B68003E9D01 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				B7D5AEA31BA7040B0043188E /* PBXTargetDependency */,
+				B763BD401CDDA581003E9D01 /* PBXTargetDependency */,
 			);
 			name = "Smile Weather";
 			productName = "SmileWeather-Example";
@@ -290,6 +403,43 @@
 			productName = "SmileWeather-ExampleTests";
 			productReference = 24CF08FA1B539EBE00B0060C /* SmileWeather-ExampleTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B763BD1F1CDDA580003E9D01 /* SmileWeatherWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B763BD461CDDA581003E9D01 /* Build configuration list for PBXNativeTarget "SmileWeatherWatch" */;
+			buildPhases = (
+				B763BD1E1CDDA580003E9D01 /* Resources */,
+				B763BD451CDDA581003E9D01 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B763BD2F1CDDA580003E9D01 /* PBXTargetDependency */,
+			);
+			name = SmileWeatherWatch;
+			productName = SmileWeatherWatch;
+			productReference = B763BD201CDDA580003E9D01 /* SmileWeatherWatch.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		B763BD2B1CDDA580003E9D01 /* SmileWeatherWatch Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B763BD421CDDA581003E9D01 /* Build configuration list for PBXNativeTarget "SmileWeatherWatch Extension" */;
+			buildPhases = (
+				F013EDE4A82997C5FC3A3A8F /* Check Pods Manifest.lock */,
+				B763BD281CDDA580003E9D01 /* Sources */,
+				B763BD291CDDA580003E9D01 /* Frameworks */,
+				B763BD2A1CDDA580003E9D01 /* Resources */,
+				1BFF693B8C8F3A400F0AF735 /* Embed Pods Frameworks */,
+				19CA919132FA0816E0BAC01F /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SmileWeatherWatch Extension";
+			productName = "SmileWeatherWatch Extension";
+			productReference = B763BD2C1CDDA580003E9D01 /* SmileWeatherWatch Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
 		};
 		B7D5AE961BA7040B0043188E /* SmileWeatherTodayWidget */ = {
 			isa = PBXNativeTarget;
@@ -328,6 +478,12 @@
 						CreatedOnToolsVersion = 6.4;
 						TestTargetID = 24CF08E01B539EBD00B0060C;
 					};
+					B763BD1F1CDDA580003E9D01 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					B763BD2B1CDDA580003E9D01 = {
+						CreatedOnToolsVersion = 7.3;
+					};
 					B7D5AE961BA7040B0043188E = {
 						CreatedOnToolsVersion = 6.4;
 					};
@@ -349,6 +505,8 @@
 				24CF08E01B539EBD00B0060C /* Smile Weather */,
 				24CF08F91B539EBE00B0060C /* SmileWeather-ExampleTests */,
 				B7D5AE961BA7040B0043188E /* SmileWeatherTodayWidget */,
+				B763BD1F1CDDA580003E9D01 /* SmileWeatherWatch */,
+				B763BD2B1CDDA580003E9D01 /* SmileWeatherWatch Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -368,6 +526,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				B7A7ACD31BD51488007D33D0 /* SampleResponse.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B763BD1E1CDDA580003E9D01 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B763BD601CDDD881003E9D01 /* Climacons.ttf in Resources */,
+				B763BD261CDDA580003E9D01 /* Assets.xcassets in Resources */,
+				B763BD241CDDA580003E9D01 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B763BD2A1CDDA580003E9D01 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B763BD611CDDD9FC003E9D01 /* Climacons.ttf in Resources */,
+				B763BD3D1CDDA581003E9D01 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,6 +587,36 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SmileWeather-ExampleTests/Pods-SmileWeather-ExampleTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		19CA919132FA0816E0BAC01F /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SmileWeatherWatch Extension/Pods-SmileWeatherWatch Extension-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1BFF693B8C8F3A400F0AF735 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SmileWeatherWatch Extension/Pods-SmileWeatherWatch Extension-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		42496D108EFFB7B296E38A35 /* Copy Pods Resources */ = {
@@ -517,6 +724,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SmileWeather-ExampleTests/Pods-SmileWeather-ExampleTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		F013EDE4A82997C5FC3A3A8F /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -541,6 +763,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B763BD281CDDA580003E9D01 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B763BD351CDDA580003E9D01 /* InterfaceController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B7D5AE931BA7040B0043188E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -556,6 +786,16 @@
 			isa = PBXTargetDependency;
 			target = 24CF08E01B539EBD00B0060C /* Smile Weather */;
 			targetProxy = 24CF08FB1B539EBE00B0060C /* PBXContainerItemProxy */;
+		};
+		B763BD2F1CDDA580003E9D01 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B763BD2B1CDDA580003E9D01 /* SmileWeatherWatch Extension */;
+			targetProxy = B763BD2E1CDDA580003E9D01 /* PBXContainerItemProxy */;
+		};
+		B763BD401CDDA581003E9D01 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B763BD1F1CDDA580003E9D01 /* SmileWeatherWatch */;
+			targetProxy = B763BD3F1CDDA581003E9D01 /* PBXContainerItemProxy */;
 		};
 		B7D5AEA31BA7040B0043188E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -579,6 +819,14 @@
 				B71DFF501B6B914A00D3501C /* pt */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B763BD221CDDA580003E9D01 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B763BD231CDDA580003E9D01 /* Base */,
+			);
+			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -740,6 +988,76 @@
 			};
 			name = Release;
 		};
+		B763BD431CDDA581003E9D01 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C8BB44B87061A26BB6097599 /* Pods-SmileWeatherWatch Extension.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				INFOPLIST_FILE = "SmileWeatherWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.self.Smile-Weather.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Debug;
+		};
+		B763BD441CDDA581003E9D01 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3962CCC79C5E75F8C70CA7C2 /* Pods-SmileWeatherWatch Extension.release.xcconfig */;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				INFOPLIST_FILE = "SmileWeatherWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.self.Smile-Weather.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Release;
+		};
+		B763BD471CDDA581003E9D01 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				IBSC_MODULE = SmileWeatherWatch_Extension;
+				INFOPLIST_FILE = SmileWeatherWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.self.Smile-Weather.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Debug;
+		};
+		B763BD481CDDA581003E9D01 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				IBSC_MODULE = SmileWeatherWatch_Extension;
+				INFOPLIST_FILE = SmileWeatherWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.self.Smile-Weather.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Release;
+		};
 		B7D5AEA51BA7040B0043188E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1CEE07DCCF44177384AA69F6 /* Pods-SmileWeatherTodayWidget.debug.xcconfig */;
@@ -800,6 +1118,24 @@
 			buildConfigurations = (
 				24CF09081B539EBE00B0060C /* Debug */,
 				24CF09091B539EBE00B0060C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B763BD421CDDA581003E9D01 /* Build configuration list for PBXNativeTarget "SmileWeatherWatch Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B763BD431CDDA581003E9D01 /* Debug */,
+				B763BD441CDDA581003E9D01 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B763BD461CDDA581003E9D01 /* Build configuration list for PBXNativeTarget "SmileWeatherWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B763BD471CDDA581003E9D01 /* Debug */,
+				B763BD481CDDA581003E9D01 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

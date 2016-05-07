@@ -5,7 +5,9 @@
 ////  Created by ryu-ushin on 7/15/15.
 ////  Copyright (c) 2015 rain. All rights reserved.
 ////
-//
+
+#if TARGET_OS_IOS
+
 #import "SmileWeatherDemoVC.h"
 #import "SmileLineLayout.h"
 #import "SmileWeatherDownLoader.h"
@@ -510,3 +512,5 @@ static NSString * const reuseIdentifier_property = @"propertyCell";
     return demoVC;
 }
 @end
+
+#endif

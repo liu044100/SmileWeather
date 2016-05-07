@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "SmileWeather"
-  s.version      = "0.1.9"
+  s.version      = "0.2.0"
   s.summary      = "A library for Search & Parse the weather data from Wunderground conveniently."
   s.description  = <<-DESC
                    1. Handle all complicated things about Search & Parse the weather data.
@@ -16,12 +16,15 @@ Pod::Spec.new do |s|
   s.social_media_url   = "https://dribbble.com/yuchenliu"
 
 
-  s.platform     = :ios, '7.0'
+  s.ios.deployment_target = "7.0"
+  s.watchos.deployment_target = "2.0"
+  s.ios.frameworks = 'UIKit', 'CoreLocation'
+  s.watchos.frameworks = 'CoreLocation'
+
   s.requires_arc = true
   s.source       = { :git => "https://github.com/liu044100/SmileWeather.git", :tag => s.version.to_s}
   s.source_files  = 'SmileWeather/Classes/*'
   s.resources = ['SmileWeather/Assets/*.png', 'SmileWeather/Assets/*.ttf', 'SmileWeather/Assets/*.xib']
   s.public_header_files = 'SmileWeather/Classes/*.h'
-  s.frameworks = 'UIKit', 'CoreLocation'
 
 end

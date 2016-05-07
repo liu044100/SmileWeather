@@ -7,9 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
 #import "SmileWeatherData.h"
-#import "SmileWeatherDemoVC.h"
 
 typedef void(^SmileWeatherDataDownloadCompletion)(SmileWeatherData * _Nullable data,  NSError *_Nullable error);
 typedef void(^SmileWeatherPlacemarksCompletion)(NSArray<CLPlacemark*> *_Nullable placeMarks, NSError *_Nullable error);

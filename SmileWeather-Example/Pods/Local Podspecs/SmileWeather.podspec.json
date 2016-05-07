@@ -1,6 +1,6 @@
 {
   "name": "SmileWeather",
-  "version": "0.1.5",
+  "version": "0.1.9",
   "summary": "A library for Search & Parse the weather data from Wunderground conveniently.",
   "description": "1. Handle all complicated things about Search & Parse the weather data.\n2. Need not any weather icon, SmileWeather handle it for you.\n3. Fully localized the related information for almost all the countries in the world.",
   "homepage": "https://github.com/liu044100/SmileWeather",
@@ -11,12 +11,22 @@
   },
   "social_media_url": "https://dribbble.com/yuchenliu",
   "platforms": {
-    "ios": "7.0"
+    "ios": "7.0",
+    "watchos": "2.0"
+  },
+  "ios": {
+    "frameworks": [
+      "UIKit",
+      "CoreLocation"
+    ]
+  },
+  "watchos": {
+    "frameworks": "CoreLocation"
   },
   "requires_arc": true,
   "source": {
     "git": "https://github.com/liu044100/SmileWeather.git",
-    "tag": "0.1.5"
+    "tag": "0.1.9"
   },
   "source_files": "SmileWeather/Classes/*",
   "resources": [
@@ -24,9 +34,5 @@
     "SmileWeather/Assets/*.ttf",
     "SmileWeather/Assets/*.xib"
   ],
-  "public_header_files": "SmileWeather/Classes/*.h",
-  "frameworks": [
-    "UIKit",
-    "CoreLocation"
-  ]
+  "public_header_files": "SmileWeather/Classes/*.h"
 }

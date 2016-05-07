@@ -1,845 +1,4100 @@
-// !$*UTF8*$!
-{
-	archiveVersion = 1;
-	classes = {
-	};
-	objectVersion = 46;
-	objects = {
-
-/* Begin PBXBuildFile section */
-		003AC4378003CE4B5E66DD0EDCA1D54D /* SmileWeatherHourlyData.h in Headers */ = {isa = PBXBuildFile; fileRef = 83CAF7A30D2E89366FD71CEDB9FD1283 /* SmileWeatherHourlyData.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1FF2D038A453FA7C6C546DAAB614575B /* SmileLineLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 17FA60EF14ABC8E049A7B6BE7D159588 /* SmileLineLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		235110A8202850C4466398770EA43BE0 /* SmileClimacons.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FDE79E5786BD9EF0A79EB32D63720C8 /* SmileClimacons.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		32569CC6741B5456E67A492AE2CF37D2 /* SmileWeatherOneDayData.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8FFBB629C8075550C1675A90CB161C /* SmileWeatherOneDayData.m */; };
-		328F8005CC9A0E8E4120291B5348431D /* Pods-SmileWeatherTodayWidget-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BEA009D3394909CBB8F916A1CAB348EC /* Pods-SmileWeatherTodayWidget-dummy.m */; };
-		42FA8861A4397F7B3FC0188A2296C1EC /* SmileWeatherForecastDayData.m in Sources */ = {isa = PBXBuildFile; fileRef = 576706404CA03E733DC6C4DD9B1B182F /* SmileWeatherForecastDayData.m */; };
-		49A886780AE30920D27E2F094E8D6CB4 /* Pods-Smile Weather-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 97A5E277F8340ED9511125CCBF5101B7 /* Pods-Smile Weather-dummy.m */; };
-		539B8D6E2B23970C817F3DE26F3BDE7E /* SmileLineLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = FDDCC9296711F3F56E74F411784D3FD7 /* SmileLineLayout.m */; };
-		57C7AE3529C18BB80A7843E495E548D8 /* SmileWeatherData.h in Headers */ = {isa = PBXBuildFile; fileRef = 8FD405DB12A8E0FDDA8D5BFD188FC48C /* SmileWeatherData.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		63A65C94A1BCE13B6A50F7933A074113 /* SmileWeatherCurrentData.h in Headers */ = {isa = PBXBuildFile; fileRef = E0B9CA615A894A0704EFED6027392EB7 /* SmileWeatherCurrentData.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		65075EDF3FEEEF952C116CFCE08B8C42 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 524DE4ACFB607B209FC2C5C16FF19694 /* Foundation.framework */; };
-		6AF11B5679559AB81BAD88D97E2E890E /* SmileWeatherForecastDayData.h in Headers */ = {isa = PBXBuildFile; fileRef = BC80DFCEB724234F499C64160D493B54 /* SmileWeatherForecastDayData.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6B68EAB537FA773B82F3E5415FC2CCA3 /* SmileWeatherData.m in Sources */ = {isa = PBXBuildFile; fileRef = F6EE6A4C4214D1B4221104C462DDFB6C /* SmileWeatherData.m */; };
-		712B6BAB9702BFF92A5BCFC105059B0B /* SmileWeatherHourlyData.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C11CF9B7CFBD316B11113E49DD2FAE5 /* SmileWeatherHourlyData.m */; };
-		7FDAB3A841EF8F651A3A171AA7FB3FC7 /* SmileWeatherCurrentData.m in Sources */ = {isa = PBXBuildFile; fileRef = E8FF8C4D39041AD3491FFF96385C04CB /* SmileWeatherCurrentData.m */; };
-		8636640109BE088B3056DBF32EED14A0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 524DE4ACFB607B209FC2C5C16FF19694 /* Foundation.framework */; };
-		8787A9D75EB68E52E9C3DABA34289BC3 /* SmileWeatherDemoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C867A4A9286A222D547A5FE9699AAD65 /* SmileWeatherDemoVC.m */; };
-		88E0ACF0D4D9CC728AC47B86C3A353CA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A48B62CC8A6EFC33D04AAC25D8FC2B45 /* UIKit.framework */; };
-		8C082CAEFBBBE3E59A88567A0E34438F /* NSString+SmileSubstring.h in Headers */ = {isa = PBXBuildFile; fileRef = DC9E7F30A023B905B8F551E63AA4B754 /* NSString+SmileSubstring.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		90594F67DC8AA57F05DFBC3790C58768 /* SmileWeatherDemoVC.h in Headers */ = {isa = PBXBuildFile; fileRef = 16CCCD401F26BA9164AA61B21DEDD15A /* SmileWeatherDemoVC.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		94E524CD65A9099E9C453FC1A22148A9 /* SmileWeather-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F8A5AE4D1232A4C74C8EF3D8B5CA3A0D /* SmileWeather-dummy.m */; };
-		9D9D47ABF44B587B467715F8770ED0DC /* SmileWeatherOneDayData.h in Headers */ = {isa = PBXBuildFile; fileRef = 29EFF54E57319B4D4EBBF579D8F903D6 /* SmileWeatherOneDayData.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A06FC49564D942C82F9B4029245F5BCA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 524DE4ACFB607B209FC2C5C16FF19694 /* Foundation.framework */; };
-		CA3F07B3E17C9C45223571A52EBD306A /* SmileWeatherDownLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = D411F7055D6F379DDF4A8278B3FC79F6 /* SmileWeatherDownLoader.m */; };
-		CC95E54EF3962942BF83E6BA12EAE3E1 /* NSString+SmileSubstring.m in Sources */ = {isa = PBXBuildFile; fileRef = 6188CA0ACDE66F4B5E718332DAEE145B /* NSString+SmileSubstring.m */; };
-		CC9F53019B246C887ABD085C219B9739 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B026A22E0E118AE17E6F907E54C9DAC4 /* CoreLocation.framework */; };
-		DB165E7B64A49EA80AC5421111CC80FB /* SmileWeatherDownLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = FC223458C5C6A312863F4E1923301A49 /* SmileWeatherDownLoader.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EF1174DC86CF0AC5DFDF6FD51996EE9A /* Pods-SmileWeather-ExampleTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E75E5FA07427A58CC723A81E817810C /* Pods-SmileWeather-ExampleTests-dummy.m */; };
-		FA2716B5E887E2CC61B919A9CA371B4D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 524DE4ACFB607B209FC2C5C16FF19694 /* Foundation.framework */; };
-/* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		62EF6D834924F3F2DDFB14038E699445 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A0D0FCE707015F468BFBC8190E5C4F1D;
-			remoteInfo = SmileWeather;
-		};
-		9AFC03D71DCB7DF48537F1C65B2C1C97 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A0D0FCE707015F468BFBC8190E5C4F1D;
-			remoteInfo = SmileWeather;
-		};
-		F603F4E5C59E5411BE1014164E421792 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A0D0FCE707015F468BFBC8190E5C4F1D;
-			remoteInfo = SmileWeather;
-		};
-/* End PBXContainerItemProxy section */
-
-/* Begin PBXFileReference section */
-		02BD890E42FB6DFC2DD7EFB38EF2578D /* Pods-SmileWeatherTodayWidget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SmileWeatherTodayWidget.release.xcconfig"; sourceTree = "<group>"; };
-		031F9C4842376FE5985A6BD2DB49C40B /* SmileWeatherDemoView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = SmileWeatherDemoView.xib; sourceTree = "<group>"; };
-		084C7EFCBBDD4B2680FE77592EA37122 /* SmileWeatherForecastCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = SmileWeatherForecastCell.xib; sourceTree = "<group>"; };
-		0B17EBA2A4D90B2BF26ACCC1F0A39575 /* Pods-SmileWeatherTodayWidget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SmileWeatherTodayWidget.debug.xcconfig"; sourceTree = "<group>"; };
-		0D52823FBB60359CE2D5FF1861B49173 /* Pods-SmileWeather-ExampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SmileWeather-ExampleTests.release.xcconfig"; sourceTree = "<group>"; };
-		1044495096AE292E5BAC83B63320DC05 /* Pods-Smile Weather-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Smile Weather-frameworks.sh"; sourceTree = "<group>"; };
-		15A68DE7FBFB8F61083FAB6D668BA840 /* Pods-Smile Weather-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Smile Weather-acknowledgements.markdown"; sourceTree = "<group>"; };
-		16CCCD401F26BA9164AA61B21DEDD15A /* SmileWeatherDemoVC.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SmileWeatherDemoVC.h; sourceTree = "<group>"; };
-		17FA60EF14ABC8E049A7B6BE7D159588 /* SmileLineLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SmileLineLayout.h; sourceTree = "<group>"; };
-		1BB38E516ACD69CC87C04EE190C0A788 /* smile_pressure@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "smile_pressure@2x.png"; sourceTree = "<group>"; };
-		1E791807B3539881F084165C8A6AFA42 /* libPods-Smile Weather.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Smile Weather.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		20699518004D8731E2FC2234616424BF /* smile_wunder_logo@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "smile_wunder_logo@2x.png"; sourceTree = "<group>"; };
-		254D73F4120C681ACA54F00A6DDB4F02 /* Pods-Smile Weather-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Smile Weather-resources.sh"; sourceTree = "<group>"; };
-		29EFF54E57319B4D4EBBF579D8F903D6 /* SmileWeatherOneDayData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SmileWeatherOneDayData.h; sourceTree = "<group>"; };
-		374716C9508C43E7CDA9F8A6E67094C3 /* smile_wind@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "smile_wind@2x.png"; sourceTree = "<group>"; };
-		3C1C612BC5C00CDC45ABF8267B44351C /* smile_drop@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "smile_drop@3x.png"; sourceTree = "<group>"; };
-		3FDE79E5786BD9EF0A79EB32D63720C8 /* SmileClimacons.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SmileClimacons.h; sourceTree = "<group>"; };
-		4901F3E7855368EBE86A238C000F7EEA /* smile_sunrise@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "smile_sunrise@2x.png"; sourceTree = "<group>"; };
-		4B8334DEECA191187CA47F69CCA91A0F /* Pods-SmileWeatherTodayWidget-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SmileWeatherTodayWidget-acknowledgements.markdown"; sourceTree = "<group>"; };
-		4ED27CC9588E734A1B0A3B4050202E11 /* smile_sunrise@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "smile_sunrise@3x.png"; sourceTree = "<group>"; };
-		524DE4ACFB607B209FC2C5C16FF19694 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		52D7F467A1DE10753695B3B05688F43C /* smile_sunset@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "smile_sunset@3x.png"; sourceTree = "<group>"; };
-		557872452F7F2328F8EB3C3505DF46DF /* Pods-SmileWeather-ExampleTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SmileWeather-ExampleTests-acknowledgements.plist"; sourceTree = "<group>"; };
-		576706404CA03E733DC6C4DD9B1B182F /* SmileWeatherForecastDayData.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SmileWeatherForecastDayData.m; sourceTree = "<group>"; };
-		5E8FFBB629C8075550C1675A90CB161C /* SmileWeatherOneDayData.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SmileWeatherOneDayData.m; sourceTree = "<group>"; };
-		6188CA0ACDE66F4B5E718332DAEE145B /* NSString+SmileSubstring.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NSString+SmileSubstring.m"; sourceTree = "<group>"; };
-		6229074489CA399349B18405A4105C1A /* libSmileWeather.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSmileWeather.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		6F0E6CF8EBCDE442CA1D099CB524885F /* Pods-SmileWeather-ExampleTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SmileWeather-ExampleTests-frameworks.sh"; sourceTree = "<group>"; };
-		70BBD0687F0CC0E99C456B1C8EE88847 /* Pods-SmileWeatherTodayWidget-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SmileWeatherTodayWidget-resources.sh"; sourceTree = "<group>"; };
-		7A64B029A207B2D7979F1A17F6CB3C6A /* libPods-SmileWeatherTodayWidget.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SmileWeatherTodayWidget.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		7B1260CA47FABBFBAFCAFF5AD5E4B963 /* Pods-SmileWeather-ExampleTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SmileWeather-ExampleTests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		83CAF7A30D2E89366FD71CEDB9FD1283 /* SmileWeatherHourlyData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SmileWeatherHourlyData.h; sourceTree = "<group>"; };
-		8853C3DEE803100EE00C28CC22BFF989 /* smile_drop@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "smile_drop@2x.png"; sourceTree = "<group>"; };
-		8C298D46C8E28577F5E80F23050CC6F5 /* SmileWeatherPropertyCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = SmileWeatherPropertyCell.xib; sourceTree = "<group>"; };
-		8E75E5FA07427A58CC723A81E817810C /* Pods-SmileWeather-ExampleTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SmileWeather-ExampleTests-dummy.m"; sourceTree = "<group>"; };
-		8FD405DB12A8E0FDDA8D5BFD188FC48C /* SmileWeatherData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SmileWeatherData.h; sourceTree = "<group>"; };
-		908E05084E45B8CF3F7C3D08AB75293D /* smile_umbrella@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "smile_umbrella@2x.png"; sourceTree = "<group>"; };
-		92B0641CB04D31074C0F5E94D31B1286 /* smile_wunder_logo@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "smile_wunder_logo@3x.png"; sourceTree = "<group>"; };
-		92B12ABEBCA955350C91DE994604C029 /* Climacons.ttf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; path = Climacons.ttf; sourceTree = "<group>"; };
-		9368969D4DBB6D67DB1ADB7701B11BC1 /* smile_openweather_logo@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "smile_openweather_logo@3x.png"; sourceTree = "<group>"; };
-		93A9E5E6D816D57C8A88EFFCD15EFDFA /* Pods-SmileWeather-ExampleTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SmileWeather-ExampleTests-resources.sh"; sourceTree = "<group>"; };
-		93ACBDC301857ED0036D3DFA113302F0 /* smile_wind@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "smile_wind@3x.png"; sourceTree = "<group>"; };
-		9615119AA4F20766C70DE925629983DE /* libPods-SmileWeather-ExampleTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SmileWeather-ExampleTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		97A5E277F8340ED9511125CCBF5101B7 /* Pods-Smile Weather-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Smile Weather-dummy.m"; sourceTree = "<group>"; };
-		9AA35DF7882C60B69312F8F0472E003E /* smile_pressure@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "smile_pressure@3x.png"; sourceTree = "<group>"; };
-		9C11CF9B7CFBD316B11113E49DD2FAE5 /* SmileWeatherHourlyData.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SmileWeatherHourlyData.m; sourceTree = "<group>"; };
-		A041B2C53A041E07CB3B75B91F4D8172 /* Pods-Smile Weather-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Smile Weather-acknowledgements.plist"; sourceTree = "<group>"; };
-		A48B62CC8A6EFC33D04AAC25D8FC2B45 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		A5655EF6334B83683F3353F06460F740 /* Pods-Smile Weather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Smile Weather.debug.xcconfig"; sourceTree = "<group>"; };
-		ADE415C5886B2BA174FA615BC2BB4920 /* smile_openweather_logo@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "smile_openweather_logo@2x.png"; sourceTree = "<group>"; };
-		B026A22E0E118AE17E6F907E54C9DAC4 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/CoreLocation.framework; sourceTree = DEVELOPER_DIR; };
-		B064058AE92DAC001F80F951F3E9A273 /* SmileWeather.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SmileWeather.xcconfig; sourceTree = "<group>"; };
-		B6DD5E7BB7B1824B1A7D7827DD60710F /* Pods-Smile Weather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Smile Weather.release.xcconfig"; sourceTree = "<group>"; };
-		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		BC80DFCEB724234F499C64160D493B54 /* SmileWeatherForecastDayData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SmileWeatherForecastDayData.h; sourceTree = "<group>"; };
-		BEA009D3394909CBB8F916A1CAB348EC /* Pods-SmileWeatherTodayWidget-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SmileWeatherTodayWidget-dummy.m"; sourceTree = "<group>"; };
-		C867A4A9286A222D547A5FE9699AAD65 /* SmileWeatherDemoVC.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SmileWeatherDemoVC.m; sourceTree = "<group>"; };
-		CCEBB4148F28663125EB66FA4A289053 /* smile_sunglass@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "smile_sunglass@2x.png"; sourceTree = "<group>"; };
-		CF0ECBB905B37CADE81FA491F1EFDB9E /* SmileWeather-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SmileWeather-prefix.pch"; sourceTree = "<group>"; };
-		D1DED54D6544BFEDF694A06F49BD77CD /* Pods-SmileWeather-ExampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SmileWeather-ExampleTests.debug.xcconfig"; sourceTree = "<group>"; };
-		D411F7055D6F379DDF4A8278B3FC79F6 /* SmileWeatherDownLoader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SmileWeatherDownLoader.m; sourceTree = "<group>"; };
-		DC9E7F30A023B905B8F551E63AA4B754 /* NSString+SmileSubstring.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NSString+SmileSubstring.h"; sourceTree = "<group>"; };
-		E0B9CA615A894A0704EFED6027392EB7 /* SmileWeatherCurrentData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SmileWeatherCurrentData.h; sourceTree = "<group>"; };
-		E8FF8C4D39041AD3491FFF96385C04CB /* SmileWeatherCurrentData.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SmileWeatherCurrentData.m; sourceTree = "<group>"; };
-		EAA2F4FD6274C38EC652DC031F72920E /* smile_sunglass@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "smile_sunglass@3x.png"; sourceTree = "<group>"; };
-		EC0283B4934881256B2AC93456062ABA /* Pods-SmileWeatherTodayWidget-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SmileWeatherTodayWidget-frameworks.sh"; sourceTree = "<group>"; };
-		EC49AE4D9B919F312A9EC3CBD20BB67E /* Pods-SmileWeatherTodayWidget-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SmileWeatherTodayWidget-acknowledgements.plist"; sourceTree = "<group>"; };
-		F02826CC7168E5CF85299CC394A96752 /* SmileWeatherHourlyCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = SmileWeatherHourlyCell.xib; sourceTree = "<group>"; };
-		F6EE6A4C4214D1B4221104C462DDFB6C /* SmileWeatherData.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SmileWeatherData.m; sourceTree = "<group>"; };
-		F8A5AE4D1232A4C74C8EF3D8B5CA3A0D /* SmileWeather-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SmileWeather-dummy.m"; sourceTree = "<group>"; };
-		F902B2FACE1454C28C1663A67BA36354 /* smile_umbrella@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "smile_umbrella@3x.png"; sourceTree = "<group>"; };
-		F9661DCBB9D64BDA4F32013D47B76D39 /* smile_sunset@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "smile_sunset@2x.png"; sourceTree = "<group>"; };
-		FC223458C5C6A312863F4E1923301A49 /* SmileWeatherDownLoader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SmileWeatherDownLoader.h; sourceTree = "<group>"; };
-		FDDCC9296711F3F56E74F411784D3FD7 /* SmileLineLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SmileLineLayout.m; sourceTree = "<group>"; };
-/* End PBXFileReference section */
-
-/* Begin PBXFrameworksBuildPhase section */
-		5AE626DF4D59AABDE03D18585047FBD1 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FA2716B5E887E2CC61B919A9CA371B4D /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		660D7EE84ECA72D01ED2379086DB411F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A06FC49564D942C82F9B4029245F5BCA /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7E1063AB06B470BA15D8797EB4D9E471 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CC9F53019B246C887ABD085C219B9739 /* CoreLocation.framework in Frameworks */,
-				8636640109BE088B3056DBF32EED14A0 /* Foundation.framework in Frameworks */,
-				88E0ACF0D4D9CC728AC47B86C3A353CA /* UIKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DDC6921879E299851934EB6D7CE435BF /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				65075EDF3FEEEF952C116CFCE08B8C42 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXFrameworksBuildPhase section */
-
-/* Begin PBXGroup section */
-		0E71EBBA5B71405797814230960E106B /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				DC9E7F30A023B905B8F551E63AA4B754 /* NSString+SmileSubstring.h */,
-				6188CA0ACDE66F4B5E718332DAEE145B /* NSString+SmileSubstring.m */,
-				3FDE79E5786BD9EF0A79EB32D63720C8 /* SmileClimacons.h */,
-				17FA60EF14ABC8E049A7B6BE7D159588 /* SmileLineLayout.h */,
-				FDDCC9296711F3F56E74F411784D3FD7 /* SmileLineLayout.m */,
-				E0B9CA615A894A0704EFED6027392EB7 /* SmileWeatherCurrentData.h */,
-				E8FF8C4D39041AD3491FFF96385C04CB /* SmileWeatherCurrentData.m */,
-				8FD405DB12A8E0FDDA8D5BFD188FC48C /* SmileWeatherData.h */,
-				F6EE6A4C4214D1B4221104C462DDFB6C /* SmileWeatherData.m */,
-				16CCCD401F26BA9164AA61B21DEDD15A /* SmileWeatherDemoVC.h */,
-				C867A4A9286A222D547A5FE9699AAD65 /* SmileWeatherDemoVC.m */,
-				FC223458C5C6A312863F4E1923301A49 /* SmileWeatherDownLoader.h */,
-				D411F7055D6F379DDF4A8278B3FC79F6 /* SmileWeatherDownLoader.m */,
-				BC80DFCEB724234F499C64160D493B54 /* SmileWeatherForecastDayData.h */,
-				576706404CA03E733DC6C4DD9B1B182F /* SmileWeatherForecastDayData.m */,
-				83CAF7A30D2E89366FD71CEDB9FD1283 /* SmileWeatherHourlyData.h */,
-				9C11CF9B7CFBD316B11113E49DD2FAE5 /* SmileWeatherHourlyData.m */,
-				29EFF54E57319B4D4EBBF579D8F903D6 /* SmileWeatherOneDayData.h */,
-				5E8FFBB629C8075550C1675A90CB161C /* SmileWeatherOneDayData.m */,
-			);
-			path = Classes;
-			sourceTree = "<group>";
-		};
-		122DA2E5084A4393C29BE363C764795C /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				704829A3910E153298C482537DDBE0E2 /* iOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		3FEE34D52D59AD99E24D8B518DE85C88 /* Pods-Smile Weather */ = {
-			isa = PBXGroup;
-			children = (
-				15A68DE7FBFB8F61083FAB6D668BA840 /* Pods-Smile Weather-acknowledgements.markdown */,
-				A041B2C53A041E07CB3B75B91F4D8172 /* Pods-Smile Weather-acknowledgements.plist */,
-				97A5E277F8340ED9511125CCBF5101B7 /* Pods-Smile Weather-dummy.m */,
-				1044495096AE292E5BAC83B63320DC05 /* Pods-Smile Weather-frameworks.sh */,
-				254D73F4120C681ACA54F00A6DDB4F02 /* Pods-Smile Weather-resources.sh */,
-				A5655EF6334B83683F3353F06460F740 /* Pods-Smile Weather.debug.xcconfig */,
-				B6DD5E7BB7B1824B1A7D7827DD60710F /* Pods-Smile Weather.release.xcconfig */,
-			);
-			name = "Pods-Smile Weather";
-			path = "Target Support Files/Pods-Smile Weather";
-			sourceTree = "<group>";
-		};
-		593C8FAF8B4A81AEA03FE50F17878A44 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				F23E0D741560C2EC7ECF9F26A25A96D3 /* SmileWeather */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		6C2D62DA1175B8309E7D5601E4FB6BEA /* SmileWeather */ = {
-			isa = PBXGroup;
-			children = (
-				593C8FAF8B4A81AEA03FE50F17878A44 /* Resources */,
-				FEF998ADDF668CF8B5F9F5C746AB87F5 /* SmileWeather */,
-				885B519455D1AEB0EB898D58D1C998D2 /* Support Files */,
-			);
-			name = SmileWeather;
-			path = ../..;
-			sourceTree = "<group>";
-		};
-		704829A3910E153298C482537DDBE0E2 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				B026A22E0E118AE17E6F907E54C9DAC4 /* CoreLocation.framework */,
-				524DE4ACFB607B209FC2C5C16FF19694 /* Foundation.framework */,
-				A48B62CC8A6EFC33D04AAC25D8FC2B45 /* UIKit.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		7408BD14EEE34D2FDCD79A3623B55DBD /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				1E791807B3539881F084165C8A6AFA42 /* libPods-Smile Weather.a */,
-				9615119AA4F20766C70DE925629983DE /* libPods-SmileWeather-ExampleTests.a */,
-				7A64B029A207B2D7979F1A17F6CB3C6A /* libPods-SmileWeatherTodayWidget.a */,
-				6229074489CA399349B18405A4105C1A /* libSmileWeather.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		7DB346D0F39D3F0E887471402A8071AB = {
-			isa = PBXGroup;
-			children = (
-				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
-				E02EF3791DBA72E8266B50F612CD499D /* Development Pods */,
-				122DA2E5084A4393C29BE363C764795C /* Frameworks */,
-				7408BD14EEE34D2FDCD79A3623B55DBD /* Products */,
-				D1565AD6BB672AD80A50FE4814567DB6 /* Targets Support Files */,
-			);
-			sourceTree = "<group>";
-		};
-		885B519455D1AEB0EB898D58D1C998D2 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				B064058AE92DAC001F80F951F3E9A273 /* SmileWeather.xcconfig */,
-				F8A5AE4D1232A4C74C8EF3D8B5CA3A0D /* SmileWeather-dummy.m */,
-				CF0ECBB905B37CADE81FA491F1EFDB9E /* SmileWeather-prefix.pch */,
-			);
-			name = "Support Files";
-			path = "SmileWeather-Example/Pods/Target Support Files/SmileWeather";
-			sourceTree = "<group>";
-		};
-		9AC815DD24428C76D10C4CCD6C3BDE54 /* Pods-SmileWeatherTodayWidget */ = {
-			isa = PBXGroup;
-			children = (
-				4B8334DEECA191187CA47F69CCA91A0F /* Pods-SmileWeatherTodayWidget-acknowledgements.markdown */,
-				EC49AE4D9B919F312A9EC3CBD20BB67E /* Pods-SmileWeatherTodayWidget-acknowledgements.plist */,
-				BEA009D3394909CBB8F916A1CAB348EC /* Pods-SmileWeatherTodayWidget-dummy.m */,
-				EC0283B4934881256B2AC93456062ABA /* Pods-SmileWeatherTodayWidget-frameworks.sh */,
-				70BBD0687F0CC0E99C456B1C8EE88847 /* Pods-SmileWeatherTodayWidget-resources.sh */,
-				0B17EBA2A4D90B2BF26ACCC1F0A39575 /* Pods-SmileWeatherTodayWidget.debug.xcconfig */,
-				02BD890E42FB6DFC2DD7EFB38EF2578D /* Pods-SmileWeatherTodayWidget.release.xcconfig */,
-			);
-			name = "Pods-SmileWeatherTodayWidget";
-			path = "Target Support Files/Pods-SmileWeatherTodayWidget";
-			sourceTree = "<group>";
-		};
-		ADFFFBB97948C898B66597BBA430AE92 /* Assets */ = {
-			isa = PBXGroup;
-			children = (
-				92B12ABEBCA955350C91DE994604C029 /* Climacons.ttf */,
-				8853C3DEE803100EE00C28CC22BFF989 /* smile_drop@2x.png */,
-				3C1C612BC5C00CDC45ABF8267B44351C /* smile_drop@3x.png */,
-				ADE415C5886B2BA174FA615BC2BB4920 /* smile_openweather_logo@2x.png */,
-				9368969D4DBB6D67DB1ADB7701B11BC1 /* smile_openweather_logo@3x.png */,
-				1BB38E516ACD69CC87C04EE190C0A788 /* smile_pressure@2x.png */,
-				9AA35DF7882C60B69312F8F0472E003E /* smile_pressure@3x.png */,
-				CCEBB4148F28663125EB66FA4A289053 /* smile_sunglass@2x.png */,
-				EAA2F4FD6274C38EC652DC031F72920E /* smile_sunglass@3x.png */,
-				4901F3E7855368EBE86A238C000F7EEA /* smile_sunrise@2x.png */,
-				4ED27CC9588E734A1B0A3B4050202E11 /* smile_sunrise@3x.png */,
-				F9661DCBB9D64BDA4F32013D47B76D39 /* smile_sunset@2x.png */,
-				52D7F467A1DE10753695B3B05688F43C /* smile_sunset@3x.png */,
-				908E05084E45B8CF3F7C3D08AB75293D /* smile_umbrella@2x.png */,
-				F902B2FACE1454C28C1663A67BA36354 /* smile_umbrella@3x.png */,
-				374716C9508C43E7CDA9F8A6E67094C3 /* smile_wind@2x.png */,
-				93ACBDC301857ED0036D3DFA113302F0 /* smile_wind@3x.png */,
-				20699518004D8731E2FC2234616424BF /* smile_wunder_logo@2x.png */,
-				92B0641CB04D31074C0F5E94D31B1286 /* smile_wunder_logo@3x.png */,
-				031F9C4842376FE5985A6BD2DB49C40B /* SmileWeatherDemoView.xib */,
-				084C7EFCBBDD4B2680FE77592EA37122 /* SmileWeatherForecastCell.xib */,
-				F02826CC7168E5CF85299CC394A96752 /* SmileWeatherHourlyCell.xib */,
-				8C298D46C8E28577F5E80F23050CC6F5 /* SmileWeatherPropertyCell.xib */,
-			);
-			path = Assets;
-			sourceTree = "<group>";
-		};
-		D1565AD6BB672AD80A50FE4814567DB6 /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				3FEE34D52D59AD99E24D8B518DE85C88 /* Pods-Smile Weather */,
-				E4EDBF00B3A729B16F3A79FF6808BD78 /* Pods-SmileWeather-ExampleTests */,
-				9AC815DD24428C76D10C4CCD6C3BDE54 /* Pods-SmileWeatherTodayWidget */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		E02EF3791DBA72E8266B50F612CD499D /* Development Pods */ = {
-			isa = PBXGroup;
-			children = (
-				6C2D62DA1175B8309E7D5601E4FB6BEA /* SmileWeather */,
-			);
-			name = "Development Pods";
-			sourceTree = "<group>";
-		};
-		E4EDBF00B3A729B16F3A79FF6808BD78 /* Pods-SmileWeather-ExampleTests */ = {
-			isa = PBXGroup;
-			children = (
-				7B1260CA47FABBFBAFCAFF5AD5E4B963 /* Pods-SmileWeather-ExampleTests-acknowledgements.markdown */,
-				557872452F7F2328F8EB3C3505DF46DF /* Pods-SmileWeather-ExampleTests-acknowledgements.plist */,
-				8E75E5FA07427A58CC723A81E817810C /* Pods-SmileWeather-ExampleTests-dummy.m */,
-				6F0E6CF8EBCDE442CA1D099CB524885F /* Pods-SmileWeather-ExampleTests-frameworks.sh */,
-				93A9E5E6D816D57C8A88EFFCD15EFDFA /* Pods-SmileWeather-ExampleTests-resources.sh */,
-				D1DED54D6544BFEDF694A06F49BD77CD /* Pods-SmileWeather-ExampleTests.debug.xcconfig */,
-				0D52823FBB60359CE2D5FF1861B49173 /* Pods-SmileWeather-ExampleTests.release.xcconfig */,
-			);
-			name = "Pods-SmileWeather-ExampleTests";
-			path = "Target Support Files/Pods-SmileWeather-ExampleTests";
-			sourceTree = "<group>";
-		};
-		F23E0D741560C2EC7ECF9F26A25A96D3 /* SmileWeather */ = {
-			isa = PBXGroup;
-			children = (
-				ADFFFBB97948C898B66597BBA430AE92 /* Assets */,
-			);
-			path = SmileWeather;
-			sourceTree = "<group>";
-		};
-		FEF998ADDF668CF8B5F9F5C746AB87F5 /* SmileWeather */ = {
-			isa = PBXGroup;
-			children = (
-				0E71EBBA5B71405797814230960E106B /* Classes */,
-			);
-			path = SmileWeather;
-			sourceTree = "<group>";
-		};
-/* End PBXGroup section */
-
-/* Begin PBXHeadersBuildPhase section */
-		D891358A624D29024AEE652776534EE1 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8C082CAEFBBBE3E59A88567A0E34438F /* NSString+SmileSubstring.h in Headers */,
-				235110A8202850C4466398770EA43BE0 /* SmileClimacons.h in Headers */,
-				1FF2D038A453FA7C6C546DAAB614575B /* SmileLineLayout.h in Headers */,
-				63A65C94A1BCE13B6A50F7933A074113 /* SmileWeatherCurrentData.h in Headers */,
-				57C7AE3529C18BB80A7843E495E548D8 /* SmileWeatherData.h in Headers */,
-				90594F67DC8AA57F05DFBC3790C58768 /* SmileWeatherDemoVC.h in Headers */,
-				DB165E7B64A49EA80AC5421111CC80FB /* SmileWeatherDownLoader.h in Headers */,
-				6AF11B5679559AB81BAD88D97E2E890E /* SmileWeatherForecastDayData.h in Headers */,
-				003AC4378003CE4B5E66DD0EDCA1D54D /* SmileWeatherHourlyData.h in Headers */,
-				9D9D47ABF44B587B467715F8770ED0DC /* SmileWeatherOneDayData.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
-
-/* Begin PBXNativeTarget section */
-		31D78FB6712DC338369FCD9AA8ECFD96 /* Pods-SmileWeatherTodayWidget */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 682067DFDBAD3A73D91A36719D144994 /* Build configuration list for PBXNativeTarget "Pods-SmileWeatherTodayWidget" */;
-			buildPhases = (
-				D412633181098BB0507B32ED486E8E28 /* Sources */,
-				660D7EE84ECA72D01ED2379086DB411F /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				4CC549AE18DAB1122CE71D1612372CE4 /* PBXTargetDependency */,
-			);
-			name = "Pods-SmileWeatherTodayWidget";
-			productName = "Pods-SmileWeatherTodayWidget";
-			productReference = 7A64B029A207B2D7979F1A17F6CB3C6A /* libPods-SmileWeatherTodayWidget.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		A0D0FCE707015F468BFBC8190E5C4F1D /* SmileWeather */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 097DAE91046F5DAF26D4D12668EBB78F /* Build configuration list for PBXNativeTarget "SmileWeather" */;
-			buildPhases = (
-				F14AC99387E992F82114CC877590D22D /* Sources */,
-				7E1063AB06B470BA15D8797EB4D9E471 /* Frameworks */,
-				D891358A624D29024AEE652776534EE1 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = SmileWeather;
-			productName = SmileWeather;
-			productReference = 6229074489CA399349B18405A4105C1A /* libSmileWeather.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		AEEE1BB726568E88F5203DFD0D576FCC /* Pods-SmileWeather-ExampleTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 9C04A492D54A185D962BC0B5509E28C6 /* Build configuration list for PBXNativeTarget "Pods-SmileWeather-ExampleTests" */;
-			buildPhases = (
-				0D94182D5710EBBFB15D5BDAF98AC26E /* Sources */,
-				DDC6921879E299851934EB6D7CE435BF /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				3406AD4EB4A2A413BC5C89F700885339 /* PBXTargetDependency */,
-			);
-			name = "Pods-SmileWeather-ExampleTests";
-			productName = "Pods-SmileWeather-ExampleTests";
-			productReference = 9615119AA4F20766C70DE925629983DE /* libPods-SmileWeather-ExampleTests.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		E74AAACBD130CAC5F26E056B90475B2F /* Pods-Smile Weather */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 98A995C595E40580A6A8F9E788A070D1 /* Build configuration list for PBXNativeTarget "Pods-Smile Weather" */;
-			buildPhases = (
-				497C2F39D135BCFC0B71403390BF1866 /* Sources */,
-				5AE626DF4D59AABDE03D18585047FBD1 /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				88B679659C39A6A77FBACBB3C76D7023 /* PBXTargetDependency */,
-			);
-			name = "Pods-Smile Weather";
-			productName = "Pods-Smile Weather";
-			productReference = 1E791807B3539881F084165C8A6AFA42 /* libPods-Smile Weather.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-/* End PBXNativeTarget section */
-
-/* Begin PBXProject section */
-		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
-			isa = PBXProject;
-			attributes = {
-				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0700;
-			};
-			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
-			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
-			hasScannedForEncodings = 0;
-			knownRegions = (
-				en,
-			);
-			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 7408BD14EEE34D2FDCD79A3623B55DBD /* Products */;
-			projectDirPath = "";
-			projectRoot = "";
-			targets = (
-				E74AAACBD130CAC5F26E056B90475B2F /* Pods-Smile Weather */,
-				AEEE1BB726568E88F5203DFD0D576FCC /* Pods-SmileWeather-ExampleTests */,
-				31D78FB6712DC338369FCD9AA8ECFD96 /* Pods-SmileWeatherTodayWidget */,
-				A0D0FCE707015F468BFBC8190E5C4F1D /* SmileWeather */,
-			);
-		};
-/* End PBXProject section */
-
-/* Begin PBXSourcesBuildPhase section */
-		0D94182D5710EBBFB15D5BDAF98AC26E /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				EF1174DC86CF0AC5DFDF6FD51996EE9A /* Pods-SmileWeather-ExampleTests-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		497C2F39D135BCFC0B71403390BF1866 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				49A886780AE30920D27E2F094E8D6CB4 /* Pods-Smile Weather-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D412633181098BB0507B32ED486E8E28 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				328F8005CC9A0E8E4120291B5348431D /* Pods-SmileWeatherTodayWidget-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F14AC99387E992F82114CC877590D22D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CC95E54EF3962942BF83E6BA12EAE3E1 /* NSString+SmileSubstring.m in Sources */,
-				539B8D6E2B23970C817F3DE26F3BDE7E /* SmileLineLayout.m in Sources */,
-				94E524CD65A9099E9C453FC1A22148A9 /* SmileWeather-dummy.m in Sources */,
-				7FDAB3A841EF8F651A3A171AA7FB3FC7 /* SmileWeatherCurrentData.m in Sources */,
-				6B68EAB537FA773B82F3E5415FC2CCA3 /* SmileWeatherData.m in Sources */,
-				8787A9D75EB68E52E9C3DABA34289BC3 /* SmileWeatherDemoVC.m in Sources */,
-				CA3F07B3E17C9C45223571A52EBD306A /* SmileWeatherDownLoader.m in Sources */,
-				42FA8861A4397F7B3FC0188A2296C1EC /* SmileWeatherForecastDayData.m in Sources */,
-				712B6BAB9702BFF92A5BCFC105059B0B /* SmileWeatherHourlyData.m in Sources */,
-				32569CC6741B5456E67A492AE2CF37D2 /* SmileWeatherOneDayData.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		3406AD4EB4A2A413BC5C89F700885339 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = SmileWeather;
-			target = A0D0FCE707015F468BFBC8190E5C4F1D /* SmileWeather */;
-			targetProxy = F603F4E5C59E5411BE1014164E421792 /* PBXContainerItemProxy */;
-		};
-		4CC549AE18DAB1122CE71D1612372CE4 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = SmileWeather;
-			target = A0D0FCE707015F468BFBC8190E5C4F1D /* SmileWeather */;
-			targetProxy = 62EF6D834924F3F2DDFB14038E699445 /* PBXContainerItemProxy */;
-		};
-		88B679659C39A6A77FBACBB3C76D7023 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = SmileWeather;
-			target = A0D0FCE707015F468BFBC8190E5C4F1D /* SmileWeather */;
-			targetProxy = 9AFC03D71DCB7DF48537F1C65B2C1C97 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
-/* Begin XCBuildConfiguration section */
-		052A17875CB827423D627183396CEB60 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = YES;
-				ENABLE_NS_ASSERTIONS = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				STRIP_INSTALLED_PRODUCT = NO;
-				SYMROOT = "${SRCROOT}/../build";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		0ED1CA73A0652BFF8FB0E95AC9ED1229 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0B17EBA2A4D90B2BF26ACCC1F0A39575 /* Pods-SmileWeatherTodayWidget.debug.xcconfig */;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				MACH_O_TYPE = staticlib;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		3703EA2E9BFD8E0B339D2D78F982A665 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 02BD890E42FB6DFC2DD7EFB38EF2578D /* Pods-SmileWeatherTodayWidget.release.xcconfig */;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				MACH_O_TYPE = staticlib;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		3849F0F986599241708B364B365B5B5B /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B6DD5E7BB7B1824B1A7D7827DD60710F /* Pods-Smile Weather.release.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				MACH_O_TYPE = staticlib;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		7AE14CF8DA5D48DF4BC27E0B8DAFFAED /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = A5655EF6334B83683F3353F06460F740 /* Pods-Smile Weather.debug.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				MACH_O_TYPE = staticlib;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		88AA5DF0E3828A6105E4FBA6DEC2CB3C /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0D52823FBB60359CE2D5FF1861B49173 /* Pods-SmileWeather-ExampleTests.release.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				MACH_O_TYPE = staticlib;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		8977936841E945F0464E063E6F007604 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D1DED54D6544BFEDF694A06F49BD77CD /* Pods-SmileWeather-ExampleTests.debug.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				MACH_O_TYPE = staticlib;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		B37F0F91F85060E28F1DAAB522DC7EC1 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				ONLY_ACTIVE_ARCH = YES;
-				STRIP_INSTALLED_PRODUCT = NO;
-				SYMROOT = "${SRCROOT}/../build";
-			};
-			name = Debug;
-		};
-		C775FF25D38C4103C062AF5835683029 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B064058AE92DAC001F80F951F3E9A273 /* SmileWeather.xcconfig */;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/SmileWeather/SmileWeather-prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"$(inherited)",
-					"SmileWeather_APP_EXTENSIONS=1",
-				);
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		D15A8866629D621B7C1685EC9D232E04 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B064058AE92DAC001F80F951F3E9A273 /* SmileWeather.xcconfig */;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/SmileWeather/SmileWeather-prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"$(inherited)",
-					"SmileWeather_APP_EXTENSIONS=1",
-				);
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-/* End XCBuildConfiguration section */
-
-/* Begin XCConfigurationList section */
-		097DAE91046F5DAF26D4D12668EBB78F /* Build configuration list for PBXNativeTarget "SmileWeather" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				C775FF25D38C4103C062AF5835683029 /* Debug */,
-				D15A8866629D621B7C1685EC9D232E04 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B37F0F91F85060E28F1DAAB522DC7EC1 /* Debug */,
-				052A17875CB827423D627183396CEB60 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		682067DFDBAD3A73D91A36719D144994 /* Build configuration list for PBXNativeTarget "Pods-SmileWeatherTodayWidget" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				0ED1CA73A0652BFF8FB0E95AC9ED1229 /* Debug */,
-				3703EA2E9BFD8E0B339D2D78F982A665 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		98A995C595E40580A6A8F9E788A070D1 /* Build configuration list for PBXNativeTarget "Pods-Smile Weather" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				7AE14CF8DA5D48DF4BC27E0B8DAFFAED /* Debug */,
-				3849F0F986599241708B364B365B5B5B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		9C04A492D54A185D962BC0B5509E28C6 /* Build configuration list for PBXNativeTarget "Pods-SmileWeather-ExampleTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				8977936841E945F0464E063E6F007604 /* Debug */,
-				88AA5DF0E3828A6105E4FBA6DEC2CB3C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-/* End XCConfigurationList section */
-	};
-	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-}
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>archiveVersion</key>
+	<string>1</string>
+	<key>classes</key>
+	<dict/>
+	<key>objectVersion</key>
+	<string>46</string>
+	<key>objects</key>
+	<dict>
+		<key>0097CAB0F31150BC24D72B23DDFA354B</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>SmileWeatherHourlyData.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>01838B1A2F60B9DC6DA812980D2F4085</key>
+		<dict>
+			<key>fileRef</key>
+			<string>E7E34DA612DD8D8F0405B1A9761C4F28</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>018D67E509E0429BEEE38BD98A2AA7F7</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>E84138E5608E0A91FDA108E45BF5906D</string>
+				<string>527084EB20B2386B17BC5F55C3358F48</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>027504F824D1516B0A33494749434278</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>smile_sunglass@2x.png</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>029E711EA07B89142FEE19770D6B1110</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>Pods-Smile Weather.release.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>033CD25F54A8AAFA27AFEF3B525E6E2B</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>75141956353A6FE38B57409D30669232</string>
+				<string>74D782734018AF4452BBA0D41981314D</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>03693DDCD04CF8FA0E72FFCC75C65B77</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>libPods-Smile Weather-SmileWeather.a</string>
+			<key>path</key>
+			<string>libPods-Smile Weather-SmileWeather.a</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>039DC51709337D01F8E3E28F23B0B044</key>
+		<dict>
+			<key>fileRef</key>
+			<string>D181ADFC254C56D6B38B1ACD505AD8E3</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>04CCEEF23F807D73B205D48305330CCE</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>E483D710A169992CED7BD61B9FC7C53D</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>APPLICATION_EXTENSION_API_ONLY</key>
+				<string>YES</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>Target Support Files/Pods-SmileWeatherWatch Extension-SmileWeather/Pods-SmileWeatherWatch Extension-SmileWeather-prefix.pch</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>$(inherited)</string>
+					<string>SmileWeather_APP_EXTENSIONS=1</string>
+				</array>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>YES</string>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>OTHER_LIBTOOLFLAGS</key>
+				<string></string>
+				<key>PRIVATE_HEADERS_FOLDER_PATH</key>
+				<string></string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>PUBLIC_HEADERS_FOLDER_PATH</key>
+				<string></string>
+				<key>SDKROOT</key>
+				<string>watchos</string>
+				<key>WATCHOS_DEPLOYMENT_TARGET</key>
+				<string>2.0</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>06A604359FEF06C889806493FB293286</key>
+		<dict>
+			<key>fileRef</key>
+			<string>1CBA06675F23081B6820866E5167FCAA</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>06ABFBE05C87D971FD722B6281D7F2C9</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>file.xib</string>
+			<key>path</key>
+			<string>SmileWeatherHourlyCell.xib</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>0761545F495E1CD98ECC15D2C97BA901</key>
+		<dict>
+			<key>fileRef</key>
+			<string>8D92458B3362DB0F336E5C9C31A989EE</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>0892B6E5B75CE7C6331406BA0E2BC1CD</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.script.sh</string>
+			<key>path</key>
+			<string>Pods-SmileWeatherTodayWidget-frameworks.sh</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>0A2DE8A148C7C045ACE0F419D990690E</key>
+		<dict>
+			<key>fileRef</key>
+			<string>7E682B5307BFC38B224AC716E42E4897</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>0A635F4A5EE347A3DF5B096F078772FE</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>018D67E509E0429BEEE38BD98A2AA7F7</string>
+			<key>buildPhases</key>
+			<array>
+				<string>E6BFEFEE4E76001192FCFA3D00F492A7</string>
+				<string>7BBFC21FB81E2907D22C9A380B9516F8</string>
+				<string>99762D13FA10968A364F4184170BE752</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>Pods-Smile Weather-SmileWeather</string>
+			<key>productName</key>
+			<string>Pods-Smile Weather-SmileWeather</string>
+			<key>productReference</key>
+			<string>03693DDCD04CF8FA0E72FFCC75C65B77</string>
+			<key>productType</key>
+			<string>com.apple.product-type.library.static</string>
+		</dict>
+		<key>0B2FD03FF82E19867396ACABD3C1809A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>8923CD73259107684F675811ABF54A95</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>0C37208C8F47F2E5FDEFAFF458992391</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>libPods-SmileWeatherTodayWidget-SmileWeather.a</string>
+			<key>path</key>
+			<string>libPods-SmileWeatherTodayWidget-SmileWeather.a</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>0C830CF324847BFEE2B13273B623D044</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text</string>
+			<key>path</key>
+			<string>Pods-Smile Weather-acknowledgements.markdown</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>0D8533FB741DBAD09186B4878B317D08</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>libPods-SmileWeather-ExampleTests.a</string>
+			<key>path</key>
+			<string>libPods-SmileWeather-ExampleTests.a</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>0DD109D05331C33062D09B9CF79AEE92</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>Pods-Smile Weather-acknowledgements.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>0EC81B8E9526D4F2EAA7AD4B46092FFF</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>SmileWeatherDownLoader.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>0F5DA37C0972F49614BCDBE9079060BC</key>
+		<dict>
+			<key>fileRef</key>
+			<string>2321CB3D711FBB1A225CC510B83CD0D0</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>1291C883FD2C4B2B7C7BFE35612A6A15</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>17C74E7CB2911F7AC208D952E275F892</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>APPLICATION_EXTENSION_API_ONLY</key>
+				<string>YES</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>MACH_O_TYPE</key>
+				<string>staticlib</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>NO</string>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>OTHER_LIBTOOLFLAGS</key>
+				<string></string>
+				<key>PODS_ROOT</key>
+				<string>$(SRCROOT)</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SDKROOT</key>
+				<string>watchos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+				<key>WATCHOS_DEPLOYMENT_TARGET</key>
+				<string>2.0</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>130234CD0B15E3CF39C2DEF3471944EA</key>
+		<dict>
+			<key>fileRef</key>
+			<string>4D4860981A089761BB45DCB2CC8206DE</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>13AD72A617DC9117B3CF4BEB0AC8E49A</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>file.xib</string>
+			<key>path</key>
+			<string>SmileWeatherForecastCell.xib</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>13FF0BA88B0127EBEF644AA5EF6D9F4F</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>FEF7FCC1269EE773B3C3964832D8D974</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>14A61BC878460516064DED6CC083CE77</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>name</key>
+			<string>Pods-SmileWeatherTodayWidget-SmileWeather</string>
+			<key>target</key>
+			<string>46EE771474E78DFFB844283AE53498B1</string>
+			<key>targetProxy</key>
+			<string>75E46D50E2F6F90E17ECD16090B8E18C</string>
+		</dict>
+		<key>156BF6D982E2214C798FAE64E5A56CF0</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>smile_wind@3x.png</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>15C92D790F4186506249150B798385AA</key>
+		<dict>
+			<key>fileRef</key>
+			<string>2E5382056C734D31A87B6B69197D425B</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>164CD395959D166F4B59B1A2DB4C2EB4</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>E31A45D91EDF770E909883F3C77A0B74</string>
+				<string>EA55FC66E13DE5ADC5D957FD57765545</string>
+				<string>319D7C65802206D321B16F17DAEF843C</string>
+				<string>8123B41F296D04AAF67C404E854436E8</string>
+				<string>9071D556825721A9E6986FED1571FC92</string>
+				<string>C9437E7F9F198B25DCA394114F61271E</string>
+				<string>74D6C529D79E20D734950A14FA41E3E5</string>
+				<string>027504F824D1516B0A33494749434278</string>
+				<string>3015A36ECEB412101529101358CDE8E9</string>
+				<string>78E445551F3EFAED9F34C5A439EC6F09</string>
+				<string>D0F131D886641A578192C8F7088E3B80</string>
+				<string>E6A1DE2B1957DB31C1AD137D2BF9BA41</string>
+				<string>CBA46090F3559D0DF80568B137C7B52A</string>
+				<string>9CC6A4FD9F2638C7CE3F213BF940B55A</string>
+				<string>26232ECCDB2FBD348886AFA87D9D4B7D</string>
+				<string>597ED6F9F6CBEA5938E19FAFFF79CE07</string>
+				<string>156BF6D982E2214C798FAE64E5A56CF0</string>
+				<string>37A83F4EFD55926703D9DFC0AE17AD10</string>
+				<string>37D7B49D8D00CF9FE937EC65D4C2B108</string>
+				<string>F6BADE2E78A84BD6CBEEBA63E0F2B03A</string>
+				<string>13AD72A617DC9117B3CF4BEB0AC8E49A</string>
+				<string>06ABFBE05C87D971FD722B6281D7F2C9</string>
+				<string>1BC60C8A9C237A240B2DBCD7B07CD0B3</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Assets</string>
+			<key>path</key>
+			<string>Assets</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>169F14627A1713AD15CE3F8EF39401D6</key>
+		<dict>
+			<key>fileRef</key>
+			<string>1CBA06675F23081B6820866E5167FCAA</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>16F8BE9981D95A158A7CE728F543F852</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
+				<string>gnu++0x</string>
+				<key>CLANG_CXX_LIBRARY</key>
+				<string>libc++</string>
+				<key>CLANG_ENABLE_MODULES</key>
+				<string>YES</string>
+				<key>CLANG_ENABLE_OBJC_ARC</key>
+				<string>YES</string>
+				<key>CLANG_WARN_BOOL_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
+				<string>YES</string>
+				<key>CLANG_WARN_EMPTY_BODY</key>
+				<string>YES</string>
+				<key>CLANG_WARN_ENUM_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_INT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
+				<string>YES</string>
+				<key>CLANG_WARN_UNREACHABLE_CODE</key>
+				<string>YES</string>
+				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
+				<string>YES</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>NO</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_DYNAMIC_NO_PIC</key>
+				<string>NO</string>
+				<key>GCC_OPTIMIZATION_LEVEL</key>
+				<string>0</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>DEBUG=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
+				<string>NO</string>
+				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
+				<string>YES</string>
+				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_FUNCTION</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_VARIABLE</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>7.0</string>
+				<key>ONLY_ACTIVE_ARCH</key>
+				<string>YES</string>
+				<key>STRIP_INSTALLED_PRODUCT</key>
+				<string>NO</string>
+				<key>SYMROOT</key>
+				<string>${SRCROOT}/../build</string>
+				<key>WATCHOS_DEPLOYMENT_TARGET</key>
+				<string>2.0</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>17499DD4D4B8C6FAF602DD67468A250D</key>
+		<dict>
+			<key>fileRef</key>
+			<string>9BF4E92C2DDC2C13B81B00E8F5B4CA4D</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>17C74E7CB2911F7AC208D952E275F892</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>Pods-SmileWeatherWatch Extension.release.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1A776B3305DA2B6D848AE660527202F0</key>
+		<dict>
+			<key>fileRef</key>
+			<string>FEFE6A5EE06C6B5774B0D97207D8ADAD</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>1BC60C8A9C237A240B2DBCD7B07CD0B3</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>file.xib</string>
+			<key>path</key>
+			<string>SmileWeatherPropertyCell.xib</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1CBA06675F23081B6820866E5167FCAA</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>SmileWeatherDownLoader.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1D8DCD779EE5B2DAAB8F5B0AF474B8FE</key>
+		<dict>
+			<key>fileRef</key>
+			<string>70FA1819371D3734F972D75CA154ECD9</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>20146073E313DA3A8A3A0ABD8A0986DA</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>2B57955DFEA3A1740789232F972302CF</string>
+				<string>DF4191EBA797C6BB2FB7DDA78ACADCFC</string>
+				<string>37EB881D097CB2C3C80D6A687D34CD5A</string>
+				<string>6E744C280B1B40A98289C83D24A6B9EA</string>
+				<string>D00CA98BA6B65F5766DC6B5F56353941</string>
+				<string>431EA7F2E271918A1FDA176CAD95524B</string>
+				<string>5FD8906C4BF7C6582B90E20D297CF062</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Pods-SmileWeather-ExampleTests</string>
+			<key>path</key>
+			<string>Target Support Files/Pods-SmileWeather-ExampleTests</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>2321CB3D711FBB1A225CC510B83CD0D0</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>SmileWeatherCurrentData.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>2322BB5FFBAF5A86D5D2CD997410190B</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>SmileWeatherDemoVC.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>2375D485379646F1BEF3C6BD0D4A06C9</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>libPods-SmileWeather-ExampleTests-SmileWeather.a</string>
+			<key>path</key>
+			<string>libPods-SmileWeather-ExampleTests-SmileWeather.a</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>26232ECCDB2FBD348886AFA87D9D4B7D</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>smile_umbrella@3x.png</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>275104FC33459119D813E389AAFA4826</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>C43D2365F33CD08D36196BE8C60F3CB9</string>
+				<string>397F16991719AD698632889FF579CCEF</string>
+				<string>57B6118FDD16E5365D8F181A269CCD0E</string>
+				<string>ED661F227878010126DE74DB462464D3</string>
+				<string>5B5A25EAAFE1030ED19B5D59E577FD61</string>
+				<string>36EF70280385B732A8CC99E3581C2772</string>
+				<string>17C74E7CB2911F7AC208D952E275F892</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Pods-SmileWeatherWatch Extension</string>
+			<key>path</key>
+			<string>Target Support Files/Pods-SmileWeatherWatch Extension</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>27618AA8DE372EECD64EE65EA6C75BC7</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>4606B3708DC50262C9261419039736B3</string>
+				<string>660D323040A93B3B244260364BAFCC79</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Frameworks</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>27678E5C98F03BE49A1B9015842B1226</key>
+		<dict>
+			<key>fileRef</key>
+			<string>A342A3378BD5CD283155194112AFF1B9</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>289A29D38A1E4F16523306BE2FC50184</key>
+		<dict>
+			<key>fileRef</key>
+			<string>D181ADFC254C56D6B38B1ACD505AD8E3</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>29F985861BDCD650BA16CAF69A5A4EE2</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>Pods-SmileWeatherTodayWidget-acknowledgements.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>2B57955DFEA3A1740789232F972302CF</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text</string>
+			<key>path</key>
+			<string>Pods-SmileWeather-ExampleTests-acknowledgements.markdown</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>2B64D87E914AA9574C6EC686E487B9ED</key>
+		<dict>
+			<key>fileRef</key>
+			<string>C78AF9ED74A4B77EF9AD62CB5ED4BD53</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>2D8E8EC45A3A1A1D94AE762CB5028504</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>16F8BE9981D95A158A7CE728F543F852</string>
+				<string>EBFA286B9AA09158030E7133A18BB3AC</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>2E5382056C734D31A87B6B69197D425B</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>Foundation.framework</string>
+			<key>path</key>
+			<string>Platforms/WatchOS.platform/Developer/SDKs/WatchOS2.0.sdk/System/Library/Frameworks/Foundation.framework</string>
+			<key>sourceTree</key>
+			<string>DEVELOPER_DIR</string>
+		</dict>
+		<key>2EF0FE98B9FAAFFAFFB9F2463452881A</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>SmileWeatherForecastDayData.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>2FCF460FD911CC0CA92591234A64F22F</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>libPods-SmileWeatherWatch Extension.a</string>
+			<key>path</key>
+			<string>libPods-SmileWeatherWatch Extension.a</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>3015A36ECEB412101529101358CDE8E9</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>smile_sunglass@3x.png</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>30BE152A81086FAAB0E419AA6849A906</key>
+		<dict>
+			<key>fileRef</key>
+			<string>2322BB5FFBAF5A86D5D2CD997410190B</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>319D7C65802206D321B16F17DAEF843C</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>smile_drop@3x.png</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3413DD7F7503BBDC6FFB611248CC29AD</key>
+		<dict>
+			<key>fileRef</key>
+			<string>8B8F55E2336DDB3430FBA5B48E567103</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>3439E05C339A301E4B927DAD02F29629</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>E483D710A169992CED7BD61B9FC7C53D</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>APPLICATION_EXTENSION_API_ONLY</key>
+				<string>YES</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>Target Support Files/Pods-SmileWeatherWatch Extension-SmileWeather/Pods-SmileWeatherWatch Extension-SmileWeather-prefix.pch</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>$(inherited)</string>
+					<string>SmileWeather_APP_EXTENSIONS=1</string>
+				</array>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>NO</string>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>OTHER_LIBTOOLFLAGS</key>
+				<string></string>
+				<key>PRIVATE_HEADERS_FOLDER_PATH</key>
+				<string></string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>PUBLIC_HEADERS_FOLDER_PATH</key>
+				<string></string>
+				<key>SDKROOT</key>
+				<string>watchos</string>
+				<key>WATCHOS_DEPLOYMENT_TARGET</key>
+				<string>2.0</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>34E3A2F084603483BB41D4B7C572A8E6</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>EBBB2217028046B0753F2B3A6F6EF264</string>
+				<string>EDC021C77C59DCF4A03410CD91F86DE2</string>
+				<string>376FC1866BA675AA58A1241FCB1504AA</string>
+				<string>DA5C4FA0AC3D5A34DD9C0C70E41DE62F</string>
+				<string>963A69D0D244844748CEED6664A2D084</string>
+				<string>7B292D44BB6DA51666B888AA885D69D9</string>
+				<string>D8799A1A2E5C82A4C16883ADBC109C19</string>
+				<string>7211C861BDC47BD75A38398982DB4BE4</string>
+				<string>A35EE7F2C28819C1AB9A5E1FFCFBE8DD</string>
+				<string>FED745F3077EA3EFD9AED22856714E75</string>
+			</array>
+			<key>isa</key>
+			<string>PBXHeadersBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>3570479F0305FE5DBEB172A62185EA71</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>E3F435105153D3FBD41A9FBE1ED904D6</string>
+				<string>5CE161201138E6B1610E975ABFC28322</string>
+				<string>D038D21431E31A4E5B8FAD3CF3305DBC</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>SmileWeather</string>
+			<key>path</key>
+			<string>../..</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>35EDD2A78DDBCDF05EB229B629482DB7</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>libPods-SmileWeatherWatch Extension-SmileWeather.a</string>
+			<key>path</key>
+			<string>libPods-SmileWeatherWatch Extension-SmileWeather.a</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>36EF70280385B732A8CC99E3581C2772</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>Pods-SmileWeatherWatch Extension.debug.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>376FC1866BA675AA58A1241FCB1504AA</key>
+		<dict>
+			<key>fileRef</key>
+			<string>8D92458B3362DB0F336E5C9C31A989EE</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>37A83F4EFD55926703D9DFC0AE17AD10</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>smile_wunder_logo@2x.png</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>37D7B49D8D00CF9FE937EC65D4C2B108</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>smile_wunder_logo@3x.png</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>37EB881D097CB2C3C80D6A687D34CD5A</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>Pods-SmileWeather-ExampleTests-dummy.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3848BB9178D7A5BF3AD7B27104DB52E2</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>Pods-SmileWeatherTodayWidget.debug.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3905285BD8949A24DD6D7BB5D05972D0</key>
+		<dict>
+			<key>fileRef</key>
+			<string>6CFD3EC171DA118323F23F3A2B3E6193</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>397F16991719AD698632889FF579CCEF</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>Pods-SmileWeatherWatch Extension-acknowledgements.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B0AD37D7EB1763D4F31F862E6901C84</key>
+		<dict>
+			<key>fileRef</key>
+			<string>D181ADFC254C56D6B38B1ACD505AD8E3</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>3BFEC47CB8AC6F23404230BD9F8C90F5</key>
+		<dict>
+			<key>fileRef</key>
+			<string>2EF0FE98B9FAAFFAFFB9F2463452881A</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>3EDCA7C014B58D05E8C14E5DA46EC6C9</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>Pods-SmileWeather-ExampleTests-SmileWeather-prefix.pch</string>
+			<key>path</key>
+			<string>../Pods-SmileWeather-ExampleTests-SmileWeather/Pods-SmileWeather-ExampleTests-SmileWeather-prefix.pch</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3FE2604EC337F6FCD0F13A4CABCBFE23</key>
+		<dict>
+			<key>fileRef</key>
+			<string>478341937342A919333D98C5C5D276B0</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>4123D25FDF850D6B1EF1687323E36EC7</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>DB2E82473DA807E3FBD549C4DEAFA948</string>
+				<string>1291C883FD2C4B2B7C7BFE35612A6A15</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>425BF8C81EDDADBD8240F9F74D18C59F</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>AD599CDF6F2F4D7804BE0A62CF58ECCE</string>
+				<string>29F985861BDCD650BA16CAF69A5A4EE2</string>
+				<string>6CFD3EC171DA118323F23F3A2B3E6193</string>
+				<string>0892B6E5B75CE7C6331406BA0E2BC1CD</string>
+				<string>B8DDCF39E7504C6C8F240E242F654B6B</string>
+				<string>3848BB9178D7A5BF3AD7B27104DB52E2</string>
+				<string>F050A88CA96FEA207D8938F04D541A43</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Pods-SmileWeatherTodayWidget</string>
+			<key>path</key>
+			<string>Target Support Files/Pods-SmileWeatherTodayWidget</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>431EA7F2E271918A1FDA176CAD95524B</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>Pods-SmileWeather-ExampleTests.debug.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4366A410DBAE6B92033770AA69C6766E</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>E0688195823020EAEF1A664EF66CD860</string>
+				<string>D06947F52451E5686212E14D33D72038</string>
+				<string>478341937342A919333D98C5C5D276B0</string>
+				<string>8D92458B3362DB0F336E5C9C31A989EE</string>
+				<string>70FA1819371D3734F972D75CA154ECD9</string>
+				<string>90E41D97B3CA70C66B2CCDEA144F8B3B</string>
+				<string>2321CB3D711FBB1A225CC510B83CD0D0</string>
+				<string>8923CD73259107684F675811ABF54A95</string>
+				<string>D181ADFC254C56D6B38B1ACD505AD8E3</string>
+				<string>A342A3378BD5CD283155194112AFF1B9</string>
+				<string>2322BB5FFBAF5A86D5D2CD997410190B</string>
+				<string>0EC81B8E9526D4F2EAA7AD4B46092FFF</string>
+				<string>1CBA06675F23081B6820866E5167FCAA</string>
+				<string>2EF0FE98B9FAAFFAFFB9F2463452881A</string>
+				<string>E7E34DA612DD8D8F0405B1A9761C4F28</string>
+				<string>0097CAB0F31150BC24D72B23DDFA354B</string>
+				<string>FEFE6A5EE06C6B5774B0D97207D8ADAD</string>
+				<string>97203A27A4CE93309E711AD11C40EE06</string>
+				<string>C78AF9ED74A4B77EF9AD62CB5ED4BD53</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Classes</string>
+			<key>path</key>
+			<string>Classes</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4606B3708DC50262C9261419039736B3</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>F511E2725754276E0BDB644500B16997</string>
+				<string>6CE29298EBB4CB3F176240D859C63944</string>
+				<string>8B8F55E2336DDB3430FBA5B48E567103</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>iOS</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>46EE771474E78DFFB844283AE53498B1</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>E7F45E95F76CE3BC07495E52F4E433B1</string>
+			<key>buildPhases</key>
+			<array>
+				<string>D1EE153D73920EC66F88B87F5E7F9B86</string>
+				<string>82F61A47A7F98BD7D7629D50B76D5842</string>
+				<string>EB6BB5981040C7E7A23690B7AA3D15BA</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>Pods-SmileWeatherTodayWidget-SmileWeather</string>
+			<key>productName</key>
+			<string>Pods-SmileWeatherTodayWidget-SmileWeather</string>
+			<key>productReference</key>
+			<string>0C37208C8F47F2E5FDEFAFF458992391</string>
+			<key>productType</key>
+			<string>com.apple.product-type.library.static</string>
+		</dict>
+		<key>473A447A4FC1FBBE11D18AA055CF78E5</key>
+		<dict>
+			<key>fileRef</key>
+			<string>70FA1819371D3734F972D75CA154ECD9</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>478341937342A919333D98C5C5D276B0</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>SmileClimacons.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4D07D08B2B760A0E68BDC76B919E20D3</key>
+		<dict>
+			<key>fileRef</key>
+			<string>E7E34DA612DD8D8F0405B1A9761C4F28</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>4D4860981A089761BB45DCB2CC8206DE</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>Pods-SmileWeatherTodayWidget-SmileWeather-dummy.m</string>
+			<key>path</key>
+			<string>../Pods-SmileWeatherTodayWidget-SmileWeather/Pods-SmileWeatherTodayWidget-SmileWeather-dummy.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4F077439E115877EFE56CA023EF1FF92</key>
+		<dict>
+			<key>fileRef</key>
+			<string>2321CB3D711FBB1A225CC510B83CD0D0</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>4F93A65A88B3CADD7BC8C8E1D5734946</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>4FF5E5F89FC15C92C76B0C97FEDB3BA0</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>Target Support Files/Pods-SmileWeather-ExampleTests-SmileWeather/Pods-SmileWeather-ExampleTests-SmileWeather-prefix.pch</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>7.0</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>YES</string>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>OTHER_LIBTOOLFLAGS</key>
+				<string></string>
+				<key>PRIVATE_HEADERS_FOLDER_PATH</key>
+				<string></string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>PUBLIC_HEADERS_FOLDER_PATH</key>
+				<string></string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>4FF5E5F89FC15C92C76B0C97FEDB3BA0</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods-SmileWeather-ExampleTests-SmileWeather.xcconfig</string>
+			<key>path</key>
+			<string>../Pods-SmileWeather-ExampleTests-SmileWeather/Pods-SmileWeather-ExampleTests-SmileWeather.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5017A8A2D8438EAB6CB48B54A2983638</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>libPods-SmileWeatherTodayWidget.a</string>
+			<key>path</key>
+			<string>libPods-SmileWeatherTodayWidget.a</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>510D54E2483A9DB365F2F26BC034B37F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>2322BB5FFBAF5A86D5D2CD997410190B</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>51893CEA318F7D1E90E7147FCEDB5C6F</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>3905285BD8949A24DD6D7BB5D05972D0</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>527084EB20B2386B17BC5F55C3358F48</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>8E5328F6EBF7B19837FDAC422AB9A69B</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>Target Support Files/Pods-Smile Weather-SmileWeather/Pods-Smile Weather-SmileWeather-prefix.pch</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>7.0</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>NO</string>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>OTHER_LIBTOOLFLAGS</key>
+				<string></string>
+				<key>PRIVATE_HEADERS_FOLDER_PATH</key>
+				<string></string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>PUBLIC_HEADERS_FOLDER_PATH</key>
+				<string></string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>55FEEE1D0535D67E95B2B0E0BA809CA9</key>
+		<dict>
+			<key>fileRef</key>
+			<string>D06947F52451E5686212E14D33D72038</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>56E3963C4700276B4AE36C01F8385286</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>9C15FA7F3C188AE14322144F15CACD20</string>
+				<string>03693DDCD04CF8FA0E72FFCC75C65B77</string>
+				<string>0D8533FB741DBAD09186B4878B317D08</string>
+				<string>2375D485379646F1BEF3C6BD0D4A06C9</string>
+				<string>5017A8A2D8438EAB6CB48B54A2983638</string>
+				<string>0C37208C8F47F2E5FDEFAFF458992391</string>
+				<string>2FCF460FD911CC0CA92591234A64F22F</string>
+				<string>35EDD2A78DDBCDF05EB229B629482DB7</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Products</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>57B6118FDD16E5365D8F181A269CCD0E</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>Pods-SmileWeatherWatch Extension-dummy.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5915D212D097D559455CD64FFC9B056E</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.script.sh</string>
+			<key>path</key>
+			<string>Pods-Smile Weather-frameworks.sh</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>597ED6F9F6CBEA5938E19FAFFF79CE07</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>smile_wind@2x.png</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5A66C80B8161B0122AFB780FC9B1DC77</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>033CD25F54A8AAFA27AFEF3B525E6E2B</string>
+			<key>buildPhases</key>
+			<array>
+				<string>51893CEA318F7D1E90E7147FCEDB5C6F</string>
+				<string>B64ACC08AD17A8BB5844CE17E58BF93B</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array>
+				<string>14A61BC878460516064DED6CC083CE77</string>
+			</array>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>Pods-SmileWeatherTodayWidget</string>
+			<key>productName</key>
+			<string>Pods-SmileWeatherTodayWidget</string>
+			<key>productReference</key>
+			<string>5017A8A2D8438EAB6CB48B54A2983638</string>
+			<key>productType</key>
+			<string>com.apple.product-type.library.static</string>
+		</dict>
+		<key>5A9F4438458C195AB93C0BBA2CBF8D0F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>0EC81B8E9526D4F2EAA7AD4B46092FFF</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>5B5A25EAAFE1030ED19B5D59E577FD61</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.script.sh</string>
+			<key>path</key>
+			<string>Pods-SmileWeatherWatch Extension-resources.sh</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5BEC4502297EE2A2C6F393355905AA33</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>55FEEE1D0535D67E95B2B0E0BA809CA9</string>
+				<string>A52B530715A2DC6B77B2F0618152BCB2</string>
+				<string>473A447A4FC1FBBE11D18AA055CF78E5</string>
+				<string>AAF794930B8AAEF43156EB18FB98BF6C</string>
+				<string>FA83E9EBDDB5CB3BB08FD6E349745F1D</string>
+				<string>30BE152A81086FAAB0E419AA6849A906</string>
+				<string>169F14627A1713AD15CE3F8EF39401D6</string>
+				<string>01838B1A2F60B9DC6DA812980D2F4085</string>
+				<string>1A776B3305DA2B6D848AE660527202F0</string>
+				<string>CE971A1C8C319903E5D235B0BF522E04</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>5CE161201138E6B1610E975ABFC28322</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>4366A410DBAE6B92033770AA69C6766E</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>SmileWeather</string>
+			<key>path</key>
+			<string>SmileWeather</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5F42C94CED6C5A1B811168B0A0022DD5</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.script.sh</string>
+			<key>path</key>
+			<string>Pods-Smile Weather-resources.sh</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5F4E24F0F087BD03203AF47FD9D827B1</key>
+		<dict>
+			<key>fileRef</key>
+			<string>F511E2725754276E0BDB644500B16997</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>5FD8906C4BF7C6582B90E20D297CF062</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>Pods-SmileWeather-ExampleTests.release.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>6256DD7A0EE3A3DC35717F8DE868BC24</key>
+		<dict>
+			<key>fileRef</key>
+			<string>478341937342A919333D98C5C5D276B0</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>62BC78B5E11A0C2C5F1896353FCA7699</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>A96CA695B8253600A598657618D4C034</string>
+			<key>buildPhases</key>
+			<array>
+				<string>A09686C6BBD0843A81E6930821BAA446</string>
+				<string>13FF0BA88B0127EBEF644AA5EF6D9F4F</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array>
+				<string>8803DCA77892DDDEE266055850B9D66E</string>
+			</array>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>Pods-SmileWeather-ExampleTests</string>
+			<key>productName</key>
+			<string>Pods-SmileWeather-ExampleTests</string>
+			<key>productReference</key>
+			<string>0D8533FB741DBAD09186B4878B317D08</string>
+			<key>productType</key>
+			<string>com.apple.product-type.library.static</string>
+		</dict>
+		<key>63986B8ABB58C5A88C0D5E96EC7EA950</key>
+		<dict>
+			<key>fileRef</key>
+			<string>97203A27A4CE93309E711AD11C40EE06</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>64226CE1B85ABEF118710FE26EB34348</key>
+		<dict>
+			<key>fileRef</key>
+			<string>1CBA06675F23081B6820866E5167FCAA</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>652C0C79FD66D95A482791A36F2FAEA1</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>D41D8CD98F00B204E9800998ECF8427E</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>E29C887A9C8851043A539C004668C392</string>
+			<key>remoteInfo</key>
+			<string>Pods-SmileWeather-ExampleTests-SmileWeather</string>
+		</dict>
+		<key>65475FDB6CB17206C4BEECC6D64B9F84</key>
+		<dict>
+			<key>fileRef</key>
+			<string>A342A3378BD5CD283155194112AFF1B9</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>65E73347F655C088FD43A61411B780E0</key>
+		<dict>
+			<key>fileRef</key>
+			<string>2EF0FE98B9FAAFFAFFB9F2463452881A</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>65F3BF1E040C5A5B9D2706AB6FF1BAEA</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>E59372D368B24D8D9FC4CCE398EAB4BB</string>
+				<string>20146073E313DA3A8A3A0ABD8A0986DA</string>
+				<string>425BF8C81EDDADBD8240F9F74D18C59F</string>
+				<string>275104FC33459119D813E389AAFA4826</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Targets Support Files</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>660D323040A93B3B244260364BAFCC79</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>9C52AE9080092BD952AA92577FB59CE1</string>
+				<string>2E5382056C734D31A87B6B69197D425B</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>watchOS</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>6AE0BF2D8482DE9A24AEAD703960F0BB</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>4FF5E5F89FC15C92C76B0C97FEDB3BA0</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>Target Support Files/Pods-SmileWeather-ExampleTests-SmileWeather/Pods-SmileWeather-ExampleTests-SmileWeather-prefix.pch</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>7.0</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>NO</string>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>OTHER_LIBTOOLFLAGS</key>
+				<string></string>
+				<key>PRIVATE_HEADERS_FOLDER_PATH</key>
+				<string></string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>PUBLIC_HEADERS_FOLDER_PATH</key>
+				<string></string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>6BDAF8C379934FA656E3F0334DD73882</key>
+		<dict>
+			<key>fileRef</key>
+			<string>0097CAB0F31150BC24D72B23DDFA354B</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>6CBA3869BD1E83CD946103464748B3B5</key>
+		<dict>
+			<key>fileRef</key>
+			<string>478341937342A919333D98C5C5D276B0</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>6CE29298EBB4CB3F176240D859C63944</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>Foundation.framework</string>
+			<key>path</key>
+			<string>Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework</string>
+			<key>sourceTree</key>
+			<string>DEVELOPER_DIR</string>
+		</dict>
+		<key>6CFD3EC171DA118323F23F3A2B3E6193</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>Pods-SmileWeatherTodayWidget-dummy.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>6E744C280B1B40A98289C83D24A6B9EA</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.script.sh</string>
+			<key>path</key>
+			<string>Pods-SmileWeather-ExampleTests-frameworks.sh</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>70FA1819371D3734F972D75CA154ECD9</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>SmileLineLayout.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>7211C861BDC47BD75A38398982DB4BE4</key>
+		<dict>
+			<key>fileRef</key>
+			<string>2EF0FE98B9FAAFFAFFB9F2463452881A</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>74D6C529D79E20D734950A14FA41E3E5</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>smile_pressure@3x.png</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>74D782734018AF4452BBA0D41981314D</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>F050A88CA96FEA207D8938F04D541A43</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>APPLICATION_EXTENSION_API_ONLY</key>
+				<string>YES</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>7.0</string>
+				<key>MACH_O_TYPE</key>
+				<string>staticlib</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>NO</string>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>OTHER_LIBTOOLFLAGS</key>
+				<string></string>
+				<key>PODS_ROOT</key>
+				<string>$(SRCROOT)</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>75141956353A6FE38B57409D30669232</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>3848BB9178D7A5BF3AD7B27104DB52E2</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>APPLICATION_EXTENSION_API_ONLY</key>
+				<string>YES</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>7.0</string>
+				<key>MACH_O_TYPE</key>
+				<string>staticlib</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>YES</string>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>OTHER_LIBTOOLFLAGS</key>
+				<string></string>
+				<key>PODS_ROOT</key>
+				<string>$(SRCROOT)</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>75634FA5179922B1F7B1749A40D3A2CD</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>Pods-Smile Weather.debug.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>758E5A1A26782D8F235B7BAB8C4ED043</key>
+		<dict>
+			<key>fileRef</key>
+			<string>A342A3378BD5CD283155194112AFF1B9</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>75CE63A98D6FEFC443BB7CD8A5782849</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>Pods-Smile Weather-SmileWeather-prefix.pch</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>75E46D50E2F6F90E17ECD16090B8E18C</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>D41D8CD98F00B204E9800998ECF8427E</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>46EE771474E78DFFB844283AE53498B1</string>
+			<key>remoteInfo</key>
+			<string>Pods-SmileWeatherTodayWidget-SmileWeather</string>
+		</dict>
+		<key>7656A12F934BDE3A64938A3D9508D141</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>75634FA5179922B1F7B1749A40D3A2CD</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>7.0</string>
+				<key>MACH_O_TYPE</key>
+				<string>staticlib</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>YES</string>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>OTHER_LIBTOOLFLAGS</key>
+				<string></string>
+				<key>PODS_ROOT</key>
+				<string>$(SRCROOT)</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>766DBD1F478B7CB2BB981C0EE8707F26</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>9FC060EB670369A512ABB98CBCCAEDC0</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>APPLICATION_EXTENSION_API_ONLY</key>
+				<string>YES</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>Target Support Files/Pods-SmileWeatherTodayWidget-SmileWeather/Pods-SmileWeatherTodayWidget-SmileWeather-prefix.pch</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>$(inherited)</string>
+					<string>SmileWeather_APP_EXTENSIONS=1</string>
+				</array>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>7.0</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>NO</string>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>OTHER_LIBTOOLFLAGS</key>
+				<string></string>
+				<key>PRIVATE_HEADERS_FOLDER_PATH</key>
+				<string></string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>PUBLIC_HEADERS_FOLDER_PATH</key>
+				<string></string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>772CD80E123DBB7C658AF230D82829BA</key>
+		<dict>
+			<key>fileRef</key>
+			<string>2322BB5FFBAF5A86D5D2CD997410190B</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>78E445551F3EFAED9F34C5A439EC6F09</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>smile_sunrise@2x.png</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>7A167C13D273153C3CC3A63A9C4ED225</key>
+		<dict>
+			<key>fileRef</key>
+			<string>E0688195823020EAEF1A664EF66CD860</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>7B1DD1AB474908D63EE4FC03F00BA84B</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>9FC060EB670369A512ABB98CBCCAEDC0</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>APPLICATION_EXTENSION_API_ONLY</key>
+				<string>YES</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>Target Support Files/Pods-SmileWeatherTodayWidget-SmileWeather/Pods-SmileWeatherTodayWidget-SmileWeather-prefix.pch</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>$(inherited)</string>
+					<string>SmileWeather_APP_EXTENSIONS=1</string>
+				</array>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>7.0</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>YES</string>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>OTHER_LIBTOOLFLAGS</key>
+				<string></string>
+				<key>PRIVATE_HEADERS_FOLDER_PATH</key>
+				<string></string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>PUBLIC_HEADERS_FOLDER_PATH</key>
+				<string></string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>7B292D44BB6DA51666B888AA885D69D9</key>
+		<dict>
+			<key>fileRef</key>
+			<string>A342A3378BD5CD283155194112AFF1B9</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>7BBFC21FB81E2907D22C9A380B9516F8</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>9C27211B71CC8DA0F589209616A03216</string>
+				<string>9B0A98667A361A289272563FD10686FE</string>
+				<string>8136DD3A7726BA4034677904BA8CC985</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>7DB346D0F39D3F0E887471402A8071AB</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>BA6428E9F66FD5A23C0A2E06ED26CD2F</string>
+				<string>E02EF3791DBA72E8266B50F612CD499D</string>
+				<string>27618AA8DE372EECD64EE65EA6C75BC7</string>
+				<string>56E3963C4700276B4AE36C01F8385286</string>
+				<string>65F3BF1E040C5A5B9D2706AB6FF1BAEA</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>7E682B5307BFC38B224AC716E42E4897</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>Pods-Smile Weather-dummy.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>7E92E7A9A95CD346A3E2B3CB1B378F09</key>
+		<dict>
+			<key>fileRef</key>
+			<string>70FA1819371D3734F972D75CA154ECD9</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>7EBCCA87C8D38ABC64542DA9028F6A41</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>04CCEEF23F807D73B205D48305330CCE</string>
+				<string>3439E05C339A301E4B927DAD02F29629</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>7FA966FE00E15A41935CB317E51B6F9D</key>
+		<dict>
+			<key>fileRef</key>
+			<string>2322BB5FFBAF5A86D5D2CD997410190B</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>8123B41F296D04AAF67C404E854436E8</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>smile_openweather_logo@2x.png</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8136DD3A7726BA4034677904BA8CC985</key>
+		<dict>
+			<key>fileRef</key>
+			<string>8B8F55E2336DDB3430FBA5B48E567103</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>82F291F541870B5A59B951B91DC3F1B3</key>
+		<dict>
+			<key>fileRef</key>
+			<string>2EF0FE98B9FAAFFAFFB9F2463452881A</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>82F61A47A7F98BD7D7629D50B76D5842</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>F21A4C23C7FBB4085E0163B7AE6AADD5</string>
+				<string>DEB4979F1675923FD30BD6CD3BE6385A</string>
+				<string>88B4D45A9D9F885BD1BC102159D301AD</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>8721F0C9CDC0AF642C2CCBD4970F7F79</key>
+		<dict>
+			<key>fileRef</key>
+			<string>E7E34DA612DD8D8F0405B1A9761C4F28</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>8803DCA77892DDDEE266055850B9D66E</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>name</key>
+			<string>Pods-SmileWeather-ExampleTests-SmileWeather</string>
+			<key>target</key>
+			<string>E29C887A9C8851043A539C004668C392</string>
+			<key>targetProxy</key>
+			<string>652C0C79FD66D95A482791A36F2FAEA1</string>
+		</dict>
+		<key>88B4D45A9D9F885BD1BC102159D301AD</key>
+		<dict>
+			<key>fileRef</key>
+			<string>8B8F55E2336DDB3430FBA5B48E567103</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>88E41AF08E2C74541EE1527B73C27B01</key>
+		<dict>
+			<key>fileRef</key>
+			<string>E7E34DA612DD8D8F0405B1A9761C4F28</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>8923CD73259107684F675811ABF54A95</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>SmileWeatherData.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>89B4427E166E8007E2C4B7151218AED4</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>Pods-Smile Weather-SmileWeather-dummy.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8B8F55E2336DDB3430FBA5B48E567103</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>UIKit.framework</string>
+			<key>path</key>
+			<string>Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/UIKit.framework</string>
+			<key>sourceTree</key>
+			<string>DEVELOPER_DIR</string>
+		</dict>
+		<key>8BEB1893C02EBCDC5D136F47716AC232</key>
+		<dict>
+			<key>fileRef</key>
+			<string>FEFE6A5EE06C6B5774B0D97207D8ADAD</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>8C900230EC0646CFAFBDE385460007EA</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>name</key>
+			<string>Pods-Smile Weather-SmileWeather</string>
+			<key>target</key>
+			<string>0A635F4A5EE347A3DF5B096F078772FE</string>
+			<key>targetProxy</key>
+			<string>A77DA15CD811CEA5000809CB67F671D4</string>
+		</dict>
+		<key>8CBC5A94C0DE34E4C37EA1CD64D96255</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>A473521D627A2915496439A844FC8F1C</string>
+				<string>6CBA3869BD1E83CD946103464748B3B5</string>
+				<string>0761545F495E1CD98ECC15D2C97BA901</string>
+				<string>A0502999F4B1B993FB7B04FC5902FF98</string>
+				<string>C9581FDA72F7C552FEF43B929CF7A732</string>
+				<string>758E5A1A26782D8F235B7BAB8C4ED043</string>
+				<string>DD64BB936A93B3022E2B86F1C63C7FF6</string>
+				<string>65E73347F655C088FD43A61411B780E0</string>
+				<string>9D9DD125BFB2807408FBC0223190CE02</string>
+				<string>CF3A64355265B8B19B1916EA9AB80EB9</string>
+			</array>
+			<key>isa</key>
+			<string>PBXHeadersBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>8D09A9C339B46F1302D605D2EBAF598D</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>431EA7F2E271918A1FDA176CAD95524B</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>7.0</string>
+				<key>MACH_O_TYPE</key>
+				<string>staticlib</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>YES</string>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>OTHER_LIBTOOLFLAGS</key>
+				<string></string>
+				<key>PODS_ROOT</key>
+				<string>$(SRCROOT)</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>8D92458B3362DB0F336E5C9C31A989EE</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>SmileLineLayout.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8E187CA69B7E0A2F2FE2E46186D6F895</key>
+		<dict>
+			<key>fileRef</key>
+			<string>1CBA06675F23081B6820866E5167FCAA</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>8E5328F6EBF7B19837FDAC422AB9A69B</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>Pods-Smile Weather-SmileWeather.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8E630C671D9CDB253D28F51F54ACA2B8</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>5FD8906C4BF7C6582B90E20D297CF062</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>7.0</string>
+				<key>MACH_O_TYPE</key>
+				<string>staticlib</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>NO</string>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>OTHER_LIBTOOLFLAGS</key>
+				<string></string>
+				<key>PODS_ROOT</key>
+				<string>$(SRCROOT)</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>9071D556825721A9E6986FED1571FC92</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>smile_openweather_logo@3x.png</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>90E41D97B3CA70C66B2CCDEA144F8B3B</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>SmileWeatherCurrentData.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9150B3BAD58A501FBFB12F7FC75A0A93</key>
+		<dict>
+			<key>fileRef</key>
+			<string>0EC81B8E9526D4F2EAA7AD4B46092FFF</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>931979D252DD6059A0369B646F23FC19</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>Pods-SmileWeather-ExampleTests-SmileWeather-dummy.m</string>
+			<key>path</key>
+			<string>../Pods-SmileWeather-ExampleTests-SmileWeather/Pods-SmileWeather-ExampleTests-SmileWeather-dummy.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>93CA9826A83AD330389A78EED1A75FDB</key>
+		<dict>
+			<key>fileRef</key>
+			<string>FEFE6A5EE06C6B5774B0D97207D8ADAD</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>95A439BD6F84C2E7A6B284714F9D1740</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>name</key>
+			<string>Pods-SmileWeatherWatch Extension-SmileWeather</string>
+			<key>target</key>
+			<string>9A63AC61030828F4A27D1776F20D500E</string>
+			<key>targetProxy</key>
+			<string>E397C9487B39F160950FD4B86BF95E18</string>
+		</dict>
+		<key>963A69D0D244844748CEED6664A2D084</key>
+		<dict>
+			<key>fileRef</key>
+			<string>8923CD73259107684F675811ABF54A95</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>97203A27A4CE93309E711AD11C40EE06</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>SmileWeatherOneDayData.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>98CA372D5C0500EB3CD24F0BEFC7A5F8</key>
+		<dict>
+			<key>fileRef</key>
+			<string>37EB881D097CB2C3C80D6A687D34CD5A</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>99762D13FA10968A364F4184170BE752</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>F54D7D8FB151FAD81233A5BB52AE90D6</string>
+				<string>3FE2604EC337F6FCD0F13A4CABCBFE23</string>
+				<string>CC9CFA269A875743FBB9C34642F30214</string>
+				<string>EE3D24375D1CAEF768BBCE80A813A243</string>
+				<string>AD59E5472087AA3BD6120B7BD4CED155</string>
+				<string>27678E5C98F03BE49A1B9015842B1226</string>
+				<string>5A9F4438458C195AB93C0BBA2CBF8D0F</string>
+				<string>82F291F541870B5A59B951B91DC3F1B3</string>
+				<string>C60F8B3046F722469901677D1E141418</string>
+				<string>A949CD6E5778A6BCDD344C650706CC81</string>
+			</array>
+			<key>isa</key>
+			<string>PBXHeadersBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>9A63AC61030828F4A27D1776F20D500E</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>7EBCCA87C8D38ABC64542DA9028F6A41</string>
+			<key>buildPhases</key>
+			<array>
+				<string>FAD6DB2118238569008E3E4D275795E9</string>
+				<string>EF0AE0AD7FF177C292BF27D31DDC565C</string>
+				<string>8CBC5A94C0DE34E4C37EA1CD64D96255</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>Pods-SmileWeatherWatch Extension-SmileWeather</string>
+			<key>productName</key>
+			<string>Pods-SmileWeatherWatch Extension-SmileWeather</string>
+			<key>productReference</key>
+			<string>35EDD2A78DDBCDF05EB229B629482DB7</string>
+			<key>productType</key>
+			<string>com.apple.product-type.library.static</string>
+		</dict>
+		<key>9B0A98667A361A289272563FD10686FE</key>
+		<dict>
+			<key>fileRef</key>
+			<string>6CE29298EBB4CB3F176240D859C63944</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>9BF4E92C2DDC2C13B81B00E8F5B4CA4D</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>Pods-SmileWeatherWatch Extension-SmileWeather-dummy.m</string>
+			<key>path</key>
+			<string>../Pods-SmileWeatherWatch Extension-SmileWeather/Pods-SmileWeatherWatch Extension-SmileWeather-dummy.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9C15FA7F3C188AE14322144F15CACD20</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>libPods-Smile Weather.a</string>
+			<key>path</key>
+			<string>libPods-Smile Weather.a</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>9C27211B71CC8DA0F589209616A03216</key>
+		<dict>
+			<key>fileRef</key>
+			<string>F511E2725754276E0BDB644500B16997</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>9C52AE9080092BD952AA92577FB59CE1</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>CoreLocation.framework</string>
+			<key>path</key>
+			<string>Platforms/WatchOS.platform/Developer/SDKs/WatchOS2.0.sdk/System/Library/Frameworks/CoreLocation.framework</string>
+			<key>sourceTree</key>
+			<string>DEVELOPER_DIR</string>
+		</dict>
+		<key>9CC6A4FD9F2638C7CE3F213BF940B55A</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>smile_umbrella@2x.png</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9D1B538E356428354356A93DBBC525BC</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>7656A12F934BDE3A64938A3D9508D141</string>
+				<string>A9D215DFE0C0F458E4C665D669EA2957</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>9D9DD125BFB2807408FBC0223190CE02</key>
+		<dict>
+			<key>fileRef</key>
+			<string>0097CAB0F31150BC24D72B23DDFA354B</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>9E74FB20DB218A30DD68BEE855B7C493</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>Pods-SmileWeatherWatch Extension-SmileWeather-prefix.pch</string>
+			<key>path</key>
+			<string>../Pods-SmileWeatherWatch Extension-SmileWeather/Pods-SmileWeatherWatch Extension-SmileWeather-prefix.pch</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9FC060EB670369A512ABB98CBCCAEDC0</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods-SmileWeatherTodayWidget-SmileWeather.xcconfig</string>
+			<key>path</key>
+			<string>../Pods-SmileWeatherTodayWidget-SmileWeather/Pods-SmileWeatherTodayWidget-SmileWeather.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A0502999F4B1B993FB7B04FC5902FF98</key>
+		<dict>
+			<key>fileRef</key>
+			<string>90E41D97B3CA70C66B2CCDEA144F8B3B</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>A09686C6BBD0843A81E6930821BAA446</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>98CA372D5C0500EB3CD24F0BEFC7A5F8</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>A1229A5E07F6559B3DD2F6DBBC4BF87B</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>164CD395959D166F4B59B1A2DB4C2EB4</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>SmileWeather</string>
+			<key>path</key>
+			<string>SmileWeather</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A342A3378BD5CD283155194112AFF1B9</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>SmileWeatherDemoVC.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A35EE7F2C28819C1AB9A5E1FFCFBE8DD</key>
+		<dict>
+			<key>fileRef</key>
+			<string>0097CAB0F31150BC24D72B23DDFA354B</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>A473521D627A2915496439A844FC8F1C</key>
+		<dict>
+			<key>fileRef</key>
+			<string>E0688195823020EAEF1A664EF66CD860</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>A52B530715A2DC6B77B2F0618152BCB2</key>
+		<dict>
+			<key>fileRef</key>
+			<string>931979D252DD6059A0369B646F23FC19</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>A77DA15CD811CEA5000809CB67F671D4</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>D41D8CD98F00B204E9800998ECF8427E</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>0A635F4A5EE347A3DF5B096F078772FE</string>
+			<key>remoteInfo</key>
+			<string>Pods-Smile Weather-SmileWeather</string>
+		</dict>
+		<key>A949CD6E5778A6BCDD344C650706CC81</key>
+		<dict>
+			<key>fileRef</key>
+			<string>97203A27A4CE93309E711AD11C40EE06</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>A96CA695B8253600A598657618D4C034</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>8D09A9C339B46F1302D605D2EBAF598D</string>
+				<string>8E630C671D9CDB253D28F51F54ACA2B8</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>A9D215DFE0C0F458E4C665D669EA2957</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>029E711EA07B89142FEE19770D6B1110</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>7.0</string>
+				<key>MACH_O_TYPE</key>
+				<string>staticlib</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>NO</string>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>OTHER_LIBTOOLFLAGS</key>
+				<string></string>
+				<key>PODS_ROOT</key>
+				<string>$(SRCROOT)</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>AAF794930B8AAEF43156EB18FB98BF6C</key>
+		<dict>
+			<key>fileRef</key>
+			<string>2321CB3D711FBB1A225CC510B83CD0D0</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>AD599CDF6F2F4D7804BE0A62CF58ECCE</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text</string>
+			<key>path</key>
+			<string>Pods-SmileWeatherTodayWidget-acknowledgements.markdown</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>AD59E5472087AA3BD6120B7BD4CED155</key>
+		<dict>
+			<key>fileRef</key>
+			<string>8923CD73259107684F675811ABF54A95</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>AE0DD011413E9490DD49B6233FBBC271</key>
+		<dict>
+			<key>fileRef</key>
+			<string>89B4427E166E8007E2C4B7151218AED4</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>AE8291F25FF5EEF498F40D1EB05EA673</key>
+		<dict>
+			<key>fileRef</key>
+			<string>90E41D97B3CA70C66B2CCDEA144F8B3B</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>B28FD306B37F8D2F251862398E01A152</key>
+		<dict>
+			<key>fileRef</key>
+			<string>8D92458B3362DB0F336E5C9C31A989EE</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>B5FE0C5F39557BECFECD528EAE03BEFF</key>
+		<dict>
+			<key>fileRef</key>
+			<string>9C52AE9080092BD952AA92577FB59CE1</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>B64ACC08AD17A8BB5844CE17E58BF93B</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>D3545C62A3F07767EF4F9E509C9867A6</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>B8DDCF39E7504C6C8F240E242F654B6B</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.script.sh</string>
+			<key>path</key>
+			<string>Pods-SmileWeatherTodayWidget-resources.sh</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B94EE4454CFCE8B95724CDB49FD82734</key>
+		<dict>
+			<key>fileRef</key>
+			<string>2E5382056C734D31A87B6B69197D425B</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>BA6428E9F66FD5A23C0A2E06ED26CD2F</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text</string>
+			<key>name</key>
+			<string>Podfile</string>
+			<key>path</key>
+			<string>../Podfile</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+			<key>xcLanguageSpecificationIdentifier</key>
+			<string>xcode.lang.ruby</string>
+		</dict>
+		<key>BB979088F9319B28DBFFCCBE50FC872A</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>BC07A54A71284FA32043B1D5A8A2B93D</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>BBF44695B8DE236EBDF2B3C7A0A91055</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>0A2DE8A148C7C045ACE0F419D990690E</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>BC07A54A71284FA32043B1D5A8A2B93D</key>
+		<dict>
+			<key>fileRef</key>
+			<string>57B6118FDD16E5365D8F181A269CCD0E</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>BE106AA25319A45212A223870DF8ED00</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>5F4E24F0F087BD03203AF47FD9D827B1</string>
+				<string>E71CDA6C0471178C23DC8D8A1986260C</string>
+				<string>3413DD7F7503BBDC6FFB611248CC29AD</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>BF4CA5CA1C209FECEE64824777D11CEA</key>
+		<dict>
+			<key>fileRef</key>
+			<string>C78AF9ED74A4B77EF9AD62CB5ED4BD53</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>BFA79D35F4D8AD7F550DF8C059C2C2B2</key>
+		<dict>
+			<key>fileRef</key>
+			<string>2321CB3D711FBB1A225CC510B83CD0D0</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>C0C7906704FA97CDE5E2F3685CCD84B5</key>
+		<dict>
+			<key>fileRef</key>
+			<string>FEFE6A5EE06C6B5774B0D97207D8ADAD</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>C43D2365F33CD08D36196BE8C60F3CB9</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text</string>
+			<key>path</key>
+			<string>Pods-SmileWeatherWatch Extension-acknowledgements.markdown</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C60F8B3046F722469901677D1E141418</key>
+		<dict>
+			<key>fileRef</key>
+			<string>0097CAB0F31150BC24D72B23DDFA354B</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>C78AF9ED74A4B77EF9AD62CB5ED4BD53</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>SmileWeatherOneDayData.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C9437E7F9F198B25DCA394114F61271E</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>smile_pressure@2x.png</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C9581FDA72F7C552FEF43B929CF7A732</key>
+		<dict>
+			<key>fileRef</key>
+			<string>8923CD73259107684F675811ABF54A95</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>CBA46090F3559D0DF80568B137C7B52A</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>smile_sunset@3x.png</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>CC9CFA269A875743FBB9C34642F30214</key>
+		<dict>
+			<key>fileRef</key>
+			<string>8D92458B3362DB0F336E5C9C31A989EE</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>CE971A1C8C319903E5D235B0BF522E04</key>
+		<dict>
+			<key>fileRef</key>
+			<string>C78AF9ED74A4B77EF9AD62CB5ED4BD53</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>CF3A64355265B8B19B1916EA9AB80EB9</key>
+		<dict>
+			<key>fileRef</key>
+			<string>97203A27A4CE93309E711AD11C40EE06</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>D0069376ADEF977DA038F2FE7660EA36</key>
+		<dict>
+			<key>fileRef</key>
+			<string>70FA1819371D3734F972D75CA154ECD9</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>D00CA98BA6B65F5766DC6B5F56353941</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.script.sh</string>
+			<key>path</key>
+			<string>Pods-SmileWeather-ExampleTests-resources.sh</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>D038D21431E31A4E5B8FAD3CF3305DBC</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>8E5328F6EBF7B19837FDAC422AB9A69B</string>
+				<string>89B4427E166E8007E2C4B7151218AED4</string>
+				<string>75CE63A98D6FEFC443BB7CD8A5782849</string>
+				<string>4FF5E5F89FC15C92C76B0C97FEDB3BA0</string>
+				<string>931979D252DD6059A0369B646F23FC19</string>
+				<string>3EDCA7C014B58D05E8C14E5DA46EC6C9</string>
+				<string>9FC060EB670369A512ABB98CBCCAEDC0</string>
+				<string>4D4860981A089761BB45DCB2CC8206DE</string>
+				<string>D38513364F4FD5617192A2F79225FF59</string>
+				<string>E483D710A169992CED7BD61B9FC7C53D</string>
+				<string>9BF4E92C2DDC2C13B81B00E8F5B4CA4D</string>
+				<string>9E74FB20DB218A30DD68BEE855B7C493</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Support Files</string>
+			<key>path</key>
+			<string>SmileWeather-Example/Pods/Target Support Files/Pods-Smile Weather-SmileWeather</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>D06947F52451E5686212E14D33D72038</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>NSString+SmileSubstring.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>D0F131D886641A578192C8F7088E3B80</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>smile_sunrise@3x.png</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>D181ADFC254C56D6B38B1ACD505AD8E3</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>SmileWeatherData.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>D1EE153D73920EC66F88B87F5E7F9B86</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>DD3727695F585A99797BB51E2CDC0544</string>
+				<string>130234CD0B15E3CF39C2DEF3471944EA</string>
+				<string>D0069376ADEF977DA038F2FE7660EA36</string>
+				<string>4F077439E115877EFE56CA023EF1FF92</string>
+				<string>289A29D38A1E4F16523306BE2FC50184</string>
+				<string>7FA966FE00E15A41935CB317E51B6F9D</string>
+				<string>64226CE1B85ABEF118710FE26EB34348</string>
+				<string>8721F0C9CDC0AF642C2CCBD4970F7F79</string>
+				<string>C0C7906704FA97CDE5E2F3685CCD84B5</string>
+				<string>F57BA41768D3241A864DD7278B330EF6</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>D3545C62A3F07767EF4F9E509C9867A6</key>
+		<dict>
+			<key>fileRef</key>
+			<string>6CE29298EBB4CB3F176240D859C63944</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>D38513364F4FD5617192A2F79225FF59</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>Pods-SmileWeatherTodayWidget-SmileWeather-prefix.pch</string>
+			<key>path</key>
+			<string>../Pods-SmileWeatherTodayWidget-SmileWeather/Pods-SmileWeatherTodayWidget-SmileWeather-prefix.pch</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>D41D8CD98F00B204E9800998ECF8427E</key>
+		<dict>
+			<key>attributes</key>
+			<dict>
+				<key>LastSwiftUpdateCheck</key>
+				<string>0700</string>
+				<key>LastUpgradeCheck</key>
+				<string>0700</string>
+			</dict>
+			<key>buildConfigurationList</key>
+			<string>2D8E8EC45A3A1A1D94AE762CB5028504</string>
+			<key>compatibilityVersion</key>
+			<string>Xcode 3.2</string>
+			<key>developmentRegion</key>
+			<string>English</string>
+			<key>hasScannedForEncodings</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXProject</string>
+			<key>knownRegions</key>
+			<array>
+				<string>en</string>
+			</array>
+			<key>mainGroup</key>
+			<string>7DB346D0F39D3F0E887471402A8071AB</string>
+			<key>productRefGroup</key>
+			<string>56E3963C4700276B4AE36C01F8385286</string>
+			<key>projectDirPath</key>
+			<string></string>
+			<key>projectReferences</key>
+			<array/>
+			<key>projectRoot</key>
+			<string></string>
+			<key>targets</key>
+			<array>
+				<string>EF16C7B7D66603AA584D50D7E9BC771E</string>
+				<string>0A635F4A5EE347A3DF5B096F078772FE</string>
+				<string>62BC78B5E11A0C2C5F1896353FCA7699</string>
+				<string>E29C887A9C8851043A539C004668C392</string>
+				<string>5A66C80B8161B0122AFB780FC9B1DC77</string>
+				<string>46EE771474E78DFFB844283AE53498B1</string>
+				<string>E3377D4F724713EA0B08B62CF16CE16D</string>
+				<string>9A63AC61030828F4A27D1776F20D500E</string>
+			</array>
+		</dict>
+		<key>D8799A1A2E5C82A4C16883ADBC109C19</key>
+		<dict>
+			<key>fileRef</key>
+			<string>0EC81B8E9526D4F2EAA7AD4B46092FFF</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>DA5C4FA0AC3D5A34DD9C0C70E41DE62F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>90E41D97B3CA70C66B2CCDEA144F8B3B</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>DB2E82473DA807E3FBD549C4DEAFA948</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>36EF70280385B732A8CC99E3581C2772</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>APPLICATION_EXTENSION_API_ONLY</key>
+				<string>YES</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>MACH_O_TYPE</key>
+				<string>staticlib</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>YES</string>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>OTHER_LIBTOOLFLAGS</key>
+				<string></string>
+				<key>PODS_ROOT</key>
+				<string>$(SRCROOT)</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SDKROOT</key>
+				<string>watchos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+				<key>WATCHOS_DEPLOYMENT_TARGET</key>
+				<string>2.0</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>DBCEF68D42C546171DB532824B44250B</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>4F93A65A88B3CADD7BC8C8E1D5734946</string>
+				<string>6AE0BF2D8482DE9A24AEAD703960F0BB</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>DD3727695F585A99797BB51E2CDC0544</key>
+		<dict>
+			<key>fileRef</key>
+			<string>D06947F52451E5686212E14D33D72038</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>DD64BB936A93B3022E2B86F1C63C7FF6</key>
+		<dict>
+			<key>fileRef</key>
+			<string>0EC81B8E9526D4F2EAA7AD4B46092FFF</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>DEB4979F1675923FD30BD6CD3BE6385A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>6CE29298EBB4CB3F176240D859C63944</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>DF4191EBA797C6BB2FB7DDA78ACADCFC</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>Pods-SmileWeather-ExampleTests-acknowledgements.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>E02EF3791DBA72E8266B50F612CD499D</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>3570479F0305FE5DBEB172A62185EA71</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Development Pods</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>E0688195823020EAEF1A664EF66CD860</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>NSString+SmileSubstring.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>E285DF14B1C68E549E4F6DEC2F3389C8</key>
+		<dict>
+			<key>fileRef</key>
+			<string>6CE29298EBB4CB3F176240D859C63944</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>E29C887A9C8851043A539C004668C392</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>DBCEF68D42C546171DB532824B44250B</string>
+			<key>buildPhases</key>
+			<array>
+				<string>5BEC4502297EE2A2C6F393355905AA33</string>
+				<string>BE106AA25319A45212A223870DF8ED00</string>
+				<string>34E3A2F084603483BB41D4B7C572A8E6</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>Pods-SmileWeather-ExampleTests-SmileWeather</string>
+			<key>productName</key>
+			<string>Pods-SmileWeather-ExampleTests-SmileWeather</string>
+			<key>productReference</key>
+			<string>2375D485379646F1BEF3C6BD0D4A06C9</string>
+			<key>productType</key>
+			<string>com.apple.product-type.library.static</string>
+		</dict>
+		<key>E31A45D91EDF770E909883F3C77A0B74</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>Climacons.ttf</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>E3377D4F724713EA0B08B62CF16CE16D</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>4123D25FDF850D6B1EF1687323E36EC7</string>
+			<key>buildPhases</key>
+			<array>
+				<string>BB979088F9319B28DBFFCCBE50FC872A</string>
+				<string>FA0C1FEA4892BFD2F5454F2D98409E4D</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array>
+				<string>95A439BD6F84C2E7A6B284714F9D1740</string>
+			</array>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>Pods-SmileWeatherWatch Extension</string>
+			<key>productName</key>
+			<string>Pods-SmileWeatherWatch Extension</string>
+			<key>productReference</key>
+			<string>2FCF460FD911CC0CA92591234A64F22F</string>
+			<key>productType</key>
+			<string>com.apple.product-type.library.static</string>
+		</dict>
+		<key>E397C9487B39F160950FD4B86BF95E18</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>D41D8CD98F00B204E9800998ECF8427E</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>9A63AC61030828F4A27D1776F20D500E</string>
+			<key>remoteInfo</key>
+			<string>Pods-SmileWeatherWatch Extension-SmileWeather</string>
+		</dict>
+		<key>E3F435105153D3FBD41A9FBE1ED904D6</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>A1229A5E07F6559B3DD2F6DBBC4BF87B</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Resources</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>E42D44F7B5D763B64CDDCC17B610EA9B</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>E285DF14B1C68E549E4F6DEC2F3389C8</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>E483D710A169992CED7BD61B9FC7C53D</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods-SmileWeatherWatch Extension-SmileWeather.xcconfig</string>
+			<key>path</key>
+			<string>../Pods-SmileWeatherWatch Extension-SmileWeather/Pods-SmileWeatherWatch Extension-SmileWeather.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>E526B90613E75D1E4E39A41F882A6D28</key>
+		<dict>
+			<key>fileRef</key>
+			<string>D06947F52451E5686212E14D33D72038</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>E59372D368B24D8D9FC4CCE398EAB4BB</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>0C830CF324847BFEE2B13273B623D044</string>
+				<string>0DD109D05331C33062D09B9CF79AEE92</string>
+				<string>7E682B5307BFC38B224AC716E42E4897</string>
+				<string>5915D212D097D559455CD64FFC9B056E</string>
+				<string>5F42C94CED6C5A1B811168B0A0022DD5</string>
+				<string>75634FA5179922B1F7B1749A40D3A2CD</string>
+				<string>029E711EA07B89142FEE19770D6B1110</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Pods-Smile Weather</string>
+			<key>path</key>
+			<string>Target Support Files/Pods-Smile Weather</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>E6A1DE2B1957DB31C1AD137D2BF9BA41</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>smile_sunset@2x.png</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>E6BFEFEE4E76001192FCFA3D00F492A7</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>E526B90613E75D1E4E39A41F882A6D28</string>
+				<string>AE0DD011413E9490DD49B6233FBBC271</string>
+				<string>7E92E7A9A95CD346A3E2B3CB1B378F09</string>
+				<string>0F5DA37C0972F49614BCDBE9079060BC</string>
+				<string>3B0AD37D7EB1763D4F31F862E6901C84</string>
+				<string>772CD80E123DBB7C658AF230D82829BA</string>
+				<string>06A604359FEF06C889806493FB293286</string>
+				<string>4D07D08B2B760A0E68BDC76B919E20D3</string>
+				<string>93CA9826A83AD330389A78EED1A75FDB</string>
+				<string>BF4CA5CA1C209FECEE64824777D11CEA</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>E71CDA6C0471178C23DC8D8A1986260C</key>
+		<dict>
+			<key>fileRef</key>
+			<string>6CE29298EBB4CB3F176240D859C63944</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>E7E34DA612DD8D8F0405B1A9761C4F28</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>SmileWeatherForecastDayData.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>E7F45E95F76CE3BC07495E52F4E433B1</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>7B1DD1AB474908D63EE4FC03F00BA84B</string>
+				<string>766DBD1F478B7CB2BB981C0EE8707F26</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>E84138E5608E0A91FDA108E45BF5906D</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>8E5328F6EBF7B19837FDAC422AB9A69B</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>Target Support Files/Pods-Smile Weather-SmileWeather/Pods-Smile Weather-SmileWeather-prefix.pch</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>7.0</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>YES</string>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>OTHER_LIBTOOLFLAGS</key>
+				<string></string>
+				<key>PRIVATE_HEADERS_FOLDER_PATH</key>
+				<string></string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>PUBLIC_HEADERS_FOLDER_PATH</key>
+				<string></string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>EA55FC66E13DE5ADC5D957FD57765545</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>smile_drop@2x.png</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>EB6BB5981040C7E7A23690B7AA3D15BA</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>7A167C13D273153C3CC3A63A9C4ED225</string>
+				<string>6256DD7A0EE3A3DC35717F8DE868BC24</string>
+				<string>B28FD306B37F8D2F251862398E01A152</string>
+				<string>AE8291F25FF5EEF498F40D1EB05EA673</string>
+				<string>0B2FD03FF82E19867396ACABD3C1809A</string>
+				<string>65475FDB6CB17206C4BEECC6D64B9F84</string>
+				<string>9150B3BAD58A501FBFB12F7FC75A0A93</string>
+				<string>3BFEC47CB8AC6F23404230BD9F8C90F5</string>
+				<string>6BDAF8C379934FA656E3F0334DD73882</string>
+				<string>63986B8ABB58C5A88C0D5E96EC7EA950</string>
+			</array>
+			<key>isa</key>
+			<string>PBXHeadersBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>EBBB2217028046B0753F2B3A6F6EF264</key>
+		<dict>
+			<key>fileRef</key>
+			<string>E0688195823020EAEF1A664EF66CD860</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>EBFA286B9AA09158030E7133A18BB3AC</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
+				<string>gnu++0x</string>
+				<key>CLANG_CXX_LIBRARY</key>
+				<string>libc++</string>
+				<key>CLANG_ENABLE_MODULES</key>
+				<string>YES</string>
+				<key>CLANG_ENABLE_OBJC_ARC</key>
+				<string>YES</string>
+				<key>CLANG_WARN_BOOL_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
+				<string>YES</string>
+				<key>CLANG_WARN_EMPTY_BODY</key>
+				<string>YES</string>
+				<key>CLANG_WARN_ENUM_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_INT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
+				<string>YES</string>
+				<key>CLANG_WARN_UNREACHABLE_CODE</key>
+				<string>YES</string>
+				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
+				<string>YES</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>YES</string>
+				<key>ENABLE_NS_ASSERTIONS</key>
+				<string>NO</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>RELEASE=1</string>
+				</array>
+				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
+				<string>YES</string>
+				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_FUNCTION</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_VARIABLE</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>7.0</string>
+				<key>STRIP_INSTALLED_PRODUCT</key>
+				<string>NO</string>
+				<key>SYMROOT</key>
+				<string>${SRCROOT}/../build</string>
+				<key>VALIDATE_PRODUCT</key>
+				<string>YES</string>
+				<key>WATCHOS_DEPLOYMENT_TARGET</key>
+				<string>2.0</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>ED661F227878010126DE74DB462464D3</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.script.sh</string>
+			<key>path</key>
+			<string>Pods-SmileWeatherWatch Extension-frameworks.sh</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>EDC021C77C59DCF4A03410CD91F86DE2</key>
+		<dict>
+			<key>fileRef</key>
+			<string>478341937342A919333D98C5C5D276B0</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>EE3D24375D1CAEF768BBCE80A813A243</key>
+		<dict>
+			<key>fileRef</key>
+			<string>90E41D97B3CA70C66B2CCDEA144F8B3B</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>EF0AE0AD7FF177C292BF27D31DDC565C</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>B5FE0C5F39557BECFECD528EAE03BEFF</string>
+				<string>B94EE4454CFCE8B95724CDB49FD82734</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>EF16C7B7D66603AA584D50D7E9BC771E</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>9D1B538E356428354356A93DBBC525BC</string>
+			<key>buildPhases</key>
+			<array>
+				<string>BBF44695B8DE236EBDF2B3C7A0A91055</string>
+				<string>E42D44F7B5D763B64CDDCC17B610EA9B</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array>
+				<string>8C900230EC0646CFAFBDE385460007EA</string>
+			</array>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>Pods-Smile Weather</string>
+			<key>productName</key>
+			<string>Pods-Smile Weather</string>
+			<key>productReference</key>
+			<string>9C15FA7F3C188AE14322144F15CACD20</string>
+			<key>productType</key>
+			<string>com.apple.product-type.library.static</string>
+		</dict>
+		<key>F050A88CA96FEA207D8938F04D541A43</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>Pods-SmileWeatherTodayWidget.release.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F21A4C23C7FBB4085E0163B7AE6AADD5</key>
+		<dict>
+			<key>fileRef</key>
+			<string>F511E2725754276E0BDB644500B16997</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>F511E2725754276E0BDB644500B16997</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>CoreLocation.framework</string>
+			<key>path</key>
+			<string>Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/CoreLocation.framework</string>
+			<key>sourceTree</key>
+			<string>DEVELOPER_DIR</string>
+		</dict>
+		<key>F54D7D8FB151FAD81233A5BB52AE90D6</key>
+		<dict>
+			<key>fileRef</key>
+			<string>E0688195823020EAEF1A664EF66CD860</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>F57BA41768D3241A864DD7278B330EF6</key>
+		<dict>
+			<key>fileRef</key>
+			<string>C78AF9ED74A4B77EF9AD62CB5ED4BD53</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>F6BADE2E78A84BD6CBEEBA63E0F2B03A</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>file.xib</string>
+			<key>path</key>
+			<string>SmileWeatherDemoView.xib</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FA0C1FEA4892BFD2F5454F2D98409E4D</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>15C92D790F4186506249150B798385AA</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>FA83E9EBDDB5CB3BB08FD6E349745F1D</key>
+		<dict>
+			<key>fileRef</key>
+			<string>D181ADFC254C56D6B38B1ACD505AD8E3</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>FAD6DB2118238569008E3E4D275795E9</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>FF140CD3A66D71ED8C65E225EC1A57E7</string>
+				<string>17499DD4D4B8C6FAF602DD67468A250D</string>
+				<string>1D8DCD779EE5B2DAAB8F5B0AF474B8FE</string>
+				<string>BFA79D35F4D8AD7F550DF8C059C2C2B2</string>
+				<string>039DC51709337D01F8E3E28F23B0B044</string>
+				<string>510D54E2483A9DB365F2F26BC034B37F</string>
+				<string>8E187CA69B7E0A2F2FE2E46186D6F895</string>
+				<string>88E41AF08E2C74541EE1527B73C27B01</string>
+				<string>8BEB1893C02EBCDC5D136F47716AC232</string>
+				<string>2B64D87E914AA9574C6EC686E487B9ED</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>FED745F3077EA3EFD9AED22856714E75</key>
+		<dict>
+			<key>fileRef</key>
+			<string>97203A27A4CE93309E711AD11C40EE06</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>FEF7FCC1269EE773B3C3964832D8D974</key>
+		<dict>
+			<key>fileRef</key>
+			<string>6CE29298EBB4CB3F176240D859C63944</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>FEFE6A5EE06C6B5774B0D97207D8ADAD</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>SmileWeatherHourlyData.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FF140CD3A66D71ED8C65E225EC1A57E7</key>
+		<dict>
+			<key>fileRef</key>
+			<string>D06947F52451E5686212E14D33D72038</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+	</dict>
+	<key>rootObject</key>
+	<string>D41D8CD98F00B204E9800998ECF8427E</string>
+</dict>
+</plist>
