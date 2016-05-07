@@ -65,6 +65,7 @@ avewind =                     {
 ///unit is M/S
 @property (copy, nonatomic) NSString *windSpeedRaw;
 @property (readonly, nonatomic) NSString *windSpeed;
+///etc. Openweathermap: 200,　Wunderground: SSW
 @property (copy, nonatomic) NSString *windDirection;
 
 

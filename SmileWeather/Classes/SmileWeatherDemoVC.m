@@ -442,7 +442,7 @@ static NSString * const reuseIdentifier_property = @"propertyCell";
                 }
             } else {
                 NSInteger pop = hourlyData.precipitationRaw.integerValue;
-                if (pop > 24) {
+                if (pop > 15) {
                     popLabel.text = hourlyData.precipitation;
                 }
             }

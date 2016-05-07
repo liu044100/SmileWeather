@@ -283,12 +283,13 @@ static NSString * const SmileCoder_timeZone = @"timeZone";
     
     //wind speed
     self.currentData.windSpeedRaw = [self createWindSpeedRawFromObject:[windDic valueForKey:@"speed"]];
+    self.currentData.windDirection = [self getOpenWeatherMapWindDirection:windDic];
     
     //today only property
     self.currentData.pressureRaw = [self createPressureStringFromObject:[mainDataDic valueForKey:@"pressure"]];
     
     //precipitation
-    self.currentData.precipitationRaw = [self createAmountOfRainFromObject_openweathermap:[jsonData objectForKey:@"rain"]];
+    self.currentData.precipitationRaw = [self createNowAmountOfRainFromObject_openweathermap:[jsonData objectForKey:@"rain"]];
     
     NSDictionary *sysDic = [jsonData objectForKey:@"sys"];
     self.currentData.sunRise = [self createSunStringFromObject_openweathermap:[sysDic valueForKey:@"sunrise"]];
@@ -297,6 +298,16 @@ static NSString * const SmileCoder_timeZone = @"timeZone";
     
     
     [self configureForecastDaysAndHourly_openweathermap:(NSArray*)[jsonData objectForKey:@"list"]];
+}
+
+-(NSString*)getOpenWeatherMapWindDirection:(NSDictionary*)windDic {
+    NSString *result = @"";
+    id data = [windDic valueForKey:@"deg"];
+    if ([data isKindOfClass:[NSNumber class]]) {
+        NSInteger degree = [data integerValue];
+        result = [NSString stringWithFormat:@"%ldº", degree];
+    }
+    return result;
 }
 
 #pragma mark - convertor for openweathermap
@@ -340,9 +351,10 @@ static NSString * const SmileCoder_timeZone = @"timeZone";
             
             //wind speed
             forecast.windSpeedRaw = [self createWindSpeedRawFromObject:[windDic valueForKey:@"speed"]];
+            forecast.windDirection = [self getOpenWeatherMapWindDirection:windDic];
             
             //precipitation
-            forecast.precipitationRaw = [self createAmountOfRainFromObject_openweathermap:[obj objectForKey:@"rain"]];
+            forecast.precipitationRaw = [self createForecastAmountOfRainFromObject_openweathermap:[obj objectForKey:@"rain"]];
             
             [forecastData addObject:forecast];
             dayFlag = components.day;
@@ -372,9 +384,10 @@ static NSString * const SmileCoder_timeZone = @"timeZone";
             
             //wind speed
             forecast.windSpeedRaw = [self createWindSpeedRawFromObject:[windDic valueForKey:@"speed"]];
+            forecast.windDirection = [self getOpenWeatherMapWindDirection:windDic];
             
             //precipitation
-            forecast.precipitationRaw = [self createAmountOfRainFromObject_openweathermap:[obj objectForKey:@"rain"]];
+            forecast.precipitationRaw = [self createForecastAmountOfRainFromObject_openweathermap:[obj objectForKey:@"rain"]];
             
             [hourlyData addObject:forecast];
         }
@@ -395,19 +408,24 @@ static NSString * const SmileCoder_timeZone = @"timeZone";
     self.forecastData = [forecastData mutableCopy];
 }
 
--(NSString*)createAmountOfRainFromObject_openweathermap:(id)object{
+-(NSString*)createForecastAmountOfRainFromObject_openweathermap:(id)object {
+    return [self createAmountOfRainFromObject_openweathermap:object key:@"3h"];
+}
+
+-(NSString*)createNowAmountOfRainFromObject_openweathermap:(id)object {
+    return [self createAmountOfRainFromObject_openweathermap:object key:@"1h"];
+}
+
+-(NSString*)createAmountOfRainFromObject_openweathermap:(id)object key:(NSString*)key{
     NSString *result = @"0 mm";;
-    
     if (object){
         NSDictionary *dic = (NSDictionary*)object;
-        id value = [dic objectForKey:@"3h"];
+        id value = [dic objectForKey:key];
 //        NSLog(@"the rain -> %@", value);
         if ([value isKindOfClass:[NSNumber class]]) {
             result = [NSString stringWithFormat:@"%.2f mm", [(NSNumber*)value floatValue]];
         }
     }
-    
-    
     return result;
 }
 
@@ -455,12 +473,10 @@ static NSString * const SmileCoder_timeZone = @"timeZone";
 
 -(NSString*)createPopStringFromObject:(id)object{
     NSString *result;
-    
-    if ([object isKindOfClass:[NSNumber class]]) {
-        NSNumber *value = (NSNumber*)object;
-        result = [value stringValue];
+    if (object) {
+        NSInteger degree = [object integerValue];
+        result = [NSString stringWithFormat:@"%ld", degree];
     }
-    
     return result;
 }
 
