@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '117CAEA3F96ADCB071B50EE4'
+               BlueprintIdentifier = 'AF77558B2FD3F0CFDB63605B'
                BlueprintName = 'Pods-SmileWeatherWatch Extension-SmileWeather'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libPods-SmileWeatherWatch Extension-SmileWeather.a'>

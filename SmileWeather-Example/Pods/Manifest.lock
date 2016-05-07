@@ -1,5 +1,5 @@
 PODS:
-  - SmileWeather (0.1.9)
+  - SmileWeather (0.2.0)
 
 DEPENDENCIES:
   - SmileWeather (from `../`)
@@ -9,6 +9,6 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  SmileWeather: 85d27af374723ecee568cc06b1e5fcdf0c647589
+  SmileWeather: 89ff26268c456cf5c2f38171aa73c010b9f16719
 
 COCOAPODS: 0.39.0
