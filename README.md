@@ -60,6 +60,7 @@ The weather information, timestamp, weekday, timezone, etc, localized all the re
 ##### 4. Support Today Extension & WatchOS 2.
 
 <img src="SmileWeather-Example/demo_gif/demo_extension.png" width="400">
+<img src="SmileWeather-Example/demo_gif/watch.PNG" width="300">
 
 ##### 5. Add the Weather Widget Style UI to your project simply, by using `SmileWeatherDemoVC`.
 
