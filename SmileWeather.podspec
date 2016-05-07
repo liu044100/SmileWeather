@@ -20,11 +20,12 @@ Pod::Spec.new do |s|
   s.watchos.deployment_target = "2.0"
   s.ios.frameworks = 'UIKit', 'CoreLocation'
   s.watchos.frameworks = 'CoreLocation'
+  s.ios.resources = ['SmileWeather/Assets/*.png', 'SmileWeather/Assets/*.ttf', 'SmileWeather/Assets/*.xib']
+  s.watchos.resources = ['SmileWeather/Assets/*.ttf']
 
   s.requires_arc = true
   s.source       = { :git => "https://github.com/liu044100/SmileWeather.git", :tag => s.version.to_s}
   s.source_files  = 'SmileWeather/Classes/*'
-  s.resources = ['SmileWeather/Assets/*.png', 'SmileWeather/Assets/*.ttf', 'SmileWeather/Assets/*.xib']
   s.public_header_files = 'SmileWeather/Classes/*.h'
 
 end
