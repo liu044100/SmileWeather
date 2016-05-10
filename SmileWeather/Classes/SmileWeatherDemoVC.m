@@ -72,7 +72,7 @@ static NSString * const reuseIdentifier_property = @"propertyCell";
     [super viewDidLoad];
     
     self.mainInterfaceColor = [UIColor blackColor];
-    self.mainInterfaceColorNightMode = [UIColor whiteColor];
+    self.mainInterfaceNightModeColor = [UIColor whiteColor];
     self.higlightedInterfaceColor = [UIColor redColor];
     
     if (self.nightMode) {
@@ -256,10 +256,10 @@ static NSString * const reuseIdentifier_property = @"propertyCell";
     
     if (self.nightMode) {
         self.view.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.7];
-        self.localityLabel.textColor = self.mainInterfaceColorNightMode;
-        self.conditionsLabel.textColor = self.mainInterfaceColorNightMode;
-        _hairLine_bottom.backgroundColor = self.mainInterfaceColorNightMode;
-        _hairLine_top.backgroundColor = self.mainInterfaceColorNightMode;
+        self.localityLabel.textColor = self.mainInterfaceNightModeColor;
+        self.conditionsLabel.textColor = self.mainInterfaceNightModeColor;
+        _hairLine_bottom.backgroundColor = self.mainInterfaceNightModeColor;
+        _hairLine_top.backgroundColor = self.mainInterfaceNightModeColor;
     } else {
         self.view.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.7];
         self.localityLabel.textColor = self.mainInterfaceColor;
@@ -355,9 +355,9 @@ static NSString * const reuseIdentifier_property = @"propertyCell";
     UILabel *lowTempLabel = (UILabel*)[cell viewWithTag:400];
     
     if (self.nightMode) {
-        weekLabel.textColor = self.mainInterfaceColorNightMode;
-        weatherLabel.textColor = self.mainInterfaceColorNightMode;
-        highTempLabel.textColor = self.mainInterfaceColorNightMode;
+        weekLabel.textColor = self.mainInterfaceNightModeColor;
+        weatherLabel.textColor = self.mainInterfaceNightModeColor;
+        highTempLabel.textColor = self.mainInterfaceNightModeColor;
     } else {
         weekLabel.textColor = self.mainInterfaceColor;
         weatherLabel.textColor = self.mainInterfaceColor;
@@ -378,7 +378,7 @@ static NSString * const reuseIdentifier_property = @"propertyCell";
         if (indexPath.row == 0) {
             weekLabel.backgroundColor = self.higlightedInterfaceColor;
             if (self.nightMode){
-                weekLabel.textColor = self.mainInterfaceColorNightMode;
+                weekLabel.textColor = self.mainInterfaceNightModeColor;
             }else{
                 weekLabel.textColor = self.mainInterfaceColor;
             }
@@ -415,9 +415,9 @@ static NSString * const reuseIdentifier_property = @"propertyCell";
     UILabel *popLabel = (UILabel*)[cell viewWithTag:400];
     
     if (self.nightMode) {
-        timeLabel.textColor = self.mainInterfaceColorNightMode;
-        weatherLabel.textColor = self.mainInterfaceColorNightMode;
-        tempLabel.textColor = self.mainInterfaceColorNightMode;
+        timeLabel.textColor = self.mainInterfaceNightModeColor;
+        weatherLabel.textColor = self.mainInterfaceNightModeColor;
+        tempLabel.textColor = self.mainInterfaceNightModeColor;
     } else {
         timeLabel.textColor = self.mainInterfaceColor;
         weatherLabel.textColor = self.mainInterfaceColor;
@@ -479,8 +479,8 @@ static NSString * const reuseIdentifier_property = @"propertyCell";
     
     iconImageView.image = [iconImageView.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     if (self.nightMode) {
-        valueLabel.textColor = self.mainInterfaceColorNightMode;
-        [iconImageView setTintColor:self.mainInterfaceColorNightMode];
+        valueLabel.textColor = self.mainInterfaceNightModeColor;
+        [iconImageView setTintColor:self.mainInterfaceNightModeColor];
     } else {
         valueLabel.textColor = self.mainInterfaceColor;
         [iconImageView setTintColor:self.mainInterfaceColor];
