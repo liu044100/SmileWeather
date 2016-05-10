@@ -1,11 +1,12 @@
 Pod::Spec.new do |s|
   s.name         = "SmileWeather"
-  s.version      = "0.2.0"
+  s.version      = "0.2.１"
   s.summary      = "A library for Search & Parse the weather data from Wunderground conveniently."
   s.description  = <<-DESC
                    1. Handle all complicated things about Search & Parse the weather data.
                    2. Need not any weather icon, SmileWeather handle it for you.
                    3. Fully localized the related information for almost all the countries in the world.
+                   4. Support Today Extension & WatchOS 2.
                    DESC
 
   s.homepage     = "https://github.com/liu044100/SmileWeather"
