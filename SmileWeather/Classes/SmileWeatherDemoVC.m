@@ -71,6 +71,10 @@ static NSString * const reuseIdentifier_property = @"propertyCell";
 -(void)viewDidLoad {
     [super viewDidLoad];
     
+    self.mainInterfaceColor = [UIColor blackColor];
+    self.mainInterfaceColorNightMode = [UIColor whiteColor];
+    self.higlightedInterfaceColor = [UIColor redColor];
+    
     if (self.nightMode) {
         self.view.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.7];
     } else {
@@ -94,7 +98,7 @@ static NSString * const reuseIdentifier_property = @"propertyCell";
     //add shadow
     [self addShadowToView:self.view];
     
-    self.activityView.backgroundColor = [UIColor redColor];
+    self.activityView.backgroundColor = self.higlightedInterfaceColor;
     self.activityView.layer.cornerRadius = CGRectGetMidX(self.activityView.bounds);
     
     [self handleAPILogoAndLayout];
@@ -252,16 +256,16 @@ static NSString * const reuseIdentifier_property = @"propertyCell";
     
     if (self.nightMode) {
         self.view.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.7];
-        self.localityLabel.textColor = [UIColor whiteColor];
-        self.conditionsLabel.textColor = [UIColor whiteColor];
-        _hairLine_bottom.backgroundColor = [UIColor whiteColor];
-        _hairLine_top.backgroundColor = [UIColor whiteColor];
+        self.localityLabel.textColor = self.mainInterfaceColorNightMode;
+        self.conditionsLabel.textColor = self.mainInterfaceColorNightMode;
+        _hairLine_bottom.backgroundColor = self.mainInterfaceColorNightMode;
+        _hairLine_top.backgroundColor = self.mainInterfaceColorNightMode;
     } else {
         self.view.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.7];
-        self.localityLabel.textColor = [UIColor blackColor];
-        self.conditionsLabel.textColor = [UIColor blackColor];
-        _hairLine_bottom.backgroundColor = [UIColor blackColor];
-        _hairLine_top.backgroundColor = [UIColor blackColor];
+        self.localityLabel.textColor = self.mainInterfaceColor;
+        self.conditionsLabel.textColor = self.mainInterfaceColor;
+        _hairLine_bottom.backgroundColor = self.mainInterfaceColor;
+        _hairLine_top.backgroundColor = self.mainInterfaceColor;
     }
     
     NSString *temp;
@@ -271,6 +275,7 @@ static NSString * const reuseIdentifier_property = @"propertyCell";
         temp = self.data.currentData.currentTempStri_Celsius;
     }
     
+    self.currentTempLabel.textColor = self.higlightedInterfaceColor;
     self.currentTempLabel.text = temp;
     self.localityLabel.text = self.data.placeName;
     
@@ -350,13 +355,13 @@ static NSString * const reuseIdentifier_property = @"propertyCell";
     UILabel *lowTempLabel = (UILabel*)[cell viewWithTag:400];
     
     if (self.nightMode) {
-        weekLabel.textColor = [UIColor whiteColor];
-        weatherLabel.textColor = [UIColor whiteColor];
-        highTempLabel.textColor = [UIColor whiteColor];
+        weekLabel.textColor = self.mainInterfaceColorNightMode;
+        weatherLabel.textColor = self.mainInterfaceColorNightMode;
+        highTempLabel.textColor = self.mainInterfaceColorNightMode;
     } else {
-        weekLabel.textColor = [UIColor blackColor];
-        weatherLabel.textColor = [UIColor blackColor];
-        highTempLabel.textColor = [UIColor blackColor];
+        weekLabel.textColor = self.mainInterfaceColor;
+        weatherLabel.textColor = self.mainInterfaceColor;
+        highTempLabel.textColor = self.mainInterfaceColor;
     }
     
     // Configure the cell
@@ -371,13 +376,17 @@ static NSString * const reuseIdentifier_property = @"propertyCell";
         weatherLabel.text = forecastDayData.icon;
         
         if (indexPath.row == 0) {
-            weekLabel.backgroundColor = [UIColor redColor];
-            weekLabel.textColor = [UIColor whiteColor];
+            weekLabel.backgroundColor = self.higlightedInterfaceColor;
+            if (self.nightMode){
+                weekLabel.textColor = self.mainInterfaceColorNightMode;
+            }else{
+                weekLabel.textColor = self.mainInterfaceColor;
+            }
             weekLabel.layer.cornerRadius = 3;
             weekLabel.layer.masksToBounds = YES;
         } else {
             weekLabel.backgroundColor = [UIColor clearColor];
-            weekLabel.textColor = [UIColor redColor];
+            weekLabel.textColor = self.higlightedInterfaceColor;
             weekLabel.layer.cornerRadius = 0;
             weekLabel.layer.masksToBounds = NO;
         }
@@ -406,17 +415,18 @@ static NSString * const reuseIdentifier_property = @"propertyCell";
     UILabel *popLabel = (UILabel*)[cell viewWithTag:400];
     
     if (self.nightMode) {
-        timeLabel.textColor = [UIColor whiteColor];
-        weatherLabel.textColor = [UIColor whiteColor];
-        tempLabel.textColor = [UIColor whiteColor];
+        timeLabel.textColor = self.mainInterfaceColorNightMode;
+        weatherLabel.textColor = self.mainInterfaceColorNightMode;
+        tempLabel.textColor = self.mainInterfaceColorNightMode;
     } else {
-        timeLabel.textColor = [UIColor blackColor];
-        weatherLabel.textColor = [UIColor blackColor];
-        tempLabel.textColor = [UIColor blackColor];
+        timeLabel.textColor = self.mainInterfaceColor;
+        weatherLabel.textColor = self.mainInterfaceColor;
+        tempLabel.textColor = self.mainInterfaceColor;
     }
 
 
     popLabel.text = @"";
+    popLabel.textColor = self.higlightedInterfaceColor;
     
     // Configure the cell
     if (!self.data) {
@@ -469,11 +479,11 @@ static NSString * const reuseIdentifier_property = @"propertyCell";
     
     iconImageView.image = [iconImageView.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     if (self.nightMode) {
-        valueLabel.textColor = [UIColor whiteColor];
-        [iconImageView setTintColor:[UIColor whiteColor]];
+        valueLabel.textColor = self.mainInterfaceColorNightMode;
+        [iconImageView setTintColor:self.mainInterfaceColorNightMode];
     } else {
-        valueLabel.textColor = [UIColor blackColor];
-        [iconImageView setTintColor:[UIColor blackColor]];
+        valueLabel.textColor = self.mainInterfaceColor;
+        [iconImageView setTintColor:self.mainInterfaceColor];
     }
 }
 
