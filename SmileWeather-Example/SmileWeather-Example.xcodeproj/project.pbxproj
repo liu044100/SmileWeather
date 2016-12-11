@@ -469,6 +469,7 @@
 					};
 					24CF08F91B539EBE00B0060C = {
 						CreatedOnToolsVersion = 6.4;
+						LastSwiftMigration = 0810;
 						TestTargetID = 24CF08E01B539EBD00B0060C;
 					};
 					B763BD1F1CDDA580003E9D01 = {
@@ -960,6 +961,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "SmileWeather-ExampleTests/SmileWeather-ExampleTests-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Smile Weather.app/Smile Weather";
 			};
 			name = Debug;
@@ -976,6 +978,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "edu.self.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "SmileWeather-ExampleTests/SmileWeather-ExampleTests-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Smile Weather.app/Smile Weather";
 			};
 			name = Release;
