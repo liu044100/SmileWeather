@@ -81,7 +81,5 @@ typedef NS_ENUM(int, SmileWeatherAPI) {
 +(nonnull NSString*)placeNameForSearchDisplay:(nonnull CLPlacemark*)placemark;
 /*!Optimized placename for display in the normal scene.*/
 +(nonnull NSString*)placeNameForDisplay:(nonnull CLPlacemark*)placemark;
-/*!Current prefered language for device.*/
--(nonnull NSString*)preferedLanguage;
 
 @end
