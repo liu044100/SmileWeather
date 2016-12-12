@@ -1,5 +1,6 @@
 # SmileWeather
 
+<a href="https://codecov.io/github/liu044100/SmileWeather?branch=master"><img src="https://img.shields.io/codecov/c/github/liu044100/SmileWeather.svg"></a>
 [![GitHub Issues](http://img.shields.io/github/issues/liu044100/SmileWeather.svg?style=flat)](https://github.com/liu044100/SmileWeather/issues)
 [![Version](https://img.shields.io/cocoapods/v/SmileWeather.svg?style=flat)](http://cocoadocs.org/docsets/SmileWeather)
 [![License](https://img.shields.io/cocoapods/l/SmileWeather.svg?style=flat)](http://cocoadocs.org/docsets/SmileWeather)
