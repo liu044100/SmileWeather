@@ -34,9 +34,9 @@ typedef NS_ENUM(int, SmileWeatherAPI) {
 +(nonnull SmileWeatherDownLoader*)sharedDownloader;
 
 //Raw data
--(void)getWeatherRawDataFromURL:(nonnull NSURL*)url completion:(nonnull SmileWeatherRawDataCompletion)completion;
+-(void)getWeatherRawDataFromURL:(nonnull NSURL*)url completion:(nonnull SmileWeatherRawDataCompletion)completion NS_SWIFT_NAME(getWeatherRawData(from:completion:));
 
--(void)getWeatherRawDicFromURL:(nonnull NSURL*)url completion:(nonnull SmileWeatherRawDicCompletion)completion;
+-(void)getWeatherRawDicFromURL:(nonnull NSURL*)url completion:(nonnull SmileWeatherRawDicCompletion)completion NS_SWIFT_NAME(getWeatherRawDic(from:completion:));
 
 //weather data
 /*!
@@ -46,7 +46,7 @@ typedef NS_ENUM(int, SmileWeatherAPI) {
  @param completion A block object containing the code to execute at the end of the request. This code is called whether the request is successful or unsuccessful.
  @see -getWeatherDataFromLocation:completion:
  */
--(void)getWeatherDataFromPlacemark:(nonnull CLPlacemark*)placeMark completion:(nonnull SmileWeatherDataDownloadCompletion)completion;
+-(void)getWeatherDataFromPlacemark:(nonnull CLPlacemark*)placeMark completion:(nonnull SmileWeatherDataDownloadCompletion)completion NS_SWIFT_NAME(getWeatherData(from:completion:));
 
 /*!
  @brief Get weather data from CLLocation.
@@ -55,7 +55,7 @@ typedef NS_ENUM(int, SmileWeatherAPI) {
  @param completion A block object containing the code to execute at the end of the request. This code is called whether the request is successful or unsuccessful.
  @see -getWeatherDataFromPlacemark:completion:
  */
--(void)getWeatherDataFromLocation:(nonnull CLLocation*)location completion:(nonnull SmileWeatherDataDownloadCompletion)completion;
+-(void)getWeatherDataFromLocation:(nonnull CLLocation*)location completion:(nonnull SmileWeatherDataDownloadCompletion)completion NS_SWIFT_NAME(getWeatherData(from:completion:));
 
 //Placemark Lists
 /*!
@@ -65,7 +65,7 @@ typedef NS_ENUM(int, SmileWeatherAPI) {
  @param completion A block object containing the code to execute at the end of the request. This code is called whether the request is successful or unsuccessful.
  @see -getPlacemarksForSearchDisplayFromString:completion:
  */
--(void)getPlacemarksFromString:(nonnull NSString*)string completion:(nonnull SmileWeatherPlacemarksCompletion)completion;
+-(void)getPlacemarksFromString:(nonnull NSString*)string completion:(nonnull SmileWeatherPlacemarksCompletion)completion NS_SWIFT_NAME(getPlacemarks(from:completion:));
 
 /*!
  @brief Get array of CLPlacemark from the input string for display in the scene where the results is displayed in the search bar. By use this method, the returned array will contains the corresponding results as much as possible.
@@ -74,14 +74,12 @@ typedef NS_ENUM(int, SmileWeatherAPI) {
  @param completion A block object containing the code to execute at the end of the request. This code is called whether the request is successful or unsuccessful.
  @see -getPlacemarksFromString:completion:
  */
--(void)getPlacemarksForSearchDisplayFromString:(nonnull NSString*)string completion:(nonnull SmileWeatherPlacemarksCompletion)completion;
+-(void)getPlacemarksForSearchDisplayFromString:(nonnull NSString*)string completion:(nonnull SmileWeatherPlacemarksCompletion)completion NS_SWIFT_NAME(getPlacemarksForSearchDisplay(from:completion:));
 
 //Utility
 /*!Optimized placename for display in the search bar scene.*/
 +(nonnull NSString*)placeNameForSearchDisplay:(nonnull CLPlacemark*)placemark;
 /*!Optimized placename for display in the normal scene.*/
 +(nonnull NSString*)placeNameForDisplay:(nonnull CLPlacemark*)placemark;
-/*!Current prefered language for device.*/
--(nonnull NSString*)preferedLanguage;
 
 @end

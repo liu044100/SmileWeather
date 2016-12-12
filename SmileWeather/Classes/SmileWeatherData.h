@@ -19,9 +19,9 @@
 /*!The weather data for current weather data.*/
 @property (nonatomic, readonly) SmileWeatherCurrentData *currentData;
 /*!The array of weather data for four days forecast.*/
-@property (nonatomic, readonly) NSArray *forecastData;
+@property (nonatomic, readonly) NSArray<SmileWeatherForecastDayData*> *forecastData;
 /*!The array of weather data for hourly forecast.*/
-@property (nonatomic, readonly) NSArray *hourlyData;
+@property (nonatomic, readonly) NSArray<SmileWeatherHourlyData*> *hourlyData;
 @property (nonatomic, readonly) CLPlacemark *placeMark;
 @property (nonatomic, readonly) NSDate *timeStamp;
 @property (nonatomic, readonly) NSTimeZone *timeZone;

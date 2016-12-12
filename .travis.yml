@@ -1,0 +1,9 @@
+language: objective-c
+os: osx
+osx_image: xcode8
+
+before_install: cd SmileWeather-Example
+script:
+  travis_retry xcodebuild -workspace SmileWeather-Example.xcworkspace -scheme 'Smile Weather' -destination "platform=iOS Simulator,name=iPhone 6 Plus" clean test GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES
+after_success:
+  - bash <(curl -s https://codecov.io/bash)

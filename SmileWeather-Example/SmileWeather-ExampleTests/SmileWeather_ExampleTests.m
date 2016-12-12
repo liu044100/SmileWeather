@@ -90,6 +90,17 @@
     [self waitForExpectationsWithTimeout:5.0 handler:nil];
 }
 
+-(void)test_Asyn_search_display{
+    XCTestExpectation *completionExpectation = [self expectationWithDescription:@"Asyn Search"];
+    // this method just for show more result in search bar
+    [self.sharedDownloader getPlacemarksForSearchDisplayFromString:@"Tokyo" completion:^(NSArray<CLPlacemark *> * _Nullable placeMarks, NSError * _Nullable error) {
+        XCTAssertNil(error, @"SmileWeatherDownLoader failed search places info");
+        XCTAssertTrue(placeMarks.count > 0, @"SmileWeatherDownLoader failed placeMark array");
+        [completionExpectation fulfill];
+    }];
+    [self waitForExpectationsWithTimeout:5.0 handler:nil];
+}
+
 -(void)test_Performance_createWeatherDataFromDictionary{
     NSURL *sampleURL = [[NSBundle testBundle] URLForResource:@"SampleResponse" withExtension:@"json"];
     NSDictionary *jsonDic = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfURL:sampleURL] options:0 error:nil];
@@ -105,12 +116,24 @@
     }];
 }
 
--(void)test_EncodeDecode:(SmileWeatherData*)data {
-    NSData *archivedData = [NSKeyedArchiver archivedDataWithRootObject:data];
+-(void)test_EncodeDecode:(SmileWeatherData*)weatherData {
+    NSData *archivedData = [NSKeyedArchiver archivedDataWithRootObject:weatherData];
     XCTAssertNotNil(archivedData, @"Fail to encode");
     SmileWeatherData *unarchivedData = [NSKeyedUnarchiver unarchiveObjectWithData:archivedData];
     XCTAssertNotNil(unarchivedData, @"Fail to decode");
-    XCTAssertTrue(unarchivedData.currentData.currentTemperature.celsius == data.currentData.currentTemperature.celsius, @"");
+    XCTAssertTrue(unarchivedData.currentData.currentTemperature.celsius == weatherData.currentData.currentTemperature.celsius, @"");
+    
+    XCTAssertTrue(weatherData.forecastData.count > 0, @"SmileWeatherDownLoader failed download forecastData");
+    XCTAssertTrue(weatherData.hourlyData.count > 0, @"SmileWeatherDownLoader failed download hourlyData");
+    
+    XCTAssertNotNil(weatherData.currentData, @"SmileWeatherDownLoader failed download currentData");
+    XCTAssertTrue(weatherData.currentData.currentTempStri_Celsius.length > 0, @"SmileWeatherCurrentData failed parse temperature_Celsius");
+    
+    SmileWeatherForecastDayData *forecastData = weatherData.forecastData.firstObject;
+    XCTAssertTrue(forecastData.highTempStri_Celsius.length > 0, @"SmileWeatherForecastDayData failed parse temperature_Celsius");
+    
+    SmileWeatherHourlyData *hourlyData = weatherData.hourlyData.firstObject;
+    XCTAssertTrue(hourlyData.currentTempStri_Celsius.length > 0, @"SmileWeatherHourlyData failed parse temperature_Celsius");
 }
 
 @end

@@ -33,24 +33,28 @@ class SmileWeather_ExapleTests_Swift: XCTestCase {
     }
     
     func test_Asyn_download() {
-        let completionExpectation = self.expectationWithDescription("Asyn Download")
-        sharedDownloader.getWeatherDataFromLocation(self.locationForTest()) { (data: SmileWeatherData?, error: NSError?) -> Void in
+        let completionExpectation = self.expectation(description: "Asyn Download")
+        
+        sharedDownloader.getWeatherData(from: self.locationForTest()) { (data: SmileWeatherData?, error: Error?) in
             XCTAssertNil(error, "SmileWeatherDownLoader failed download weather info")
-            XCTAssertTrue(data?.forecastData.count > 0, "SmileWeatherDownLoader failed download forecastData")
-            XCTAssertTrue(data?.hourlyData.count > 0, "SmileWeatherDownLoader failed download hourlyData")
+            XCTAssertTrue(data!.forecastData.count > 0, "SmileWeatherDownLoader failed download forecastData")
+            XCTAssertTrue(data!.hourlyData.count > 0, "SmileWeatherDownLoader failed download hourlyData")
             completionExpectation.fulfill()
         }
-        self.waitForExpectationsWithTimeout(5.0, handler: nil)
+        
+        self.waitForExpectations(timeout: 5.0, handler: nil)
     }
     
     func test_Asyn_search() {
-        let completionExpectation = self.expectationWithDescription("Asyn Search")
-        sharedDownloader.getPlacemarksFromString("Tokyo") { (places: [CLPlacemark]?, error: NSError?) -> Void in
+        let completionExpectation = self.expectation(description: "Asyn Search")
+        
+        sharedDownloader.getPlacemarks(from: "Tokyo") { (places: [CLPlacemark]?, error: Error?) in
             XCTAssertNil(error, "SmileWeatherDownLoader failed search places info")
-            XCTAssertTrue(places?.count > 0, "SmileWeatherDownLoader failed placeMark array")
+            XCTAssertTrue(places!.count > 0, "SmileWeatherDownLoader failed placeMark array")
             completionExpectation.fulfill()
         }
-        self.waitForExpectationsWithTimeout(5.0, handler: nil)
+        
+        self.waitForExpectations(timeout: 5.0, handler: nil)
     }
     
 }
