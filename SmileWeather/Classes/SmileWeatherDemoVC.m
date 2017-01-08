@@ -302,6 +302,8 @@ static NSString * const reuseIdentifier_property = @"propertyCell";
     
     self.conditionsLabel.text = self.data.currentData.condition;
     self.loading = NO;
+    
+    self.tempUnitsSegmentControl.tintColor = self.higlightedInterfaceColor;
 }
 
 #pragma mark <UICollectionViewDataSource>
@@ -355,11 +357,9 @@ static NSString * const reuseIdentifier_property = @"propertyCell";
     UILabel *lowTempLabel = (UILabel*)[cell viewWithTag:400];
     
     if (self.nightMode) {
-        weekLabel.textColor = self.mainInterfaceNightModeColor;
         weatherLabel.textColor = self.mainInterfaceNightModeColor;
         highTempLabel.textColor = self.mainInterfaceNightModeColor;
     } else {
-        weekLabel.textColor = self.mainInterfaceColor;
         weatherLabel.textColor = self.mainInterfaceColor;
         highTempLabel.textColor = self.mainInterfaceColor;
     }
@@ -380,7 +380,7 @@ static NSString * const reuseIdentifier_property = @"propertyCell";
             if (self.nightMode){
                 weekLabel.textColor = self.mainInterfaceNightModeColor;
             }else{
-                weekLabel.textColor = self.mainInterfaceColor;
+                weekLabel.textColor = [UIColor whiteColor];
             }
             weekLabel.layer.cornerRadius = 3;
             weekLabel.layer.masksToBounds = YES;

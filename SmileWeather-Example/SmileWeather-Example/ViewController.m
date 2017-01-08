@@ -78,6 +78,8 @@ static NSString * const demoLocation_key = @"demoLocation";
     _demoVC = [SmileWeatherDemoVC DemoVCToView:self.containerView];
     _demoVC.delegate = self;
     _demoVC.fahrenheit = [_userDefaults boolForKey:kIsFahrenheit];
+    //customize tint color
+    //_demoVC.higlightedInterfaceColor = [UIColor brownColor];
     
     //get weather data
     [self getWeatherData];

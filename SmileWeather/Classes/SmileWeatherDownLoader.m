@@ -445,7 +445,7 @@
     
     NSString *lang = [[SmileWeatherDownLoader sharedDownloader] preferedLanguage];
     
-    static NSString *baseURL_wunderground =  @"http://api.wunderground.com/api/";
+    static NSString *baseURL_wunderground =  @"https://api.wunderground.com/api/";
     NSString *parameters_wunderground = [NSString stringWithFormat:@"/forecast/conditions/astronomy/hourly/lang:%@/q/",lang];
     CLLocationCoordinate2D coordinates = location.coordinate;
     requestURL = [NSString stringWithFormat:@"%@%@%@%f,%f.json", baseURL_wunderground, self.key, parameters_wunderground, coordinates.latitude, coordinates.longitude];
