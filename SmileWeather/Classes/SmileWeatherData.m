@@ -361,6 +361,20 @@ static NSString * const SmileCoder_timeZone = @"timeZone";
             [forecastData addObject:forecast];
             dayFlag = components.day;
         }
+        if (dayFlag == components.day) {
+            SmileWeatherForecastDayData *sameDayData = [forecastData lastObject];
+            NSDictionary *mainDataDic = [obj objectForKey:@"main"];
+            
+            SmileTemperature highTemperature = [self createTemperatureFromObject_openweathermap:[mainDataDic valueForKey:@"temp_max"]];
+            if (highTemperature.initialized && highTemperature.celsius > sameDayData.highTemperature.celsius) {
+                sameDayData.highTemperature = highTemperature;
+            }
+            
+            SmileTemperature lowTemperature = [self createTemperatureFromObject_openweathermap:[mainDataDic valueForKey:@"temp_min"]];
+            if (lowTemperature.initialized && lowTemperature.celsius < sameDayData.lowTemperature.celsius) {
+                sameDayData.lowTemperature = lowTemperature;
+            }
+        }
         
         //hourly data
         if (idx < 13) {
